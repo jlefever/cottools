@@ -1,10 +1,13 @@
 import abc
 import enum
+import itertools as it
 import subprocess
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from typing import Iterable
 from uuid import UUID, uuid4
 
+import networkx as nx
 from bidict import bidict
 
 NULL_COMMIT_ID = "0" * 40
@@ -54,19 +57,19 @@ class NameLine:
 
 class NameTableListener(abc.ABC):
     @abc.abstractmethod
-    def on_add(self, walk_id: UUID, name: str) -> None:
+    def on_add(self, id: UUID, name: str) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_delete(self, walk_id: UUID) -> None:
+    def on_delete(self, id: UUID) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_rename(self, old_walk_id: UUID, new_walk_id: UUID) -> None:
+    def on_rename(self, old_id: UUID, new_id: UUID) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_merge(self, old_walk_id: UUID, new_walk_id: UUID) -> None:
+    def on_merge(self, old_id: UUID, new_id: UUID) -> None:
         raise NotImplementedError
 
 
@@ -88,29 +91,32 @@ class NameTable:
     def add_listener(self, listener: NameTableListener) -> None:
         self._listeners.append(listener)
 
-    def get_walk_id(self, name: str) -> UUID | None:
+    def get_id(self, name: str) -> UUID | None:
         return self._table.get(name)
 
-    def get_name(self, walk_id: UUID) -> str | None:
-        return self._table.inverse.get(walk_id)
+    def get_name(self, id: UUID) -> str | None:
+        return self._table.inverse.get(id)
+
+    def ids(self) -> Iterable[UUID]:
+        return self._table.values()
 
     def add(self, name: str) -> UUID:
         if name in self._table:
             raise RuntimeError(f"Attempted to add a name that already exists: {name}")
-        walk_id = uuid4()
-        self._table[name] = walk_id
+        id = uuid4()
+        self._table[name] = id
         for listener in self._listeners:
-            listener.on_add(walk_id, name)
-        return walk_id
+            listener.on_add(id, name)
+        return id
 
     def delete(self, name: str) -> UUID:
         if name not in self._table:
             raise RuntimeError(f"Attempted to delete a name that doesn't exist: {name}")
-        walk_id = self._table[name]
+        id = self._table[name]
         del self._table[name]
         for listener in self._listeners:
-            listener.on_delete(walk_id)
-        return walk_id
+            listener.on_delete(id)
+        return id
 
     def rename(self, old_name: str, new_name: str) -> None:
         old_id = self.delete(old_name)
@@ -141,30 +147,33 @@ class NameTable:
                     pass
 
 
-class FileSolver(NameTableListener):
+class RenameSolver(NameTableListener):
     def __init__(self) -> None:
         self._names: dict[UUID, str] = dict()
         self._walk_ids: dict[str, list[UUID]] = defaultdict(list)
         self._add_counts: Counter[str] = Counter()
         self._equivalencies: dict[UUID, list[UUID]] = defaultdict(list)
 
-    def on_add(self, walk_id: UUID, name: str) -> None:
-        self._names[walk_id] = name
-        self._walk_ids[name].append(walk_id)
+    def on_add(self, id: UUID, name: str) -> None:
+        self._names[id] = name
+        self._walk_ids[name].append(id)
         self._add_counts[name] += 1
 
-    def on_delete(self, walk_id: UUID) -> None:
+    def on_delete(self, id: UUID) -> None:
         pass
 
-    def on_rename(self, old_walk_id: UUID, new_walk_id: UUID) -> None:
-        self._equivalencies[old_walk_id].append(new_walk_id)
-        self._equivalencies[new_walk_id].append(old_walk_id)
+    def on_rename(self, old_id: UUID, new_id: UUID) -> None:
+        self._equivalencies[old_id].append(new_id)
+        self._equivalencies[new_id].append(old_id)
 
-    def on_merge(self, old_walk_id: UUID, new_walk_id: UUID) -> None:
-        self._equivalencies[old_walk_id].append(new_walk_id)
-        self._equivalencies[new_walk_id].append(old_walk_id)
+    def on_merge(self, old_id: UUID, new_id: UUID) -> None:
+        self._equivalencies[old_id].append(new_id)
+        self._equivalencies[new_id].append(old_id)
 
-    def solve_files(self) -> dict[UUID, UUID]:
+    def names(self) -> dict[UUID, str]:
+        return self._names
+
+    def solve_renames(self) -> dict[UUID, UUID]:
         files: dict[UUID, UUID] = dict()
 
         def visit(walk_id: UUID, file_id: UUID):
@@ -177,7 +186,7 @@ class FileSolver(NameTableListener):
         for walk_id in self._names.keys():
             visit(walk_id, uuid4())
 
-        # Debugging name reuse
+        # Debug: Print name reuse
         for name, count in self._add_counts.items():
             if count < 2:
                 continue
@@ -280,13 +289,29 @@ class FileLookup:
             return None
 
 
+def find_exclusive_cliques(edges: Iterable[tuple[int, int]]) -> list[list[int]]:
+    # Find cliques
+    G = nx.Graph(edges)
+    cliques: list[list[int]] = [sorted(c) for c in nx.find_cliques(G)] # type: ignore
+
+    # Greedily filter to exclusive cliques using max size then min ID as priority
+    exclusive_cliques: list[list[int]] = []
+    deleted_nodes: set[int] = set()
+    for clique in sorted(cliques, key=lambda c: [-1 * len(c)] + c):
+        if len(set(clique) & deleted_nodes) != 0:
+            continue
+        exclusive_cliques.append(clique)
+        deleted_nodes.update(clique)
+    return exclusive_cliques
+
+
 class CommitWalker(Walker[list[NameLine]]):
     def __init__(self) -> None:
         self._tables: dict[str, NameTable] = dict()
-        self._solver = FileSolver()
+        self._commits: dict[UUID, list[str]] = defaultdict(list)
+        self._solver = RenameSolver()
 
     def visit_edge(self, edge: Edge[list[NameLine]]) -> None:
-        # print(f"Visiting EDGE: {edge.tgt} <- {edge.src}")
         table = NameTable(self._tables[edge.src])
         table.update(edge.data)
         if edge.tgt in self._tables:
@@ -295,15 +320,63 @@ class CommitWalker(Walker[list[NameLine]]):
             self._tables[edge.tgt] = table
 
     def visit_node(self, node: str) -> None:
-        # print(f"Visiting NODE: {node}")
         if node not in self._tables:
             table = NameTable()
             table.add_listener(self._solver)
             self._tables[node] = table
+        for id in self._tables[node].ids():
+            self._commits[id].append(node)
 
-    def to_file_lookup(self) -> FileLookup:
-        files = self._solver.solve_files()
-        return FileLookup(self._tables, files)
+    def solve_files(self) -> FileLookup:
+        walk_to_file = self._solver.solve_renames()
+        walk_to_name = self._solver.names()
+        walk_to_commits = self._commits
+
+        file_to_walks: dict[UUID, list[UUID]] = defaultdict(list)
+        file_to_names: dict[UUID, list[str]] = defaultdict(list)
+        file_to_commits: dict[UUID, set[str]] = defaultdict(set)
+        for walk, file in walk_to_file.items():
+            file_to_walks[file].append(walk)
+            file_to_names[file].append(walk_to_name[walk])
+            file_to_commits[file].update(walk_to_commits[walk])
+
+        name_to_files: dict[str, list[UUID]] = defaultdict(list)
+        for walk, name in walk_to_name.items():
+            name_to_files[name].append(walk_to_file[walk])
+
+        # TODO: Use git topo-order
+        file_to_ix: bidict[UUID, int] = bidict()
+        for ix, file in enumerate(file_to_commits):
+            file_to_ix[file] = ix
+
+        edges: set[tuple[int, int]] = set()
+        for file_a, commits_a in file_to_commits.items():
+            for name in file_to_names[file_a]:
+                for file_b in name_to_files[name]:
+                    if file_a == file_b:
+                        continue
+                    if len(commits_a & file_to_commits[file_b]) != 0:
+                        continue
+                    a, b = file_to_ix[file_a], file_to_ix[file_b]
+                    edges.add((min(a, b), max(a, b)))
+
+        cliques = find_exclusive_cliques(edges)
+
+        # Debug: Print unused edges
+        used_edges = set(it.chain(*(it.combinations(c, r=2) for c in cliques)))
+        unused_edges = edges - used_edges
+        print(f"Total edges:  {len(edges)}")
+        print(f"Used edges:   {len(used_edges)}")
+        print(f"Unused edges: {len(unused_edges)}")
+
+        walk_to_clique = dict(walk_to_file)
+        for clique in cliques:
+            clique_id = uuid4()
+            for ix in clique:
+                for walk in file_to_walks[file_to_ix.inv[ix]]:
+                    walk_to_clique[walk] = clique_id
+
+        return FileLookup(self._tables, walk_to_clique)
 
 
 CommitGraph = Graph[list[NameLine]]
@@ -332,7 +405,7 @@ def parse_log(log: str) -> list[CommitLine | NameLine]:
         try:
             lines.append(parse_line(line))
         except StopParsing:
-            print(f"Warning: failed to parse line {i}: {line}")
+            print(f"Warning: failed to parse line {i + 1}: {line}")
             continue
     return lines
 
@@ -347,10 +420,10 @@ def parse_line(line: str) -> CommitLine | NameLine:
 def parse_name_line(line: str) -> NameLine:
     tokens = line.split("\t")
     if len(tokens) == 3:
-        old_name = parse_name(tokens[1])
-        new_name = parse_name(tokens[2])
+        old_name = tokens[1]
+        new_name = tokens[2]
     elif len(tokens) == 2:
-        name = parse_name(tokens[1])
+        name = tokens[1]
         old_name, new_name = name, name
     else:
         raise StopParsing
@@ -360,15 +433,6 @@ def parse_name_line(line: str) -> NameLine:
     elif status == Status.DELETE:
         new_name = ""
     return NameLine(status, score, old_name, new_name)
-
-
-def parse_name(token: str) -> str:
-    if token.startswith('"'):
-        # Skip paths with "unusual" characters
-        # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath
-        # print("Warning: Skipping path with unusual character...")
-        raise StopParsing
-    return token
 
 
 def parse_status(token: str) -> tuple[Status, int | None]:
@@ -390,10 +454,12 @@ def parse_commit_line(line: str) -> CommitLine:
         pass
     if len(parents) == 0:
         return CommitLine.root(id)
-    try:
-        diff_parent_id = tokens[tokens.index("(from") + 1].removesuffix(")")
-    except ValueError:
-        diff_parent_id = parents[0]
+    diff_parent_id = parents[0]
+    if len(parents) > 1:
+        if tokens[len(parents) + 1] == "(from":
+            diff_parent_id = tokens[len(parents) + 2].removesuffix(")")
+        else:
+            raise RuntimeError("diff parent not specified")
     return CommitLine.child(id, parents, diff_parent_id)
 
 
