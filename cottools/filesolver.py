@@ -1,12 +1,12 @@
 import abc
 import itertools as it
 import re
+import subprocess
+from collections import defaultdict
 from dataclasses import dataclass
-from collections import Counter, defaultdict
-from io import TextIOBase
-from typing import Iterable, Any
-
 from datetime import datetime
+from io import StringIO, TextIOBase
+from typing import Any, Iterable
 
 import networkx as nx
 from bidict import bidict
@@ -95,31 +95,26 @@ class NameTable:
 
     def modify(self, name: str) -> None:
         if name not in self._table:
-            # raise RuntimeError(f"Attempted to modify a name that doesn't exists: {name}")
-            self.add(name)
-        else:
-            for listener in self._listeners:
-                listener.on_modify(self._table[name])
+            raise RuntimeError(
+                f"Attempted to modify a name that doesn't exists: {name}"
+            )
+        for listener in self._listeners:
+            listener.on_modify(self._table[name])
 
     def delete(self, name: str) -> int:
         if name not in self._table:
-            return -1
-            # raise RuntimeError(f"Attempted to delete a name that doesn't exist: {name}")
-        else:
-            id = self._table[name]
-            del self._table[name]
-            for listener in self._listeners:
-                listener.on_delete(id)
-            return id
+            raise RuntimeError(f"Attempted to delete a name that doesn't exist: {name}")
+        id = self._table[name]
+        del self._table[name]
+        for listener in self._listeners:
+            listener.on_delete(id)
+        return id
 
     def rename(self, old_name: str, new_name: str) -> None:
         old_id = self.delete(old_name)
-        if old_id < 0:
-            self.add(new_name)
-        else:
-            new_id = self.add(new_name)
-            for listener in self._listeners:
-                listener.on_rename(old_id, new_id)
+        new_id = self.add(new_name)
+        for listener in self._listeners:
+            listener.on_rename(old_id, new_id)
 
     def merge_into(self, new_table: "NameTable") -> None:
         if self._table.keys() != new_table._table.keys():
@@ -132,18 +127,16 @@ class NameTable:
                 listener.on_merge(old_id, new_id)
 
 
-class NameSolver(NameTableListener):
+class FileEdgeRecorder(NameTableListener):
     def __init__(self) -> None:
-        self._names: dict[int, str] = dict()
-        self._walk_ids: dict[str, list[int]] = defaultdict(list)
-        self._add_counts: Counter[str] = Counter()
-        self._renames: dict[int, list[int]] = defaultdict(list)
-        self._merges: dict[int, list[int]] = defaultdict(list)
+        self._id_to_name: dict[int, str] = dict()
+        self._name_to_ids: dict[str, list[int]] = defaultdict(list)
+        self._renames: set[tuple[int, int]] = set()
+        self._merges: set[tuple[int, int]] = set()
 
     def on_add(self, id: int, name: str) -> None:
-        self._names[id] = name
-        self._walk_ids[name].append(id)
-        self._add_counts[name] += 1
+        self._id_to_name[id] = name
+        self._name_to_ids[name].append(id)
 
     def on_modify(self, id: int) -> None:
         return
@@ -152,43 +145,25 @@ class NameSolver(NameTableListener):
         return
 
     def on_rename(self, old_id: int, new_id: int) -> None:
-        self._renames[old_id].append(new_id)
-        self._renames[new_id].append(old_id)
+        self._renames.add((min(old_id, new_id), max(old_id, new_id)))
 
     def on_merge(self, old_id: int, new_id: int) -> None:
-        self._merges[old_id].append(new_id)
-        self._merges[new_id].append(old_id)
+        self._merges.add((min(old_id, new_id), max(old_id, new_id)))
 
     def names(self) -> dict[int, str]:
-        return self._names
+        return self._id_to_name
 
-    def solve_names(self, *, renames: bool) -> dict[int, int]:
-        files: dict[int, int] = dict()
+    def get_merge_edges(self) -> set[tuple[int, int]]:
+        return self._merges
 
-        def visit(walk_id: int, file_id: int):
-            if walk_id in files:
-                return
-            files[walk_id] = file_id
-            for other in self._merges[walk_id]:
-                visit(other, file_id)
-            if not renames:
-                return
-            for other in self._renames[walk_id]:
-                visit(other, file_id)
+    def get_rename_edges(self) -> set[tuple[int, int]]:
+        return self._renames
 
-        for file_id, walk_id in enumerate(self._names.keys()):
-            visit(walk_id, file_id)
-
-        # Debug: Print name reuse
-        for name, count in self._add_counts.items():
-            if count < 2:
-                continue
-            n_files = len(set(files[w] for w in self._walk_ids[name]))
-            if n_files < 2:
-                continue
-            print(f"{name} added {count} times: {n_files} files")
-
-        return files
+    def get_reuse_edges(self) -> set[tuple[int, int]]:
+        edges: set[tuple[int, int]] = set()
+        for ids in self._name_to_ids.values():
+            edges.update(it.combinations(sorted(ids), r=2))
+        return edges
 
 
 class DiffListener(abc.ABC):
@@ -217,9 +192,38 @@ class DiffListener(abc.ABC):
         raise NotImplementedError
 
 
+def to_adj(edges: Iterable[tuple[int, int]]) -> dict[int, set[int]]:
+    adj: dict[int, set[int]] = defaultdict(set)
+    for u, v in edges:
+        if u == v:
+            continue
+        adj[u].add(v)
+        adj[v].add(u)
+    return adj
+
+
+def to_trans_closure(edges: Iterable[tuple[int, int]]) -> set[tuple[int, int]]:
+    adj = to_adj(edges)
+
+    def visit(history: set[int], node: int) -> None:
+        if node in history:
+            return
+        history.add(node)
+        for other in adj[node]:
+            visit(history, other)
+
+    tc_edges: set[tuple[int, int]] = set()
+    for node in adj:
+        history: set[int] = set()
+        visit(history, node)
+        history.remove(node)
+        tc_edges.update((min(u, v), max(u, v)) for u, v in it.product([node], history))
+    return tc_edges
+
+
 def find_exclusive_cliques(edges: Iterable[tuple[int, int]]) -> list[list[int]]:
     # Find cliques
-    G = nx.Graph(edges)
+    G = nx.Graph((u, v) for u, v in edges if u != v)
     cliques: list[list[int]] = [sorted(c) for c in nx.find_cliques(G)]  # type: ignore
 
     # Greedily filter to exclusive cliques using min ID as priority
@@ -233,32 +237,50 @@ def find_exclusive_cliques(edges: Iterable[tuple[int, int]]) -> list[list[int]]:
     return exclusive_cliques
 
 
+def print_edge_debug(edges: set[tuple[int, int]], cliques: list[list[int]]) -> None:
+    used_edges = set(it.chain(*(it.combinations(c, r=2) for c in cliques)))
+    unused_edges = edges - used_edges
+    print(f"Total edges:  {len(edges)}")
+    print(f"Used edges:   {len(used_edges)}")
+    print(f"Unused edges: {len(unused_edges)}")
+
+
 class FileLookup:
     def __init__(self, tables: dict[str, bidict[str, int]]) -> None:
         self._tables = tables
+        self._id_to_commits: dict[int, list[str]] = defaultdict(list)
+        self._name_to_commits: dict[str, list[str]] = defaultdict(list)
+        for commit, table in self._tables.items():
+            for id in table.values():
+                self._id_to_commits[id].append(commit)
+            for name in table.keys():
+                self._name_to_commits[name].append(commit)
 
-    def get_file_id(self, commit: str, name: str) -> int | None:
-        try:
-            return self._tables[commit][name]
-        except KeyError:
-            return None
+    def file_table(self, commit: str) -> bidict[str, int]:
+        return self._tables[commit]
+
+    def file_id(self, commit: str, name: str) -> int:
+        return self._tables[commit][name]
+
+    def file_name(self, commit: str, id: int) -> str:
+        return self._tables[commit].inv[id]
     
-    def get_file_name(self, commit: str, id: int) -> str | None:
-        try:
-            return self._tables[commit].inv[id]
-        except KeyError:
-            return None
+    def commits_by_id(self, id: int) -> list[str]:
+        return self._id_to_commits[id]
+    
+    def commits_by_name(self, name: str) -> list[str]:
+        return self._name_to_commits[name]
 
 
-class NameRecorder(DiffListener):
+class FileSolver(DiffListener):
     def __init__(self) -> None:
         self._tables: dict[str, NameTable] = dict()
-        self._commits: dict[int, list[str]] = defaultdict(list)
-        self._solver = NameSolver()
+        self._commits: dict[int, set[str]] = defaultdict(set)
+        self._edge_recorder = FileEdgeRecorder()
 
         self._curr_commit = NULL_COMMIT_ID
         self._curr_table = NameTable(None, IdProvider())
-        self._curr_table.add_listener(self._solver)
+        self._curr_table.add_listener(self._edge_recorder)
         self._tables[NULL_COMMIT_ID] = self._curr_table
 
     def on_enter_diff(self, commit: str, parent: str) -> None:
@@ -279,60 +301,86 @@ class NameRecorder(DiffListener):
 
     def on_exit_diff(self) -> None:
         for id in self._curr_table.ids():
-            self._commits[id].append(self._curr_commit)
+            self._commits[id].add(self._curr_commit)
         if self._curr_commit not in self._tables:
             self._tables[self._curr_commit] = self._curr_table
         else:
             self._curr_table.merge_into(self._tables[self._curr_commit])
 
-    def solve_files(self, *, renames: bool) -> FileLookup:
-        walk_to_file = self._solver.solve_names(renames=renames)
-        walk_to_name = self._solver.names()
+    def solve_files(self) -> FileLookup:
+        walk_to_name = self._edge_recorder.names()
         walk_to_commits = self._commits
+        merge_edges = self._edge_recorder.get_merge_edges()
+        rename_edges = self._edge_recorder.get_rename_edges()
+        reuse_edges = self._edge_recorder.get_reuse_edges()
+        walk_to_file: dict[int, int] = dict()
 
-        file_to_walks: dict[int, list[int]] = defaultdict(list)
-        file_to_names: dict[int, list[str]] = defaultdict(list) # why not a set ?
+        # Step 1: Solve using merge edges
+        merge_adj = to_adj(merge_edges)
+
+        def visit_merge(walk: int, file: int):
+            if walk in walk_to_file:
+                return
+            walk_to_file[walk] = file
+            for other in merge_adj[walk]:
+                visit_merge(other, file)
+
+        for walk in walk_to_name:
+            visit_merge(walk, walk)
+
+        # Step 2: Solve using rename edges
+        file_to_walks: dict[int, set[int]] = defaultdict(set)
         file_to_commits: dict[int, set[str]] = defaultdict(set)
         for walk, file in walk_to_file.items():
-            file_to_walks[file].append(walk)
-            file_to_names[file].append(walk_to_name[walk])
+            file_to_walks[walk].add(file)
             file_to_commits[file].update(walk_to_commits[walk])
 
-        name_to_files: dict[str, list[int]] = defaultdict(list)
-        for walk, name in walk_to_name.items():
-            name_to_files[name].append(walk_to_file[walk])
-
-        edges: set[tuple[int, int]] = set()
-        for file_a, commits_a in file_to_commits.items():
-            for name in file_to_names[file_a]:
-                for file_b in name_to_files[name]:
-                    if file_a == file_b:
-                        continue
-                    if len(commits_a & file_to_commits[file_b]) != 0:
-                        continue
-                    edges.add((min(file_a, file_b), max(file_a, file_b)))
-
-        cliques = find_exclusive_cliques(edges)
-
-        # Debug: Print unused edges
-        used_edges = set(it.chain(*(it.combinations(c, r=2) for c in cliques)))
-        unused_edges = edges - used_edges
-        print(f"Total edges:  {len(edges)}")
-        print(f"Used edges:   {len(used_edges)}")
-        print(f"Unused edges: {len(unused_edges)}")
+        rename_edges = to_trans_closure(rename_edges)
+        rename_edges = {(walk_to_file[u], walk_to_file[v]) for u, v in rename_edges}
+        rename_edges = {
+            (min(u, v), max(u, v))
+            for u, v in rename_edges
+            if len(file_to_commits[u] & file_to_commits[v]) == 0
+        }
+        cliques = find_exclusive_cliques(rename_edges)
+        print_edge_debug(rename_edges, cliques)
 
         for clique in cliques:
             for file in clique:
                 for walk in file_to_walks[file]:
                     walk_to_file[walk] = min(clique)
 
+        # Step 3: Solve using reuse edges
+        file_to_walks: dict[int, set[int]] = defaultdict(set)
+        file_to_commits: dict[int, set[str]] = defaultdict(set)
+        for walk, file in walk_to_file.items():
+            file_to_walks[walk].add(file)
+            file_to_commits[file].update(walk_to_commits[walk])
+
+        reuse_edges = {(walk_to_file[u], walk_to_file[v]) for u, v in reuse_edges}
+        reuse_edges = {
+            (min(u, v), max(u, v))
+            for u, v in reuse_edges
+            if len(file_to_commits[u] & file_to_commits[v]) == 0
+        }
+        cliques = find_exclusive_cliques(reuse_edges)
+        print_edge_debug(reuse_edges, cliques)
+
+        for clique in cliques:
+            for file in clique:
+                for walk in file_to_walks[file]:
+                    walk_to_file[walk] = min(clique)
+
+        print("Done")
+
+        # Step 4: Build final tables. This step is actually 3x more time-consuming
+        # than everything else.
         tables: dict[str, bidict[str, int]] = dict()
         for commit, name_table in self._tables.items():
-            table: bidict[str, int] = bidict(name_table.table())
+            table: dict[str, int] = dict()
             for name, walk in name_table.table().items():
                 table[name] = walk_to_file[walk]
-            tables[commit] = table
-
+            tables[commit] = bidict(table)
         return FileLookup(tables)
 
 
@@ -340,7 +388,7 @@ class ChangeRecorder(DiffListener):
     def __init__(self) -> None:
         self._curr_commit: str = NULL_COMMIT_ID
         self._curr_names: set[str] = set()
-        self._names: dict[str, set[str]] = dict()
+        self._commit_to_names: dict[str, set[str]] = dict()
 
     def on_enter_diff(self, commit: str, parent: str) -> None:
         self._curr_commit = commit
@@ -359,11 +407,26 @@ class ChangeRecorder(DiffListener):
         self._curr_names.add(new_name)
 
     def on_exit_diff(self) -> None:
-        if self._curr_commit not in self._names:
-            self._names[self._curr_commit] = self._curr_names
+        if self._curr_commit not in self._commit_to_names:
+            self._commit_to_names[self._curr_commit] = self._curr_names
         else:
-            self._names[self._curr_commit] &= self._curr_names
+            self._commit_to_names[self._curr_commit] &= self._curr_names
 
+    def to_changes_by_name(self) -> dict[str, list[str]]:
+        name_to_commits: dict[str, list[str]] = defaultdict(list)
+        for commit, names in self._commit_to_names.items():
+            for name in names:
+                name_to_commits[name].append(commit)
+        return name_to_commits
+
+    def to_changes_by_id(self, lookup: FileLookup) -> dict[int, list[str]]:
+        id_to_commits: dict[int, list[str]] = defaultdict(list)
+        for commit, names in self._commit_to_names.items():
+            file_table = lookup.file_table(commit)
+            for name in names:
+                id_to_commits[file_table[name]].append(commit)
+        return id_to_commits
+    
 
 class DiffPrinter(DiffListener):
     def __init__(self) -> None:
@@ -507,33 +570,40 @@ class CommitData:
 
 class CommitDataRecorder(LogListener):
     def __init__(self) -> None:
-        self._data: dict[str, dict[str, Any]] = dict()
-        self._commit: dict[str, Any] = dict()
+        self._curr_commit: dict[str, Any] | None = None
+        self._commits: dict[str, dict[str, Any]] = dict()
 
     def on_enter_commit(
         self, commit: str, parents: list[str], from_parent: str
     ) -> None:
-        self._commit = dict()
-        self._data[commit] = self._commit
-        self._commit["id"] = commit
-        self._commit["parents"] = list(parents)
+        if commit in self._commits:
+            self._curr_commit = None
+            return
+        self._curr_commit = dict()
+        self._commits[commit] = self._curr_commit
+        self._curr_commit["id"] = commit
+        self._curr_commit["parents"] = list(parents)
 
     def on_field(self, key: str, value: str) -> None:
+        if self._curr_commit is None:
+            return
         key = key.lower()
         if key == "author" or key == "commit":
             match = re.match("^(.+) <(.+)>$", value)
-            self._commit[f"{key}user"] = match.group(1) # type: ignore
-            self._commit[f"{key}email"] = match.group(2) # type: ignore
+            self._curr_commit[f"{key}user"] = match.group(1)  # type: ignore
+            self._curr_commit[f"{key}email"] = match.group(2)  # type: ignore
         elif key == "authordate" or key == "commitdate":
-            self._commit[key] = datetime.fromisoformat(value)
+            self._curr_commit[key] = datetime.fromisoformat(value)
         else:
-            self._commit[key] = value
+            self._curr_commit[key] = value
 
     def on_message(self, message: str) -> None:
-        if "message" in self._commit:
-            self._commit["message"].append(message)
+        if self._curr_commit is None:
+            return
+        if "message" in self._curr_commit:
+            self._curr_commit["message"].append(message)
         else:
-            self._commit["message"] = [message]
+            self._curr_commit["message"] = [message]
 
     def on_change(self, status: str, name_a: str, name_b: str | None) -> None:
         pass
@@ -557,7 +627,7 @@ class CommitDataRecorder(LogListener):
                 commit_date=value["commitdate"],
                 message=value["message"],
             )
-            for key, value in self._data.items()
+            for key, value in self._commits.items()
         }
 
 
@@ -649,8 +719,108 @@ class LogParser:
                 break
             self._lineno += 1
             self._line = self._line.rstrip()
+            print(f"LINE: {self._line}")
             if self._line != "":
                 break
 
     def _is_eof(self) -> bool:
         return self._line == ""
+
+
+def extract_log(repo_path: str, ref: str) -> str:
+    args = [
+        "git",
+        "log",
+        # Commit Ordering
+        "--topo-order",
+        "--reverse",
+        # Commit Formatting
+        "--format=fuller",
+        "--date=iso-strict",
+        "--parents",
+        # Diff Formatting
+        "--diff-merges=separate",
+        "--diff-algorithm=histogram",
+        "--name-status",
+        "--find-renames",
+        "-l0",
+        "--diff-filter=ADMR",
+        ref,
+    ]
+    res = subprocess.run(args, cwd=repo_path, capture_output=True, text=True)
+    return res.stdout
+
+
+class Repo:
+    def __init__(
+        self,
+        files: FileLookup,
+        commits: dict[str, CommitData],
+        changes_by_id: dict[int, list[str]],
+        changes_by_name: dict[str, list[str]],
+    ) -> None:
+        self._files = files
+        self._commits = commits
+        self._changes_by_id = changes_by_id
+        self._changes_by_name = changes_by_name
+
+    @staticmethod
+    def load_repo(repo_path: str, ref: str) -> "Repo":
+        name_recorder = FileSolver()
+        change_recorder = ChangeRecorder()
+        # diff_printer = DiffPrinter()
+
+        diff_notifier = DiffNotifier()
+        diff_notifier.add_listener(name_recorder)
+        diff_notifier.add_listener(change_recorder)
+        # diff_notifier.add_listener(diff_printer)
+
+        commit_data_recorder = CommitDataRecorder()
+
+        reader = StringIO(extract_log(repo_path, ref))
+        parser = LogParser(reader)
+        parser.add_listener(diff_notifier)
+        parser.add_listener(commit_data_recorder)
+        parser.parse()
+
+        files = name_recorder.solve_files()
+        commits = commit_data_recorder.to_dict()
+        changes_by_id = change_recorder.to_changes_by_id(files)
+        changes_by_name = change_recorder.to_changes_by_name()
+        return Repo(files, commits, changes_by_id, changes_by_name)
+
+    def commits(self) -> list[str]:
+        return list(self._commits)
+
+    def latest_commit(self) -> str:
+        return list(self._commits)[-1]
+
+    def commit_data(self, commit: str) -> CommitData:
+        return self._commits[commit]
+
+    def file_ids(self, commit: str) -> list[int]:
+        return sorted(self._files.file_table(commit).values())
+
+    def file_names(self, commit: str) -> list[str]:
+        return sorted(self._files.file_table(commit).keys())
+
+    def file_id_by_name(self, commit: str, file_name: str) -> int:
+        return self._files.file_id(commit, file_name)
+
+    def file_name_by_id(self, commit: str, file_id: int) -> str:
+        return self._files.file_name(commit, file_id)
+
+    def file_table(self, commit: str) -> bidict[str, int]:
+        return self._files.file_table(commit)
+
+    def commits_by_id(self, file_id: int) -> list[str]:
+        return self._files.commits_by_id(file_id)
+
+    def commits_by_name(self, file_name: str) -> list[str]:
+        return self._files.commits_by_name(file_name)
+
+    def changes_by_id(self, file_id: int) -> list[str]:
+        return self._changes_by_id[file_id]
+    
+    def changes_by_name(self, file_name: str) -> list[str]:
+        return self._changes_by_name[file_name]
