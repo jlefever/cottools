@@ -1,0 +1,11 @@
+commit fc149b09fdc76c3a8c394a78d2f5a2cfa282f834
+A	foo1
+A	foo2
+
+commit d3518422766d6cbc9bbe8f2acb02524558a2e401 fc149b09fdc76c3a8c394a78d2f5a2cfa282f834
+R	foo1	foo3
+R	foo2	foo4
+
+commit c26a4ef7d9846ffcc7aab30dcc26e0a909c71c6c d3518422766d6cbc9bbe8f2acb02524558a2e401 fc149b09fdc76c3a8c394a78d2f5a2cfa282f834 (from fc149b09fdc76c3a8c394a78d2f5a2cfa282f834)
+R	foo1	foo4
+R	foo2	foo3
