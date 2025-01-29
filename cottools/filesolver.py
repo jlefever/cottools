@@ -12,10 +12,10 @@ from typing import Any, Iterable
 import networkx as nx
 from bidict import bidict
 
-NULL_COMMIT_ID = "0" * 40
+_NULL_COMMIT_ID = "0" * 40
 
 
-class NameTableListener(abc.ABC):
+class _NameTableListener(abc.ABC):
     @abc.abstractmethod
     def on_add(self, id: int, name: str) -> None:
         raise NotImplementedError
@@ -37,7 +37,7 @@ class NameTableListener(abc.ABC):
         raise NotImplementedError
 
 
-class IdProvider:
+class _IdProvider:
     def __init__(self) -> None:
         self._id = 0
 
@@ -47,12 +47,12 @@ class IdProvider:
         return id
 
 
-class NameTable:
+class _NameTable:
     _table: bidict[str, int]
-    _id_provider: IdProvider
-    _listeners: list[NameTableListener]
+    _id_provider: _IdProvider
+    _listeners: list[_NameTableListener]
 
-    def __init__(self, parent: "NameTable | None", id_provider: IdProvider) -> None:
+    def __init__(self, parent: "_NameTable | None", id_provider: _IdProvider) -> None:
         if parent is None:
             self._table = bidict()
             self._id_provider = id_provider
@@ -62,11 +62,11 @@ class NameTable:
             self._id_provider = id_provider
             self._listeners = parent._listeners
 
-    def add_listener(self, listener: NameTableListener) -> None:
+    def add_listener(self, listener: _NameTableListener) -> None:
         self._listeners.append(listener)
 
-    def create_child(self) -> "NameTable":
-        table = NameTable(self, self._id_provider)
+    def create_child(self) -> "_NameTable":
+        table = _NameTable(self, self._id_provider)
         table._listeners = self._listeners
         return table
 
@@ -117,7 +117,7 @@ class NameTable:
         for listener in self._listeners:
             listener.on_rename(old_id, new_id)
 
-    def merge_into(self, new_table: "NameTable") -> None:
+    def merge_into(self, new_table: "_NameTable") -> None:
         if self._table.keys() != new_table._table.keys():
             raise RuntimeError("Expected identical key sets")
         for key in sorted(self._table):
@@ -128,7 +128,7 @@ class NameTable:
                 listener.on_merge(old_id, new_id)
 
 
-class FileEdgeRecorder(NameTableListener):
+class _FileEdgeRecorder(_NameTableListener):
     def __init__(self) -> None:
         self._id_to_name: dict[int, str] = dict()
         self._name_to_ids: dict[str, list[int]] = defaultdict(list)
@@ -167,7 +167,7 @@ class FileEdgeRecorder(NameTableListener):
         return edges
 
 
-class DiffListener(abc.ABC):
+class _DiffListener(abc.ABC):
     @abc.abstractmethod
     def on_enter_diff(self, commit: str, parent: str) -> None:
         raise NotImplementedError
@@ -193,7 +193,7 @@ class DiffListener(abc.ABC):
         raise NotImplementedError
 
 
-def to_adj(edges: Iterable[tuple[int, int]]) -> dict[int, set[int]]:
+def _to_adj(edges: Iterable[tuple[int, int]]) -> dict[int, set[int]]:
     adj: dict[int, set[int]] = defaultdict(set)
     for u, v in edges:
         if u == v:
@@ -203,8 +203,8 @@ def to_adj(edges: Iterable[tuple[int, int]]) -> dict[int, set[int]]:
     return adj
 
 
-def to_trans_closure(edges: Iterable[tuple[int, int]]) -> set[tuple[int, int]]:
-    adj = to_adj(edges)
+def _to_trans_closure(edges: Iterable[tuple[int, int]]) -> set[tuple[int, int]]:
+    adj = _to_adj(edges)
 
     def visit(history: set[int], node: int) -> None:
         if node in history:
@@ -222,7 +222,7 @@ def to_trans_closure(edges: Iterable[tuple[int, int]]) -> set[tuple[int, int]]:
     return tc_edges
 
 
-def find_exclusive_cliques(edges: Iterable[tuple[int, int]]) -> list[list[int]]:
+def _find_exclusive_cliques(edges: Iterable[tuple[int, int]]) -> list[list[int]]:
     # Find cliques
     G = nx.Graph((u, v) for u, v in edges if u != v)
     cliques: list[list[int]] = [sorted(c) for c in nx.find_cliques(G)]  # type: ignore
@@ -238,7 +238,7 @@ def find_exclusive_cliques(edges: Iterable[tuple[int, int]]) -> list[list[int]]:
     return exclusive_cliques
 
 
-def print_edge_debug(edges: set[tuple[int, int]], cliques: list[list[int]]) -> None:
+def _print_edge_debug(edges: set[tuple[int, int]], cliques: list[list[int]]) -> None:
     used_edges = set(it.chain(*(it.combinations(c, r=2) for c in cliques)))
     unused_edges = edges - used_edges
     print(f"Total edges:  {len(edges)}")
@@ -246,7 +246,7 @@ def print_edge_debug(edges: set[tuple[int, int]], cliques: list[list[int]]) -> N
     print(f"Unused edges: {len(unused_edges)}")
 
 
-class FileLookup:
+class _FileLookup:
     def __init__(self, tables: dict[str, bidict[str, int]]) -> None:
         self._tables = tables
         self._id_to_commits: dict[int, list[str]] = defaultdict(list)
@@ -273,16 +273,16 @@ class FileLookup:
         return self._name_to_commits[name]
 
 
-class FileSolver(DiffListener):
+class _FileSolver(_DiffListener):
     def __init__(self) -> None:
-        self._tables: dict[str, NameTable] = dict()
+        self._tables: dict[str, _NameTable] = dict()
         self._commits: dict[int, set[str]] = defaultdict(set)
-        self._edge_recorder = FileEdgeRecorder()
+        self._edge_recorder = _FileEdgeRecorder()
 
-        self._curr_commit = NULL_COMMIT_ID
-        self._curr_table = NameTable(None, IdProvider())
+        self._curr_commit = _NULL_COMMIT_ID
+        self._curr_table = _NameTable(None, _IdProvider())
         self._curr_table.add_listener(self._edge_recorder)
-        self._tables[NULL_COMMIT_ID] = self._curr_table
+        self._tables[_NULL_COMMIT_ID] = self._curr_table
 
     def on_enter_diff(self, commit: str, parent: str) -> None:
         self._curr_commit = commit
@@ -308,7 +308,7 @@ class FileSolver(DiffListener):
         else:
             self._curr_table.merge_into(self._tables[self._curr_commit])
 
-    def solve_files(self) -> FileLookup:
+    def solve_files(self) -> _FileLookup:
         walk_to_name = self._edge_recorder.names()
         walk_to_commits = self._commits
         merge_edges = self._edge_recorder.get_merge_edges()
@@ -317,7 +317,7 @@ class FileSolver(DiffListener):
         walk_to_file: dict[int, int] = dict()
 
         # Step 1: Solve using merge edges
-        merge_adj = to_adj(merge_edges)
+        merge_adj = _to_adj(merge_edges)
 
         def visit_merge(walk: int, file: int):
             if walk in walk_to_file:
@@ -336,15 +336,15 @@ class FileSolver(DiffListener):
             file_to_walks[walk].add(file)
             file_to_commits[file].update(walk_to_commits[walk])
 
-        rename_edges = to_trans_closure(rename_edges)
+        rename_edges = _to_trans_closure(rename_edges)
         rename_edges = {(walk_to_file[u], walk_to_file[v]) for u, v in rename_edges}
         rename_edges = {
             (min(u, v), max(u, v))
             for u, v in rename_edges
             if len(file_to_commits[u] & file_to_commits[v]) == 0
         }
-        cliques = find_exclusive_cliques(rename_edges)
-        print_edge_debug(rename_edges, cliques)
+        cliques = _find_exclusive_cliques(rename_edges)
+        _print_edge_debug(rename_edges, cliques)
 
         for clique in cliques:
             for file in clique:
@@ -364,8 +364,8 @@ class FileSolver(DiffListener):
             for u, v in reuse_edges
             if len(file_to_commits[u] & file_to_commits[v]) == 0
         }
-        cliques = find_exclusive_cliques(reuse_edges)
-        print_edge_debug(reuse_edges, cliques)
+        cliques = _find_exclusive_cliques(reuse_edges)
+        _print_edge_debug(reuse_edges, cliques)
 
         for clique in cliques:
             for file in clique:
@@ -382,12 +382,12 @@ class FileSolver(DiffListener):
             for name, walk in name_table.table().items():
                 table[name] = walk_to_file[walk]
             tables[commit] = bidict(table)
-        return FileLookup(tables)
+        return _FileLookup(tables)
 
 
-class ChangeRecorder(DiffListener):
+class _ChangeRecorder(_DiffListener):
     def __init__(self) -> None:
-        self._curr_commit: str = NULL_COMMIT_ID
+        self._curr_commit: str = _NULL_COMMIT_ID
         self._curr_names: set[str] = set()
         self._commit_to_names: dict[str, set[str]] = dict()
 
@@ -420,7 +420,7 @@ class ChangeRecorder(DiffListener):
                 name_to_commits[name].append(commit)
         return name_to_commits
 
-    def to_changes_by_id(self, lookup: FileLookup) -> dict[int, list[str]]:
+    def to_changes_by_id(self, lookup: _FileLookup) -> dict[int, list[str]]:
         id_to_commits: dict[int, list[str]] = defaultdict(list)
         for commit, names in self._commit_to_names.items():
             file_table = lookup.file_table(commit)
@@ -429,7 +429,7 @@ class ChangeRecorder(DiffListener):
         return id_to_commits
 
 
-class DiffPrinter(DiffListener):
+class _DiffPrinter(_DiffListener):
     def __init__(self) -> None:
         self._count = 0
 
@@ -461,7 +461,7 @@ class DiffPrinter(DiffListener):
         print()
 
 
-class LogListener(abc.ABC):
+class _LogListener(abc.ABC):
     @abc.abstractmethod
     def on_enter_commit(
         self, commit: str, parents: list[str], from_parent: str
@@ -489,14 +489,14 @@ class LogListener(abc.ABC):
         raise NotImplementedError
 
 
-class DiffNotifier(LogListener):
+class _DiffNotifier(_LogListener):
     def __init__(self) -> None:
-        self._listeners: list[DiffListener] = []
-        self._curr_commit = NULL_COMMIT_ID
+        self._listeners: list[_DiffListener] = []
+        self._curr_commit = _NULL_COMMIT_ID
         self._curr_parents: list[str] = list()
         self._prev_index: int | None = None
 
-    def add_listener(self, listener: DiffListener) -> None:
+    def add_listener(self, listener: _DiffListener) -> None:
         self._listeners.append(listener)
 
     def on_enter_commit(
@@ -569,7 +569,7 @@ class CommitData:
     message: list[str]
 
 
-class CommitDataRecorder(LogListener):
+class _CommitDataRecorder(_LogListener):
     def __init__(self) -> None:
         self._curr_commit: dict[str, Any] | None = None
         self._commits: dict[str, dict[str, Any]] = dict()
@@ -632,9 +632,9 @@ class CommitDataRecorder(LogListener):
         }
 
 
-class LogParser:
+class _LogParser:
     _reader: TextIOBase
-    _listeners: list[LogListener]
+    _listeners: list[_LogListener]
     _lineno: int
     _line: str
 
@@ -644,7 +644,7 @@ class LogParser:
         self._lineno = 0
         self._advance()
 
-    def add_listener(self, listener: LogListener) -> None:
+    def add_listener(self, listener: _LogListener) -> None:
         self._listeners.append(listener)
 
     def parse(self) -> None:
@@ -679,7 +679,7 @@ class LogParser:
         hashes: list[str] = match.group(1).strip().split()
         commit, parents = hashes[0], hashes[1:]
         if len(parents) == 0:
-            parents.append(NULL_COMMIT_ID)
+            parents.append(_NULL_COMMIT_ID)
         from_parent: str | None = match.group(2)
         if from_parent is None:
             if len(parents) < 2:
@@ -727,7 +727,7 @@ class LogParser:
         return self._line == ""
 
 
-def extract_log(repo_path: str, ref: str) -> str:
+def _extract_log(repo_path: str, ref: str) -> str:
     args = [
         "git",
         "log",
@@ -753,7 +753,7 @@ def extract_log(repo_path: str, ref: str) -> str:
 class Repo:
     def __init__(
         self,
-        files: FileLookup,
+        files: _FileLookup,
         commits: dict[str, CommitData],
         changes_by_id: dict[int, list[str]],
         changes_by_name: dict[str, list[str]],
@@ -765,19 +765,19 @@ class Repo:
 
     @staticmethod
     def parse_log(repo_path: str, ref: str) -> "Repo":
-        name_recorder = FileSolver()
-        change_recorder = ChangeRecorder()
+        name_recorder = _FileSolver()
+        change_recorder = _ChangeRecorder()
         # diff_printer = DiffPrinter()
 
-        diff_notifier = DiffNotifier()
+        diff_notifier = _DiffNotifier()
         diff_notifier.add_listener(name_recorder)
         diff_notifier.add_listener(change_recorder)
         # diff_notifier.add_listener(diff_printer)
 
-        commit_data_recorder = CommitDataRecorder()
+        commit_data_recorder = _CommitDataRecorder()
 
-        reader = StringIO(extract_log(repo_path, ref))
-        parser = LogParser(reader)
+        reader = StringIO(_extract_log(repo_path, ref))
+        parser = _LogParser(reader)
         parser.add_listener(diff_notifier)
         parser.add_listener(commit_data_recorder)
         parser.parse()

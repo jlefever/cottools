@@ -2,6 +2,7 @@
     "jupyter.notebookFileRoot": "${workspaceFolder}",
     "python.analysis.typeCheckingMode": "strict",
     "python.analysis.diagnosticSeverityOverrides": {
+        "reportUnusedClass": "warning",
         "reportUnusedImport": "warning"
     }
 }
