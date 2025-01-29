@@ -343,7 +343,7 @@ class FileSolver(DiffListener):
             if len(file_to_commits[u] & file_to_commits[v]) == 0
         }
         cliques = find_exclusive_cliques(rename_edges)
-        print_edge_debug(rename_edges, cliques)
+        # print_edge_debug(rename_edges, cliques)
 
         for clique in cliques:
             for file in clique:
@@ -364,14 +364,14 @@ class FileSolver(DiffListener):
             if len(file_to_commits[u] & file_to_commits[v]) == 0
         }
         cliques = find_exclusive_cliques(reuse_edges)
-        print_edge_debug(reuse_edges, cliques)
+        # print_edge_debug(reuse_edges, cliques)
 
         for clique in cliques:
             for file in clique:
                 for walk in file_to_walks[file]:
                     walk_to_file[walk] = min(clique)
 
-        print("Done")
+        # print("Done")
 
         # Step 4: Build final tables. This step is actually 3x more time-consuming
         # than everything else.
@@ -589,7 +589,7 @@ class CommitDataRecorder(LogListener):
             return
         key = key.lower()
         if key == "author" or key == "commit":
-            match = re.match("^(.+) <(.+)>$", value)
+            match = re.match("^(.*) <(.*)>$", value)
             self._curr_commit[f"{key}user"] = match.group(1)  # type: ignore
             self._curr_commit[f"{key}email"] = match.group(2)  # type: ignore
         elif key == "authordate" or key == "commitdate":
@@ -719,7 +719,6 @@ class LogParser:
                 break
             self._lineno += 1
             self._line = self._line.rstrip()
-            print(f"LINE: {self._line}")
             if self._line != "":
                 break
 
@@ -744,7 +743,6 @@ def extract_log(repo_path: str, ref: str) -> str:
         "--name-status",
         "--find-renames",
         "-l0",
-        "--diff-filter=ADMR",
         ref,
     ]
     res = subprocess.run(args, cwd=repo_path, capture_output=True, text=True)
