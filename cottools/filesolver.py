@@ -2,6 +2,7 @@ import abc
 import itertools as it
 import re
 import subprocess
+import pickle
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime
@@ -264,10 +265,10 @@ class FileLookup:
 
     def file_name(self, commit: str, id: int) -> str:
         return self._tables[commit].inv[id]
-    
+
     def commits_by_id(self, id: int) -> list[str]:
         return self._id_to_commits[id]
-    
+
     def commits_by_name(self, name: str) -> list[str]:
         return self._name_to_commits[name]
 
@@ -343,7 +344,7 @@ class FileSolver(DiffListener):
             if len(file_to_commits[u] & file_to_commits[v]) == 0
         }
         cliques = find_exclusive_cliques(rename_edges)
-        # print_edge_debug(rename_edges, cliques)
+        print_edge_debug(rename_edges, cliques)
 
         for clique in cliques:
             for file in clique:
@@ -364,14 +365,14 @@ class FileSolver(DiffListener):
             if len(file_to_commits[u] & file_to_commits[v]) == 0
         }
         cliques = find_exclusive_cliques(reuse_edges)
-        # print_edge_debug(reuse_edges, cliques)
+        print_edge_debug(reuse_edges, cliques)
 
         for clique in cliques:
             for file in clique:
                 for walk in file_to_walks[file]:
                     walk_to_file[walk] = min(clique)
 
-        # print("Done")
+        print("Done")
 
         # Step 4: Build final tables. This step is actually 3x more time-consuming
         # than everything else.
@@ -426,7 +427,7 @@ class ChangeRecorder(DiffListener):
             for name in names:
                 id_to_commits[file_table[name]].append(commit)
         return id_to_commits
-    
+
 
 class DiffPrinter(DiffListener):
     def __init__(self) -> None:
@@ -763,7 +764,7 @@ class Repo:
         self._changes_by_name = changes_by_name
 
     @staticmethod
-    def load_repo(repo_path: str, ref: str) -> "Repo":
+    def parse_log(repo_path: str, ref: str) -> "Repo":
         name_recorder = FileSolver()
         change_recorder = ChangeRecorder()
         # diff_printer = DiffPrinter()
@@ -786,6 +787,15 @@ class Repo:
         changes_by_id = change_recorder.to_changes_by_id(files)
         changes_by_name = change_recorder.to_changes_by_name()
         return Repo(files, commits, changes_by_id, changes_by_name)
+
+    @staticmethod
+    def load(pkl_path: str) -> "Repo":
+        with open(pkl_path, "rb") as f:
+            return pickle.load(f)
+
+    def dump(self, pkl_path: str) -> None:
+        with open(pkl_path, "wb") as f:
+            pickle.dump(self, f)
 
     def commits(self) -> list[str]:
         return list(self._commits)
@@ -819,6 +829,6 @@ class Repo:
 
     def changes_by_id(self, file_id: int) -> list[str]:
         return self._changes_by_id[file_id]
-    
+
     def changes_by_name(self, file_name: str) -> list[str]:
         return self._changes_by_name[file_name]
