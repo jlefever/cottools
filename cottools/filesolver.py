@@ -1,9 +1,9 @@
 import abc
 import itertools as it
+import pickle
 import re
 import subprocess
-import pickle
-from collections import defaultdict
+from collections import defaultdict, deque
 from dataclasses import dataclass
 from datetime import datetime
 from io import StringIO, TextIOBase
@@ -727,6 +727,104 @@ class _LogParser:
         return self._line == ""
 
 
+def find_topo_order(
+    parents: dict[str, list[str]], *, reverse_branches: bool = False
+) -> list[str]:
+    r"""Returns a topological order of nodes in a DAG. Intended for commits.
+
+    Must have only a single leaf node. Each node must be in the keyset of
+    parents even if it has no parents.
+
+    Parents are always shown before children. For example, in a commit history
+    like this:
+
+    1---2----4----7---
+     \           /
+      3----5----6
+
+    the resulting order will be: 1, 2, 4, 3, 5, 6, 7.
+
+    In this example, 7 is a merge commit because it has more than one parent.
+    The order of the parents of a merge commit is significant. Typically, the
+    first parent is the "main" branch while the other(s) are "feature" branches.
+
+    By default, the contents of the first branch ("main") are listed first. In
+    the above example, this assumes 7 has its parents ordered as: 4, 6. But with
+    reverse_branches=True, the last branch will be listed first. In this case,
+    the order would be: 1, 3, 5, 6, 2, 4, 7.
+    """
+    non_leafs: set[str] = set(p for ps in parents.values() for p in ps)
+    leafs: set[str] = parents.keys() - non_leafs
+    if len(leafs) != 1:
+        raise ValueError(f"Expected a single leaf, found {len(leafs)}")
+
+    if reverse_branches:
+
+        def iter_parents(node: str) -> Iterable[str]:
+            return parents[node]
+    else:
+
+        def iter_parents(node: str) -> Iterable[str]:
+            return reversed(parents[node])
+
+    topo: list[str] = []
+    perm: set[str] = set()
+    temp: set[str] = set()
+    stack: deque[str] = deque([next(iter(leafs))])
+
+    while stack:
+        node = stack[-1]
+        if node in perm:
+            stack.pop()
+            continue
+        if node in temp:
+            temp.remove(node)
+            perm.add(node)
+            topo.append(node)
+            stack.pop()
+            continue
+        temp.add(node)
+        for parent in iter_parents(node):
+            if parent in perm:
+                continue
+            if parent in temp:
+                raise ValueError("Graph must be acyclic")
+            stack.append(parent)
+
+    return topo
+
+
+def find_longest_path(
+    parents: dict[str, list[str]],
+    subset: set[str],
+    *,
+    topo_order: list[str] | None = None,
+) -> list[str]:
+    if topo_order is None:
+        topo_order = find_topo_order(parents)
+
+    predecessors: dict[str, str] = dict()
+    values: dict[str, int] = dict()
+
+    for node in topo_order:
+        node_parents = parents[node]
+
+        if len(node_parents) == 0:
+            values[node] = 0
+            continue
+
+        parent_values = [values[p] for p in node_parents]
+        max_value = max(parent_values)
+        predecessors[node] = node_parents[parent_values.index(max_value)]
+        values[node] = max_value + 1 if node in subset else 0
+
+    path: list[str] = [topo_order[-1]]
+    while (node := path[-1]) in predecessors:
+        path.append(predecessors[node])
+
+    return [n for n in reversed(path) if n in subset]
+
+
 def _extract_log(repo_path: str, ref: str) -> str:
     args = [
         "git",
@@ -762,6 +860,10 @@ class FileRepo:
         self._commits = commits
         self._changes_by_id = changes_by_id
         self._changes_by_name = changes_by_name
+        self._parents: dict[str, list[str]] = defaultdict(list)
+        for commit in self._commits.values():
+            self._parents[commit.id] = list(commit.parents)
+        self._topo_order: list[str] = find_topo_order(self._parents)
 
     @staticmethod
     def parse_log(repo_path: str, ref: str) -> "FileRepo":
@@ -832,3 +934,11 @@ class FileRepo:
 
     def changes_by_name(self, file_name: str) -> list[str]:
         return self._changes_by_name[file_name]
+
+    def cont_changes_by_id(self, file_id: int) -> list[str]:
+        commits = set(self.changes_by_id(file_id))
+        return find_longest_path(self._parents, commits, topo_order=self._topo_order)
+
+    def cont_changes_by_name(self, file_name: str) -> list[str]:
+        commits = set(self.changes_by_name(file_name))
+        return find_longest_path(self._parents, commits, topo_order=self._topo_order)
