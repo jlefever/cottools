@@ -750,7 +750,7 @@ def _extract_log(repo_path: str, ref: str) -> str:
     return res.stdout
 
 
-class Repo:
+class FileRepo:
     def __init__(
         self,
         files: _FileLookup,
@@ -764,7 +764,7 @@ class Repo:
         self._changes_by_name = changes_by_name
 
     @staticmethod
-    def parse_log(repo_path: str, ref: str) -> "Repo":
+    def parse_log(repo_path: str, ref: str) -> "FileRepo":
         name_recorder = _FileSolver()
         change_recorder = _ChangeRecorder()
         # diff_printer = DiffPrinter()
@@ -786,10 +786,10 @@ class Repo:
         commits = commit_data_recorder.to_dict()
         changes_by_id = change_recorder.to_changes_by_id(files)
         changes_by_name = change_recorder.to_changes_by_name()
-        return Repo(files, commits, changes_by_id, changes_by_name)
+        return FileRepo(files, commits, changes_by_id, changes_by_name)
 
     @staticmethod
-    def load(pkl_path: str) -> "Repo":
+    def load(pkl_path: str) -> "FileRepo":
         with open(pkl_path, "rb") as f:
             return pickle.load(f)
 
