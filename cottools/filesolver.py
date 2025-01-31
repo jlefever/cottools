@@ -931,10 +931,10 @@ class NameRepo:
 
     def changes_by_id(self, file_id: int) -> list[str]:
         return self._changes_by_id[file_id]
-
+    #Commits that change by name
     def changes_by_name(self, file_name: str) -> list[str]:
         return self._changes_by_name[file_name]
-
+    
     def cont_changes_by_id(self, file_id: int) -> list[str]:
         commits = set(self.changes_by_id(file_id))
         return find_longest_path(self._parents, commits, topo_order=self._topo_order)

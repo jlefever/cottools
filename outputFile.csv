@@ -1,0 +1,527 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+40a7d3b6ac35d2ecb34e85fc3403d2e48e33874e,2005-12-12 17:53:59+00:00,2005-12-12 17:53:59+00:00,activemq-core/src/main/java/org/activemq/transport/failover/FailoverTransport.java,399,399,"Moved the trunk code into the trunk sub directory
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356304 13f79535-47bb-0310-9956-ffa450edef68",60,1.1965821361022442,1.4832942746768705,48
+f1bbfd320193609fad94c9ef2654c0c7b78d0aff,2005-12-14 17:34:16+00:00,2005-12-14 17:34:16+00:00,activemq-core/src/main/java/org/activemq/transport/failover/FailoverTransport.java,400,400,"fixed bug that prevented the initialReconnectDelay value from being changed
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356814 13f79535-47bb-0310-9956-ffa450edef68",60,1.1965648326329785,1.483244870422657,48
+8032ef40bea6bb08d0f8151866beadd7cafb9eb1,2005-12-20 18:05:38+00:00,2005-12-20 18:05:38+00:00,activemq-core/src/main/java/org/activemq/transport/failover/FailoverTransport.java,404,404,"- updated openwire marshalers.
+- added some more toString() methods to the transports
+- Fixed up the advisories so that duplicate consumer infos are not sent
+- Changed the demand forwarding bridge so that loop back message filtering occurs in the broker instead of on the bridge
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358056 13f79535-47bb-0310-9956-ffa450edef68",61,1.1981610031317613,1.4853000089528854,48
+92a698fe42656274d0f3e31be415ba881b094b3f,2005-12-22 06:11:40+00:00,2005-12-22 06:11:40+00:00,activemq-core/src/main/java/org/activemq/transport/failover/FailoverTransport.java,402,402,"updated headers in source file to use apache header
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358513 13f79535-47bb-0310-9956-ffa450edef68",61,1.1981610031317613,1.4853000089528854,48
+d29ca2a71b7fd281c15f7d05e135c196d2b2488c,2005-12-28 17:24:02+00:00,2005-12-28 17:24:02+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,402,402,"Refactor org.activemq -> org.apache.activemq
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359567 13f79535-47bb-0310-9956-ffa450edef68",61,1.1981610031317613,1.4853000089528854,48
+48b4869472d647a890ce6905e7914b7d1ecde948,2005-12-29 02:15:21+00:00,2005-12-29 02:15:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,402,402,"Updated copyright headers to be (c) 2005-2006 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359679 13f79535-47bb-0310-9956-ffa450edef68",61,1.1981610031317613,1.4853000089528854,48
+4098942c1e8c1947eeecaff8bfcdbd8ba9d01ab9,2006-01-18 19:16:58+00:00,2006-01-18 19:16:58+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,448,448,"Added master/slave functionality to the Broker
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@370223 13f79535-47bb-0310-9956-ffa450edef68",66,1.4244272138061094,1.5056523571377096,54
+40ce55be77effd7a07010cd04e8f9582ca4377eb,2006-01-26 12:40:12+00:00,2006-01-26 12:40:12+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,451,451,"added extra NPE check
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@372519 13f79535-47bb-0310-9956-ffa450edef68",66,1.4169559369541131,1.5028005281189363,56
+2ae71698560f5e493cd1a7e68bc1dda6e8ef9da8,2006-01-31 12:33:44+00:00,2006-01-31 12:33:44+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,453,453,"removed possible NPE
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@373809 13f79535-47bb-0310-9956-ffa450edef68",66,1.4139125385737124,1.5021528321167297,58
+3e7ebc2368d378176ac257977e3b4dfc3a890241,2006-01-31 16:31:21+00:00,2006-01-31 16:31:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,452,452,"Add a check to the iterate() so that on failover - it's not possible
+to iterate for ever if the transport has actually been stopped
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@373862 13f79535-47bb-0310-9956-ffa450edef68",64,1.4140588399641154,1.5024310031206234,59
+e99fc62e4a8fdb87b5e5446eef1d2abab24be4ea,2006-02-09 06:43:10+00:00,2006-02-09 06:43:10+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,463,463,"- Added a message to the request map in failover before sending it to prevent race condition where the response tries (and fails) to remove the message before it is even added. This is to prevent double sending a message because it is still in the requestMap. (This is for the master-slave test cases)
+- Enabled a QueueBridgeTest, this test seems to pass already.
+- Some minor typo correction.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@376206 13f79535-47bb-0310-9956-ffa450edef68",66,1.4147133322186742,1.5036426178333215,61
+f915da57723b9ac0139a38ea9e365a3a1968538b,2006-02-18 07:18:01+00:00,2006-02-18 07:18:01+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,470,470,"Extended TransportListener to notify when transport is interrupted and resumed
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378699 13f79535-47bb-0310-9956-ffa450edef68",66,1.4145100400182824,1.503209473765532,65
+8b572cb6b8567cf6c4a6abbfe6b3ff2e5bfb04d6,2006-02-19 22:15:43+00:00,2006-02-19 22:15:43+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,470,470,"don't iterate forever in oneWay() if disposed (can cause some tests to hang in Connection close)
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378969 13f79535-47bb-0310-9956-ffa450edef68",66,1.414046973053913,1.5023386449528189,65
+2bc09bb764ea7f78e1d69e0a23013abc51e79bbc,2006-02-21 09:14:07+00:00,2006-02-21 09:14:07+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,482,482,"fixed exponentialBackoff
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@379397 13f79535-47bb-0310-9956-ffa450edef68",69,1.415160796637347,1.5038218096610272,66
+3155d41711ac1b8fc068af1dacdbf08d066ded76,2006-02-21 18:23:06+00:00,2006-02-21 18:23:06+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,484,484,"don't throw an exception if the transport is disposed
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@379557 13f79535-47bb-0310-9956-ffa450edef68",67,1.4150251368511644,1.5035684328485894,68
+99c1a67a288555bc7413616e10c6e1f432d8064b,2006-03-03 15:02:54+00:00,2006-03-03 15:02:54+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,484,484,"refactor of the TcpTransport so that the timeout and buffer size can be configured via properties before the socket is used after the start() method is called.
+this also fixes AMQ-610
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382846 13f79535-47bb-0310-9956-ffa450edef68",67,1.414823143676729,1.503199461498184,68
+ead505da9837037beae4e5bd18049971d7d0473d,2006-03-07 20:33:02+00:00,2006-03-07 20:33:02+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,485,485,"Fixed transport testcase so that it does not fail anymore.  tcp transport was being stopped and then oneway was being called on it, and it was throwing an unexpected illegalstate exception witched to ioexception and all was better.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@384001 13f79535-47bb-0310-9956-ffa450edef68",67,1.4145459456767533,1.502672467316678,68
+436fe42778df7955e4c04d686e6bedd8a08d57c8,2006-03-08 14:10:27+00:00,2006-03-08 14:10:27+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,489,489,"minor refactor to use ""stopped"" and ""stopping"" as properties on ServiceSupport and the transport classes. Also made the TransportListener getter visible and avoided the need for protected variables in the various TransportFilter implementations (due to inlining, often getter methods are faster in hotspot than access to protected fields, plus it simplifies the code & makes it less brittle)
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@384220 13f79535-47bb-0310-9956-ffa450edef68",68,1.4121234706549575,1.4971950161829577,68
+87043382882e04be1bd05fed5cb2596d7fadcc1e,2006-03-10 15:53:21+00:00,2006-03-10 15:53:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,489,489,"refactored the UDP transport to push most of the code and logic back into the transport layer itself.
+
+* Command how has transient from & to properties which can be used with transports like UDP/multicast to indicate which endpoint (typically broker) actually sent the commands
+* used int for commandId 
+* support for PartialCommand support; allowing large commands (such as big messages) to be split up into smaller chunks
+* added a CommandJoiner for joining partial commands together into complete commands
+* ReliableTransport which re-orders and can re-request missed commands
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@384826 13f79535-47bb-0310-9956-ffa450edef68",68,1.4098508329202004,1.4968386432931455,68
+5fe0a4ca8ac2e033010be065e2348ad40d16bcd9,2006-03-10 17:03:31+00:00,2006-03-10 17:03:31+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,493,493,"Added request(Command. timeout) to transport and added a timeout on
+close from ActiveMQConnection
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@384853 13f79535-47bb-0310-9956-ffa450edef68",69,1.4160221198681953,1.5080652038631397,68
+9c19776c17969d2dd46bf6f3e410816fe01203af,2006-03-15 14:14:29+00:00,2006-03-15 14:14:29+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,498,498,"catch interupted exceptions
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@386076 13f79535-47bb-0310-9956-ffa450edef68",69,1.4163610718928883,1.508710664802145,68
+84fd773f27564ebeb1f3d6cfe81b08ae2afdb64b,2006-04-07 13:31:59+00:00,2006-04-07 13:31:59+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,499,499,"Updated the Transport interface so that you can pass in a ResponseCallback object that will be called when the response for a request arrives.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@392288 13f79535-47bb-0310-9956-ffa450edef68",69,1.4166578890199513,1.5092663583122299,68
+ef0734bccf71c27d87d7e519afc8e683be09b3dc,2006-04-13 20:15:35+00:00,2006-04-13 20:15:35+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,514,514,"fine tuning, client control commands etc.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@393912 13f79535-47bb-0310-9956-ffa450edef68",74,1.35906298877772,1.5291907931842985,72
+e2aad41e6a8d0ab5315be519cd43aaec984f2912,2006-04-28 05:54:54+00:00,2006-04-28 05:54:54+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,516,516,"Since some OS/JVM combinations handle threads more efficiently than others, using a thread pool to run our async tasks may not
+be the most optimal solution.  Modified the TaskRunnerFactory so that it uses a system property to choose between the 
+PooledTaskRunner or the DedicatedTaskRunner which now keeps a dedicated thread per task.
+
+The default is still set to use the PooledTaskRunner, but we may change this if performance benchmarks indicate that DedicatedTaskRunner should be the default.
+
+Also make the thread names a little more uniform so that when you use a debugger you can easily tell what each thread is doing.
+
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@397774 13f79535-47bb-0310-9956-ffa450edef68",76,1.3585260100367946,1.5282813000724838,72
+14fda24c872b7846667a062a358ba2ba8ff3174e,2006-05-26 20:44:54+00:00,2006-05-26 20:44:54+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,516,516,"Fix for: http://issues.apache.org/activemq/browse/AMQ-726
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@409742 13f79535-47bb-0310-9956-ffa450edef68",76,1.3584922198146556,1.5282177961005299,72
+c2a51115cd0a2efede4cb24ba2c25178c684400e,2006-06-15 03:04:15+00:00,2006-06-15 03:04:15+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,516,516,"Applied http://issues.apache.org/activemq/browse/AMQ-608 thanks Kevin.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@414443 13f79535-47bb-0310-9956-ffa450edef68",75,1.3584494055421312,1.5281323761583763,73
+0f1dccee3797645e8df7ddaa40972e8fce08ffac,2006-06-19 12:32:59+00:00,2006-06-19 12:32:59+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,523,523,"applied patch from Jason Sherman for AMQ-753 to expose the remote connection address in JMX - many thanks!
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@415306 13f79535-47bb-0310-9956-ffa450edef68",76,1.3591755046567067,1.528132715878005,75
+1ea430e557060809f726229ad9dffa6ee0ada649,2006-07-11 14:32:01+00:00,2006-07-11 14:32:01+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,523,523,"http://issues.apache.org/activemq/browse/AMQ-608
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@420872 13f79535-47bb-0310-9956-ffa450edef68",77,1.3592264427492333,1.528232894413461,74
+57b494132549ebef6877bf47da3c3d5d776286e0,2006-07-28 03:04:41+00:00,2006-07-28 03:04:41+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,524,524,"Applied new source header boiler plate per http://www.apache.org/legal/src-headers.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426366 13f79535-47bb-0310-9956-ffa450edef68",77,1.3592264427492333,1.528232894413461,74
+6e714a2fe5bc5727ef55ce18c33d99128e73f8a5,2006-08-23 15:31:40+00:00,2006-08-23 15:31:40+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,524,524,"use INFO level logging when we loose a connection to a broker to highlight to users bad networking issues such as dropped sockets or bad firewalls etc. This change fixes AMQ-829
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@434064 13f79535-47bb-0310-9956-ffa450edef68",77,1.3590699621285236,1.5278929759513584,74
+ac66a09dab2a3a756def13c35e54a8a2e11017b8,2006-09-04 04:56:25+00:00,2006-09-04 04:56:25+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,528,528,"Added a MemoryPropertyEditor that allows you to specify memory sizes in the xbean config like: limit=""20 MB""
+Upgraded the xbean maven plugin to 2.6 and the new qdox that it used did not like some of our valid inline initialization of variables, so I had
+to refactor to an equivalent form that qdox did like.
+
+http://issues.apache.org/activemq/browse/AMQ-827
+http://issues.apache.org/activemq/browse/AMQ-909
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@439930 13f79535-47bb-0310-9956-ffa450edef68",78,1.3154233669965791,1.5542022597836957,74
+b75a6dac1bbf4d153b177fc3a36c9aeb6ffa5ea3,2006-09-04 05:44:38+00:00,2006-09-04 05:44:38+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,531,531,"Applied patch: https://issues.apache.org/activemq/browse/AMQ-891
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@439939 13f79535-47bb-0310-9956-ffa450edef68",78,1.3183110956484922,1.5535722379230068,74
+04c3b07a966e89cb207b53c852f16b881f2d5fec,2006-09-14 07:16:11+00:00,2006-09-14 07:16:11+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,546,546,"Backported fix for https://issues.apache.org/activemq/browse/AMQ-915
+Failover transport does not replay all the transaction operations on failover.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@443271 13f79535-47bb-0310-9956-ffa450edef68",81,1.3137782990139923,1.556103657808931,80
+295850da01be27b59f90674527af28c5a6dbbab1,2006-09-14 17:38:32+00:00,2006-09-14 17:38:32+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,531,531,"Rolling back commit 443271 since it is breaking the build
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@443425 13f79535-47bb-0310-9956-ffa450edef68",78,1.3183110956484922,1.5535722379230068,74
+220ad62a5057fec622eb073fb97e0c2a76b2e586,2006-09-14 17:58:49+00:00,2006-09-14 17:58:49+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,547,547,"https://issues.apache.org/activemq/browse/AMQ-915
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@443430 13f79535-47bb-0310-9956-ffa450edef68",82,1.3120946488718315,1.5544094332098066,80
+9ca56a0049e2009f1725aaf0e7afdf6e4d21d6ee,2006-10-15 03:31:28+00:00,2006-10-15 03:31:28+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,549,549,"http://issues.apache.org/activemq/browse/AMQ-976
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@464110 13f79535-47bb-0310-9956-ffa450edef68",82,1.322585375457223,1.5585089525964981,80
+86cbdfd5db5b1c90c4a5f4dcdef702b0cf4901ce,2006-11-17 00:29:03+00:00,2006-11-17 00:29:03+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,549,549,"Switching to Java 5.. Build and Runtime now require Java 5 see: http://www.nabble.com/Switching-to-ActiveMQ-4.2-to-Java-5----tf2637427.html
+- Update maven build
+- Removed dependency on concurrent-backport
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@475999 13f79535-47bb-0310-9956-ffa450edef68",82,1.322585375457223,1.5585089525964981,80
+22e007f0a33d8600cd08276949c8c6d10b694c7d,2007-01-25 11:41:42+00:00,2007-01-25 11:41:42+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,549,549,"log when transport reconnects successfully
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@499746 13f79535-47bb-0310-9956-ffa450edef68",81,1.3225896978492613,1.5585278039758244,80
+a3e382199cd45169ebad5c2c1544d67ac7314412,2007-06-27 18:53:30+00:00,2007-06-27 18:53:30+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,549,549,"ensure member variables are always synchronized 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@551271 13f79535-47bb-0310-9956-ffa450edef68",81,1.3174090544298591,1.5619629543083224,80
+c7469c433cfd00019656b3a5ff6cdcd24ca128bc,2007-07-03 08:29:11+00:00,2007-07-03 08:29:11+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,553,553,"Added flag to transport to denote if its fault tolerant
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@552736 13f79535-47bb-0310-9956-ffa450edef68",82,1.3180920153195939,1.562121463387897,80
+230a86c4897e10fbc5e7384b064cc526395d47e5,2007-08-08 15:52:25+00:00,2007-08-08 15:52:25+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,552,552,"Fixing a bunch of checkstyle violations
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563921 13f79535-47bb-0310-9956-ffa450edef68",82,1.3180920153195939,1.562121463387897,80
+f812e3417988e13ed638434f892cff5c4ab843ad,2007-08-08 18:56:59+00:00,2007-08-08 18:56:59+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,549,549,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563982 13f79535-47bb-0310-9956-ffa450edef68",80,1.335306234518368,1.5837031440483518,92
+74a7a8bbfc8012bf0842b1eec891a8545f9944cb,2007-08-09 00:34:07+00:00,2007-08-09 00:34:07+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,548,548,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564057 13f79535-47bb-0310-9956-ffa450edef68",79,1.335306234518368,1.5837031440483518,92
+fc00993839c69f86823870e06a335d035db48bb2,2007-08-09 16:37:49+00:00,2007-08-09 16:37:49+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,554,554,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564271 13f79535-47bb-0310-9956-ffa450edef68",79,1.3340152183111784,1.5814476915708586,92
+933eb2f9e4040a3a9200b1a461dc4e004aafbf81,2007-08-11 00:49:19+00:00,2007-08-11 00:49:19+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,555,555,"More checkstyle fixes and Generics usage.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564814 13f79535-47bb-0310-9956-ffa450edef68",80,1.3353674370590438,1.5841836509772298,92
+487e6941523c651ecc92f3c14896c6e201802895,2007-10-15 14:50:09+00:00,2007-10-15 14:50:09+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,559,559,"Fix for a failover transport deadlock that could occur if the transport is stopped at the same time a failure occurs.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@584800 13f79535-47bb-0310-9956-ffa450edef68",80,1.3354932589583104,1.5843729812194884,93
+d3d58fe41d2e946f87abcbf1001be51e18749075,2007-10-22 19:37:01+00:00,2007-10-22 19:37:01+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,561,561,"Test case and Fix for https://issues.apache.org/activemq/browse/AMQ-777
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@587216 13f79535-47bb-0310-9956-ffa450edef68",80,1.3346339369429852,1.5828433603637029,94
+e210657db22c84c7702bafe520f2de4a1c381d96,2008-01-29 20:06:47+00:00,2008-01-29 20:06:47+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,617,617,"Fix for https://issues.apache.org/activemq/browse/AMQ-1572
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@616506 13f79535-47bb-0310-9956-ffa450edef68",82,1.333892381717487,1.574688708302314,103
+418823a7e1ef46d2ce26c94eeb616cd7d0ca57a8,2008-01-30 12:10:22+00:00,2008-01-30 12:10:22+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,655,655,"Further enhancement for https://issues.apache.org/activemq/browse/AMQ-1572
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@616733 13f79535-47bb-0310-9956-ffa450edef68",90,1.346269777121638,1.590642109560162,109
+a55149cad020c064b0be0eb4f6f78008acff9408,2008-01-30 12:14:12+00:00,2008-01-30 12:14:12+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,655,655,"Further enhancement for https://issues.apache.org/activemq/browse/AMQ-1572
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@616735 13f79535-47bb-0310-9956-ffa450edef68",90,1.3464006853609465,1.5908862476661016,109
+3ac0537e3e25b8b30541f0fbc97ea5c69cc5af81,2008-01-31 06:34:12+00:00,2008-01-31 06:34:12+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,682,682,"added isDisposed to Transport interface
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@617015 13f79535-47bb-0310-9956-ffa450edef68",92,1.3487328026601721,1.5915744185058613,114
+ecc87ea6723fbb97e0851083d3d841ad24db559c,2008-02-05 14:06:43+00:00,2008-02-05 14:06:43+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,689,689,"add isConnected() flag to a Transport
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@618656 13f79535-47bb-0310-9956-ffa450edef68",92,1.3439283804285092,1.5804836320204216,114
+6c52d289851c10de642677601e37a890ca08472d,2008-02-07 09:51:19+00:00,2008-02-07 09:51:19+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,745,745,"Fix for:
+https://issues.apache.org/activemq/browse/AMQ-1116
+https://issues.apache.org/activemq/browse/AMQ-1575
+https://issues.apache.org/activemq/browse/AMQ-1577
+https://issues.apache.org/activemq/browse/AMQ-1581
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@619336 13f79535-47bb-0310-9956-ffa450edef68",100,1.347077531333274,1.5854143572353216,129
+5460b7bb47724cb3fe1816eb6f5f87e97e113dbb,2008-02-08 07:24:26+00:00,2008-02-08 07:24:26+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,739,739,"remove patch comment
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@619789 13f79535-47bb-0310-9956-ffa450edef68",100,1.347077531333274,1.5854143572353216,129
+2a153b085fce82a1cac802d96ab75fd756ac69fc,2008-02-21 08:13:08+00:00,2008-02-21 08:13:08+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,758,758,"Fix for https://issues.apache.org/activemq/browse/AMQ-1560
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@629713 13f79535-47bb-0310-9956-ffa450edef68",99,1.3869840174437416,1.6077778030871994,129
+204f6d83857df7b5c7e1f85b1c62fcd4b12f2c4f,2008-02-21 09:10:27+00:00,2008-02-21 09:10:27+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,758,758,"have backup off by default
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@629725 13f79535-47bb-0310-9956-ffa450edef68",99,1.387017488409997,1.6078797072166284,129
+b34f7302313bf91a2828173d0a9bf6a2c18c2d0b,2008-02-22 10:05:33+00:00,2008-02-22 10:05:33+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,757,757,"expose some methods to make it easier to test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@630136 13f79535-47bb-0310-9956-ffa450edef68",99,1.3870234530112417,1.6078873768586903,129
+e225ba622c30fa190a006aef499ef372033d194f,2008-02-26 15:00:37+00:00,2008-02-26 15:00:37+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,782,782,"optionally replay messages on the fault tolerant transport
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@631244 13f79535-47bb-0310-9956-ffa450edef68",102,1.3875545810748522,1.6034557809879495,129
+da6c2d61f1966eb9d1e09c03b2c5c3b9b6abef4a,2008-02-28 06:20:12+00:00,2008-02-28 06:20:12+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,785,785,"Changing logging to log stacktraces to debug only
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@631864 13f79535-47bb-0310-9956-ffa450edef68",102,1.3870877472372751,1.6030672026987274,131
+a6e227dcdc2b65c9a01f6cefd860ce49660b3036,2008-02-28 06:24:17+00:00,2008-02-28 06:24:17+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,782,782,"Tweak the logging a bit. Didn't like the idea of different log messages depending on log level.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@631866 13f79535-47bb-0310-9956-ffa450edef68",102,1.3871210578029423,1.6031456326416336,129
+710db267a91233af8bffaa3ce9d1ee78b9f37c41,2008-02-29 09:22:02+00:00,2008-02-29 09:22:02+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,782,782,"Move back to using DEfaultThreadPools for reconnect tasks - as 
+for very bad connections, DedicatedTaskRunner could get swamped with
+reconnect tasks
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@632269 13f79535-47bb-0310-9956-ffa450edef68",102,1.3872472055933311,1.6035163204222966,129
+c0b00b2d28b147655fdc0b0651a1553610812989,2008-02-29 14:55:10+00:00,2008-02-29 14:55:10+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,782,782,"set track messages off by default
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@632333 13f79535-47bb-0310-9956-ffa450edef68",102,1.3875300107217345,1.6043026069542983,129
+c0b74f056290b5517cb1a0c8a1d8016245274287,2008-03-06 20:45:02+00:00,2008-03-06 20:45:02+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,787,787,"Fix for: https://issues.apache.org/activemq/browse/AMQ-1613
+Avoid deadlocking with the thread calling oneway() when we are cleaning up the connection due to an Inactivity error.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@634411 13f79535-47bb-0310-9956-ffa450edef68",104,1.3972907406661081,1.615012479292622,130
+c6b88f1ecc46d14381ae9e667121738f700f7a51,2008-03-11 21:17:51+00:00,2008-03-11 21:17:51+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,792,792,"Made the ReconnectTest a little more robust.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636106 13f79535-47bb-0310-9956-ffa450edef68",106,1.3973138400307363,1.615057610011623,131
+cb654705695c0877a934f7953f351e7a6e217342,2008-03-12 17:10:17+00:00,2008-03-12 17:10:17+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,795,795,"use a separate mutex for building backups
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636425 13f79535-47bb-0310-9956-ffa450edef68",106,1.3984593659437927,1.6170830428930922,131
+70511a6929f616a4aaacd8d27a2759c8fcf0dafa,2008-03-17 13:34:11+00:00,2008-03-17 13:34:11+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,802,802,"don't want errors from old transport after its failed
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@637883 13f79535-47bb-0310-9956-ffa450edef68",106,1.3979420450534512,1.6143616827091507,133
+cdd2108dd1c83985c0a5f161594ee09ea48e16ce,2008-03-17 16:42:09+00:00,2008-03-17 16:42:09+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,806,806,"Just making it a little more thread safe.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@637965 13f79535-47bb-0310-9956-ffa450edef68",107,1.397728065758731,1.6137331191491395,133
+3957eb0f6d087c67fc02a0e3b293d4c7fc579cb6,2008-03-18 07:15:45+00:00,2008-03-18 07:15:45+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,792,792,"removed unused executor
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@638246 13f79535-47bb-0310-9956-ffa450edef68",107,1.355207465448442,1.593857819360833,133
+f55923619d34be7402bab9d3a9ad50b41d8efcc3,2008-03-19 16:07:54+00:00,2008-03-19 16:07:54+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,799,799,"Added separately configurable initial delay for timeout tasks on InactivityMonitor
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@638910 13f79535-47bb-0310-9956-ffa450edef68",107,1.356174081259066,1.5957314305307322,134
+c04d8c548d0f0cd1fe4b25b3d6aaf5b68b25ec20,2008-03-24 23:19:50+00:00,2008-03-24 23:19:50+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,790,790,"Better failover error handling and now we pass on the max initial inactivity timeout to the timeout used by the intial wire format negociation.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@640641 13f79535-47bb-0310-9956-ffa450edef68",108,1.3568535862800855,1.5970535794626886,129
+cec77fd12a05d9f20688cc61ebca80c38406d512,2008-04-09 13:56:47+00:00,2008-04-09 13:56:47+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,791,791,"Fix for https://issues.apache.org/activemq/browse/AMQ-1451
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@646354 13f79535-47bb-0310-9956-ffa450edef68",107,1.3564957455240654,1.596370425015901,130
+6b6cdaee344b3dae577b627aaa109655d7a72a28,2008-04-09 15:27:42+00:00,2008-04-09 15:27:42+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,801,801,"Fix for https://issues.apache.org/activemq/browse/AMQ-1488
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@646401 13f79535-47bb-0310-9956-ffa450edef68",107,1.387306262486834,1.5977621747214774,130
+f7fa2bc58da06a71d314490f462e17de96e6e14d,2008-06-05 17:57:55+00:00,2008-06-05 17:57:55+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,818,818,"Fix for https://issues.apache.org/activemq/browse/AMQ-1771
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@663680 13f79535-47bb-0310-9956-ffa450edef68",107,1.3896228457945177,1.601161123954907,131
+60d4d48fbf3f10a478c13f7433783934194d659b,2008-06-05 18:11:46+00:00,2008-06-05 18:11:46+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,819,819,"Further change for https://issues.apache.org/activemq/browse/AMQ-1771
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@663691 13f79535-47bb-0310-9956-ffa450edef68",107,1.3896228459265356,1.6011611230292366,131
+4a052d20b123227a347ba3538a0a8955e4c73f36,2008-06-11 23:22:12+00:00,2008-06-11 23:22:12+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,825,825,"Fix for https://issues.apache.org/activemq/browse/AMQ-1771
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@666893 13f79535-47bb-0310-9956-ffa450edef68",107,1.3888324762484046,1.5996002182129394,133
+4a1279639f8598cd90b1e32c32068c1822731550,2009-01-12 14:05:57+00:00,2009-01-12 14:05:57+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,843,843,"fix for https://issues.apache.org/activemq/browse/AMQ-2061
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@733761 13f79535-47bb-0310-9956-ffa450edef68",108,1.3878119807150944,1.595351221189985,137
+132f662209f7e25a1d9c240fdddcf61e0ed1226c,2009-03-26 15:22:57+00:00,2009-03-26 15:22:57+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,848,848,"resolve AMQ-2149|https://issues.apache.org/activemq/browse/AMQ-2149 - isses with kaha reference store and duplicate messages, recovery of duplicaes and recovery with memory limits and session duplicate acks resulting in out of order message dispatch, more detail in the jira and test case
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@758678 13f79535-47bb-0310-9956-ffa450edef68",108,1.387755529929221,1.5952530053538208,139
+4b4ce4aaf272792d0beba07b47e7aac6850e9228,2009-05-12 17:13:10+00:00,2009-05-12 17:13:10+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,856,856,"resolve https://issues.apache.org/activemq/browse/AMQ-2246
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@773985 13f79535-47bb-0310-9956-ffa450edef68",108,1.3877634590826098,1.5952758387698107,140
+9383c6d697658f6ac7902e621124649b510b6bb3,2009-05-14 09:57:24+00:00,2009-05-14 09:57:24+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,857,857,"resolve alternative path to https://issues.apache.org/activemq/browse/AMQ-2241 via ra where connection is reused. state tracker was not notified when remove command is suppressed and simulated during transport outage
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@774712 13f79535-47bb-0310-9956-ffa450edef68",108,1.3878693970588727,1.59548010155693,140
+684c901016378fa9196481828834880bfaabce79,2009-05-26 15:55:49+00:00,2009-05-26 15:55:49+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,856,856,"have failover transport use shared random generator so random can loadbalance in the same jvm
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@778777 13f79535-47bb-0310-9956-ffa450edef68",108,1.387678054607099,1.5951102997013569,140
+42282810a88c2a7ed1814f0bc13e922efcccaaaa,2009-09-11 16:16:08+00:00,2009-09-11 16:16:08+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,854,854,"Fix for https://issues.apache.org/activemq/browse/AMQ-2387
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813906 13f79535-47bb-0310-9956-ffa450edef68",107,1.387678054607099,1.5951102997013569,140
+f3b1ea9cfb9ddb3547782546627ad3696ec1ca39,2009-09-14 13:12:46+00:00,2009-09-14 13:12:46+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,854,854,"Fix for https://issues.apache.org/activemq/browse/AMQ-2391
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@814627 13f79535-47bb-0310-9956-ffa450edef68",107,1.387753783788343,1.5953114729448792,140
+3720e847d147c04688467b9357daedc232c697ad,2009-09-14 13:39:32+00:00,2009-09-14 13:39:32+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,863,863,"Fix for https://issues.apache.org/activemq/browse/AMQ-2385
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@814638 13f79535-47bb-0310-9956-ffa450edef68",108,1.3863218621122524,1.5907176927298676,140
+31ecfae93453e5a35d72322bf2e2bb5adcdeac5e,2009-09-14 13:43:54+00:00,2009-09-14 13:43:54+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,871,871,"Fix for https://issues.apache.org/activemq/browse/AMQ-2385
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@814639 13f79535-47bb-0310-9956-ffa450edef68",108,1.3863218618550954,1.590717690546046,144
+8978ac0772a0dad67a45b0b5a1a77c115ec649c2,2009-11-25 20:56:28+00:00,2009-11-25 20:56:28+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,879,879,"Fix for AMQ-2511:  Inactivity monitor does not time out stale connections.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@884267 13f79535-47bb-0310-9956-ffa450edef68",109,1.3873192566899677,1.591878480335725,146
+b9e51d6492c6e32d480f406d4440200bee828036,2009-12-17 08:42:52+00:00,2009-12-17 08:42:52+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,889,889,"resolve https://issues.apache.org/activemq/browse/AMQ-2473 - issue with jmstemplate were producers are closed before transaction commits which is fine save when failover ocurrs. the producers need to be replayed to allow tracked messages to be replayed. added the capability to track and relay transaction producers. Can be disabled if producers out live transactions
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@891582 13f79535-47bb-0310-9956-ffa450edef68",111,1.3888312909269172,1.5928231078286914,146
+62eb5cf5810c3f39b2f3f70d54c89863aa488d66,2010-01-11 18:22:01+00:00,2010-01-11 18:22:01+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,890,890,"reduce unmatched ack exceptions, tidy up prefetchExtension https://issues.apache.org/activemq/browse/AMQ-2560
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@897988 13f79535-47bb-0310-9956-ffa450edef68",111,1.3885163784259555,1.5922280013427823,147
+8d3ca9030317b384fc10c04b00d16bf4a6a4a9c4,2010-01-25 18:19:54+00:00,2010-01-25 18:19:54+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,898,898,"resolve: https://issues.apache.org/activemq/browse/AMQ-2579 - use ConsumerControl with destination to update prefetch once recovery is complete. restored consumers are pull only pending recovery completion on the client side. Update WireFormat version to 6 - fix for 5.4 due to wireformat update
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@902908 13f79535-47bb-0310-9956-ffa450edef68",111,1.3880332588680249,1.5899722203085498,147
+5a03c37faf0f75a9835039cb8f403d18e2a853b6,2010-01-29 17:39:20+00:00,2010-01-29 17:39:20+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,906,906,"resolve timing issue with reconnect in failover transport that can stall reconnect logic - resulted in intermittent failure of AMQ2183Test. reorg of test make it reproducable when master is waiting for slave to connect and its disconnects ocurr async so they can clash with inprogress reconnects - resolve https://issues.apache.org/activemq/browse/AMQ-2588
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@904568 13f79535-47bb-0310-9956-ffa450edef68",110,1.3879164964081103,1.589743632476227,151
+b836af84f064cfcf6d92dda16b534be13adadb72,2010-02-04 11:06:13+00:00,2010-02-04 11:06:13+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,907,907,"further evolution of resolution for https://issues.apache.org/activemq/browse/AMQ-2590 - indoubt transactions are now rolledback, pending transactions can wait for jms.consumerFailoverRedeliveryWaitPeriod for redeliveries before rolling back. If previously delivered messages are not replayed the transaction is rolledback
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@906450 13f79535-47bb-0310-9956-ffa450edef68",111,1.3878191924396648,1.589562980564316,151
+f392884e31d9325fd90643b6d8e01668a58b70de,2010-03-08 12:48:45+00:00,2010-03-08 12:48:45+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1022,1022,"Fix for https://issues.apache.org/activemq/browse/AMQ-2632
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@920306 13f79535-47bb-0310-9956-ffa450edef68",113,1.324531669780694,1.5870831618897054,187
+a1c427e0a3591fdbefe180bb7f6fff96e3433309,2010-03-15 14:49:18+00:00,2010-03-15 14:49:18+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1034,1034,"Fix failing ReconnectTest
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@923272 13f79535-47bb-0310-9956-ffa450edef68",115,1.3220663071582064,1.5806172347260516,188
+4eafcccf6249f0936a4a83ddb3b4f078c07f70ce,2010-04-01 23:25:20+00:00,2010-04-01 23:25:20+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1038,1038,"resolve https://issues.apache.org/activemq/browse/AMQ-2556 - resolve leaks with XA_RDONLY - prepare needs to cleanup the transaction state, both on the broker and on the client connection/session/failover state
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@930135 13f79535-47bb-0310-9956-ffa450edef68",116,1.3386128822423502,1.578455797260129,188
+c4d8bc47a0bb8a5de919611cd0d77bb285dcbb7a,2010-04-28 16:12:29+00:00,2010-04-28 16:12:29+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1048,1048,"tidy up vm url handling, fix failover and ssl context: resolve https://issues.apache.org/activemq/browse/AMQ-2715 and add test for same, improve logging around network connector
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@938998 13f79535-47bb-0310-9956-ffa450edef68",116,1.3387468067938684,1.5781335930410394,188
+c14c7e791dc499af9d7e984b620c876506654564,2010-07-04 05:49:20+00:00,2010-07-04 05:49:20+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1135,1135,"Fix for https://issues.apache.org/activemq/browse/AMQ-2807
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@960296 13f79535-47bb-0310-9956-ffa450edef68",124,1.3400020231090761,1.576973891558039,197
+a6a6a708ff26c8ddba966107d2add4186e173ba4,2010-07-08 14:23:21+00:00,2010-07-08 14:23:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1135,1135,"resolve https://issues.apache.org/activemq/browse/AMQ-2800, https://issues.apache.org/activemq/browse/AMQ-2542, https://issues.apache.org/activemq/browse/AMQ-2803 - implement duplicate checker in transport for a failover: reconnect, uses last seqid from store. iimplemented for kahaDB and JDBC
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@961783 13f79535-47bb-0310-9956-ffa450edef68",124,1.3400707408565045,1.5771060688551126,197
+4c4f0d18cefd3952e84e79bbf0c66b19c210c6e2,2010-09-07 14:40:58+00:00,2010-09-07 14:40:58+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1133,1133,"resolve: https://issues.apache.org/activemq/browse/AMQ-2904 - fix issue with network connector failover recreating consumer in pull mode, add test. related to: https://issues.apache.org/activemq/browse/AMQ-2579
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@993382 13f79535-47bb-0310-9956-ffa450edef68",123,1.33992996803453,1.5768440878195806,197
+32db9c5a933d4746b73b5b0b0c1628865bd7b629,2010-11-23 10:20:29+00:00,2010-11-23 10:20:29+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1133,1133,"https://issues.apache.org/activemq/browse/AMQ-3049 - failover and initialReconnectDelay
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1038036 13f79535-47bb-0310-9956-ffa450edef68",123,1.3391896154530674,1.5754114728763118,199
+6ed942a3eec957658074741ed6ab74cb62d9a795,2010-12-10 13:07:00+00:00,2010-12-10 13:07:00+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1133,1133,"fix regression with DiscoveryTransportNoBrokerTest - https://issues.apache.org/jira/browse/AMQ-3049 - reconnectDelay of -1 not appropriate for sleep
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1044340 13f79535-47bb-0310-9956-ffa450edef68",122,1.3390180096723467,1.5747891283047668,199
+738e9a19ea3519d6483744a0f02f1e815f98e22b,2010-12-15 12:21:43+00:00,2010-12-15 12:21:43+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1133,1133,"resolve: https://issues.apache.org/jira/browse/AMQ-3085 with test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1049521 13f79535-47bb-0310-9956-ffa450edef68",122,1.3391499086760845,1.5750395644409179,199
+c7522305732396dbee751ea37e2554f2420908be,2011-01-13 14:18:14+00:00,2011-01-13 14:18:14+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1144,1144,"https://issues.apache.org/jira/browse/AMQ-3077 - ArraysIndexOutOfBoundsException : -32768 in ""BrokerService[xxx] Task"" thread - brokerInfo and peerBroker infro explosion problems. A peer is a oneway relationship with networks, broker infos were being accumulated in duplicate for each connector and for multiple connectors. The peer broker info was maintained for each which caused the problem marshalling. re: https://issues.apache.org/jira/browse/AMQ-2632 - the configuration is now respected so it can be selectively enabled and rebalance only occurs if we randomly choose an alternative. The nested peer broker info is not propagated in a connection control
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1058577 13f79535-47bb-0310-9956-ffa450edef68",121,1.3409095890059124,1.5779183550668792,204
+8bf987b134bd827b93ed8157b323bc3bd2d8a82e,2011-02-10 14:24:01+00:00,2011-02-10 14:24:01+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1144,1144,"https://issues.apache.org/jira/browse/AMQ-3177 - use slf4j instead of jcl
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069405 13f79535-47bb-0310-9956-ffa450edef68",121,1.341012324258863,1.5781209671630465,204
+b0c2a40fb979829ceca2ca51858ca67269bd5992,2011-02-16 14:08:48+00:00,2011-02-16 14:08:48+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1144,1144,"Removing svn keywords, they don't have much value and just add additional noise when diffing source trees.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071259 13f79535-47bb-0310-9956-ffa450edef68",121,1.341012324258863,1.5781209671630465,204
+6c09e846b18c5b9b7da3780199f98d2c1f7ae8c8,2011-03-08 15:01:59+00:00,2011-03-08 15:01:59+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1148,1148,"https://issues.apache.org/jira/browse/AMQ-2632 - dispose the old transport listener before rebalancing
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1079384 13f79535-47bb-0310-9956-ffa450edef68",122,1.3420634500352278,1.5796294721403135,204
+986ed145a791052a7190f069563095a0110c8742,2011-03-16 22:48:26+00:00,2011-03-16 22:48:26+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1148,1148,"https://issues.apache.org/jira/browse/AMQ-3222 - Failover and SimpleDiscovery - query parameters getting dropped, resolve by leaving composite prams in place and seperating out params that need to be applied to discovered transports, new format 'discovered.x' for the mulitcast case. Revisit https://issues.apache.org/jira/browse/AMQ-2981,https://issues.apache.org/jira/browse/AMQ-2598,https://issues.apache.org/activemq/browse/AMQ-2939
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1082333 13f79535-47bb-0310-9956-ffa450edef68",122,1.3420619077062839,1.5796310164585212,204
+b6b69113b1c0eb78f05a95023355e678457b9d51,2011-09-28 22:07:21+00:00,2011-09-28 22:07:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1167,1167,"apply fixes for https://issues.apache.org/jira/browse/AMQ-3513
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1177088 13f79535-47bb-0310-9956-ffa450edef68",125,1.344679118468283,1.5815961939644647,214
+ad76330eedd235a14c773206da7451cce7bf1305,2011-09-29 16:02:49+00:00,2011-09-29 16:02:49+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1159,1159,"https://issues.apache.org/jira/browse/AMQ-3516
+
+Add fix along with a unit test to ensure it stays fixed.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1177345 13f79535-47bb-0310-9956-ffa450edef68",125,1.3428948079732206,1.5785390676057829,214
+7d8ce02dee5b71ac7a90bd82f4a39bf17e1842cf,2011-09-29 21:42:29+00:00,2011-09-29 21:42:29+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1175,1175,"fix for: https://issues.apache.org/jira/browse/AMQ-3517
+
+Adds tests for the backup option and cleans up some other the other tests.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1177437 13f79535-47bb-0310-9956-ffa450edef68",137,1.3453939957224197,1.5829777729727421,224
+4acd13243ad5a39068b9c82c05210b57f78de252,2011-10-13 20:07:48+00:00,2011-10-13 20:07:48+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1202,1202,"https://issues.apache.org/jira/browse/AMQ-3542 - Using failover: with static discovery in a network connector to choose from a master/slave tuple leads to hangs and invalid states. issue with demand forward bridge reacting to failover transport interupt/resume leading to race conditions. race condition with tracking bridges and restarts. change default maxReconnectAttempts=0 to mean none, -1 for infinte. Default behavour is still infinite. To reference a master slave pair, use: static:(failover:(a,b)?maxReconnectAttempts=0)?useExponentialBackOff=false. see org.apache.activemq.network.FailoverStaticNetworkTest
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1183062 13f79535-47bb-0310-9956-ffa450edef68",140,1.3422269732999537,1.5750244893805778,233
+f4e0725420ec14bf667c0caff5b74f6c0a028cdb,2011-10-20 07:59:05+00:00,2011-10-20 07:59:05+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1205,1205,"https://issues.apache.org/jira/browse/AMQ-3542 - prevent failover reconnect till start is initiated, prevents connection establishment w/o a listener which ensures a bridge is already ready to handle a response and start a local bridge, useDedicatedTaskRunner=true can lead to this case
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1186654 13f79535-47bb-0310-9956-ffa450edef68",140,1.3421229945563617,1.5748339195316032,234
+599abc58bb9f41fee9d0f539e0d8c7a9dc757301,2011-11-30 10:58:21+00:00,2011-11-30 10:58:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1210,1210,"https://issues.apache.org/jira/browse/AMQ-2730 - test to validate there is no implicit limit on reconnects due to the task runner exceeding its iterations, if the task is not complete it re queues it, so at least on trunk, the taskrunner issue is resolved
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1208377 13f79535-47bb-0310-9956-ffa450edef68",141,1.3422788200104319,1.574780370199033,234
+1d52f3b53cafc3c89c4df1a6ea7427a5ce2ab23b,2012-01-23 20:46:50+00:00,2012-01-23 20:46:50+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1225,1225,"fix for: https://issues.apache.org/jira/browse/AMQ-3673
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1234981 13f79535-47bb-0310-9956-ffa450edef68",145,1.3425889962421682,1.5753733983051212,239
+91059de2836c833e07709f4be9149f2c022ae315,2012-02-01 13:12:33+00:00,2012-02-01 13:12:33+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1222,1222,"https://issues.apache.org/jira/browse/AMQ-3685 - fixing cluster update feature
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1239118 13f79535-47bb-0310-9956-ffa450edef68",144,1.3418837141377717,1.5740555635026017,240
+7388438a85fe46b05b37ccc5f7fe5b9d16b8fccc,2012-02-06 16:25:44+00:00,2012-02-06 16:25:44+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1283,1283,"https://issues.apache.org/jira/browse/AMQ-3699 - priority uris for failover transport
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1241061 13f79535-47bb-0310-9956-ffa450edef68",149,1.344787147648122,1.5764118292548552,257
+19cb932816a09b05d5da73da7fbc39e0dec0e522,2012-02-07 11:24:49+00:00,2012-02-07 11:24:49+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1287,1287,"https://issues.apache.org/jira/browse/AMQ-3685 - a few more fixes for failover cluster update ... handle well original broker restarting and avoid deadlock
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1241426 13f79535-47bb-0310-9956-ffa450edef68",149,1.3450573505195584,1.5769183228142087,259
+beda82ad5a854fafa2a9847fe93991071f517f2e,2012-02-10 11:48:56+00:00,2012-02-10 11:48:56+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1292,1292,"https://issues.apache.org/jira/browse/AMQ-3706 - balance randomize with cluster update
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1242748 13f79535-47bb-0310-9956-ffa450edef68",149,1.3451536234577,1.57709770351198,261
+a3060e79d969fcf1f769be010c31e098a98a10e2,2012-02-14 21:36:04+00:00,2012-02-14 21:36:04+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1292,1292,"https://issues.apache.org/jira/browse/AMQ-3706
+
+Don't send a URI to the client that equals ""null"" when the BrokerInfo has no set Broker URI, that sends the failover transport into an infinite reconnect cycle.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1244221 13f79535-47bb-0310-9956-ffa450edef68",149,1.3451405417456206,1.5770800630161443,261
+a7e7bce0aefd0624d9c6e94337477a5861804bac,2012-03-14 21:31:25+00:00,2012-03-14 21:31:25+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1299,1299,"fix and test for: https://issues.apache.org/jira/browse/AMQ-3719
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1300726 13f79535-47bb-0310-9956-ffa450edef68",149,1.3451405418434226,1.5770800639766633,263
+d92d3a8a06b6a20769d39c5b1cf19a7c8bf91921,2012-03-22 21:00:17+00:00,2012-03-22 21:00:17+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1305,1305,"fix for: https://issues.apache.org/jira/browse/AMQ-3782
+
+avoid any potential NPE and try again.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1304057 13f79535-47bb-0310-9956-ffa450edef68",149,1.3451084595025737,1.5770250576773592,267
+0227c081120108b912bcb8898b83c2c4b5bb0119,2012-07-20 22:53:07+00:00,2012-07-20 22:53:07+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1317,1317,"fix and tests for: https://issues.apache.org/jira/browse/AMQ-3932
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1364009 13f79535-47bb-0310-9956-ffa450edef68",149,1.3455582245132773,1.5778946952105921,271
+14e636b74811136d7ded0cae16d74ed19058456a,2012-07-24 21:13:33+00:00,2012-07-24 21:13:33+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1330,1330,"apply fix for: https://issues.apache.org/jira/browse/AMQ-3939
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1365290 13f79535-47bb-0310-9956-ffa450edef68",150,1.3458717812799836,1.5784849719012355,274
+205d02598d8da8c975ead6614f5ab3636035099e,2012-08-07 22:02:28+00:00,2012-08-07 22:02:28+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1335,1335,"Refine the fix for: https://issues.apache.org/jira/browse/AMQ-3939 
+
+The unit test was failing on slower hardware, some backups could be missed if the transport was processing the ConnectionControl command during the stop since the buildBackups method runs from there outside the reconnectMutex and not in the thread of the taskRunner. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1370559 13f79535-47bb-0310-9956-ffa450edef68",150,1.345699680347412,1.5781575564553463,275
+ca15308b3fe229e4ac9cdfda48be75e61ca37d6b,2012-08-07 22:50:26+00:00,2012-08-07 22:50:26+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1335,1335,"method buildBackups should bail out early in the transport is stopped. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1370581 13f79535-47bb-0310-9956-ffa450edef68",150,1.3456595002542202,1.5780801863766878,276
+ce50e287acde240587ab81f8482e25cd512925b1,2012-08-14 08:34:41+00:00,2012-08-14 08:34:41+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1335,1335,"https://issues.apache.org/jira/browse/AMQ-3972 - failover transport - don't propagate exceptions for disposed transport
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1372770 13f79535-47bb-0310-9956-ffa450edef68",150,1.345592237465092,1.5779450766232568,277
+8a01c5d16a051541df404683e6d8ae71bc6240be,2012-09-07 11:58:21+00:00,2012-09-07 11:58:21+00:00,activemq-core/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1343,1343,"AMQ-3451: Ensure thread pools is shutdown properly to avoid any leaks. Do not use the old @deprecated thread pool.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1381985 13f79535-47bb-0310-9956-ffa450edef68",151,1.3457217567361615,1.5778722132040794,277
+9a8f6e415db43a4e43ad42a87b3617b3641aa07d,2012-11-07 05:00:17+00:00,2012-11-07 05:00:17+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1343,1343,"Refactored the classes needed to run an ActiveMQ JMS client out from the activemq-core module to the activemq-client module.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406466 13f79535-47bb-0310-9956-ffa450edef68",151,1.3457217567361615,1.5778722132040794,277
+585a966a9b512d0e1709e067f82d1998a8701d2b,2013-04-08 16:58:21+00:00,2013-04-08 16:58:21+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1345,1345,"https://issues.apache.org/jira/browse/AMQ-4461 - priority backup with multiple brokers
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1465683 13f79535-47bb-0310-9956-ffa450edef68",151,1.345809777208187,1.5780463533422822,278
+15affd0755deeebcdc670039ec1d19fefe0d8c65,2013-04-12 11:52:15+00:00,2013-04-12 11:52:15+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1339,1339,"https://issues.apache.org/jira/browse/AMQ-3706 - improve rebalance distribution which is more apparent when only two brokers are involved
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1467241 13f79535-47bb-0310-9956-ffa450edef68",151,1.3459482491576356,1.5783211889442221,275
+fbac51c8f8709b0e5a831c8dbbd2fae58bfc1ea1,2013-05-01 16:33:57+00:00,2013-05-01 16:33:57+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1374,1374,"https://issues.apache.org/jira/browse/AMQ-4501
+
+Partial fix, perform a proper URI comparison to avoid an unnecessary reconnect bounce.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1478083 13f79535-47bb-0310-9956-ffa450edef68",155,1.259528477507473,1.5960382530884767,279
+e777126d3006f15868e890864ec795f1cfeff324,2013-05-01 20:53:51+00:00,2013-05-01 20:53:51+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1382,1382,"fix for: https://issues.apache.org/jira/browse/AMQ-4501
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1478184 13f79535-47bb-0310-9956-ffa450edef68",158,1.2598066723359649,1.596573814318341,281
+d6873244653bfea6aa569e0650799181593967b8,2013-05-02 13:03:04+00:00,2013-05-02 13:03:04+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1382,1382,"https://issues.apache.org/jira/browse/AMQ-4507 - apply fix with thanks
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1478357 13f79535-47bb-0310-9956-ffa450edef68",158,1.2598106614208011,1.59658217534416,281
+3a8eb74a9fd422e9137ccb3bf75201b52dd809ba,2013-05-03 15:21:25+00:00,2013-05-03 15:21:25+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1386,1386,"Fix and test for: https://issues.apache.org/jira/browse/AMQ-4505
+
+When a broker was stopping it was sending out a cluster update after tearing down its bridges so any client connected to it would lose its awareness of other brokers in the cluster. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1478835 13f79535-47bb-0310-9956-ffa450edef68",159,1.2597473724275134,1.5964588604736514,282
+9490793f2ce32d1afd5f88cbb6b0aa2aab918979,2013-05-28 11:17:17+00:00,2013-05-28 11:17:17+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1401,1401,"https://issues.apache.org/jira/browse/AMQ-4461 - priority backup should not be restricted by the pool size
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1486869 13f79535-47bb-0310-9956-ffa450edef68",160,1.2605274579855976,1.5975737464006996,287
+0ff359341c3adc7404b8485ad90a21696da57139,2013-09-10 12:56:25-04:00,2013-09-10 12:56:25-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1413,1413,"Fixes AMQ-4718: Extra options added to a failover/discovery URL that don't map to failover configuration settings, should get passed to the nested URLs.",163,1.2634918872597314,1.6023016777042165,292
+4f19f31a37ca719a92967272cd751ce0c3a539b4,2013-10-04 11:35:23+01:00,2013-10-04 11:34:53+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1413,1413,https://issues.apache.org/jira/browse/AMQ-4785 - fix and test,163,1.263484422768863,1.6022843454328632,292
+06356db1c4dda514be086961a891aff8765c63be,2013-11-03 11:00:03+01:00,2013-11-03 11:00:03+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1414,1414,AMQ-4826: Failover transport - avoid floating-point issue on other JDKs.,163,1.2633274775167078,1.6019780634368919,292
+c55a66692126c76b81cfd20c66749e3bf1bb8606,2013-11-13 15:19:16-05:00,2013-11-13 15:19:16-05:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1450,1450,"https://issues.apache.org/jira/browse/AMQ-4706
+
+add setting warnAfterReconnectAttempts to FailoverTransport to log a
+warning after every N retries.  A value of <= 0 will disable the
+warnings.",166,1.2622864712767847,1.5989286545487327,295
+bc1ca6c8cf3cfb36f552c6315f1a2ec359e3bb6b,2013-11-19 12:41:10+01:00,2013-11-19 12:41:10+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1447,1447,https://issues.apache.org/jira/browse/AMQ-4897 - race condition in failover transport,169,1.2623267292790281,1.59901113140143,293
+146fb121086f5aee41c58785e57199ee7a6a95e4,2014-02-05 11:25:44+00:00,2014-01-29 12:44:51+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1447,1447,ensure stack trace is in trace logging of exception,169,1.262341469111269,1.5990380036257583,293
+084d606d897cc625836a82e6eeaaa2e80cad5477,2014-02-12 14:29:23+01:00,2014-02-12 14:29:23+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1447,1447,"improve failover transport failure message to include client port, which makes will make it easier to debug things in multi-connection clients",169,1.2621552482137837,1.5986752470711854,293
+8188f7f884c96fe2174315be784bea2e560a09ba,2014-03-07 12:04:49+01:00,2014-03-07 12:04:20+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1452,1452,https://issues.apache.org/jira/browse/AMQ-5090 - improve failover transaction tracking,169,1.2621797142437465,1.5987223201725818,293
+8824ac9fcb245c0191471ac9190fbf9ef652589c,2014-06-18 12:58:50-04:00,2014-06-18 12:58:50-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1452,1452,"https://issues.apache.org/jira/browse/AMQ-5231
+
+Only apply timeout to the Message sends, other commands are handled
+separately as needed.",169,1.2620386797292662,1.59845034872493,294
+ce911bafbfc4bab88fbd0827273ab4e9ee2de0f7,2014-06-23 12:13:45+01:00,2014-06-23 12:12:39+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1462,1462,https://issues.apache.org/jira/browse/AMQ-5241 - track window between sending shutdown info and doing local close to avoid race with broker on normal connection.close - needs two jvm to reliably reproduce so no unit test with the fix,170,1.2619171008145138,1.5977855478154137,296
+3ef53896917076981c505b087e9f6ff99042aa3f,2015-05-12 22:10:57+01:00,2015-05-12 21:55:07+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1455,1455,https://issues.apache.org/jira/browse/AMQ-4897 - rework with test that shows the blocking inactivity monitor task. Removed some redundant state,169,1.2446409886654215,1.6039679181378066,300
+2536c03125e17c4d21d50489df8c01a1f0ba4bc0,2015-05-20 09:57:05+01:00,2015-05-19 11:41:49+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1456,1456,fix sync on failover updated urls - intermittent failure on FailoverComplexClusterTest,169,1.2448304215206214,1.60433345156193,300
+ae9af4b8b29e792db213ca2cc2879ddc7c4118e5,2015-08-31 15:55:44+01:00,2015-08-31 15:55:44+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1465,1465,https://issues.apache.org/jira/browse/AMQ-5951 - ensure failover oneway won't retry if reconnect will not happen,171,1.2415965709466303,1.6043845392543006,304
+8514e38135cf3c4da913806f3677a89785613e10,2015-09-30 11:41:08+01:00,2015-09-29 16:34:36+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1471,1471,"https://issues.apache.org/jira/browse/AMQ-5951 - scenario wheere transaction command can block, additional test and further fix",172,1.2409613840910871,1.6028107733597756,309
+0a12bcb928f151b5ace9a0cffc34ec717b6a8e9c,2015-11-27 12:21:56+00:00,2015-11-27 12:20:12+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1471,1471,"https://issues.apache.org/jira/browse/AMQ-2191 https://issues.apache.org/jira/browse/AMQ-3529 - rework fixes to remove uncertanty from dealing with intettuptedexception. Sync requests will trap interrupts that ocurr while waiting for responses and fail the connection with an interruptedioexception. Interrupts pending before requests will be suppressed, allowing possible clean shutdown. It is not safe to replay openwire ops b/c they are not idempotent, the only safe option is to have a teardown of the broker side state from a close",172,1.2408831773611246,1.6026506291930978,309
+db1506a5921f70134c3b647cec51204f0e1c1416,2016-01-12 14:00:13+00:00,2016-01-12 14:00:13+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1472,1472,https://issues.apache.org/jira/browse/AMQ-6124 - fix and test - propagate broker info from prestarted backup transport,172,1.2408726065324827,1.602628598977967,309
+4ea435bf460e68a3f1fc2addadc9b683742cc40d,2016-01-15 18:07:56-05:00,2016-01-15 18:07:56-05:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1480,1480,"https://issues.apache.org/jira/browse/AMQ-5336
+
+URI comparison needs to be done using the host / port comparison method
+instead of string equality due to other features like nested options
+which can alter the URIs and lead to continued attempts to reconnect to
+the transport that's already connected when priority backup is used.",171,1.2403924122116328,1.60135891043397,312
+c8af70f0949e38270b313b7b8ce305c5870362da,2016-04-15 12:49:49-04:00,2016-04-15 12:49:49-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1474,1474,"https://issues.apache.org/jira/browse/AMQ-5819
+
+Only apply the initialReconnectDelay on the first reconnection attempt
+after a connected transport has failed.",171,1.2403321369158085,1.601242231350023,312
+23a5beb86c3dac151ae3ed242ce506aa0048bd03,2016-04-18 09:45:45-04:00,2016-04-18 09:45:45-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1451,1451,"https://issues.apache.org/jira/browse/AMQ-6248
+
+Prevent conccurent calls to handleTransportFailure from closing an
+already reconnected transport instance.",179,1.3305874836302856,1.6025431368918914,295
+3560d9123dbeecc97f075a6812f15b2484836275,2016-04-18 09:53:59-04:00,2016-04-18 09:53:59-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1451,1451,AMQ-6248 fix logging statement to use the connected URI.,179,1.3306731456124092,1.6027050108386065,295
+31c55f75108b06020eb6206c52361b04f49656a9,2016-06-30 14:52:40-04:00,2016-06-17 16:26:52-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1477,1477,"https://issues.apache.org/jira/browse/AMQ-6339
+
+Add support for AMQP client to connect using WebSockets.",182,1.3337839451235722,1.6077011474485106,301
+629ee285685b5f63315c8fcd6138a37bd17b958d,2016-11-02 12:57:39-04:00,2016-11-02 12:57:39-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1477,1477,"https://issues.apache.org/jira/browse/AMQ-6495
+
+State variables shared across threads in the transport need to be marked
+volatile.",182,1.335188198562023,1.6104430913950614,301
+d54d046b8a8f2e9e5c0a28e1f8c7634b3c8b18e4,2016-11-03 11:54:33-04:00,2016-11-03 11:54:33-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1477,1477,This closes #185. Won't fix. (fix more file permissions),182,1.335188198562023,1.6104430913950614,301
+2b64b7b04fb22600390f0eea56d1386f934a5368,2018-07-05 17:34:30+01:00,2018-07-05 17:34:30+01:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1477,1477,AMQ-4706 - ensure we log the first warn and include the failure reason,182,1.335188198474758,1.610443087825857,304
+7974e8c0991dd0bcf2e226ea9b54ff8d740acfc8,2018-07-30 07:56:33-04:00,2018-07-30 07:56:33-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1479,1479,AMQ-7004 - Improved logging in Failover Transport,182,1.335027151491671,1.6101301136934045,304
+0b71b06ac81f4192ac752e6fdbfa0b84eb635052,2018-09-04 06:53:00-04:00,2018-09-04 06:53:00-04:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1477,1477,"Revert ""AMQ-7004 - Improved logging in Failover Transport""
+
+This reverts commit 7974e8c0991dd0bcf2e226ea9b54ff8d740acfc8.
+
+This caused problems with too much logging so reverting",182,1.335188198474758,1.610443087825857,304
+b9bcd2fcc37837cafa0ff4caa54ae5a04a26ab99,2019-03-12 12:24:20+00:00,2019-03-12 12:24:20+00:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1482,1482,AMQ-7165 - ensure failover updated uris are additive such that statically configured uris are respected,183,1.3350157937535596,1.6101231622435177,306
+bc9ff5a09fb0aad28d94c2aa72b4e31011b61905,2022-01-12 11:05:17-06:00,2021-12-23 07:57:24-06:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1487,1487,[AMQ-8443] Allow reconnect command to work,184,1.334252813909472,1.608262927742021,307
+094dbc89f3630691f1bd66d0d07fe879842fa51b,2022-02-25 19:46:45-06:00,2022-02-25 19:46:45-06:00,activemq-client/src/main/java/org/apache/activemq/transport/failover/FailoverTransport.java,1491,1491,[AMQ-8515] FailoverTransport should handle MaxFrameSizeExceededException (#785),184,1.3342528137100413,1.608262925715815,307
