@@ -1,0 +1,718 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+40a7d3b6ac35d2ecb34e85fc3403d2e48e33874e,2005-12-12 17:53:59+00:00,2005-12-12 17:53:59+00:00,activemq-core/src/main/java/org/activemq/broker/TransportConnection.java,214,214,"Moved the trunk code into the trunk sub directory
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356304 13f79535-47bb-0310-9956-ffa450edef68",14,29,1.19944966368419,1.5110476918642475,7
+384e290b7f16e1ed40ebf1706c81c91abcc80765,2005-12-19 12:22:09+00:00,2005-12-19 12:22:09+00:00,activemq-core/src/main/java/org/activemq/broker/TransportConnection.java,216,216,"added enqueue/dequeue statistics at the Connection/Connector level in JMX
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@357683 13f79535-47bb-0310-9956-ffa450edef68",15,29,1.1998329484714017,1.5117872641447592,7
+8032ef40bea6bb08d0f8151866beadd7cafb9eb1,2005-12-20 18:05:38+00:00,2005-12-20 18:05:38+00:00,activemq-core/src/main/java/org/activemq/broker/TransportConnection.java,193,193,"- updated openwire marshalers.
+- added some more toString() methods to the transports
+- Fixed up the advisories so that duplicate consumer infos are not sent
+- Changed the demand forwarding bridge so that loop back message filtering occurs in the broker instead of on the bridge
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358056 13f79535-47bb-0310-9956-ffa450edef68",14,28,1.1873127591182406,1.4946528298147743,3
+92a698fe42656274d0f3e31be415ba881b094b3f,2005-12-22 06:11:40+00:00,2005-12-22 06:11:40+00:00,activemq-core/src/main/java/org/activemq/broker/TransportConnection.java,191,191,"updated headers in source file to use apache header
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358513 13f79535-47bb-0310-9956-ffa450edef68",14,28,1.1873127591182406,1.4946528267193162,3
+d29ca2a71b7fd281c15f7d05e135c196d2b2488c,2005-12-28 17:24:02+00:00,2005-12-28 17:24:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,191,191,"Refactor org.activemq -> org.apache.activemq
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359567 13f79535-47bb-0310-9956-ffa450edef68",14,28,1.1873127591182406,1.4946528267193162,3
+48b4869472d647a890ce6905e7914b7d1ecde948,2005-12-29 02:15:21+00:00,2005-12-29 02:15:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,191,191,"Updated copyright headers to be (c) 2005-2006 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359679 13f79535-47bb-0310-9956-ffa450edef68",14,28,1.1873127591182406,1.4946528263410161,3
+c59246d5edc68539bcfdd327b43c98c0f45e8fa9,2006-01-09 17:21:52+00:00,2006-01-09 17:21:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,198,198,"- Changed the command id objects so that they do not use fields that have the same name as the class (for the .net folks)
+- Added a ConnectionError command that can be used to notify a connection of async errors associated with the connection.
+- 
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@367341 13f79535-47bb-0310-9956-ffa450edef68",16,28,1.1921851525575367,1.5036104952404468,3
+4098942c1e8c1947eeecaff8bfcdbd8ba9d01ab9,2006-01-18 19:16:58+00:00,2006-01-18 19:16:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,220,220,"Added master/slave functionality to the Broker
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@370223 13f79535-47bb-0310-9956-ffa450edef68",16,31,1.2151814476352627,1.5287088123952088,6
+71afa0ded92805e0039d74e1a8d39f34e3934c90,2006-01-23 16:48:10+00:00,2006-01-23 16:48:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,219,219,"removed sleep from stop() method
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@371590 13f79535-47bb-0310-9956-ffa450edef68",16,31,1.2160463407513955,1.5302651234649842,6
+d2d1c6d63d67115448d9b929c2d2e2e3dcd7f0f1,2006-01-23 19:40:42+00:00,2006-01-23 19:40:42+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,221,221,"The Transport Connection now notifies it's Connector of lifecycle events so that the Connector does not have to wrap the broker in yet another filter to notice the connection's lifecycle events.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@371636 13f79535-47bb-0310-9956-ffa450edef68",16,31,1.2131510891511175,1.525127474864957,6
+f915da57723b9ac0139a38ea9e365a3a1968538b,2006-02-18 07:18:01+00:00,2006-02-18 07:18:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,222,222,"Extended TransportListener to notify when transport is interrupted and resumed
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378699 13f79535-47bb-0310-9956-ffa450edef68",16,31,1.2126402047631755,1.5242140228989356,6
+75af5faa5ae5c715483b86e0e899bffd9e533c45,2006-02-27 12:39:06+00:00,2006-02-27 12:39:06+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,219,219,"Enure reference count for MessageReference is always updated - if dispatched sync or async
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@381328 13f79535-47bb-0310-9956-ffa450edef68",12,31,1.2118984904210048,1.5228162614448586,6
+0f1dccee3797645e8df7ddaa40972e8fce08ffac,2006-06-19 12:32:59+00:00,2006-06-19 12:32:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,223,223,"applied patch from Jason Sherman for AMQ-753 to expose the remote connection address in JMX - many thanks!
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@415306 13f79535-47bb-0310-9956-ffa450edef68",13,32,1.2178785520050952,1.5289775068609668,6
+57b494132549ebef6877bf47da3c3d5d776286e0,2006-07-28 03:04:41+00:00,2006-07-28 03:04:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,224,224,"Applied new source header boiler plate per http://www.apache.org/legal/src-headers.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426366 13f79535-47bb-0310-9956-ffa450edef68",13,32,1.2178785520050952,1.5289775083271182,6
+a86a587788e62c801c9aa71cefe7fa703d0ca810,2006-09-14 06:54:49+00:00,2006-09-14 06:54:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,227,227,"fixed for http://issues.apache.org/activemq/browse/AMQ-918
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@443267 13f79535-47bb-0310-9956-ffa450edef68",14,32,1.217189795473343,1.5276793317460433,8
+4b595ea6dc2d0bd3dcd7e80d0ddb670ead17245d,2006-09-25 11:26:53+00:00,2006-09-25 11:26:53+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,281,281,"applied patch from John Heitmann for AMQ-932  - many thanks!
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@449654 13f79535-47bb-0310-9956-ffa450edef68",32,38,1.2152642788059622,1.5212533741207046,12
+9ca56a0049e2009f1725aaf0e7afdf6e4d21d6ee,2006-10-15 03:31:28+00:00,2006-10-15 03:31:28+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,282,282,"http://issues.apache.org/activemq/browse/AMQ-976
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@464110 13f79535-47bb-0310-9956-ffa450edef68",32,38,1.2087298173262662,1.5203613353442142,12
+cafe4cbcc4cf31839ff5bdfb5af7a55a682ef075,2006-11-06 19:35:59+00:00,2006-11-06 19:35:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,291,291,"http://issues.apache.org/activemq/browse/AMQ-1026
+Created a ReconnectTest that showed problems with the synchronization used when a client reconnects to a server via failover before the server detects the client failure.
+- InactivityMonitor : Better syncronization so that an inactivty exception is only raised once.
+- Connection: Added serviceExceptionAsync() method and change all methods that are dispatching to use this instead of serviceException() to avoid possible deadlock that can occur during connection shutdown.
+- MockTransport: finer grained sychonization to avoid deadlocks.
+- PrefetchSubscription: it is possible it will get duplicate acks on a failover reconnect
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@471837 13f79535-47bb-0310-9956-ffa450edef68",34,39,1.2098781186055767,1.5189458931350812,13
+da7478d9d534eefd979404417d0dbb9e7fd84a36,2006-11-07 16:40:23+00:00,2006-11-07 16:40:23+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1065,1065,"Eliminated AbstractConnection by inlining it into TransportConnection.  The synchronization complexity between the two was making my head spin.  Now that they are consolidated, we can try to simply them a little more.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@472157 13f79535-47bb-0310-9956-ffa450edef68",162,106,1.223758932198571,1.6617821637264605,106
+43d2ef0469b5e65076d3896f599581bc9fa1f002,2006-11-13 19:49:33+00:00,2006-11-13 19:49:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1065,1065,"log an error for ConnectionErrors that are not transport or 
+Broker in shutdown related
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@474465 13f79535-47bb-0310-9956-ffa450edef68",163,106,1.2237508395693133,1.6617494498915906,105
+caa30ffdc02b57cf970ffc7eba5f877af184114b,2006-11-14 12:44:16+00:00,2006-11-14 12:44:16+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1068,1068,"Added synconization to the methods that setup connection state so that when an async error is detected, it properly does a full cleanup.  Previously subscriptions were not properly cleaned up since they were being setup at the same time as they were being cleaned up.
+
+Also start 1 async exception thread ever since an async exception leads to connection tear down.  Subsequent failures do not need additional async threads started.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@474769 13f79535-47bb-0310-9956-ffa450edef68",163,107,1.222156035170755,1.656987859736658,106
+86cbdfd5db5b1c90c4a5f4dcdef702b0cf4901ce,2006-11-17 00:29:03+00:00,2006-11-17 00:29:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1068,1068,"Switching to Java 5.. Build and Runtime now require Java 5 see: http://www.nabble.com/Switching-to-ActiveMQ-4.2-to-Java-5----tf2637427.html
+- Update maven build
+- Removed dependency on concurrent-backport
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@475999 13f79535-47bb-0310-9956-ffa450edef68",163,107,1.222156035170755,1.6569878573608645,106
+27ded73ca6380e3e9d8bc2e39a86ca5f906ed62f,2006-12-28 20:44:59+00:00,2006-12-28 20:44:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1068,1068,"drop synchronization from connectionState and connection context - 
+not required when using ConcurrentHashMap and limited concurrency for 
+publishers or transactions for the same client connection 
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@490789 13f79535-47bb-0310-9956-ffa450edef68",163,107,1.2240901859062434,1.6622912255292763,106
+8b0f88a2573602ecfea38fdb89e2ad3fcd08f9b5,2006-12-29 20:19:25+00:00,2006-12-29 20:19:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,984,984,"put the synchronization back for now
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@491088 13f79535-47bb-0310-9956-ffa450edef68",81,107,1.222084132870146,1.6501900767026423,74
+84eb9f8b6975ccdf1fe7aa7c666fcc59ceb91ac7,2007-03-03 11:30:22+00:00,2007-03-03 11:30:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1029,1029,"performance tuning
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514131 13f79535-47bb-0310-9956-ffa450edef68",85,113,1.2275357959406399,1.6635678374444105,77
+1191d5eeb282e36476eb536ad0f7bf11dd570ae2,2007-03-03 12:41:34+00:00,2007-03-03 12:41:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1029,1029,"make ProducerBrokerExchange mutable if the destination is composite
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514143 13f79535-47bb-0310-9956-ffa450edef68",85,113,1.2275043435822568,1.6634808005721027,77
+2eaafc0c12bd5b2d8fa70b29ed48fee2ac76053c,2007-03-04 06:47:54+00:00,2007-03-04 06:47:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1041,1041,"add wildcard info to the ConsumerBrokerExchange
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514365 13f79535-47bb-0310-9956-ffa450edef68",85,113,1.2275630177694348,1.663660117289053,80
+df15551a4bdd8cda54b188032eaaa24495cdd4e0,2007-03-05 07:48:06+00:00,2007-03-05 07:48:06+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1044,1044,"messages from remote broker are now handled correctly again
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514592 13f79535-47bb-0310-9956-ffa450edef68",85,113,1.227689184277511,1.6640221189892441,81
+015cd8a7f92cb245977f1d502ffc401932426095,2007-03-05 15:41:17+00:00,2007-03-05 15:41:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1117,1117,"ported fix to trunk : 
+http://issues.apache.org/activemq/browse/AMQ-1172
+http://issues.apache.org/activemq/browse/AMQ-1174
+http://issues.apache.org/activemq/browse/AMQ-1175
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514694 13f79535-47bb-0310-9956-ffa450edef68",95,116,1.2808772672943596,1.6612378520048285,100
+49ea0eddf6ecfc2e6709192b0667b8126e4dfe92,2007-03-05 16:26:08+00:00,2007-03-05 16:26:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1125,1125,"ported fix to trunk : 
+http://issues.apache.org/activemq/browse/AMQ-1181
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514720 13f79535-47bb-0310-9956-ffa450edef68",96,117,1.2804281414473482,1.6593266478717037,101
+b743552137969cc827e73221be0ab17a8112c47e,2007-03-05 17:03:36+00:00,2007-03-05 17:03:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1153,1153,"ported fix to trunk : 
+http://issues.apache.org/activemq/browse/AMQ-1179
+http://issues.apache.org/activemq/browse/AMQ-1180
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514734 13f79535-47bb-0310-9956-ffa450edef68",99,119,1.2789450941782146,1.6544579301311613,105
+d57343cdb55b6f3b951e43ffe768305477a32344,2007-03-07 10:44:14+00:00,2007-03-07 10:44:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1154,1154,"minor patch to avoid ClassCastException for AMQ-1189
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@515524 13f79535-47bb-0310-9956-ffa450edef68",99,119,1.278988359055748,1.6545935020281635,105
+f7db42a8353b95279bedab6b3b9ba12f0569b24a,2007-03-07 16:11:50+00:00,2007-03-07 16:11:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1154,1154,"Fix for https://issues.apache.org/activemq/browse/AMQ-1189, use 2 fields instead of 1 for the 2 usages of the consumer field to avoid CCE when using vm messaging.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@515625 13f79535-47bb-0310-9956-ffa450edef68",100,119,1.2789241208279873,1.6544040996654912,105
+ec14f6569d7c9b0dcffbb799a7fa19aafa25a210,2007-03-07 17:23:07+00:00,2007-03-07 17:23:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1162,1162,"Added a new windowSize field to the ProducerInfo command and added a new ProducerAck command.  These will be needed to implement better producer flow control
+where threads do not block on the broker side.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@515654 13f79535-47bb-0310-9956-ffa450edef68",103,120,1.2798450577976477,1.6566827108440387,105
+1a3f54c93f54f946342cc307848bb29722bfe8ae,2007-03-08 00:22:18+00:00,2007-03-08 00:22:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1170,1170,"Expose the wire format protocol to the ActiveMQConnection and TransportConnection objects
+so that they know when then can use more advanced protocol options.  This will be needed
+to implement producer flow control acking.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@515863 13f79535-47bb-0310-9956-ffa450edef68",104,122,1.2808279276405041,1.65862226102911,105
+4207bd9cc04d9716eafdadebc42852adf4d58dc7,2007-03-09 17:29:30+00:00,2007-03-09 17:29:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1181,1181,"Adding the bits need to do producer flow control with a window to the broker. Just implemented on the Queue case for now.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@516475 13f79535-47bb-0310-9956-ffa450edef68",106,123,1.277808813511452,1.6488223866055758,107
+fb3b6dba571b9dbffaac45ac920037760ceb6dbc,2007-03-09 18:23:44+00:00,2007-03-09 18:23:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1205,1205,"Enhanced the ActiveMQConnection to use the CommandVisitor instead of using a big if swtich
+when handling commands from the broker.  This should be slightly more efficient.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@516492 13f79535-47bb-0310-9956-ffa450edef68",111,128,1.282412378658329,1.6602975182831772,108
+4741136695f6871fa035c44c65a59e0d1ffe829f,2007-03-13 15:53:24+00:00,2007-03-13 15:53:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1228,1228,"add method to retrieve the URI used by the local VMTransport
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@517741 13f79535-47bb-0310-9956-ffa450edef68",113,129,1.2824466870264721,1.6600738831361839,111
+ae73f860b99f30256a3f2b30d4e5bfdb0beec74e,2007-03-13 16:19:58+00:00,2007-03-13 16:19:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1234,1234,"working towards a solution for http://issues.apache.org/activemq/browse/AMQ-920
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@517753 13f79535-47bb-0310-9956-ffa450edef68",111,129,1.2824018081233641,1.6599541263000333,113
+489f5aa2046a610f15360a7c53cc530020cf8394,2007-03-15 01:45:49+00:00,2007-03-15 01:45:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1236,1236,"- Propagate the AlwaysSyncSend setting from the ConnectionFactory to the Connection
+- Got rid of the UseSyncSend property since AlwaysSyncSend was already there and did the same thing.
+- Updated VMPendingMessageCursor so that it updates the reference counters of the message so that the usage managers are properly updated since the messages are being kept in memory.
+- Updated the region Queue so that it decrements the usage in the case of a transaction.
+- Enabled the ProducerFlowControlTest since it is now working.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@518437 13f79535-47bb-0310-9956-ffa450edef68",111,129,1.2823929513550725,1.6599294266163147,114
+54114ccf77ac8032f51274bff19c8ae0de37a94c,2007-03-21 09:18:56+00:00,2007-03-21 09:18:56+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1240,1240,"fix for broker name not being registered with the network connector
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@520814 13f79535-47bb-0310-9956-ffa450edef68",111,129,1.2824111596970686,1.6599694957577231,114
+98cd515fff69a930164df0a4f03e69f720362522,2007-06-26 05:36:43+00:00,2007-06-26 05:36:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1240,1240,"fix for shutdown command
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@550698 13f79535-47bb-0310-9956-ffa450edef68",111,129,1.2827085406742065,1.6608383152220627,114
+a3e382199cd45169ebad5c2c1544d67ac7314412,2007-06-27 18:53:30+00:00,2007-06-27 18:53:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1260,1260,"ensure member variables are always synchronized 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@551271 13f79535-47bb-0310-9956-ffa450edef68",112,129,1.2832695290420029,1.6623855071667393,123
+25a252f34868fa58b3cb9207e8f91a44e720e8e7,2007-07-03 08:31:10+00:00,2007-07-03 08:31:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1243,1243,"Added duplicate detection to the TransactionBroker - so can cope with rollbacks etc.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@552738 13f79535-47bb-0310-9956-ffa450edef68",112,129,1.2834122665699315,1.6627648520486351,119
+241971a13388a39b282472968f7d2ab433b82242,2007-07-04 04:44:00+00:00,2007-07-04 04:44:00+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1241,1241,"fix deadlock
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@553076 13f79535-47bb-0310-9956-ffa450edef68",112,129,1.283424729112297,1.6627898468083937,119
+83a6eff431007e259fce89905f3245669f65c8fc,2007-07-19 19:24:31+00:00,2007-07-19 19:24:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1243,1243,"move decision about being a slave from the Broker to the ConnectionContext - so can be done on a Connection basis if required
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@557748 13f79535-47bb-0310-9956-ffa450edef68",113,129,1.2836733024402198,1.663487013632824,119
+8f6fac7f1b8d90c2b979a989a667823df2afafd5,2007-07-24 15:01:32+00:00,2007-07-24 15:01:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1246,1246,"Fix for AMQ-1339 - Give the connection dispatcher threads names that are easy to associate with the peer.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@559071 13f79535-47bb-0310-9956-ffa450edef68",115,130,1.2831663085878269,1.6617225524290942,121
+35ba427ec963c8b29401599e67c4042894a8ae69,2007-07-29 08:57:31+00:00,2007-07-29 08:57:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1256,1256,"Fix for http://issues.apache.org/activemq/browse/AMQ-920
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@560696 13f79535-47bb-0310-9956-ffa450edef68",115,130,1.2832407012662852,1.6619231093769953,121
+ea7473170159ef6be75025292e2050071534f639,2007-07-30 05:34:37+00:00,2007-07-30 05:34:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1321,1321,"Serveral changes needed to Fix https://issues.apache.org/activemq/browse/AMQ-1349
+ - The vm:// transport was delivering events to the listener before start() was called.  Also clean it up a little by consolidating
+   the use of the prePeerSetQueue and messageQueue field.
+ - the tcp:// .stop() method now blocks until the thread that calls out to the listener is shutdown.
+ - TransportConnection was not doing a good job synchronizing when multiple concurrent conenctions to the same connection Id was established.
+   IllegalStateExceptions were common when a failover connection reconnected.  Now we make sure that only 1 connection with a given connectionId
+   is activley operating in the broker.  Also removed 1 un-needed hash lookup by replacing the brokerConnectionStates Map with the 
+   connectionState variable.
+    
+Also added a pause in the JmsTempDestinationTest to avoid intermitent failures.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@560872 13f79535-47bb-0310-9956-ffa450edef68",134,141,1.422523917907131,1.6550153891386534,112
+a4015755690206e1201851c933e062856079ab85,2007-07-30 16:01:37+00:00,2007-07-30 16:01:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1322,1322,"Added support for length of time messages are processed by the broker - 
+fix for https://issues.apache.org/activemq/browse/AMQ-1160,
+https://issues.apache.org/activemq/browse/AMQ-1072,
+https://issues.apache.org/activemq/browse/AMQ-936 
+and ground work for for https://issues.apache.org/activemq/browse/AMQ-567
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@561026 13f79535-47bb-0310-9956-ffa450edef68",132,141,1.422477464055433,1.6549100964654448,113
+c07b23352cbcd60172f0ccbab3ea6747e44307fe,2007-07-30 18:45:49+00:00,2007-07-30 18:45:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1322,1322,"Fix for https://issues.apache.org/activemq/browse/AMQ-567
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@561088 13f79535-47bb-0310-9956-ffa450edef68",130,141,1.4223177212988043,1.6544721579607105,114
+5ad47320389a2044d107c27251807277e91fbf36,2007-07-30 23:11:24+00:00,2007-07-30 23:11:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1323,1323,"- Faster VMTransport shutdown by avoiding a potential deadlock
+- Better connection shutdown.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@561180 13f79535-47bb-0310-9956-ffa450edef68",130,141,1.4223107463200686,1.6544484816038703,114
+230a86c4897e10fbc5e7384b064cc526395d47e5,2007-08-08 15:52:25+00:00,2007-08-08 15:52:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1325,1325,"Fixing a bunch of checkstyle violations
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563921 13f79535-47bb-0310-9956-ffa450edef68",128,141,1.3828718577624963,1.6628584271727964,176
+f812e3417988e13ed638434f892cff5c4ab843ad,2007-08-08 18:56:59+00:00,2007-08-08 18:56:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1353,1353,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563982 13f79535-47bb-0310-9956-ffa450edef68",128,141,1.3826298495069718,1.6622796665229305,176
+74a7a8bbfc8012bf0842b1eec891a8545f9944cb,2007-08-09 00:34:07+00:00,2007-08-09 00:34:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1326,1326,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564057 13f79535-47bb-0310-9956-ffa450edef68",129,141,1.382871857762496,1.6628584262022177,176
+fc00993839c69f86823870e06a335d035db48bb2,2007-08-09 16:37:49+00:00,2007-08-09 16:37:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1328,1328,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564271 13f79535-47bb-0310-9956-ffa450edef68",128,141,1.3826024144540827,1.6615475920533644,176
+ecf89a60bfd8089d1b1de5666bd2e9d5938abe8e,2007-08-10 16:57:01+00:00,2007-08-10 16:57:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1350,1350,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564679 13f79535-47bb-0310-9956-ffa450edef68",131,141,1.3819416165305174,1.6597957007916644,176
+933eb2f9e4040a3a9200b1a461dc4e004aafbf81,2007-08-11 00:49:19+00:00,2007-08-11 00:49:19+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1386,1386,"More checkstyle fixes and Generics usage.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564814 13f79535-47bb-0310-9956-ffa450edef68",134,142,1.3833642024409698,1.6634741911187205,176
+01bdc524e7950ca31f6258091d67e18f7f1cfbae,2007-09-20 19:11:44+00:00,2007-09-20 19:11:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1384,1384,"Better broker shutdown handling and also better test support.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@577882 13f79535-47bb-0310-9956-ffa450edef68",134,142,1.3836322820101774,1.6641593984713694,175
+3d024d6b4f6f72b5d731d3242699d5325160ca43,2007-09-28 15:09:33+00:00,2007-09-28 15:09:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1389,1389,"Make amq 5.x compatible again with 4.x clients
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@580382 13f79535-47bb-0310-9956-ffa450edef68",135,142,1.3837476124921553,1.6644627678541921,177
+7b1fd3484ef2f557a3b322b5f08a8f5499be2c7f,2007-10-03 20:24:27+00:00,2007-10-03 20:24:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1395,1395,"Fix for http://issues.apache.org/activemq/browse/AMQ-1250
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@581715 13f79535-47bb-0310-9956-ffa450edef68",135,142,1.3837626832839494,1.6645058551966143,177
+a9119eca19a8a427d2f99693bf98553d8bba8bb2,2007-10-10 19:53:07+00:00,2007-10-10 19:53:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1312,1312,"Fix for NPE in duplex network connection
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@583595 13f79535-47bb-0310-9956-ffa450edef68",124,131,1.338944349419326,1.640466473888142,167
+ceec57aa0d2e082c01777bafc55f007c8bbbc7e2,2007-10-25 15:43:34+00:00,2007-10-25 15:43:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1312,1312,"Removed synchronizations on all the processXXX() methods to avoid getting into situations where deadlocks occur.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@588260 13f79535-47bb-0310-9956-ffa450edef68",124,131,1.34088856539424,1.6445543082611493,167
+ada47fbc50e8a324538517ba262490499cd05530,2007-11-05 18:47:16+00:00,2007-11-05 18:47:16+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1316,1316,"- memory leak fix: TransportConnection would leak memory if an error occured while start()ing the connection.  Most visible when you create a network connector pointing at a remote broker that was down since this loops through creating TransportConnectors every few seconds.
+- Deadlock fix VMTransport could dead lock if during start() an error occured and stop was recusively called.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@592114 13f79535-47bb-0310-9956-ffa450edef68",124,131,1.340809680070814,1.6443993313852354,167
+29849639120020bd63b0cc510e3a5025cb33b0b7,2007-12-08 18:56:11+00:00,2007-12-08 18:56:11+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1307,1307,"If you have a multi-threaded client which share 1 connection to the broker it is possible you may have seen errors like:
+
+2007-12-05 14:14:52,606 [VMTransport] ERROR - org.apache.activemq.broker.TransportConnection.Service - Async error occurred: java.lang.IllegalStateException: Cannot lookup a connection that had not been registered: ID:bubba-38184-1196882086290-2:1
+java.lang.IllegalStateException: Cannot lookup a connection that had not been registered: ID:bubba-38184-1196882086290-2:1
+at org.apache.activemq.broker.SingleTransportConnectionStateRegister.lookupConnectionState(SingleTransportConnectionStateRegister.java:113)
+at org.apache.activemq.broker.TransportConnection.lookupConnectionState(TransportConnection.java:1313)
+at org.apache.activemq.broker.TransportConnection.processRemoveConsumer(TransportConnection.java:538)
+at org.apache.activemq.command.RemoveInfo.visit(RemoveInfo.java:64)
+at org.apache.activemq.broker.TransportConnection.service(TransportConnection.java:281)
+at org.apache.activemq.broker.TransportConnection$1.onCommand(TransportConnection.java:178)
+at org.apache.activemq.transport.ResponseCorrelator.onCommand(ResponseCorrelator.java:100)
+at org.apache.activemq.transport.TransportFilter.onCommand(TransportFilter.java:67)
+at org.apache.activemq.transport.vm.VMTransport.iterate(VMTransport.java:202)
+at org.apache.activemq.thread.PooledTaskRunner.runTask(PooledTaskRunner.java:118)
+at org.apache.activemq.thread.PooledTaskRunner$1.run(PooledTaskRunner.java:42)
+at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:885)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+at java.lang.Thread.run(Thread.java:619)
+
+
+root cause is that the client side has multiple threads calling close() on consumer/session and the connection objects. If the timing of those concurrent calls was just right, it is possible for the client to send the connection close message followed by a session or consumer close message which is invalid and would result in IllegalStateException reported by the broker.
+
+- Simplified the ActiveMQConnection and TransportConnection shutdown so that this does does not happen.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@602529 13f79535-47bb-0310-9956-ffa450edef68",126,129,1.3425261140305738,1.6481996529697716,164
+34378e8ec146b0861f3308809a926116b9e1c35a,2007-12-21 16:45:21+00:00,2007-12-21 16:45:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1307,1307,"Only wait 1 second for connections to stop. When killing a stale 
+connection - if stop doesn't complete - it hangs the broker.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@606241 13f79535-47bb-0310-9956-ffa450edef68",126,129,1.3425340040259583,1.6482160469565053,164
+a28ccae9fb86aa1a7b316fbeb7f9e6658f9a8f7b,2008-01-17 14:31:03+00:00,2008-01-17 14:31:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1309,1309,"added a test case and fix for AMQ-775 along with a useful base class for testing ActiveMQ using Camel
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@612828 13f79535-47bb-0310-9956-ffa450edef68",126,129,1.3422574835030558,1.6476772438481828,164
+25b6812daaae09572c85cbd99cf527bc278e27d8,2008-02-26 14:56:31+00:00,2008-02-26 14:56:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1318,1318,"Added network and fault tolerant flags to ConnectionContext
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@631241 13f79535-47bb-0310-9956-ffa450edef68",127,131,1.3426672152907988,1.648063359390669,166
+4ae43a36b5ea991ec0032087228304f31e3b6a5a,2008-03-06 21:26:53+00:00,2008-03-06 21:26:53+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1318,1318,"reduce contention around stats on connection - thx for spotting this Hiram!
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@634420 13f79535-47bb-0310-9956-ffa450edef68",127,131,1.3427892918125908,1.6482988095249416,166
+4c481ec6a9c0bf21514f70afc9a1e35ea89de7ab,2008-03-07 02:33:32+00:00,2008-03-07 02:33:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1342,1342,"Added a ReentrantReadWriteLock to guard against a service call executing while a connection is being shutdown.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@634505 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.2938646460861127,1.6526319272902827,166
+5e747b070ddadd4e77f1f8962a54a115c6c04ef8,2008-03-07 20:09:07+00:00,2008-03-07 20:09:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1344,1344,"Improvements to removing stale connections
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@634797 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.2943251075145041,1.653522495465544,168
+f67415d8799a540dc7d1bc9a52862b4b9f2a5a60,2008-03-12 17:04:44+00:00,2008-03-12 17:04:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1349,1349,"don't wait for ever when stopping the connection on a blocked write
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636419 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.294593472793897,1.6540424821888757,168
+1987cfa2347cba9299eaed98a1e6b39c9ab7f45b,2008-03-15 18:59:49+00:00,2008-03-15 18:59:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1352,1352,"Only unlock a service lock if we managed to lock it
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@637454 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.2944291627309372,1.6537196522080317,169
+372f69aba9c7f9cf7ea25dbc19865c48c632583c,2008-03-17 13:28:06+00:00,2008-03-17 13:28:06+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1361,1361,"tightened synchronization around dispatchQueue
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@637878 13f79535-47bb-0310-9956-ffa450edef68",128,133,1.2945168030507137,1.6538741360181508,169
+4bce5c810ab071c19a90d522dac109ff73e45a7d,2008-03-17 16:34:34+00:00,2008-03-17 16:34:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1351,1351,"Don't timeout trying to aquire the service write lock.  Timing out can cause to improper shutdown.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@637962 13f79535-47bb-0310-9956-ffa450edef68",128,133,1.2943834158266276,1.653614237481231,168
+eccb3373031f11b8fed1864656fa8e42141ed429,2008-03-18 13:18:22+00:00,2008-03-18 13:18:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1343,1343,"Don't send the ShutdownInfo when stopping the transport.  This should make it faster to shutdown a failed connection.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@638358 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2942407442527122,1.65333151070594,164
+c18b583020cdf97b545586ead7c3ccdcb57523f3,2008-03-19 15:52:36+00:00,2008-03-19 15:52:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1343,1343,"Don't timeout a stop since that can lead to a failover connection not being able to reconnect correctly.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@638891 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2943680215347517,1.6535852699608629,163
+31a87ac778c81f56f3fed6ca5df7a9339cf9995c,2008-03-19 18:45:08+00:00,2008-03-19 18:45:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1346,1346,"allow blocked connections to unblock so we can get in and stop them.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@638969 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.2944109692365633,1.6536847894337223,163
+0302ffded77773a37423930a596a15b7b9051be4,2008-03-21 03:29:33+00:00,2008-03-21 03:29:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1345,1345,"avoid deadlock on stop()
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@639531 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.2945776551541588,1.6540146143523604,163
+5d99c99ab72fb500d66e07fe346dfd64ce7460ac,2008-04-17 18:09:37+00:00,2008-04-17 18:09:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1344,1344,"Fix for https://issues.apache.org/activemq/browse/AMQ-1670 you should now able able to add transports before configuring the reset of 
+the broker properties.  Also slightly changed the TransportFactory interface so that you are not forced to supply a brokerId to bind
+a transport.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@649211 13f79535-47bb-0310-9956-ffa450edef68",129,133,1.2945872219918695,1.6540358203099292,163
+3224ff8a0a238a2fd4d4e64c23146dafaa24bce2,2008-06-04 15:15:57+00:00,2008-06-04 15:15:57+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1343,1343,"make sure that the task runner is the first thing setup since other startup bits might want to do an async send.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@663178 13f79535-47bb-0310-9956-ffa450edef68",128,133,1.294711080850311,1.654277694262158,163
+db2451cfd97954080225ce2b1cb6c4bd4096defe,2008-06-20 19:46:34+00:00,2008-06-20 19:46:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1343,1343,"Possible fix for AMQ-1819.. Hopefully sending the broker info async will break the deadlock.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@670045 13f79535-47bb-0310-9956-ffa450edef68",128,133,1.2946278169405494,1.6541157083200877,163
+4118d02a95f383f8fc9ddbfb74023ddec54638ef,2008-07-02 16:22:59+00:00,2008-07-02 16:22:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1343,1343,"patch for https://issues.apache.org/activemq/browse/AMQ-1585
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@673433 13f79535-47bb-0310-9956-ffa450edef68",128,133,1.2946286309758195,1.6541172755524036,163
+f4012c50984a4726d562aaa270105a37c41d842c,2008-07-09 19:14:35+00:00,2008-07-09 19:14:35+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1341,1341,"patch from https://issues.apache.org/activemq/browse/AMQ-1848
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@675314 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.29455812206082,1.6539784154202355,163
+d14e4aee1c204de5ea726fa632aeee5823ca44a7,2008-09-02 11:48:21+00:00,2008-09-02 11:48:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1363,1363,"Apply patch for https://issues.apache.org/activemq/browse/AMQ-596
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@691206 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2946666292177385,1.6541968567579248,167
+e53668eb2379386d339b88aeca95430915797016,2008-11-17 21:55:46+00:00,2008-11-17 21:55:46+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1365,1365,"resolve AMQ-2004
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@718403 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2945812424599887,1.6540248366724741,167
+301203e6254aae3f792ddd4bc0ffea904fab61f5,2008-12-10 16:23:07+00:00,2008-12-10 16:23:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1366,1366,"resolve AMQ-2030, rev OpenWire version to 4 to accomadate additional field in ConsumerInfo that can hold array of networkConsumerIds that allows suppression of duplicate topic subscriptions in a cyclic network
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@725323 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2944237325778165,1.6537140094805942,167
+3b08860f10a12b8753e24756cf66f4a8d66b270e,2009-01-29 20:51:09+00:00,2009-01-29 20:51:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1368,1368,"resolve https://issues.apache.org/activemq/browse/AMQ-2087 - add a long attribute to RemoveInfo where the last delivered broker sequence id is passed back to the broker, prefetched messages with ids > than this value now don't get their redelivery count incremented, requires wireformat version increment and Destination api change
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@739008 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.294871091940809,1.6546007327462118,167
+59643ef23ecf1e0a59fbc4d798b84a8a4457d429,2009-02-02 09:28:28+00:00,2009-02-02 09:28:28+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1371,1371,"fix for https://issues.apache.org/activemq/browse/AMQ-2092
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@739950 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2799119979987323,1.654859791680969,168
+662aee8f211e5848ad400f6d52026e4a350acbc6,2009-02-02 11:50:29+00:00,2009-02-02 11:50:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1371,1371,"a bit better error message for https://issues.apache.org/activemq/browse/AMQ-2092
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@739966 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2773038842053845,1.655010510182407,168
+504bcf0596693070d9c1deb00a6ef2c6455ecf3d,2009-02-09 16:33:50+00:00,2009-02-09 16:33:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1371,1371,"demote log error or async exception to warn, with sendFailIfNoSpace, logs gets spammed with expected error messages
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@742603 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.2773215204056627,1.6550449397585418,168
+98497b19303af231068904157034049ba5141137,2009-09-10 13:19:52+00:00,2009-09-10 13:19:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1371,1371,"Fix for https://issues.apache.org/activemq/browse/AMQ-2071 and 
+https://issues.apache.org/activemq/browse/AMQ-2070
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813422 13f79535-47bb-0310-9956-ffa450edef68",127,133,1.27736179162186,1.655119979268015,168
+42282810a88c2a7ed1814f0bc13e922efcccaaaa,2009-09-11 16:16:08+00:00,2009-09-11 16:16:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1345,1345,"Fix for https://issues.apache.org/activemq/browse/AMQ-2387
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813906 13f79535-47bb-0310-9956-ffa450edef68",93,133,1.277146958610304,1.6531316554961963,177
+c808bebd00064c6c1d2c702f10e249e6e2f99254,2009-11-13 15:22:07+00:00,2009-11-13 15:22:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1350,1350,"resolve https://issues.apache.org/activemq/browse/AMQ-2483 and https://issues.apache.org/activemq/browse/AMQ-2028, keep track of outstanding wakeup requests in a queue with regular task runner avoids build up in determintic task runner. Exposed useDeterministicTaskRunner to validate some test that fail with the -DuseDedicatedTaskRunner=true system property. With broker.useDedicatedTask=false, Queues will use pooled executor for dispatch.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@835874 13f79535-47bb-0310-9956-ffa450edef68",93,133,1.2775053710705797,1.653833278177873,177
+8732f70793786c250ff986eea78dd8a87fcb42c8,2009-12-18 13:03:40+00:00,2009-12-18 13:03:40+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1358,1358,"first cut of audit recovery for https://issues.apache.org/activemq/browse/AMQ-2540 - test case reproduces. Little more tidy up needed such that the query is limited and such that the audit is recovered at the persistence adapter rather than at the store level - also related to https://issues.apache.org/activemq/browse/AMQ-2473
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@892242 13f79535-47bb-0310-9956-ffa450edef68",93,133,1.2772673052686825,1.653366677981835,181
+8d3ca9030317b384fc10c04b00d16bf4a6a4a9c4,2010-01-25 18:19:54+00:00,2010-01-25 18:19:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1360,1360,"resolve: https://issues.apache.org/activemq/browse/AMQ-2579 - use ConsumerControl with destination to update prefetch once recovery is complete. restored consumers are pull only pending recovery completion on the client side. Update WireFormat version to 6 - fix for 5.4 due to wireformat update
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@902908 13f79535-47bb-0310-9956-ffa450edef68",93,133,1.2772987221895056,1.653440492866799,181
+1f521da77e86ee42861e9bfee2a2daff37cb3272,2010-02-26 18:40:31+00:00,2010-02-26 18:40:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1362,1362,"Updated the TransportConnector and TransportConnection to use a thread pool when initalizing and destroying connection to better support fast
+connect and disconnect use cases.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@916780 13f79535-47bb-0310-9956-ffa450edef68",94,133,1.2772170645347298,1.6532802133627906,181
+f392884e31d9325fd90643b6d8e01668a58b70de,2010-03-08 12:48:45+00:00,2010-03-08 12:48:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1381,1381,"Fix for https://issues.apache.org/activemq/browse/AMQ-2632
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@920306 13f79535-47bb-0310-9956-ffa450edef68",98,135,1.2500740764564096,1.6592941015256824,187
+4eafcccf6249f0936a4a83ddb3b4f078c07f70ce,2010-04-01 23:25:20+00:00,2010-04-01 23:25:20+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1388,1388,"resolve https://issues.apache.org/activemq/browse/AMQ-2556 - resolve leaks with XA_RDONLY - prepare needs to cleanup the transaction state, both on the broker and on the client connection/session/failover state
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@930135 13f79535-47bb-0310-9956-ffa450edef68",100,135,1.2502671702488182,1.6596721666055374,189
+a6a6a708ff26c8ddba966107d2add4186e173ba4,2010-07-08 14:23:21+00:00,2010-07-08 14:23:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1394,1394,"resolve https://issues.apache.org/activemq/browse/AMQ-2800, https://issues.apache.org/activemq/browse/AMQ-2542, https://issues.apache.org/activemq/browse/AMQ-2803 - implement duplicate checker in transport for a failover: reconnect, uses last seqid from store. iimplemented for kahaDB and JDBC
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@961783 13f79535-47bb-0310-9956-ffa450edef68",100,135,1.2499092707863988,1.6589769281491875,191
+6b4509cdea61f78c2ecc013929c8c54da0f38341,2010-07-28 10:43:27+00:00,2010-07-28 10:43:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1422,1422,"apply patch from https://issues.apache.org/activemq/browse/AMQ-2774
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@980014 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.250124647907015,1.6587682848793766,195
+7629eafd0a54f163b8092f43d2d83f9cd6ee3907,2010-08-09 11:06:00+00:00,2010-08-09 11:06:00+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1422,1422,"resolve https://issues.apache.org/activemq/browse/AMQ-2119 - have transport errors log at info level rather than debug
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@983584 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.250154046723496,1.6588253762664236,195
+784b93df4d369f8c90c2038dc440ee0f0b0f09d8,2010-08-12 15:16:47+00:00,2010-08-12 15:16:47+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1422,1422,"https://issues.apache.org/activemq/browse/AMQ-2598 - URISupport.parseParameters() now supports composite urls
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@984826 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.25015404661131,1.6588253752501616,195
+c4911bda043fa76d4051a58f600be9652130fedf,2010-10-06 15:58:26+00:00,2010-10-06 15:58:26+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1424,1424,"resolve https://issues.apache.org/activemq/browse/AMQ-2902 - ensure there is no exception on graceful close of vm transport, also have stack trace for transport exceptions at debug level, just toString at info level, test included, thanks
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1005094 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.2501933204935465,1.6589027405552366,197
+2a2dcd5ec45f2d165f65a8e6983a9d28c4981199,2010-12-30 17:03:35+00:00,2010-12-30 17:03:35+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1429,1429,"https://issues.apache.org/jira/browse/AMQ-3109 - mbeans for bridges created by duplex connector
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1053942 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.2501933204935465,1.6589027406416341,198
+0ed0ba584c3a2637dac6378301b3d276aae13c9f,2011-01-11 10:28:43+00:00,2011-01-11 10:28:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1429,1429,"https://issues.apache.org/jira/browse/AMQ-3124 - Failover transport client gets corrupted connectedBrokers data - apply variant of suggested patch with thanks. Stripping server side url options is the right way to go, reusing api used by discovery publisher to same effect, additional test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1057565 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.2502350832733173,1.6589840605602235,200
+c7522305732396dbee751ea37e2554f2420908be,2011-01-13 14:18:14+00:00,2011-01-13 14:18:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1425,1425,"https://issues.apache.org/jira/browse/AMQ-3077 - ArraysIndexOutOfBoundsException : -32768 in ""BrokerService[xxx] Task"" thread - brokerInfo and peerBroker infro explosion problems. A peer is a oneway relationship with networks, broker infos were being accumulated in duplicate for each connector and for multiple connectors. The peer broker info was maintained for each which caused the problem marshalling. re: https://issues.apache.org/jira/browse/AMQ-2632 - the configuration is now respected so it can be selectively enabled and rebalance only occurs if we randomly choose an alternative. The nested peer broker info is not propagated in a connection control
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1058577 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.2502865855823686,1.659089580878764,198
+53ea4caa200a5920974f5be9df4b454d4c82954e,2011-01-20 13:44:22+00:00,2011-01-20 13:44:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1425,1425,"https://issues.apache.org/jira/browse/AMQ-3040 - ConnectionState.getTempDestinations() typo
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1061299 13f79535-47bb-0310-9956-ffa450edef68",102,138,1.2502414423948816,1.6590023451871805,198
+27d0ff4011482a7a5eeda14a1c16647e72ac4671,2011-02-10 11:02:48+00:00,2011-02-10 11:02:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1437,1437,"https://issues.apache.org/jira/browse/AMQ-3176 - Potential deadlock in duplex network connector recreation, resulting in dangling connections. https://issues.apache.org/jira/browse/AMQ-3129 - Can only have one duplex networkConnection per transportConnection. Rework of https://issues.apache.org/jira/browse/AMQ-2774. NetworkConnector.name attribute (default NC) is used to differenciate duplex network connectors so it needs to be unique to allow multiple to be configured. Removing existing matching network connectors on a reconnect is now thread safe
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069339 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.248869189350299,1.6561096756243574,198
+8bf987b134bd827b93ed8157b323bc3bd2d8a82e,2011-02-10 14:24:01+00:00,2011-02-10 14:24:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1437,1437,"https://issues.apache.org/jira/browse/AMQ-3177 - use slf4j instead of jcl
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069405 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2488906379651712,1.6561536392474272,198
+bf4dd7330dbcc9a32c407d665fe3b9e2b049c26e,2011-02-11 15:42:38+00:00,2011-02-11 15:42:38+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1441,1441,"http://issues.apache.org/jira/browse/AMQ-3178 - 5.3.x clients to 5.4 brokers always get updated cluster information in the broker info, this should be configurable
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069846 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2489261383454506,1.6562249239928495,200
+b0c2a40fb979829ceca2ca51858ca67269bd5992,2011-02-16 14:08:48+00:00,2011-02-16 14:08:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1441,1441,"Removing svn keywords, they don't have much value and just add additional noise when diffing source trees.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071259 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2489261383454506,1.6562249233878013,200
+7739a3cc4a4764046643f4dbdb5f823bf26b4a81,2011-02-25 14:54:48+00:00,2011-02-25 14:54:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1444,1444,"suppress stack trace from failed add connecton to debug level trace, such that the warn just has the exception toString, with an authenticated broker, the stack trace is too much information and is the predominant reason for a failure to add
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1074550 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.248926138466617,1.6562249236125735,201
+78f85ed277d639bbe48eab9e7ed8a22fb09e84c6,2011-03-04 11:46:39+00:00,2011-03-04 11:46:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1444,1444,"further reduction in stack traces at warn level in log for STOMP, suppress to stack trace to debug level, better for authorized broker
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1077889 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.248926138466617,1.6562249236125735,201
+69f56058f258b1036972dfdf51bfa5c48d0d826e,2011-03-04 16:48:01+00:00,2011-03-04 16:48:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1450,1450,"https://issues.apache.org/jira/browse/AMQ-3198 - Allow JAAS GuestLoginModule to fail if users specify a password
+new option to GuestLoginModule, credentialsInvalidate, when true, presence of a password will cause module to fail login
+allowing the next module to validate the credential. Will only guest users who don't specify a password
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1078048 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2489557238129563,1.6562826651893976,202
+8700ab7cdebb96d7afba702b26551c23a0faba72,2011-03-09 13:06:43+00:00,2011-03-09 13:06:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1449,1449,"https://issues.apache.org/jira/browse/AMQ-3198 - don't unregister original connection
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1079782 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2489557236673523,1.6562826649429334,202
+f93d05acefc81fc9aa6d90914eb737783520c68a,2011-03-09 17:01:55+00:00,2011-03-09 17:01:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1450,1450,"https://issues.apache.org/jira/browse/AMQ-3198 - unregister failed add connection but have unregister respect the reference count such that it is only removed if the refcount is 1
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1079885 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2489557238129563,1.6562826641839676,202
+f0429be6ee603f3b94d37c53005f40853d3f24b0,2011-03-14 18:24:21+00:00,2011-03-14 18:24:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1449,1449,"https://issues.apache.org/jira/browse/AMQ-3219 - add basic support for MDC and enable broker name to appear in log entries
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1081502 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2490603233651776,1.6564844797496516,202
+2b456ddbd06d78ffc7a7c3a4f3e669cbf24f95a4,2011-03-17 13:53:38+00:00,2011-03-17 13:53:38+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1452,1452,"https://issues.apache.org/jira/browse/AMQ-3219 - more work on MDC logging
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1082489 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2491894546071247,1.6567467715971032,202
+e10f75c33d57041083c95d08dd16635eeafe4ba9,2011-03-22 13:46:16+00:00,2011-03-22 13:46:16+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1449,1449,"https://issues.apache.org/jira/browse/AMQ-3236 - In the case of DLQ processing due to an exception from onMessage, provide the exception string as a message property. New property, org.apache.activemq.command.ActiveMQMessage#DLQ_DELIVERY_FAILURE_CAUSE_PROPERTY will hold the string form of the exception that causes a posion ack for a dlq message. It may be null if the cause was regular calls to rollback or message expiry. Wireformat change to have exception included with messageAck. new version 7
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1084175 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2491751392559673,1.656721755563413,202
+3da9f1c6ea0836b5fed53b00f3cb3a40fad47e14,2011-03-23 13:17:09+00:00,2011-03-23 13:17:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1449,1449,"https://issues.apache.org/jira/browse/AMQ-3219 - add prefix to mdc keys
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1084576 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2491188973304335,1.6566161436135385,202
+8a2892b9d05457f4b67ef6efa6b696746f7e02d6,2011-04-08 16:16:58+00:00,2011-04-08 16:16:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1447,1447,"https://issues.apache.org/jira/browse/AMQ-3276 - ConcurrentModificationException in embedded 5.5.0 broker. Rework https://issues.apache.org/jira/browse/AMQ-3219 - no need to set the context on thread creation as mdc impl uses an InheritableThreadLocal. This should avoid the concurrent mod, little test in mods to org.apache.activemq.bugs.AMQ2902Test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1090320 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2491334040818782,1.6566430048659344,202
+b5579ac1caf331f494b5d2f1b7b557f7546e1b23,2011-05-16 10:17:14+00:00,2011-05-16 10:17:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1448,1448,"https://issues.apache.org/jira/browse/AMQ-3135 - add remote address to connection info advisory
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1103673 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2491334039870758,1.6566430048954726,202
+fd6c731690fc82c3d40eb80a917646d8d99c139e,2011-05-18 15:19:50+00:00,2011-05-18 15:19:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1450,1450,"https://issues.apache.org/jira/browse/AMQ-3135 - ConnectionInfo.clientIp - supporting duplex network case
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1124299 13f79535-47bb-0310-9956-ffa450edef68",105,139,1.2491334039870758,1.6566430048954726,204
+2b102598dc95d1a436db57b933ca3332ef867e54,2011-06-02 15:28:30+00:00,2011-06-02 15:28:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1460,1460,"https://issues.apache.org/jira/browse/AMQ-3351 - Usage of the temp store index by the PList needs the be improved. new implementation puts the max entries in a page, reading/writing requires substantially less page access and disk access when pending messages build up
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1130607 13f79535-47bb-0310-9956-ffa450edef68",107,141,1.2492249323643358,1.6564624216590607,213
+4cf6dae48b18319315149f8e16b0e275f0a50207,2011-07-05 14:37:39+00:00,2011-07-05 14:37:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1458,1458,"https://issues.apache.org/jira/browse/AMQ-3393 - Number of established STOMP connections constantly increasing. resolve contention over delayed stop. add count attribute to connector to see current number of connections
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1143080 13f79535-47bb-0310-9956-ffa450edef68",107,141,1.2489890134226593,1.6559987135841228,213
+1ec990575d3fe71a78737f5f9a67834e784e5fc4,2011-07-06 19:12:26+00:00,2011-07-06 19:12:26+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1462,1462,"apply patch for https://issues.apache.org/jira/browse/AMQ-3074
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1143535 13f79535-47bb-0310-9956-ffa450edef68",108,142,1.248851914670744,1.6555311385303857,213
+24cd2b3f2902242fc8b62bdcaf098405f290392e,2011-08-03 10:17:17+00:00,2011-08-03 10:17:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1462,1462,"https://issues.apache.org/jira/browse/AMQ-3435: Connection is taking a long time to close warning and hung close thread. Ensure stop called during start can attempt a stop such that it does not hang
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1153419 13f79535-47bb-0310-9956-ffa450edef68",108,142,1.2488079426842158,1.6554460159262498,213
+8abb5b6df10a62445e9d14850184247a51f78ddb,2011-09-14 13:49:25+00:00,2011-09-14 13:49:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1464,1464,"https://issues.apache.org/jira/browse/AMQ-3499 - increase transport failure to warn and exclude eof for stomp
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1170624 13f79535-47bb-0310-9956-ffa450edef68",108,142,1.2489894027033173,1.6558069313815464,213
+6778a49eecb2efe2af4fb6bb2a0d7c82f9861248,2011-10-27 10:21:20+00:00,2011-10-27 10:21:20+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1464,1464,"https://issues.apache.org/jira/browse/AMQ-3568 - Consumer auto acking of duplicate message dispatch can lead to Unmatched acknowledge: and redelivery. Using individual ack in this case. Added a warn, as this sort of duplicate shoud be trapped by the store producerAudit, maxFailoverProducersToTrack may need an increase
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1189700 13f79535-47bb-0310-9956-ffa450edef68",108,142,1.248906529121349,1.6556459341995335,213
+2711ad1f3f838e965b82d0b19b15b88ca858335a,2011-11-03 11:53:31+00:00,2011-11-03 11:53:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1464,1464,"https://issues.apache.org/jira/browse/AMQ-3576 - fix regression in network connector tests, the sequence id check is not valud for bridges that concentrate messages from multiple consumers. duplicate suppression for network connectors needs to be based on message ids
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1197072 13f79535-47bb-0310-9956-ffa450edef68",108,142,1.2489827953544796,1.655793514758998,214
+0018f4a3ad22ce1f02e7c1925f4800f19ff3198e,2011-11-03 16:23:29+00:00,2011-11-03 16:23:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1464,1464,"https://issues.apache.org/jira/browse/AMQ-3576 - implementation for network connectors, the store needs to be queried b/c messages from multiple producers are multiplexed by a network connector bridge. Additional boolean auditNetworkProducers on TransportConnector can disable the check if duplicates can be dealt with by the application layer. Additional test included.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1197203 13f79535-47bb-0310-9956-ffa450edef68",108,142,1.2487168435155664,1.6552737769232553,215
+3a71f8e33d0309cb0ca5b5758a8f251da205e757,2011-12-02 21:34:14+00:00,2011-12-02 21:34:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1446,1446,"Fix for https://issues.apache.org/jira/browse/AMQ-3294 and https://issues.apache.org/jira/browse/AMQ-1928
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1209700 13f79535-47bb-0310-9956-ffa450edef68",111,143,1.247975982073413,1.6536364678960438,216
+712303e6ecf8cc6f2ecfcf2b41de892104a87785,2011-12-05 15:44:26+00:00,2011-12-05 15:44:26+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1449,1449,"only do delayStop () for SecurityExceptions
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1210503 13f79535-47bb-0310-9956-ffa450edef68",111,143,1.248444742683316,1.6545593179348275,217
+d4ccc50ea7c19a0b93f2be9c7d7acbe9259f75d8,2011-12-12 12:19:43+00:00,2011-12-12 12:19:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1450,1450,"https://issues.apache.org/jira/browse/AMQ-3253 - rework to make recreation of temp destination more specific to use case, result is no advisories like https://issues.apache.org/jira/browse/AMQ-2571. This avoids the possibility of looping in a network. Additional test. Resolve race condition on destination advisories, a remove could overwrite an inflight add command. A copy is now in place for the remove
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1213208 13f79535-47bb-0310-9956-ffa450edef68",111,143,1.2484447425433294,1.6545593173022064,217
+cfcd4f7f64241fe58568cb5e17b4e6cf322c4ce4,2011-12-13 13:42:37+00:00,2011-12-13 13:42:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1450,1450,"apply patch for: https://issues.apache.org/jira/browse/AMQ-3624
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1213691 13f79535-47bb-0310-9956-ffa450edef68",111,143,1.2485320466719712,1.6547352622796219,217
+802f6b193a6767576cca4bd41604b79f98420709,2011-12-13 23:13:35+00:00,2011-12-13 23:13:35+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1453,1453,"fix for: https://issues.apache.org/jira/browse/AMQ-3605
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1213979 13f79535-47bb-0310-9956-ffa450edef68",111,144,1.2491608406187171,1.6557924928342485,220
+c856f30bc556ccdf5c1f05a0244743eca8100c3e,2011-12-20 15:12:11+00:00,2011-12-20 15:12:11+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1473,1473,"fix for: https://issues.apache.org/jira/browse/AMQ-3625
+
+applied patch to add the supplied test case.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1221310 13f79535-47bb-0310-9956-ffa450edef68",113,144,1.301040236475358,1.6535761320090343,228
+5cc1a557ff9d272e7eebcbee9ac5cfa294a580d9,2011-12-20 20:42:18+00:00,2011-12-20 20:42:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1473,1473,"fix for: https://issues.apache.org/jira/browse/AMQ-3625
+
+Ensure that incoming commands get exception responses after the initial error is triggered so that client transports don't block wia intg for responses.  
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1221484 13f79535-47bb-0310-9956-ffa450edef68",111,145,1.247414734793261,1.652145465695777,228
+91059de2836c833e07709f4be9149f2c022ae315,2012-02-01 13:12:33+00:00,2012-02-01 13:12:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1473,1473,"https://issues.apache.org/jira/browse/AMQ-3685 - fixing cluster update feature
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1239118 13f79535-47bb-0310-9956-ffa450edef68",111,145,1.247414734793261,1.6521454645736329,228
+ac54a611f32c1a480e4f6505533885cc52653bfc,2012-03-02 19:15:45+00:00,2012-03-02 19:15:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1476,1476,"ensure broker stop ocurrs after subs connected and add defensive check to close identified by one failure scenario
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1296396 13f79535-47bb-0310-9956-ffa450edef68",111,145,1.2475561292882928,1.6524221569968207,230
+22807198354a81dc957e707b8b1e6e82de397fbf,2012-04-09 14:07:03+00:00,2012-04-09 14:07:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1479,1479,"https://issues.apache.org/jira/browse/AMQ-3706 - use round-robin instead of rnd for cluster rebalancing
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1311237 13f79535-47bb-0310-9956-ffa450edef68",111,145,1.2475561292882928,1.6524221565114343,231
+74bed6b577fcc7388922a74e15036a5729aa2e6a,2012-04-20 09:51:55+00:00,2012-04-20 09:51:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1523,1523,"Fix for https://issues.apache.org/jira/browse/AMQ-3813
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1328287 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.246070207434667,1.6491772374431868,249
+c9b49d8b07f34ead08aa501a0b9c5e4100c00e74,2012-07-31 13:54:41+00:00,2012-07-31 13:54:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1522,1522,"https://issues.apache.org/jira/browse/AMQ-3294 - further refinement of dispose on security exception, now only on connection attempts. A security exception on an authenticated connection is reported back to the client and remains intact. Made use of inactivitymonitor w useKeepAlive=false to abort dos style hogging connections
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1367553 13f79535-47bb-0310-9956-ffa450edef68",115,147,1.2460226658329336,1.6490841386281039,249
+8a01c5d16a051541df404683e6d8ae71bc6240be,2012-09-07 11:58:21+00:00,2012-09-07 11:58:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1528,1528,"AMQ-3451: Ensure thread pools is shutdown properly to avoid any leaks. Do not use the old @deprecated thread pool.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1381985 13f79535-47bb-0310-9956-ffa450edef68",116,148,1.2461072717827884,1.6490634651540363,249
+58aca869816e893e7a2f34f0708c1d7fcbdca0f5,2012-11-07 13:37:50+00:00,2012-11-07 13:37:50+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1528,1528,"Refactor all the core broker classes from the activemq-core module into the activemq-broker module.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406629 13f79535-47bb-0310-9956-ffa450edef68",116,148,1.2461072717827884,1.6490634674788218,249
+39ff4d9fd839f0e3b4a727f0df6f7e999e14a0ea,2012-11-13 09:31:37+00:00,2012-11-13 09:31:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1504,1504,"Fix for https://issues.apache.org/jira/browse/AMQ-4165 - remove pure master/slave functionality
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1408651 13f79535-47bb-0310-9956-ffa450edef68",115,147,1.2464282290119104,1.6498911828951437,240
+ae61847d025e76ba23876e1ba3f05f3d26f8a741,2013-01-12 18:13:27+00:00,2013-01-12 18:13:27+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1602,1602,"https://issues.apache.org/jira/browse/AMQ-4248
+
+Add expanded transmit callback interface so that a failure to transmit can be distinguished from normal operation and allow for no further attempts at dispatch fixing the current NPE when async dispatch is enabled. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1432487 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.248304338998288,1.6538215876675137,245
+1958aeb069966b6d443d93418e1e4b767b937f8f,2013-01-14 15:57:05+00:00,2013-01-14 15:57:05+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1603,1603,"https://issues.apache.org/jira/browse/AMQ-4248
+
+Don't swallow the exception.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1432963 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.2482663961578502,1.6537491153788435,245
+8012f2851120d5ebf840d0a4bbecc222f77369c3,2013-01-25 21:47:17+00:00,2013-01-25 21:47:17+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1598,1598,"https://issues.apache.org/jira/browse/AMQ-4276 - deal with destnotexist for temps. support alwaysSyncSend for duplex. improve reporting of failures. additional test.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1438734 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.2483355233985416,1.6538841373332287,245
+88d85ae552d6d0ee1b01c98d4750226783ac3d0e,2013-02-05 14:48:31+00:00,2013-02-05 14:48:31+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1602,1602,"https://issues.apache.org/jira/browse/AMQ-3331 - fix regression in BrokerNetworkWithStuckMessagesTest - vm connector exposed some turnips in there w.r.t the response correlator
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1442613 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.2483260051732095,1.6538655226442347,246
+8b3761c5752cd2efa6d0596f6ed48e5e77c61bb0,2013-02-25 18:24:20+00:00,2013-02-25 18:24:20+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1603,1603,"fix for: https://issues.apache.org/jira/browse/AMQ-4319
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1449797 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.2497493800855104,1.6566629809387143,246
+34f33293703d6274f45d4c90dcbc65c723adc787,2013-07-02 15:28:42+00:00,2013-07-02 15:28:42+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1604,1604,"When the leveldb replicated master was shutting down the client would get notified of a failure and it would not be hidden from the client app.  We now suppress sending failure messages to clients when a broker is shutting down so that the client failover logic can kick in an reconnect the client to another server gracefully.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1498978 13f79535-47bb-0310-9956-ffa450edef68",116,147,1.2571904061155423,1.6562250132243561,247
+07369531ea484cc3b11ba1b6c8357713500b51e3,2013-07-18 12:53:08+00:00,2013-07-18 12:53:08+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1578,1578,"Add support for exposing information about blocked sends through JMX - see https://issues.apache.org/jira/browse/AMQ-4635
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1504452 13f79535-47bb-0310-9956-ffa450edef68",116,148,1.25882663866247,1.6592692681062058,251
+13bbe52646aa55d5e813446c687bb91bebae80d9,2013-07-30 20:18:07+00:00,2013-07-30 20:18:07+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1583,1583,"https://issues.apache.org/jira/browse/AMQ-4643 - ensure handled ioexceptions are not propagated back to client when broker or transports are shutdown. additional tests existing tests refactored to reflect new determinism. IOException handler now throws SuppressReplyException which is trapped by the transport connector. If store exception need to be processes by the client, for immediate response rather than failover reconnect, then the ioexception handler should be configured to ignoreAllErrors
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1508602 13f79535-47bb-0310-9956-ffa450edef68",117,148,1.2587436237437473,1.6591060839045741,253
+65ba623c967b9def8acd13c0b08e6504c0a68049,2013-08-28 11:48:15+00:00,2013-08-28 11:48:15+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1583,1583,"https://issues.apache.org/jira/browse/AMQ-2902 - resolve intermittent test failure when stop ocurrs while start is in progress
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1518171 13f79535-47bb-0310-9956-ffa450edef68",117,148,1.2586278452948991,1.6588772209957945,254
+e1bbde7302d7d169bec978633d2dd85eba2e19cc,2013-09-13 14:53:41-04:00,2013-09-13 14:53:41-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1574,1574,"https://issues.apache.org/jira/browse/AMQ-4721
+
+Upgrade to latest slf4j library and update many LOG statements to use
+proper calls (no string concats).  Removes many uneeded isXXXEnabled
+checks to clean up the code.",117,148,1.2587567406521165,1.6591177208921983,251
+7c63788e1a60c7303103c54ff368ae128aca7933,2013-10-07 10:20:00-04:00,2013-10-02 09:16:37-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1578,1578,Implementing AMQ-4788 - Add support for allowing the broker to partition client client load across a broker cluster using a partitioning config,118,149,1.2573285358117234,1.6561539272412118,251
+bc4f4e92a6e38032c91748764e5ef4f03b5d4140,2013-11-18 12:11:34-05:00,2013-11-18 12:11:34-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1581,1581,Fixes AMQ-4896 - MQTT does not properly restore durable subs with the Paho client.,118,149,1.2576390955090013,1.656761485413676,252
+374cab9cd528ed9f456addc2ef247ebfae68f2c0,2013-12-05 08:55:56+00:00,2013-12-05 08:55:56+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1581,1581,Fix for https://issues.apache.org/jira/browse/AMQ-4918,118,149,1.2576390955190906,1.65676148478528,252
+190a44bf25a7484e3a0c6178890c953824fbdf3c,2014-02-13 14:15:20-05:00,2014-02-13 14:13:29-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1585,1585,Implements AMQ-5050: Populate a 'Host' header in the WireFormatInfo of the Openwire protocol to let multi-tenant proxies route connections.,119,150,1.2581015198843406,1.6575129675815348,252
+93ca04468bc4e586ea3b271268355c91d3228e31,2014-02-14 16:22:50-05:00,2014-02-14 16:22:50-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1607,1607,Implements AMQ-5054: Display the number of active transactions and age of oldest transaction on a Connection's JMX info,121,152,1.2607294003129679,1.6623584110367602,260
+c6fe94ec0388f2acb169c9e3839ade5dc7c2c65f,2014-02-21 11:22:11+01:00,2014-02-21 11:22:00+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1611,1611,https://issues.apache.org/jira/browse/AMQ-5070 - broker blocked on shutdown,121,152,1.3144982256625064,1.6623746762780172,262
+e8818fafea0c46fb9fc3029b27f5740f55616eef,2014-03-03 13:22:30+00:00,2014-03-03 13:22:30+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1613,1613,"https://issues.apache.org/jira/browse/AMQ-5080 - fix up rar transacted delivery and redelivery processing, xarecovery and transaction completion afer failover - using failover maxReconnectAttempts=0 to avoid blocking periodic recovery and negate replay of aborted transaction state",121,152,1.3143217516204888,1.6620259154213572,264
+707940f1a6f3b80d3e340cbbb7baeb3d8a5057bf,2014-06-05 16:16:01-04:00,2014-06-05 16:16:01-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1658,1658,"https://issues.apache.org/jira/browse/AMQ-5214
+
+Check for security error on responses and log a warning so there is a
+record of the event",122,152,1.3144534742246052,1.662289615709718,266
+00921f22ff9a8792d7663ef8fadd4823402a6324,2014-08-13 11:15:29-04:00,2014-08-13 11:15:29-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1654,1654,Remove unused ConnectionControl handling.,122,152,1.3135949819285975,1.6606050227659992,263
+52e1a05aaadda40eb2ce63f610937981f96506c6,2014-10-31 16:40:41+00:00,2014-10-31 16:33:56+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1658,1658,"https://issues.apache.org/jira/browse/AMQ-5347 - variant of patch and additional tests applied, prefetch=0 test without restart exposed ordering bug with fix for https://issues.apache.org/jira/browse/AMQ-2719",122,152,1.3135296814323671,1.6604739376022746,263
+a2c5c22ec5e5f30816f0cf3d0f1d192267f7e25e,2015-01-23 15:23:35+00:00,2015-01-23 15:23:35+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1658,1658,https://issues.apache.org/jira/browse/AMQ-5513 - additional test for reconnect/rebalance case - indicate the absense of delivery information to the destination,122,152,1.3135312815377933,1.660477109791479,263
+8cf98a070f0fb60857e85cb74c4969d0256ebb0e,2015-02-11 13:37:32+00:00,2015-02-11 13:13:06+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1660,1660,"rework  https://issues.apache.org/jira/browse/AMQ-3684 and https://issues.apache.org/jira/browse/AMQ-4532 to avoid intermittent hangs, processing shutdown wile shutdown is in progress - AMQ1936Test and AMQ2021Test - using just TransportDisposedIOException to propagate exception response and start shutdown process and ignoring broker side for logging",122,152,1.3136489735417962,1.660706128448383,264
+b60bfbbeb4cc25e38c6c82e0d94e22e31fe96da3,2015-02-12 18:00:58+00:00,2015-02-12 16:01:09+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1658,1658,"Revert ""rework  https://issues.apache.org/jira/browse/AMQ-3684 and https://issues.apache.org/jira/browse/AMQ-4532 to avoid intermittent hangs, processing shutdown wile shutdown is in progress - AMQ1936Test and AMQ2021Test - using just TransportDisposedIOException to propagate exception response and start shutdown process and ignoring broker side for logging""
+
+This reverts commit 8cf98a070f0fb60857e85cb74c4969d0256ebb0e.
+
+seems there are a bunch of network tests that don't conform with the new approach - back to the drawing board",122,152,1.3135312815377933,1.6604771103121911,263
+5313ad8a96279c63fb1b6a97513c142eba778643,2015-03-04 22:06:05+00:00,2015-03-04 22:06:05+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1658,1658,remove stack trace from auth failure log warn - stack trace is already covered by debug service level logging,122,152,1.3135312815328675,1.6604771092851653,263
+ec9a92f6fc5554017e1b3551b24e2e19e0da8fbc,2015-04-13 10:25:51-04:00,2015-04-13 10:25:51-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1661,1661,"https://issues.apache.org/jira/browse/AMQ-5649
+
+Ensures that max producers on a connection includes anonymous producers
+in its count, based on patch from: Christopher L. Shannon (cshannon)
+<christopher.l.shannon@gmail.com>
+
+Merged the test into the existing ConfigTest that validates the max
+producers functionality.",122,152,1.3135337921697576,1.6604789987180648,261
+eb6c0826311a876769e56029dc1e261ee7519db5,2015-04-22 16:32:17+01:00,2015-04-22 16:32:17+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1662,1662,https://issues.apache.org/jira/browse/AMQ-5735 - fix up semantics around lastDeliveredSequenceId,122,152,1.313457679615091,1.66033212902105,261
+e19293de5f434b0a80af3892f29ea964b52e27cb,2015-05-12 14:23:12+02:00,2015-05-12 14:22:15+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1666,1666,"https://issues.apache.org/jira/browse/AMQ-5772
+
+Improve Broker.removeConnection() method, so that we pass the cause for removing it (if available)",123,152,1.3134532411927888,1.6603556288832308,261
+84737f7749a74fda8b17e20ff02e5efd2adac764,2015-05-22 15:37:48-04:00,2015-05-21 20:36:41-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1667,1667,"https://issues.apache.org/jira/browse/AMQ-5771
+
+Including remote ip address when logging authentication failures",123,152,1.313213587086341,1.6598855256984866,261
+b1ea29ed1485f2cd134f332511fa3c857d0c773f,2015-07-16 15:18:23+01:00,2015-07-16 15:17:55+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1671,1671,AMQ-5892 - remove default stack trace from service warn to debug level on async error; makes it consistent with transport logging,123,152,1.3133192886283225,1.6600927878018183,263
+457dbd8b64a3753dcaa1e3de7f4f2374e8ec624e,2015-08-05 16:29:29+00:00,2015-08-05 16:23:22+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1671,1671,"https://issues.apache.org/jira/browse/AMQ-5919
+
+Converting printStackTrace statements to slf4j so that exceptions
+are logged properly",123,152,1.3132904004596495,1.6600317002609226,263
+04ee70a161b463f69692debea623d754a5c781c2,2015-08-11 19:39:29+00:00,2015-07-16 18:23:24+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1672,1672,"https://issues.apache.org/jira/browse/AMQ-5889
+
+Adding support for auto detection of wire protocols over a transport.
+OpenWire, AMQP, STOMP, and MQTT can all be detected and the broker
+will properly handle each one over a given Transport.  Currently
+auto TCP, NIO, SSL, and NIO+SSL transports can handle auto-detection
+of the wire format and client but support could be added in the
+future for other transports like websockets.",123,152,1.3132190538319888,1.6598882910049406,263
+a772b0ef7261b3cbe0093e083d39f6440aa6a936,2016-01-27 10:06:36-05:00,2016-01-27 10:06:36-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1671,1671,Remove a printStackTrace for an exception that is also logged.   Produces noise on console,123,152,1.3132904004596495,1.6600317008660863,263
+fe9d99e7a071c4c09c78dfd95630036b86a8a05b,2016-05-25 11:24:43+01:00,2016-05-25 11:24:43+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1696,1696,AMQ-3166 - implement rollbackOnlyOnAsyncException such that async exceptions on transactional sends or acks result in the transaction being marked rollback only and commit failing with an exception. Test that shows current state of play using alwaySendSync or AsyncCallback. rollbackOnlyOnAsyncException enabled by default.,127,156,1.3135300942850594,1.6598732361460713,273
+98d20008333af380ae05d91036d123501115ab8c,2016-06-09 12:10:09-04:00,2016-06-09 12:09:42-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1695,1695,"https://issues.apache.org/jira/browse/AMQ-6275
+
+Avoid unnecessary connection state lookup leading to lock ordering
+issues.",127,156,1.314140123977454,1.6610748352047109,273
+39184e2fb052fc73c69934890a16b333f1ea31d5,2016-07-19 11:31:44-04:00,2016-07-19 11:30:32-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1701,1701,"https://issues.apache.org/jira/browse/AMQ-6366
+
+Fixing the duplex bridge case for restarting durable subscriptions when
+dynamicOnly is false",127,156,1.3137539130201596,1.6603086968944365,275
+9f7d70ba0d8f0262c76844954b274786e3d7545f,2016-07-20 08:33:45-04:00,2016-07-20 08:33:15-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1701,1701,"https://issues.apache.org/jira/browse/AMQ-6366
+
+Need to make sure that the durableDestinations set on the duplex bridge
+are only topics",128,156,1.3137539130513682,1.660308698344585,273
+3953b9aaefaee914bdd0702f27aef47c021ceb27,2016-07-25 11:56:13-04:00,2016-07-20 12:36:41-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1751,1751,"https://issues.apache.org/jira/browse/AMQ-6373
+
+Adding a new OpenWire command called BrokerSubscriptionInfo in order to
+help synchronize durable subs across a network bridge.  Added OpenWire
+version 12.  For dynamicallyIncludedDestination durable subs will now be
+synchronized on a bridge reconnect as long as the bridge supports
+conduitSubscriptions and dynamicOnly=false",132,159,1.318250249632015,1.6687391807960879,283
+e73ab348375db71116624326d29398e0088d7334,2016-08-01 10:02:56-04:00,2016-07-30 10:58:29-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1752,1752,"https://issues.apache.org/jira/browse/AMQ-6383
+https://issues.apache.org/jira/browse/AMQ-6373
+
+Adding a new flag that can be specified on a network bridge to allow
+forcing of subscriptions to be durable.  Cleaned up some unit tests.",132,159,1.318250249632015,1.6687391808594927,283
+d206621a73e4731b00eff49518ea93ba9a4ee3c0,2016-10-20 13:47:38-04:00,2016-10-20 13:46:27-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1738,1738,"https://issues.apache.org/jira/browse/AMQ-6472
+
+Durable sync over a network bridge will now also sync non-durable
+subscriptions proplrly if the consumer belongs to a destination that is
+configured to force network durable subscriptions.",131,158,1.3153930658093336,1.6632544395845623,280
+d54d046b8a8f2e9e5c0a28e1f8c7634b3c8b18e4,2016-11-03 11:54:33-04:00,2016-11-03 11:54:33-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1738,1738,This closes #185. Won't fix. (fix more file permissions),131,158,1.3153930658093336,1.663254439780599,280
+dce2b61f870245a0c12b634d12cd0fa3a8a60daa,2016-11-04 09:30:09-04:00,2016-11-03 02:04:16-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1727,1727,AMQ-6494 Return ExceptionResponse during broker service shutdown,131,158,1.2537082663802033,1.6627405271793307,278
+bdec3f6ddb7f1417690f3c89d07ea77f0d6d96e5,2017-01-12 07:36:50-05:00,2017-01-12 07:36:16-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1727,1727,"https://issues.apache.org/jira/browse/AMQ-6560
+
+Converting flags in TransportConnection to AtomicBoolean to reduce
+synchronization and improve thread safety",131,158,1.2550577405747607,1.6654367567818504,278
+d9c74d7317677725a52466349f7ed91911664d3d,2017-01-12 10:21:08-05:00,2017-01-12 10:21:08-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1726,1726,"https://issues.apache.org/jira/browse/AMQ-6561
+
+Stop connections on all connection attempt errors, not just security
+exceptions, to prevent dangling open sockets.",131,158,1.2550577405747607,1.6654367604724964,277
+9b9e3d36788d4b17d7033b9ee44c34a75ad33c17,2017-02-01 16:15:11-05:00,2017-02-01 16:15:03-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1726,1726,"https://issues.apache.org/jira/browse/AMQ-6588
+
+Add more detail to log output for easier tracking",131,158,1.2550577405747607,1.6654367604724964,277
+b6521e292b20788eef44f3a7810d8e4281b677dc,2017-02-27 17:01:16+00:00,2017-02-27 17:01:16+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1730,1730,[AMQ-6414] additional logging that helped identify root cause,131,158,1.2550067886883696,1.6653337875763232,279
+d84a58656c0b3fcb2aad04e47ef843bf379a25f0,2017-03-29 23:50:47+01:00,2017-03-29 23:50:47+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1730,1730,[AMQ-6640] allign use of sync vm transport usage on duplex end of networkconnector with initiator end. only duplexinbound for forwarding is async to allow thread for responses. vm transport options applied in one place and test more deterministic w.r.t the hang scenario,131,158,1.2550067886883696,1.6653337874929097,279
+4ef1fc74cf8068b5c41cc1f4d1c97967658a465b,2017-03-30 12:12:13+01:00,2017-03-30 12:12:13+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1730,1730,[AMQ-6640] either broker dispatch to bridge or bridge dispatch to broker needs to be async - dispatchAsync network option is the trigger for the vm transport to be sync in line with the current defaults. original BacklogNetworkCrossTalkTest scenario exposed this. upshot is dispatchAsync=false is not compatible with duplicate subscription suppression which is fair.,131,158,1.2550067886883696,1.6653337873467957,279
+0f7561e85ab18912ce65120dde465aef5acda12a,2017-04-04 14:15:00+01:00,2017-04-04 14:15:00+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1732,1732,"Revert ""AMQ-6494 Return ExceptionResponse during broker service shutdown""
+the root cause seems to be in the vm transport iterator
+
+This reverts commit dce2b61f870245a0c12b634d12cd0fa3a8a60daa.",131,158,1.316740698700865,1.665940211815979,280
+a8a032af091ae2f6d1affe95b37bb424214d1990,2017-12-20 22:00:54-05:00,2017-11-13 15:06:22+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1732,1732,AMQ-6861 Allow customisation of network bridge creation logic.,131,158,1.316740698700865,1.6659402110824078,280
+c29d7477d09f15b9e2f49b2b2bceae7b71113cfd,2018-07-05 11:54:22+01:00,2018-07-05 11:54:22+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1732,1732,no jira - fix warn formatting error,131,158,1.316740698700865,1.665940211989169,280
+cdbddcafa237027599dfd9ae030f42898ec5299c,2018-09-20 14:58:34+01:00,2018-09-20 14:58:34+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1727,1727,AMQ-7057 - support transport connector warnOnRemoteClose to suppress eof warnings on loadbalance or health check socket ping,130,157,1.3167170088722124,1.6660248957346646,275
+8cc0c5ad6c85381cf6bbeaf179086d451d96650e,2018-11-21 10:23:13+00:00,2018-11-21 10:23:13+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1720,1720,AMQ-7106 - fix pending stop support by avoiding sync through single shared status var - fix and test,130,158,1.3182012471030016,1.6687985644008927,282
+6764511fa1b7efc8df097514f991ff3950f618f1,2020-02-12 17:52:28+01:00,2020-02-10 20:05:21+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1720,1720,Fix unused format arguments in log messages.,130,158,1.3181600937953513,1.668718135268561,282
+945cd6b7de20cbc0a092eaa2e6dff5dfacc9acc3,2020-03-04 18:57:02+01:00,2020-03-04 18:57:02+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1720,1720,[AMQ-7303] Improve logging in case of security exception on transport connection,130,158,1.3181600937953513,1.6687181362887054,282
+1a2de52c5f580c24590c706fcf3b6fc61dc88379,2021-03-20 10:58:07+01:00,2021-03-20 10:58:07+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1726,1726,Fix slf4j logger use,130,158,1.318189587599516,1.66877982398476,282
+ceaeaa986b4f9a233fe7b24f0e7b3b5c2dcfa9ec,2021-08-04 07:48:10+02:00,2021-08-02 13:25:56+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1731,1731,[AMQ-8252] Doesn't display warn stack trace for stomp (regression compared to 5.15.x),131,159,1.317908805576605,1.6681022922044717,288
+2f96b4a60c30f1d9a3ce047aa41a94d975324d83,2022-01-14 11:37:44+01:00,2021-12-23 07:26:19+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1730,1730,[AMQ-8252] Introduce stackTraceEnabled flag on transport connector to define if the stack trace should be displayed or not in case of WARN messages,130,158,1.318213079970889,1.6688264358406508,284
+6a944a05d90b3f2d44c9890a5724e7a6a702a0eb,2022-01-24 09:21:19-06:00,2022-01-24 09:21:19-06:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1729,1729,[AMQ-8462] Remove double call to listConnectionStates during connection close,130,158,1.3181694022342607,1.6687438160780417,284
+ae30dce4e24ce5e0467d2a3219627cbefef1f0ae,2022-03-03 15:24:38-06:00,2022-03-03 08:10:58-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1729,1729,"AMQ-8520: Log4j2 test fixes
+
+Also fixes Log4jConfigView",130,158,1.318089630057374,1.6685871761701032,284
+680717cb9527a52d8f7ec81c5f9df675dd110ad4,2022-07-18 16:20:25-05:00,2022-07-18 16:20:25-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/TransportConnection.java,1727,1727,[AMQ-8976] Add maxConnectionExceededCount metric for connectors (#850),130,158,1.318089630057374,1.6685871764870757,284

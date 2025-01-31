@@ -1,0 +1,610 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+40a7d3b6ac35d2ecb34e85fc3403d2e48e33874e,2005-12-12 17:53:59+00:00,2005-12-12 17:53:59+00:00,activemq-core/src/main/java/org/activemq/ActiveMQMessageConsumer.java,731,731,"Moved the trunk code into the trunk sub directory
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356304 13f79535-47bb-0310-9956-ffa450edef68",87,52,0.977796077809097,1.6130846498087443,91
+22474cd5414d568230cdb244741cc95b32777220,2005-12-21 20:43:50+00:00,2005-12-21 20:43:50+00:00,activemq-core/src/main/java/org/activemq/ActiveMQMessageConsumer.java,735,735,"Fixed: https://jira.logicblaze.com/jira/browse/AMQ-426
+JMS api object now implement a toString() that can be used to correlate back to log messages on the message broker.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358371 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9796311683760944,1.614311475444464,91
+92a698fe42656274d0f3e31be415ba881b094b3f,2005-12-22 06:11:40+00:00,2005-12-22 06:11:40+00:00,activemq-core/src/main/java/org/activemq/ActiveMQMessageConsumer.java,733,733,"updated headers in source file to use apache header
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358513 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9796311683760944,1.614311476496685,91
+18dd4cd867da8e29e9a65461d50d226e2f7265e1,2005-12-22 15:43:42+00:00,2005-12-22 15:43:42+00:00,activemq-core/src/main/java/org/activemq/ActiveMQMessageConsumer.java,744,744,"Fixed and added test cases for the consumer start() stop() methods.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358579 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9768479189746646,1.609529359199397,94
+d29ca2a71b7fd281c15f7d05e135c196d2b2488c,2005-12-28 17:24:02+00:00,2005-12-28 17:24:02+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,744,744,"Refactor org.activemq -> org.apache.activemq
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359567 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9768479189746646,1.6095293586512922,94
+48b4869472d647a890ce6905e7914b7d1ecde948,2005-12-29 02:15:21+00:00,2005-12-29 02:15:21+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,744,744,"Updated copyright headers to be (c) 2005-2006 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359679 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9768479189746646,1.609529359199397,94
+80f5e0ced1de75624f109466395ef57fdb6f774b,2005-12-30 18:09:24+00:00,2005-12-30 18:09:24+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,746,746,"Fixed https://jira.logicblaze.com/jira/browse/AMQ-460
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@360127 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9768391064780421,1.6094823268502936,94
+c8d74e7113ce444f3897d5f5416859f13b0c15cc,2006-01-05 08:22:59+00:00,2006-01-05 08:22:59+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,745,745,"removed RedeliveryPolicy from openwire and moved into the client package
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@366118 13f79535-47bb-0310-9956-ffa450edef68",88,53,0.9768391064780421,1.6094823268502936,94
+f0454b1e8889e6ed06963ef4f08583332f02baaf,2006-01-05 12:21:24+00:00,2006-01-05 12:21:24+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,758,758,"part of the fix for AMQ-286 to allow the redelivery policy to be configured on a consumer
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@366170 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9822239320364496,1.6133733037610611,94
+c59246d5edc68539bcfdd327b43c98c0f45e8fa9,2006-01-09 17:21:52+00:00,2006-01-09 17:21:52+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,758,758,"- Changed the command id objects so that they do not use fields that have the same name as the class (for the .net folks)
+- Added a ConnectionError command that can be used to notify a connection of async errors associated with the connection.
+- 
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@367341 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9824211567148305,1.6137755441853017,94
+6a70920b20190424907b00f17d3ee80128423f2e,2006-01-27 13:31:17+00:00,2006-01-27 13:31:17+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,758,758,"notify listener after the enqueue
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@372844 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9822881546009203,1.6135293195972678,94
+641140ebab39286be4f36da08092969b216035ee,2006-02-04 00:35:53+00:00,2006-02-04 00:35:53+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,759,759,"Forced to copy message before leaving the consumer - as the destination could change if
+the message is forwarded on.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@374795 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9822130377097414,1.613303573148794,94
+bf8f99b51da15b16b840435e488c5294eb7cc6a0,2006-02-05 19:56:10+00:00,2006-02-05 19:56:10+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,758,758,"remove System.err println
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@375087 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9820144479913049,1.6130306047841214,94
+d86f77f462111a74673cc67e1a2bb799d0bcfd67,2006-02-10 17:06:46+00:00,2006-02-10 17:06:46+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,765,765,"Fixed failing ChangeSessionDeliveryModeTest test in the assembly module.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@376766 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9803928857236043,1.6099634496229835,95
+bed10aac1e4d8e1e6f5dc7817b63014525be299d,2006-03-03 10:34:33+00:00,2006-03-03 10:34:33+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,767,767,"allowed the maximum pending message count to be specified on the ActiveMQPrefetchPolicy or the ConsumerInfo
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382753 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9804635896361059,1.6100638956362663,95
+7f5213ba990ff4f1629f63dc93d0225a3c78594c,2006-03-03 15:36:38+00:00,2006-03-03 15:36:38+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,767,767,"Standardize on throwing Exception instead of Throwable, we were using both forms throught the API
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382869 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9760994805673563,1.6125714333344774,95
+d9b9427a5f79c0e2977a9466c0b0bcb5919e0023,2006-03-06 19:10:32+00:00,2006-03-06 19:10:32+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,767,767,"added fix for AMQ-519 so that we explicitly force the redelivered message to be deserialized again for ObjectMessage instances to avoid mutable objects being changed, then rolled back
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@383627 13f79535-47bb-0310-9956-ffa450edef68",91,56,0.9762196388696117,1.6127853117363469,95
+d96414553254f3bbf37a2ffe8dfbb1d046771536,2006-04-11 19:09:11+00:00,2006-04-11 19:09:11+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,775,775,"extra peformance tuning parameters
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@393294 13f79535-47bb-0310-9956-ffa450edef68",78,58,0.9777163305550579,1.6108144969464857,90
+00d054a6c267c04d011c9ea8ca018c45ecdaa3ac,2006-04-12 15:52:06+00:00,2006-04-12 15:52:06+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,773,773,"more tuning
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@393490 13f79535-47bb-0310-9956-ffa450edef68",78,58,0.9777163303981166,1.6108144956374104,90
+52ee976ec8c13ee5666faeb1a7d12ab4a92dc8e9,2006-04-12 16:18:36+00:00,2006-04-12 16:18:36+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,778,778,"added support for clearing messages in-flight
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@393495 13f79535-47bb-0310-9956-ffa450edef68",79,59,0.9787324312719029,1.6108901406604121,90
+ef0734bccf71c27d87d7e519afc8e683be09b3dc,2006-04-13 20:15:35+00:00,2006-04-13 20:15:35+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,814,814,"fine tuning, client control commands etc.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@393912 13f79535-47bb-0310-9956-ffa450edef68",82,62,0.9827306169871621,1.6130952821706688,92
+6eaea6f3361b7ba5183f8d7037f232c5619e351a,2006-04-14 08:38:50+00:00,2006-04-14 08:38:50+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,835,835,"For optimized acknowledge, eagerly get acknowledgements from consumers
+when the dispatched list gets too big.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@394050 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9837118139033361,1.6115868622842222,99
+91720daee7c3a1f2be5b38d922639750632b6a39,2006-04-17 15:29:43+00:00,2006-04-17 15:29:43+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,842,842,"On consumer close, wait for it's async threads to finish before returning.  Was getting errors when async acks were sent and the subscription was allready closed.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@394705 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9840386661812549,1.6122013114859002,99
+b708fd32c3acaff5ae1744c71a005b890480b5dd,2006-04-18 05:50:40+00:00,2006-04-18 05:50:40+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,845,845,"Properly handle a rollback() when call from an onMessaqge()
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@394851 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9841879150775716,1.6125291700426825,103
+2c64bf99d92fea07c27c93ae09b503174ce3f781,2006-04-19 14:46:25+00:00,2006-04-19 14:46:25+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,845,845,"fine tuning
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@395256 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9841963215046552,1.6125446421932754,103
+fa8b88990636ad2a4ca69ea935615a12a755103c,2006-04-20 14:58:50+00:00,2006-04-20 14:58:50+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,845,845,"finese tuning
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@395611 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9841885925377007,1.6125301309253228,103
+f25e2ca23ec6d005ad361d3392f9c2c87c9571b3,2006-04-28 15:11:39+00:00,2006-04-28 15:11:39+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,845,845,"Applyed Rodrigo S de Castro's latest unit test patch and fixed the redelivery problem.  Redelivery was not being delayed when rollback was called from the message listener.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@397915 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9840908548213425,1.612392634599955,103
+4c4f86a0d8523eb9fca630b181ce2b90e28940a6,2006-06-19 11:55:44+00:00,2006-06-19 11:55:44+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,840,840,"applied patch from Christopher G. Stach II for AMQ-747 to allow redelivery backoff to add a collision avoidence capability. Many thanks!
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@415300 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9840594550411161,1.612369325408514,101
+fb6af074475ba333637544e68c3a6fea6895d57d,2006-07-23 10:01:47+00:00,2006-07-23 10:01:47+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,841,841,"added logging if MessageListener objects throw exceptions
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@424698 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9842972235984977,1.6128110273928287,101
+57b494132549ebef6877bf47da3c3d5d776286e0,2006-07-28 03:04:41+00:00,2006-07-28 03:04:41+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,842,842,"Applied new source header boiler plate per http://www.apache.org/legal/src-headers.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426366 13f79535-47bb-0310-9956-ffa450edef68",82,64,0.9842972235984977,1.6128110273928287,101
+6e3a634518d7166f9dad5476312f5abddda4759c,2006-08-10 18:48:24+00:00,2006-08-10 18:48:24+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,861,861,"added the client side and a test case to show prefetch of zero working for pull-only queues with synchronous consumers to fix AMQ-855
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@430476 13f79535-47bb-0310-9956-ffa450edef68",83,65,0.9830126241498525,1.6093306599115151,105
+a19bfd4c9a969d41faacb858be855d9fda338bba,2006-09-01 19:52:18+00:00,2006-09-01 19:52:18+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,880,880,"https://issues.apache.org/activemq/browse/AMQ-855 allow prefetch==0 to work with receive(timeout) and receiveNoWait()
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@439442 13f79535-47bb-0310-9956-ffa450edef68",88,65,0.9814510040281053,1.6065683244530784,113
+b75a6dac1bbf4d153b177fc3a36c9aeb6ffa5ea3,2006-09-04 05:44:38+00:00,2006-09-04 05:44:38+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,881,881,"Applied patch: https://issues.apache.org/activemq/browse/AMQ-891
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@439939 13f79535-47bb-0310-9956-ffa450edef68",88,65,0.9813583124699835,1.6064038665900164,113
+62f798a3dfd5995f1334da991b26b977da52b5da,2006-09-08 14:56:41+00:00,2006-09-08 14:56:41+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,881,881,"https://issues.apache.org/activemq/browse/AMQ-855
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@441525 13f79535-47bb-0310-9956-ffa450edef68",88,65,0.9809849673346748,1.605722875271725,114
+2e08bc7f37b0c714898737a60dd6b909e4787650,2006-10-16 19:50:20+00:00,2006-10-16 19:50:20+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,881,881,"https://issues.apache.org/activemq/browse/AMQ-855
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@464643 13f79535-47bb-0310-9956-ffa450edef68",88,65,0.9811097654477066,1.6059531183865003,114
+d96a43d400329bf126dbd9f58db692650b7a94ae,2006-10-18 13:55:53+00:00,2006-10-18 13:55:53+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,879,879,"some trivial javadoc fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@465251 13f79535-47bb-0310-9956-ffa450edef68",88,65,0.9811097654477066,1.6059531183865003,114
+333158a031fe2265f0277ddd4e45b4d364233c1c,2006-10-23 19:07:10+00:00,2006-10-23 19:07:10+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,879,879,"Fixed typo in subscriptionName property name in the ConsumerInfo object.  Left the previous getters and setters but deprectaed them.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@467090 13f79535-47bb-0310-9956-ffa450edef68",88,65,0.9804854530612289,1.6048047632913045,114
+da5139c24b083551fd00c88eb90a1f205c054c7c,2006-11-08 00:14:56+00:00,2006-11-08 00:14:56+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,910,910,"All message dispatching should occur from the session's executor.  Also, we should dispatch any messages in the consumers queue before dispatching messages in the session's queues.
+
+http://issues.apache.org/activemq/browse/AMQ-1031
+http://issues.apache.org/activemq/browse/AMQ-1032
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@472345 13f79535-47bb-0310-9956-ffa450edef68",94,66,0.9807091262714077,1.60376000532112,119
+2510b088adbe75ba744bb6fccc1eb66b46ce38c4,2006-11-11 06:09:59+00:00,2006-11-11 06:09:59+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,913,913,"fixed for http://issues.apache.org/activemq/browse/AMQ-1042
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@473647 13f79535-47bb-0310-9956-ffa450edef68",94,66,0.9804695025215099,1.6032876316916245,119
+86faaef7c9e5e01f0563ebbea610d01e9511cecc,2006-11-16 12:08:22+00:00,2006-11-16 12:08:22+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,933,933,"Fix for AMQ-1053. Added support for pluggable message transformation together with an implementation using XStream to marshall ObjectMessage instances as TextMessages. See the XStreamTransformTest to see how a producer can send ObjectMessages but then consumers can see either ObjectMessages or TextMessages depending on their requirements.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@475701 13f79535-47bb-0310-9956-ffa450edef68",97,69,0.982067101998386,1.602330991894757,123
+86cbdfd5db5b1c90c4a5f4dcdef702b0cf4901ce,2006-11-17 00:29:03+00:00,2006-11-17 00:29:03+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,933,933,"Switching to Java 5.. Build and Runtime now require Java 5 see: http://www.nabble.com/Switching-to-ActiveMQ-4.2-to-Java-5----tf2637427.html
+- Update maven build
+- Removed dependency on concurrent-backport
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@475999 13f79535-47bb-0310-9956-ffa450edef68",97,69,0.982067101998386,1.602330991894757,123
+979c5d55eec2d7312f05c0b28ad82a8ef8c6da89,2006-11-18 13:35:51+00:00,2006-11-18 13:35:51+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,934,934,"applied patch for http://issues.apache.org/activemq/browse/AMQ-967
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@476523 13f79535-47bb-0310-9956-ffa450edef68",97,69,0.983095606806581,1.6042069947101962,125
+ecb50234ec17abe5293d265b93ecda0817341da4,2006-11-20 21:40:28+00:00,2006-11-20 21:40:28+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,931,931,"http://issues.apache.org/activemq/browse/AMQ-1042
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@477356 13f79535-47bb-0310-9956-ffa450edef68",97,69,0.9833226562989097,1.6046549697671446,125
+e78a6f7ee952ebd32f03f22eb8109c712860b7bb,2006-11-22 16:59:26+00:00,2006-11-22 16:59:26+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,936,936,"added yield back into dispatch() - but with a counter - so not so much of a performance hog
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@478238 13f79535-47bb-0310-9956-ffa450edef68",97,70,0.9837363746511967,1.603880601556992,126
+87d15d6b98bd654774c05484234d6bf60d4926c3,2006-12-14 12:25:49+00:00,2006-12-14 12:25:49+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,941,941,"https://issues.apache.org/activemq/browse/AMQ-1097
+- Fix for selector configured using destination options is not set
+- Test case to demonstrate issue
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@487187 13f79535-47bb-0310-9956-ffa450edef68",97,70,0.9842117316220731,1.6047695746048565,129
+419ed2ee91432459d58ece793b3287a97c98db8b,2006-12-14 15:23:47+00:00,2006-12-14 15:23:47+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,944,944,"Patch for AMQ-1093 to avoid a deadlock if the transport is being reconnected from inside a MessageListener which is calling a send(), lets make the explicit clear of the consumer dispatch list asynchronous and within the existing mutex
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@487235 13f79535-47bb-0310-9956-ffa450edef68",96,71,0.9860341799491931,1.6070560680108072,130
+d7a9feb0a641f87c6138000e946dad38b1c3faed,2006-12-29 09:28:01+00:00,2006-12-29 09:28:01+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,944,944,"Fix for http://issues.apache.org/activemq/browse/AMQ-1113
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@490967 13f79535-47bb-0310-9956-ffa450edef68",96,71,0.9860296823082993,1.607047822934086,130
+bd7d59c38f5b90d8b089520abf05ad9cbc8046b5,2007-03-05 18:04:44+00:00,2007-03-05 18:04:44+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,948,948,"ported fix to trunk : 
+http://issues.apache.org/activemq/browse/AMQ-1176
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514754 13f79535-47bb-0310-9956-ffa450edef68",97,72,0.9894455767308892,1.6123257542852125,130
+cbaa58b5087acb16584bbd2fd383d519e46748c7,2007-07-03 08:19:33+00:00,2007-07-03 08:19:33+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,983,983,"Added duplicate detection on the client
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@552713 13f79535-47bb-0310-9956-ffa450edef68",96,72,0.9882985270805371,1.610311367324494,134
+3d862f0dfb8bc097ff6a4e45e0cc25b06e498e9d,2007-07-05 12:21:37+00:00,2007-07-05 12:21:37+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,984,984,"allow the exclusive queue consumer flag to be defaulted on a connection factory / connection
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@553473 13f79535-47bb-0310-9956-ffa450edef68",96,72,0.988062735742271,1.609860656219789,134
+a4015755690206e1201851c933e062856079ab85,2007-07-30 16:01:37+00:00,2007-07-30 16:01:37+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,987,987,"Added support for length of time messages are processed by the broker - 
+fix for https://issues.apache.org/activemq/browse/AMQ-1160,
+https://issues.apache.org/activemq/browse/AMQ-1072,
+https://issues.apache.org/activemq/browse/AMQ-936 
+and ground work for for https://issues.apache.org/activemq/browse/AMQ-567
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@561026 13f79535-47bb-0310-9956-ffa450edef68",96,72,0.9881106954829586,1.60993144748329,135
+230a86c4897e10fbc5e7384b064cc526395d47e5,2007-08-08 15:52:25+00:00,2007-08-08 15:52:25+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,983,983,"Fixing a bunch of checkstyle violations
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563921 13f79535-47bb-0310-9956-ffa450edef68",94,72,0.9865727461039625,1.6075304405462423,161
+74a7a8bbfc8012bf0842b1eec891a8545f9944cb,2007-08-09 00:34:07+00:00,2007-08-09 00:34:07+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,993,993,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564057 13f79535-47bb-0310-9956-ffa450edef68",95,72,0.986711072580148,1.6077732500143345,160
+ecf89a60bfd8089d1b1de5666bd2e9d5938abe8e,2007-08-10 16:57:01+00:00,2007-08-10 16:57:01+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1006,1006,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564679 13f79535-47bb-0310-9956-ffa450edef68",94,72,0.9860216349989129,1.6065073222751585,160
+933eb2f9e4040a3a9200b1a461dc4e004aafbf81,2007-08-11 00:49:19+00:00,2007-08-11 00:49:19+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1016,1016,"More checkstyle fixes and Generics usage.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564814 13f79535-47bb-0310-9956-ffa450edef68",94,72,0.9863183917362142,1.6070499702764272,160
+fba074227d4b7aceee3f06320938714378ed78ea,2007-08-22 15:09:44+00:00,2007-08-22 15:09:44+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1021,1021,"allow a MessageListener to be specified when creating a consumer; to avoid threading issues when creating lots of consumers after the connection has started
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@568644 13f79535-47bb-0310-9956-ffa450edef68",95,72,0.9858287978174344,1.606159723797466,162
+5829d7045ce48eb30b8397dd5c7d2beb348068e8,2007-09-11 05:20:20+00:00,2007-09-11 05:20:20+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1021,1021,"added better debug logging
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@574460 13f79535-47bb-0310-9956-ffa450edef68",95,72,0.984943475201911,1.6044786323001412,162
+c256dcf9e80c1e21b5a9688747f763b73363d969,2007-10-03 23:32:29+00:00,2007-10-03 23:32:29+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1035,1035,"Fix for https://issues.apache.org/activemq/browse/AMQ-1038
+ We now send REDELIVERY acks to the broker when a message is redelivered.  This allows the broker to update the message with the number of times redelivery has occured so that if the message is delivered to another consumer it can DQL the message when max redeliveries have occured across consumers.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@581747 13f79535-47bb-0310-9956-ffa450edef68",102,71,0.9831612672533782,1.6027085124465192,163
+caf7a7c7c2d1f3491b3650bb1ea73ea999db2bfb,2008-01-21 10:28:59+00:00,2008-01-21 10:28:59+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1049,1049,"Fix for https://issues.apache.org/activemq/browse/AMQ-1556
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@613829 13f79535-47bb-0310-9956-ffa450edef68",102,71,0.982767027477172,1.6019222918982232,163
+76ac7588e82902d585fd511e7ee4956167ce45a1,2008-03-28 02:22:39+00:00,2008-03-28 02:22:39+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1051,1051,"- Fixing out of order dispatch.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@642067 13f79535-47bb-0310-9956-ffa450edef68",101,71,0.9844505430904965,1.6051875594835987,164
+8e98b13c87a3bd75a996f5baa709d293909f2bdd,2008-03-31 19:26:19+00:00,2008-03-31 19:26:19+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1051,1051,"Fixing DLQ tests.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@643108 13f79535-47bb-0310-9956-ffa450edef68",101,71,0.984450543170037,1.6051875620439628,164
+3eb06105d35901b7bc5daefb99cf9d4cd57ddc3d,2008-04-09 09:54:28+00:00,2008-04-09 09:54:28+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1053,1053,"Apply patch for https://issues.apache.org/activemq/browse/AMQ-1631
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@646248 13f79535-47bb-0310-9956-ffa450edef68",101,71,0.9846674486942849,1.6055641926081516,164
+b4c3a30b9e061868630ba19b14d88c61cd1ac44f,2008-04-09 18:37:26+00:00,2008-04-09 18:37:26+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1056,1056,"Fix for https://issues.apache.org/activemq/browse/AMQ-1103
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@646477 13f79535-47bb-0310-9956-ffa450edef68",101,71,0.9848186302277147,1.605826814260038,165
+2076f452e72d7d4b9be6992ead61f2383896c24e,2008-05-16 09:21:44+00:00,2008-05-16 09:21:44+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1063,1063,"Fix for https://issues.apache.org/activemq/browse/AMQ-1732
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@656980 13f79535-47bb-0310-9956-ffa450edef68",101,71,0.9849747862439359,1.6061049197813924,169
+4ddb3e3f6c3f15229ae75058a84cc461f452b901,2008-05-16 18:29:33+00:00,2008-05-16 18:29:33+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1072,1072,"tidy up for https://issues.apache.org/activemq/browse/AMQ-1732
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@657155 13f79535-47bb-0310-9956-ffa450edef68",102,74,0.8254617468555824,1.6486236141203636,167
+ab3b155ff6591d75ec577c0ad0c6d28e9890c6e4,2008-05-19 13:06:37+00:00,2008-05-19 13:06:37+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1072,1072,"more for https://issues.apache.org/activemq/browse/AMQ-1736
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@657817 13f79535-47bb-0310-9956-ffa450edef68",102,74,0.8255139897887518,1.6487203646378454,167
+d8b5d5c4cd6b695b6e28e56fe18909c3a12a865e,2008-05-20 08:14:47+00:00,2008-05-20 08:14:47+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1072,1072,"Fix for https://issues.apache.org/activemq/browse/AMQ-1735
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@658154 13f79535-47bb-0310-9956-ffa450edef68",102,74,0.8256370020240901,1.6491149429328211,167
+0acf54586f1a1da34ab97bee94858f2c0c444984,2008-06-04 10:52:13+00:00,2008-06-04 10:52:13+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1072,1072,"Fix for https://issues.apache.org/activemq/browse/AMQ-1760
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@663059 13f79535-47bb-0310-9956-ffa450edef68",102,74,0.8256681197450128,1.6491998437137512,167
+b52624e66bd10f36cd4502077f7e281bbafbca44,2008-06-18 19:29:54+00:00,2008-06-18 19:29:54+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1072,1072,"Apply patch from https://issues.apache.org/activemq/browse/AMQ-1808
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@669263 13f79535-47bb-0310-9956-ffa450edef68",102,74,0.8268481901667032,1.652417573236122,167
+9ce91fa62503f45af4828e528a3c799853cff3bc,2008-09-10 18:01:46+00:00,2008-09-10 18:01:46+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1097,1097,"Applied patch for https://issues.apache.org/activemq/browse/AMQ-1925
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@693915 13f79535-47bb-0310-9956-ffa450edef68",104,75,0.8284601916604181,1.655225927961761,173
+a2101b7b05da2f36f23844853b4b13259ed60590,2008-09-17 17:15:31+00:00,2008-09-17 17:15:31+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1101,1101,"Fixing the JMSConsumerTest case. 
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@696372 13f79535-47bb-0310-9956-ffa450edef68",104,75,0.8286184302256917,1.6556664498179894,175
+93439b285341a2888160dddbbb7517e870a7e9e2,2008-09-22 14:32:03+00:00,2008-09-22 14:32:03+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1099,1099,"Don't set the first message id if it's not known. It gets calcuated on the server side.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@697850 13f79535-47bb-0310-9956-ffa450edef68",104,75,0.8285881994308664,1.6555814405752702,174
+efdf8ce25a5e925935b99b9cb78eef5a52eb4524,2008-09-24 14:46:00+00:00,2008-09-24 14:46:00+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1109,1109,"https://issues.apache.org/activemq/browse/AMQ-1951
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@698595 13f79535-47bb-0310-9956-ffa450edef68",107,76,0.8282050732491383,1.652602009098446,176
+4d6043aa94227b4b2604394e0c855c9869c211f4,2008-10-01 12:01:00+00:00,2008-10-01 12:01:00+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1110,1110,"fix regression AMQ-1959
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@700746 13f79535-47bb-0310-9956-ffa450edef68",107,76,0.8281122810293091,1.652342875504115,176
+e53668eb2379386d339b88aeca95430915797016,2008-11-17 21:55:46+00:00,2008-11-17 21:55:46+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1110,1110,"resolve AMQ-2004
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@718403 13f79535-47bb-0310-9956-ffa450edef68",107,76,0.8281748788874553,1.652468708416113,179
+2b2b35e757ee97d9d16b14246f5df3c8b0a8f12f,2008-11-19 11:08:54+00:00,2008-11-19 11:08:54+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1110,1110,"resolve AMQ-2005, Scheduler is now referenced by its users such that it cannot be gc'ed during normal operation
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@718931 13f79535-47bb-0310-9956-ffa450edef68",106,77,0.8290536472916367,1.6531117297942293,179
+4229aee737feb32590afc36f0361d840ce1cec2b,2008-12-11 16:36:59+00:00,2008-12-11 16:36:59+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1116,1116,"fix AMQ-2032 - consumer.dispose was clearing delivered messages even if in a tx
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@725737 13f79535-47bb-0310-9956-ffa450edef68",106,77,0.8297616113904208,1.6550725902770655,182
+50a98e3b0e078a5f8be03ef2e75ae0745a40e719,2008-12-15 18:48:51+00:00,2008-12-15 18:48:51+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1134,1134,"fix - AMQ-2034 - have close in XA transaction deferred to synchronisation after completion, have rollback call beforeEnd to propagate acknowledgements; add a bunch of tests
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@726764 13f79535-47bb-0310-9956-ffa450edef68",109,80,0.6853519385945103,1.7066957458102927,186
+3b08860f10a12b8753e24756cf66f4a8d66b270e,2009-01-29 20:51:09+00:00,2009-01-29 20:51:09+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1135,1135,"resolve https://issues.apache.org/activemq/browse/AMQ-2087 - add a long attribute to RemoveInfo where the last delivered broker sequence id is passed back to the broker, prefetched messages with ids > than this value now don't get their redelivery count incremented, requires wireformat version increment and Destination api change
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@739008 13f79535-47bb-0310-9956-ffa450edef68",109,82,0.687469052648439,1.7094978268211731,186
+40465998ee66c025e726f5ce7ac8ecc3fac480ed,2009-02-02 11:14:05+00:00,2009-02-02 11:14:05+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1135,1135,"resolve issue with broken ra tests, allow XA operation on non transacted session, check for transaction now is xa aware
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@739961 13f79535-47bb-0310-9956-ffa450edef68",109,82,0.6874599456466046,1.709422407000858,184
+1ab76f775d4cade018f16f970b93b5ee9d77ac8f,2009-02-03 19:05:07+00:00,2009-02-03 19:05:07+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1135,1135,"AMQ-2091: Add a cache to the jms selector parser for speed improvements
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@740375 13f79535-47bb-0310-9956-ffa450edef68",109,82,0.6874599456466046,1.709422405285485,184
+586ea12d1e11356751c197c95420b0bc06fbd947,2009-02-10 08:07:16+00:00,2009-02-10 08:07:16+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1141,1141,"Fix for https://issues.apache.org/activemq/browse/AMQ-2100
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@742876 13f79535-47bb-0310-9956-ffa450edef68",109,82,0.6873948755674204,1.7091740296831817,184
+184761a119ae684a910bed41bc0f81bc2334fdb4,2009-02-19 18:15:59+00:00,2009-02-19 18:15:59+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1139,1139,"tidy up redispatch logic a little more, resolve: AMQ-2128, deliver acks on dispose in auto_ack mode. also get some closure on: MQ-2075
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@745953 13f79535-47bb-0310-9956-ffa450edef68",109,82,0.6873851024349942,1.7091775329924712,184
+132f662209f7e25a1d9c240fdddcf61e0ed1226c,2009-03-26 15:22:57+00:00,2009-03-26 15:22:57+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1139,1139,"resolve AMQ-2149|https://issues.apache.org/activemq/browse/AMQ-2149 - isses with kaha reference store and duplicate messages, recovery of duplicaes and recovery with memory limits and session duplicate acks resulting in out of order message dispatch, more detail in the jira and test case
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@758678 13f79535-47bb-0310-9956-ffa450edef68",109,82,0.6873907900681437,1.7091829413473272,184
+f8ef7ff31f591b49b2aca490ed840d1380ea3d2f,2009-04-02 14:03:54+00:00,2009-04-02 14:03:54+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1155,1155,"https://issues.apache.org/activemq/browse/AMQ-2195 - receive should throw an exception if the connection is lost
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@761301 13f79535-47bb-0310-9956-ffa450edef68",112,85,0.690661294875947,1.7144601457789928,187
+e45bb0690764746dc2f6ae66d3b55efa873b4592,2009-04-03 10:16:28+00:00,2009-04-03 10:16:28+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1176,1176,"further tests and fixes related to failover, this time transactions and topics. prefetch and maxPageSize are relevant in the transacted. With redeliveries the prefetch needs to be less than half the transaction size and the maxPageSize needs to exceed the transaction span. more tests in AMQ-2149|https://issues.apache.org/activemq/browse/AMQ-2149 and some amendments to the fixes for that issue
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@761597 13f79535-47bb-0310-9956-ffa450edef68",113,86,0.6911781644542179,1.7144632744061112,194
+9f548bb74aa9da57c0226e4eaa381f1efeff8a9e,2009-04-06 19:20:12+00:00,2009-04-06 19:20:12+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1180,1180,"ensure duplicate acks are send immediatly and supppress outstanding delivery acks on transport resumption, AMQ-2149|https://issues.apache.org/activemq/browse/AMQ-2149
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@762464 13f79535-47bb-0310-9956-ffa450edef68",112,85,0.6906756980679416,1.7145394388790867,200
+461af7c9e158b2d8f1a1df27549060f894f09918,2009-05-21 19:19:57+00:00,2009-05-21 19:19:57+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1181,1181,"fix for https://issues.apache.org/activemq/browse/AMQ-2262 - inflight message count
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@777225 13f79535-47bb-0310-9956-ffa450edef68",112,85,0.6906219327440327,1.7143066720536047,200
+b997d257d53979ccbfa61669c0c102251a37e1ac,2009-05-22 10:46:20+00:00,2009-05-22 10:46:20+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1184,1184,"resolve https://issues.apache.org/activemq/browse/AMQ-2265, revert https://issues.apache.org/activemq/browse/AMQ-2262, inflight count stil needs work
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@777463 13f79535-47bb-0310-9956-ffa450edef68",112,85,0.6905219066710613,1.7139891183487688,200
+a707594a8d1ff9aadea2f43ddc21f58fe6f05e05,2009-05-22 21:23:48+00:00,2009-05-22 21:23:48+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1179,1179,"https://issues.apache.org/activemq/browse/AMQ-2262 and https://issues.apache.org/activemq/browse/AMQ-2265
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@777716 13f79535-47bb-0310-9956-ffa450edef68",111,85,0.6906103026024888,1.714309078629019,198
+7a59d284dc6401b6b756edbfda1dc759c82cf5d4,2009-07-07 15:54:32+00:00,2009-07-07 15:54:32+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1182,1182,"resolve https://issues.apache.org/activemq/browse/AMQ-1112 - fix issues with inflight count when messages expire on the consumer/client and on consumer close
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@791881 13f79535-47bb-0310-9956-ffa450edef68",111,85,0.6905582949133051,1.7141617466245695,199
+b08ae5074325e48d5f4e5fb73d20d8f4916450b8,2009-08-03 07:42:43+00:00,2009-08-03 07:42:43+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1186,1186,"Added patch for https://issues.apache.org/activemq/browse/AMQ-1744
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@800235 13f79535-47bb-0310-9956-ffa450edef68",109,85,0.6908070687036254,1.7149615374696907,200
+ec821411aa0896cb616e0b07dc31bee54df3cb85,2009-09-24 14:01:53+00:00,2009-09-24 14:01:53+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1194,1194,"AMQ-2401: Applying patch which makes the DUPS_OK on Queue case use the same ack strategy that is used by AUTO_ACK.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@818487 13f79535-47bb-0310-9956-ffa450edef68",111,87,0.6893595931392303,1.7060635967735578,203
+83df5cef5421aeb6db04c04377ed960c07e26f6c,2009-11-23 18:43:01+00:00,2009-11-23 18:43:01+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1200,1200,"resolve https://issues.apache.org/activemq/browse/AMQ-2489 - duplicate delivery acks resulted in broker exceptions with client or inividual ack - delivery acks now only for unacked messages - down side is pending messages in broker remain on expiry awaiting ack from ackLaer that dependes on prefetch value - but this is reasonable and to be expected. they will be removed on close or subsequent acks in any event
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@883458 13f79535-47bb-0310-9956-ffa450edef68",111,87,0.6893685592007053,1.7061158043849254,204
+13f9ec8555354b77de16ce2a6230525bc6e49f20,2009-11-26 16:46:38+00:00,2009-11-26 16:46:38+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1203,1203,"https://issues.apache.org/activemq/browse/AMQ-2515 - Optimized Acknowledgements and interrupted transport
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@884633 13f79535-47bb-0310-9956-ffa450edef68",112,89,0.6894526559810862,1.7022082287957294,202
+0bc545b5d161fc9feccd19e7fde6cd5d5ffac28f,2010-01-08 00:17:37+00:00,2010-01-08 00:17:37+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1204,1204,"resolve potential lost ack with failover and an in progress consumer transaction that results in an Unmatched ack exception - resolve: https://issues.apache.org/activemq/browse/AMQ-2560
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@897061 13f79535-47bb-0310-9956-ffa450edef68",114,90,0.6885867386661237,1.69788952018462,199
+62eb5cf5810c3f39b2f3f70d54c89863aa488d66,2010-01-11 18:22:01+00:00,2010-01-11 18:22:01+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1207,1207,"reduce unmatched ack exceptions, tidy up prefetchExtension https://issues.apache.org/activemq/browse/AMQ-2560
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@897988 13f79535-47bb-0310-9956-ffa450edef68",114,90,0.6883426478579225,1.6971118758360098,199
+7ceb4cbc432afeea89928a6333f1f215a351eee4,2010-01-18 09:43:21+00:00,2010-01-18 09:43:21+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1207,1207,"resolve https://issues.apache.org/activemq/browse/AMQ-2572 - issue with unconsumed prefetched messages being ignored as duplicates - timing issue with consumer close and session dispatch
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@900318 13f79535-47bb-0310-9956-ffa450edef68",114,90,0.6883208338710882,1.6970825719026885,199
+862cd718ed353322dbaf5ac2c9a496137af56604,2010-01-20 16:49:22+00:00,2010-01-20 16:49:22+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1205,1205,"resolve https://issues.apache.org/activemq/browse/AMQ-2573 - rollback of audit check needs to be synced with redispatch after failover transport resumption, otherwise some redispatched unconsumed messages can get auto-acked as duplicates in error
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@901273 13f79535-47bb-0310-9956-ffa450edef68",113,90,0.6872961513071761,1.693345217441259,202
+62daac4b31fded111cf6eb6fd33b212418ce85ea,2010-02-01 22:41:17+00:00,2010-02-01 22:41:17+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1293,1293,"resolve https://issues.apache.org/activemq/browse/AMQ-2590 - commit may throw a TransactionRolledBackException in the event that after a failover recovery, the same messages are not redispatched - the transaction cannot be fully recreated so it must rollback
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@905432 13f79535-47bb-0310-9956-ffa450edef68",118,94,0.6871678868132707,1.686448052808415,224
+b836af84f064cfcf6d92dda16b534be13adadb72,2010-02-04 11:06:13+00:00,2010-02-04 11:06:13+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1356,1356,"further evolution of resolution for https://issues.apache.org/activemq/browse/AMQ-2590 - indoubt transactions are now rolledback, pending transactions can wait for jms.consumerFailoverRedeliveryWaitPeriod for redeliveries before rolling back. If previously delivered messages are not replayed the transaction is rolledback
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@906450 13f79535-47bb-0310-9956-ffa450edef68",118,98,0.6879527599950168,1.6831211983566317,242
+39d071798a3011a1d52cc26e94d7b9e1fa2e9537,2010-02-06 05:13:21+00:00,2010-02-06 05:13:21+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1360,1360,"https://issues.apache.org/activemq/browse/AMQ-2590 - ensure beforeEnd is called once per transaction so ack on rollback is avoided, add more tests
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@907174 13f79535-47bb-0310-9956-ffa450edef68",119,99,0.7231445641745264,1.6924686907722601,241
+7f8c822a202905da7e034f3282536f247bfeb766,2010-02-27 10:07:05+00:00,2010-02-27 10:07:05+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1355,1355,"resolve https://issues.apache.org/activemq/browse/AMQ-906 - have retries with autoack and runtime exception from onMessage 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@916936 13f79535-47bb-0310-9956-ffa450edef68",119,99,0.7228705615697425,1.691149975200771,241
+9e54516abae3e5c756defbbe90d494891b488486,2010-04-12 14:03:18+00:00,2010-04-12 14:03:18+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1366,1366,"resolve https://issues.apache.org/activemq/browse/AMQ-2693 - loaded machine with slow thread creation can delay interruption processing past next dispatch which can be problematic. prefetch=1 will workaround
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@933240 13f79535-47bb-0310-9956-ffa450edef68",120,101,0.7245370451796967,1.695291216686034,243
+1a5ad284ed67d1742237c337072635f29aae5f9c,2010-05-20 12:02:10+00:00,2010-05-20 12:02:10+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1371,1371,"fixes for https://issues.apache.org/activemq/browse/AMQ-2620 and
+https://issues.apache.org/activemq/browse/AMQ-2568
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@946600 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7070518224971443,1.7036588651201172,243
+18adfefabef7fb6dc7dafcdf86cb59b54b7750a1,2010-05-26 14:52:20+00:00,2010-05-26 14:52:20+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1372,1372,"resolve https://issues.apache.org/activemq/browse/AMQ-2751 - duplicate suppression over eager with listener, session.recover from a message listener when default delayed redelivery is in place
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@948463 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7070741914914065,1.7037477312824385,243
+7f0ced9402713b4ee660167d0060d8f56461e148,2010-05-31 16:12:06+00:00,2010-05-31 16:12:06+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1375,1375,"resolve regression in FailoverTransactionTest following change to fix resolve https://issues.apache.org/activemq/browse/AMQ-2751, fix needs to be conditional on delayed delivery otherwise it can effect async transacted redelivery on failover 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@949789 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.707157820156407,1.704133589946129,244
+c14dc3a06fb4b25db3e69f232ea565a4ff161824,2010-06-22 15:20:49+00:00,2010-06-22 15:20:49+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1380,1380,"Fix for https://issues.apache.org/activemq/browse/AMQ-2790
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@956918 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7070954121390182,1.7037941604329119,245
+383d12ed0e1269161561e0050a6695610003bba2,2010-07-21 17:09:33+00:00,2010-07-21 17:09:33+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1382,1382,"resolve: https://issues.apache.org/activemq/browse/AMQ-2741 - visibility of abort slow consumer policy in via jmx
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@966319 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7071089258037989,1.7038532100507835,246
+c23f9e6584e01b92460a06273f09a22f358453f3,2010-08-06 08:10:52+00:00,2010-08-06 08:10:52+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1384,1384,"resolve: fix https://issues.apache.org/activemq/browse/AMQ-1847 - set initialRedeliveryDelay=0 to get non delayed first redelivery, use deliveryDelay to set the base for subsequent redelivery. existing users with an initialRedeliveryDelay set will now see it being respected.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@982903 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7068983397750428,1.7029232305832829,247
+8bf987b134bd827b93ed8157b323bc3bd2d8a82e,2011-02-10 14:24:01+00:00,2011-02-10 14:24:01+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1384,1384,"https://issues.apache.org/jira/browse/AMQ-3177 - use slf4j instead of jcl
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069405 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7069531262860225,1.7031758243693442,247
+b0c2a40fb979829ceca2ca51858ca67269bd5992,2011-02-16 14:08:48+00:00,2011-02-16 14:08:48+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1384,1384,"Removing svn keywords, they don't have much value and just add additional noise when diffing source trees.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071259 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7069531262860226,1.7031758247417046,247
+2d121f4092a3891c4162f95c46a57d9e56c52134,2011-02-25 13:17:14+00:00,2011-02-25 13:17:14+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1384,1384,"https://issues.apache.org/jira/browse/AMQ-3190 - Durable Subscription - missing messages when selector matching sub resumes after broker restart
+the next message id needs to be tracked such that unmatched messages are not ignored from the indexi after a restart. Tracking it as part of message add
+in the ackPositions.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1074511 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7069552567792735,1.7031756487977205,247
+e10f75c33d57041083c95d08dd16635eeafe4ba9,2011-03-22 13:46:16+00:00,2011-03-22 13:46:16+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1386,1386,"https://issues.apache.org/jira/browse/AMQ-3236 - In the case of DLQ processing due to an exception from onMessage, provide the exception string as a message property. New property, org.apache.activemq.command.ActiveMQMessage#DLQ_DELIVERY_FAILURE_CAUSE_PROPERTY will hold the string form of the exception that causes a posion ack for a dlq message. It may be null if the cause was regular calls to rollback or message expiry. Wireformat change to have exception included with messageAck. new version 7
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1084175 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7069647224845856,1.7032448517164283,247
+975fc55b2ae9de9ed630f69812914dc8267655df,2011-05-20 16:37:39+00:00,2011-05-20 16:37:39+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1389,1389,"https://issues.apache.org/jira/browse/AMQ-3332 - Make optimizeAckTimeout configurable to allow for different network latencies. Added attribute optimizeAcknowledgeTimeOut to ActiveMQConnectionFactory and ActiveMQConnection to make this configurble. A value of 0 disables, default stays at 300ms
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1125454 13f79535-47bb-0310-9956-ffa450edef68",118,101,0.7074219706736444,1.705267382277976,249
+2030097e01c6ea65236bfc9616ed3b158f4ef7b8,2011-09-30 11:59:44+00:00,2011-09-30 11:59:44+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1420,1420,"https://issues.apache.org/jira/browse/AMQ-3519 - Allow JMSRedelivered flag to survive a restart. Add transactedIndividualAck flag to connection factory and rewriteOnRedelivery to KahaDBPersistenceAdapter. These combine to persist the redelivery status on a rollback
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1177619 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7757482914559786,1.6947654722952987,255
+88f60580e3e3ae2a27b3f7639bfc6469f5bbe8b7,2011-10-13 22:28:47+00:00,2011-10-13 22:28:47+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1429,1429,"apply fix for: https://issues.apache.org/jira/browse/AMQ-3500
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1183143 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7756243386695658,1.694339188975706,256
+56272fab37d850994109cb46ecb740974cc92519,2011-10-16 14:28:42+00:00,2011-10-16 14:28:42+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1429,1429,"https://issues.apache.org/jira/browse/AMQ-3500
+
+Only validate the params inside the domain of the producer or consumer.  
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1184834 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7756243386909858,1.6943391856847052,256
+b7f280817d072be10c0314bff9f43d2d7b242564,2011-10-16 16:54:18+00:00,2011-10-16 16:54:18+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1429,1429,"https://issues.apache.org/jira/browse/AMQ-3500
+
+fix a cut and paste oops
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1184866 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7756243386909858,1.6943391847055194,256
+6c4bcb3197b6f836b25ec4c7568709c8070a0d65,2011-10-17 12:44:55+00:00,2011-10-17 12:44:55+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1430,1430,"https://issues.apache.org/jira/browse/AMQ-3500
+
+Don't remove the options, just get them each time.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1185129 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7756243386909858,1.694339186791291,256
+6778a49eecb2efe2af4fb6bb2a0d7c82f9861248,2011-10-27 10:21:20+00:00,2011-10-27 10:21:20+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1431,1431,"https://issues.apache.org/jira/browse/AMQ-3568 - Consumer auto acking of duplicate message dispatch can lead to Unmatched acknowledge: and redelivery. Using individual ack in this case. Added a warn, as this sort of duplicate shoud be trapped by the store producerAudit, maxFailoverProducersToTrack may need an increase
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1189700 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7756339638399916,1.6943672094091018,255
+9ee296722007049d18b56c77385a58cef72a5a98,2011-10-28 12:11:18+00:00,2011-10-28 12:11:18+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1431,1431,"https://issues.apache.org/jira/browse/AMQ-3519 - fix intermittent failure of org.apache.activemq.broker.RedeliveryRestartTest. inddividual ack marking delivery must be sent sync
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1190265 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.775610698688052,1.6942625916422476,255
+0a66b793320bcf9082cd829e253707d31a879f3c,2011-10-30 23:27:52+00:00,2011-10-30 23:27:52+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1436,1436,"additional fixes for: https://issues.apache.org/jira/browse/AMQ-3547
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1195278 13f79535-47bb-0310-9956-ffa450edef68",120,104,0.7756916227861663,1.6946037086842802,256
+0b6bf7ec1ba9df68ae6492408d482c984849c31c,2011-10-31 18:54:19+00:00,2011-10-31 18:54:19+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1460,1460,"Fix for: https://issues.apache.org/jira/browse/AMQ-1853
+
+Tests included.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1195615 13f79535-47bb-0310-9956-ffa450edef68",122,107,0.7499959974441879,1.729269062498921,262
+97ae32388c4fdb4a48ae0892e8a9142da062d032,2012-02-16 00:02:15+00:00,2012-02-16 00:02:15+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1459,1459,"fix for: https://issues.apache.org/jira/browse/AMQ-3714 lazy init the Scheduler object in ActiveMQConnection.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1244796 13f79535-47bb-0310-9956-ffa450edef68",124,106,0.749705647276936,1.7297447635855239,262
+dc258ab2aefd7b9973130469393584207a74b995,2012-06-13 20:45:10+00:00,2012-06-13 20:45:10+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1460,1460,"https://issues.apache.org/jira/browse/AMQ-3654 - JDBC Master/Slave : Slave cannot acquire lock when the master loose database connection. Adding an leasebasedlocker that can survive db disconnect, and jdbcioexceptionhandler that will pause/resume transports on db outage
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1350006 13f79535-47bb-0310-9956-ffa450edef68",124,106,0.7498008533211148,1.7302260902924884,262
+a3836b562d019ad1ce637bf1341c1fc3775c7113,2012-07-03 20:45:12+00:00,2012-07-03 20:45:12+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1460,1460,"fix for: https://issues.apache.org/jira/browse/AMQ-3224
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1356927 13f79535-47bb-0310-9956-ffa450edef68",124,106,0.7498204022034599,1.7303132267135737,262
+0227c081120108b912bcb8898b83c2c4b5bb0119,2012-07-20 22:53:07+00:00,2012-07-20 22:53:07+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1463,1463,"fix and tests for: https://issues.apache.org/jira/browse/AMQ-3932
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1364009 13f79535-47bb-0310-9956-ffa450edef68",125,106,0.7498676522183142,1.7305534654261663,262
+39e20d041596df023044a8799c5cb862d84d4c66,2012-08-10 14:44:36+00:00,2012-08-10 14:44:36+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1478,1478,"AMQ-3965: Fix for org.apache.activemq.ActiveMQMessageConsumer.java plus new JUnit test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1371722 13f79535-47bb-0310-9956-ffa450edef68",125,106,0.7498661311930547,1.7305265207928517,265
+6c1676b59fcd7d46ed4ea9c5c1d6ef77f9bbd779,2012-09-06 17:50:43+00:00,2012-09-06 17:50:43+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1474,1474,"AMQ-4026: Using ThreadPoolUtils to shutdown thread pool. Use thread pool from broker service where applicable.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1381695 13f79535-47bb-0310-9956-ffa450edef68",125,106,0.7498777392985438,1.7305038809172326,265
+3d5a758666f24c8226d35c7ceae3dc3dc8fd2ea1,2012-09-18 10:12:30+00:00,2012-09-18 10:12:30+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1531,1531,"fix for: https://issues.apache.org/jira/browse/AMQ-3664
+
+Added now option to connection and consumer to allow for configuration of a time interval upon which all the outstanding acks are delivered when optimized acknowledge is used so that a long running consumer that doesn't receive any more messages will eventually ack the last few unacked messages.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1387079 13f79535-47bb-0310-9956-ffa450edef68",132,110,0.7501262397731129,1.7248678510252866,275
+c02acbd3d44efc2f9a6483128d71ab04c5aa02a0,2012-09-26 19:59:36+00:00,2012-09-26 19:59:36+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1539,1539,"fix and tests for: https://issues.apache.org/jira/browse/AMQ-4083
+
+Ensure that client ack mode sends acks for expired messages.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1390710 13f79535-47bb-0310-9956-ffa450edef68",133,110,0.7501366158222972,1.7249328791861722,278
+8a75d960d56ac3513053d09561b3ec809fe0a70c,2012-09-27 18:17:47+00:00,2012-09-27 18:17:47+00:00,activemq-core/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1533,1533,"fix and tests for: https://issues.apache.org/jira/browse/AMQ-4083
+
+Revert previous fix.  We need to ack each expired message when we detect and not overload the usage of delivered acks for extending the prefetch window.  The problem was an edge case where the broker detected a message as expired after the client had delivered it but before it ack'd it as consumed.  
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1391152 13f79535-47bb-0310-9956-ffa450edef68",134,111,0.7503031490215649,1.7241786119704943,275
+9a8f6e415db43a4e43ad42a87b3617b3641aa07d,2012-11-07 05:00:17+00:00,2012-11-07 05:00:17+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1533,1533,"Refactored the classes needed to run an ActiveMQ JMS client out from the activemq-core module to the activemq-client module.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406466 13f79535-47bb-0310-9956-ffa450edef68",134,111,0.750303149021565,1.7241786132667685,275
+95e6d6074fe6e7ee5e95125bf9e5f8386b9dd00b,2012-12-17 11:48:01+00:00,2012-12-17 11:48:01+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1533,1533,"https://issues.apache.org/jira/browse/AMQ-4224 - have broker update zero prefetch on consumer so that it can issue a pull request as appropriate
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1422873 13f79535-47bb-0310-9956-ffa450edef68",134,111,0.75030937838961,1.7242019547989313,275
+bac12438409fe17c4ac31f75617f5bbaeb7b8ee3,2013-01-30 12:12:07+00:00,2013-01-30 12:12:07+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1533,1533,"https://issues.apache.org/jira/browse/AMQ-3539 - applying suggested fix, it makes sense. thanks
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1440366 13f79535-47bb-0310-9956-ffa450edef68",134,111,0.75030937838961,1.7242019532269517,275
+2aff82c47a9667c20b8b4ea10252471f441f6084,2013-04-09 17:05:21+00:00,2013-04-09 17:05:21+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1560,1560,"fix and test for: https://issues.apache.org/jira/browse/AMQ-4464
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1466131 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.7122942415556275,1.7330105186628193,275
+163ad5d4a929667821ac11637202a12db0f1fd5e,2013-04-24 21:01:24+00:00,2013-04-24 21:01:24+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1560,1560,"Fix for AMQ4472: We can eagerly close a txed consumer if it has not delivered any messages.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1471673 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.712082422721248,1.7319363354382282,276
+620523a5979162e57bd08d3ab679e0ce0f8e4030,2013-05-17 14:27:48+00:00,2013-05-17 14:27:48+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1561,1561,"https://issues.apache.org/jira/browse/AMQ-4000 - initial implementation of keeping track of durable subscribers over network and unregister them appropriately
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1483827 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.7120868733403377,1.7319224993977504,276
+a971b648ea8f9fcaa376f93811a3abaee7c667e1,2013-07-18 10:48:29+00:00,2013-07-18 10:48:29+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1562,1562,"https://issues.apache.org/jira/browse/AMQ-4637 - populate DLQ_DELIVERY_FAILURE_CAUSE_PROPERTY for messages that exceed a redelivery policy - makes it easier to identify in the dlq
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1504423 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.7120796766652367,1.7318921020213316,276
+0826fdcf0645016f4a88fc785aaa21dce5855f75,2013-07-19 18:21:09+00:00,2013-07-19 18:21:09+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1561,1561,"AMQ-4637 fix test that fails due to this change, also remove extra call to setPoisonCause
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1504954 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.712063576933161,1.7318162845983054,276
+20f384ce59b758a0f3c1b0e0620e2efd58ca230a,2013-07-19 20:20:08+00:00,2013-07-19 20:20:08+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1562,1562,"https://issues.apache.org/jira/browse/AMQ-4637 - track cause and policy
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1505000 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.712063576933161,1.7318162871169256,276
+13bbe52646aa55d5e813446c687bb91bebae80d9,2013-07-30 20:18:07+00:00,2013-07-30 20:18:07+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1563,1563,"https://issues.apache.org/jira/browse/AMQ-4643 - ensure handled ioexceptions are not propagated back to client when broker or transports are shutdown. additional tests existing tests refactored to reflect new determinism. IOException handler now throws SuppressReplyException which is trapped by the transport connector. If store exception need to be processes by the client, for immediate response rather than failover reconnect, then the ioexception handler should be configured to ignoreAllErrors
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1508602 13f79535-47bb-0310-9956-ffa450edef68",139,111,0.7119836881107605,1.7314457537700971,276
+82c4ab83eddff7b2dd6bb5884fb9cff181b0185a,2013-08-07 13:39:24+00:00,2013-08-07 13:39:24+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1587,1587,"https://issues.apache.org/jira/browse/AMQ-4665 - fix auto ack on duplicate, now use poison ack. For client ack allow replay after failover. Additional tests to validate new behaviour
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1511307 13f79535-47bb-0310-9956-ffa450edef68",140,111,0.7105944233296809,1.731910082465047,283
+c387522217da4921d3274ff4f1ab93277dface6f,2013-09-19 16:26:52+01:00,2013-09-19 16:26:07+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1587,1587,"https://issues.apache.org/jira/browse/AMQ-4426 - default to client ack, so that if a tx aborts we never auto ack or start a local transaction",140,111,0.7105895603626919,1.731881802066537,283
+dc0291b290bc6d4a9d77eede1dd319ea7db8f903,2013-10-08 21:29:17+01:00,2013-10-08 21:28:30+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1591,1591,https://issues.apache.org/jira/browse/AMQ-4791 - fix and test. removed the delay but left the warn if dispatch ocurrs before interruption processing is complete. Problem was a race between consumer close and sessions copy on write dispatchers list,141,112,0.7103855054482614,1.729309479909817,284
+b136df177ff879de495c8908a5ba6a1e5c2778c9,2014-03-19 15:33:44+00:00,2014-03-19 15:33:44+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1591,1591,"https://issues.apache.org/jira/browse/AMQ-5089 - fix and test, respect client ack for topics and only decrement counters when ack is received",141,112,0.7103909632720873,1.7293636865949735,284
+fad1dd0f1727af8ce6e0d05a51c32cc63f658e24,2014-04-16 15:49:34+01:00,2014-04-16 15:48:27+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1613,1613,"https://issues.apache.org/jira/browse/AMQ-5146 - validate redeliveryPolicy excess pre dispatch, fix and test",143,114,0.7100900280356658,1.7249367635870607,294
+f70dc74312499d9b0c24f02a5bfcf316af4edf3d,2014-04-24 10:53:33+01:00,2014-04-24 10:52:03+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1614,1614,https://issues.apache.org/jira/browse/AMQ-5146 - durable sub redelivery test regression https://issues.apache.org/jira/browse/AMQ-5156 - pre delivery check for max redelivery should only apply to transacted sessions,143,114,0.709849177166863,1.7236787059464966,295
+c34851fd57bc7ef3fc2c847d71ae4cd8f32670e3,2014-07-17 17:08:13+01:00,2014-07-17 17:07:19+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1629,1629,https://issues.apache.org/jira/browse/AMQ-5279 - ensure poison on failover redelivery only when delivery is not pending else where,145,116,0.7096492183162622,1.7197357794084598,301
+642cc432160067a11ff36dcadd4aeb7c4cbbccdc,2014-10-22 14:42:45-04:00,2014-10-22 14:42:45-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1639,1639,"https://issues.apache.org/jira/browse/AMQ-5406
+
+Add support for disable of consumer expiration checks.",147,119,0.7105774615838555,1.7199754735931327,303
+bbb2acca2fe75ce3b40f6d1092440355ae148610,2014-12-05 14:49:48+00:00,2014-12-05 14:49:48+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1641,1641,https://issues.apache.org/jira/browse/AMQ-5476 - fix and test - https://issues.apache.org/jira/browse/AMQ-2790 - default messagePrioritySupported=false,147,119,0.7105774616421052,1.719975472646775,304
+dbb1d8b83d2ee5c5a38c55834a70cd21a2dd2ad0,2015-01-09 13:30:59+00:00,2015-01-09 13:28:58+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1641,1641,"https://issues.apache.org/jira/browse/AMQ-5513 - have lastDeliveredSequence -1 indicate nothing was received, respect this value in queue sub remove and durable sub deactivate. 0 still constitutes no info - so old clients see same behaviour as before",147,119,0.7105274645540383,1.7196561458380215,304
+174dcbff2a8af5e550793af6d413d2967409bc33,2015-07-06 16:13:52-04:00,2015-07-05 22:11:23-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1642,1642,"https://issues.apache.org/jira/browse/AMQ-5340
+
+A QueueBrowser no longer checks expiry on messages to prevent a
+browser from hanging in between the hasMoreElements check and actually
+getting a message.  This means that if messages were in the queue when
+the browser started it will receive messages even if they are now
+expired. Even though the browser will get the expired message, the
+broker will still expire it to prevent future access to it.
+
+Thanks to Henno Vermeulen for providing a test case.",147,119,0.7104696895995364,1.7193373282935587,305
+c38a61d7aeec46847c0a658d7e39ac85181d5251,2015-07-06 16:47:58-04:00,2015-07-06 16:47:58-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1620,1620,"https://issues.apache.org/jira/browse/AMQ-5340
+
+Clean up a bit, extend test timeout to account for slow CI machines,
+remove System prints and replace with LOG.",149,120,0.7106339663025727,1.7187958688984963,290
+f10aab64282310dd97205f8fa1dafb39d44f6559,2015-07-09 16:46:21+01:00,2015-06-25 18:22:32+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1623,1623,"https://issues.apache.org/jira/browse/AMQ-5851
+resolves #123
+
+This commit resolves an issue where unmatched acknowledgement
+messages could be received when running a MDB consumer and
+sending messages with a short TTL.  The expiration logic when
+receiveing an expired Message Ack will now only expire messages
+in dispatch relating to the received ack, not all expired messages
+in the dispatch list.",149,120,0.7106627144926345,1.7189383338833006,291
+b9b27b968b53748cfaf0520f45609097c2879db7,2015-07-16 10:46:11-04:00,2015-07-16 10:42:55-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1623,1623,"https://issues.apache.org/jira/browse/AMQ-5893
+
+Ensure that unacknowledged messages are removed from the Audit so they
+are able to be redelivered to another consumer on this connection",149,120,0.710603168028617,1.7186353730943233,292
+b84413a31471e0c9e949cd7198ee952d063dfb61,2015-07-30 17:17:55-04:00,2015-07-30 17:17:37-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1627,1627,"https://issues.apache.org/jira/browse/AMQ-5907
+
+recompute the timeout value and send a new pull request if the message
+received exceeds the configure redelivery maximum.",149,120,0.7106010291615034,1.718647828958713,293
+3348ade99b2be00eb5452785a1325afc2a39b066,2015-08-03 14:41:56-04:00,2015-08-03 14:38:54-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1628,1628,"https://issues.apache.org/jira/browse/AMQ-5914
+
+Ensure a new pull request is sent, adds test.",149,120,0.7106573606502553,1.7189401798953596,293
+61b2f6b40e06a5fd72077a4abcca7faadc07e3e4,2015-08-05 18:13:42-04:00,2015-08-05 18:13:42-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1631,1631,Fix some javadoc warnings and spelling errors in the docs.,149,120,0.7106573606502553,1.7189401811473133,293
+8d982479e9a5579fc3f6da04109a1b3ef69431eb,2015-09-28 14:29:57+01:00,2015-09-28 14:20:19+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1637,1637,"https://issues.apache.org/jira/browse/AMQ-5854 - fix and test. Ensure transaction rollback if there are pending acks during a failover reconnect. Reliably tracking pending acks to eusure possible redelivery is too complex in the context of acks getting dropped by failover or ignored by the subscription, in addition to being sent async. Couple that with multiple consumers on the same connection and the locking of message delivery; only safe course is to ensure rollback outcome.",149,120,0.71041943785337,1.7177071477734627,295
+4a27b72377bf8104b1a586bb26946c59508a3f26,2015-11-20 16:18:27-05:00,2015-11-20 16:18:27-05:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1636,1636,"https://issues.apache.org/jira/browse/AMQ-6042
+
+Apply fix and test from Martin Lichtin to preserve the rollback cause in
+all ack modes.",149,120,0.7104489921416645,1.7178447896964542,295
+0a12bcb928f151b5ace9a0cffc34ec717b6a8e9c,2015-11-27 12:21:56+00:00,2015-11-27 12:20:12+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1630,1630,"https://issues.apache.org/jira/browse/AMQ-2191 https://issues.apache.org/jira/browse/AMQ-3529 - rework fixes to remove uncertanty from dealing with intettuptedexception. Sync requests will trap interrupts that ocurr while waiting for responses and fail the connection with an interruptedioexception. Interrupts pending before requests will be suppressed, allowing possible clean shutdown. It is not safe to replay openwire ops b/c they are not idempotent, the only safe option is to have a teardown of the broker side state from a close",149,120,0.7103701990550396,1.7174342237891294,294
+c78eddce7ed3045b5508dd6713252dca8766436c,2015-12-11 17:05:49+00:00,2015-12-11 17:05:49+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1630,1630,"revert sync ack send for https://issues.apache.org/jira/browse/AMQ-3519 due to rework in https://issues.apache.org/jira/browse/AMQ-5068 - sync send no longer needed because redelivered flag is persisted before dispatch. This avoids a roundtrip overhead on individual ack, ie priority or nonBlockingRedelivery options in the mix",149,120,0.7103864004000965,1.717521307697531,294
+94446e53dc348b9109dff46e92484ed9e6cc1d72,2015-12-14 13:50:42+01:00,2015-12-14 13:50:27+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1622,1622,https://issues.apache.org/jira/browse/AMQ-6077 - define object message trusted packages on connection factory,149,120,0.7103756157386104,1.7174552056972912,296
+92870553389ef288d81c4ad670463c4fb1002c69,2016-01-13 18:08:18-05:00,2016-01-13 18:08:18-05:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1638,1638,"https://issues.apache.org/jira/browse/AMQ-6125
+
+Ensure that the redelivery policy is never null in the consumer.",149,120,0.7104376482945293,1.7177739331449622,298
+aaecdff8b485dc1baf84110375d4b9ffa6f68c19,2016-04-13 16:53:00-04:00,2016-04-13 16:53:00-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1640,1640,"https://issues.apache.org/jira/browse/AMQ-6245
+
+Don't log the pull timed out messages that might still be in the
+unconsumed list during rollback of unconsumed messages",149,120,0.7104791185670284,1.7179811162632537,300
+3dfda807f6c65f78badfccdbcec3676e45e66a2c,2016-06-23 17:47:15+02:00,2016-06-23 17:47:05+02:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1645,1645,https://issues.apache.org/jira/browse/AMQ-6336 - queue browser delivers expired messages,149,120,0.7104662738011966,1.7179321671338594,304
+6bfa13b6e707fb3465a9193cd44c478514fcd948,2016-07-05 20:05:29+00:00,2016-07-05 19:32:17+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1651,1651,"https://issues.apache.org/jira/browse/AMQ-5426
+
+Fixing a race condition in ActiveMQMessageConsumer that could cause a
+NPE when the consumer is closing
+
+Thanks to Michael Wong for providing the test case for this issue.",150,120,0.7104073780810602,1.7176011328777188,305
+3856c3999ac8a29171c09de99bd0e8bf9cdaff4e,2016-07-05 20:27:02+00:00,2016-07-05 20:27:02+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1645,1645,"Revert ""https://issues.apache.org/jira/browse/AMQ-5426""
+
+This reverts commit 6bfa13b6e707fb3465a9193cd44c478514fcd948.",149,120,0.7104662738011966,1.7179321671338594,304
+c02bc648460059b6dbc201fa21b7ee0ce2445082,2016-07-05 20:35:07+00:00,2016-07-05 20:35:07+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1647,1647,"https://issues.apache.org/jira/browse/AMQ-5426
+
+Fixing a race condition in ActiveMQMessageConsumer that could cause a
+NPE when the consumer is closing by only modifing pendingAck inside of
+the deliveredMessagesMutex
+
+Thanks to Michael Wong for providing the test case for this issue.",149,120,0.7104830248169934,1.7180426952211054,304
+a3a5a1affa7aa229202efc51625531ccce1414bb,2016-07-15 16:45:35-04:00,2016-07-15 16:45:35-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1655,1655,"https://issues.apache.org/jira/browse/AMQ-6336
+
+Ensure that when expired messages are handled client side that pull
+consumers get a chance to see it and send a new pull request complete an
+outstanding timed pull.",150,120,0.7105100410517798,1.7182042151502546,306
+e91f5c8062f81a76e6983c489bfd092ce4071480,2016-10-07 09:57:28+01:00,2016-10-07 09:57:14+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1657,1657,AMQ-6454 - ensure message.acknowledge throws if consumer has closed and message has been released broker side,150,120,0.7053523850026981,1.71771807904765,306
+d54d046b8a8f2e9e5c0a28e1f8c7634b3c8b18e4,2016-11-03 11:54:33-04:00,2016-11-03 11:54:33-04:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1657,1657,This closes #185. Won't fix. (fix more file permissions),150,120,0.7053523850026981,1.71771807904765,306
+b6bca3976c9dc18ff5a51c51c218b2f7f8825fbe,2016-11-24 17:02:37+00:00,2016-11-24 17:02:37+00:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1658,1658,[AMQ-6517] make pre dispatch redelivery policy check optional jms.redeliveryPolicy.preDispatchCheck=false,150,120,0.7052714041751366,1.7172839538544316,307
+02548777c2954f5ccad918df8b1280fd601f8fd6,2019-09-04 12:24:42+01:00,2019-09-04 12:24:42+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1691,1691,AMQ-7298 - rework redelivery message tracking to ensure no duplicate suppression (and dlq) in error for local transaction batches that failover,154,126,0.7828511438111884,1.7241400743990263,315
+a2e718f25957099ae734b44b9840b4f2a0199320,2020-10-23 09:50:18+02:00,2020-10-23 09:50:18+02:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1691,1691,AMQ-8055 - rename posion to correct poison,154,126,0.7828486798970867,1.7241451438409845,315
+c4d2ddfce9944cff6ec4003242ce79a2e843aac8,2021-04-16 13:12:13+01:00,2021-04-16 13:12:13+01:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1693,1693,"AMQ-7298 - fix regression with broker redelivery plugin, fix and test relates to AMQ-8168",154,126,0.7828270278045835,1.7239879360795443,315
+393a696955cbf97b90576e4a85b3ce1a02268ad7,2022-05-31 01:56:30+02:00,2022-05-31 01:56:30+02:00,activemq-client/src/main/java/org/apache/activemq/ActiveMQMessageConsumer.java,1692,1692,"AMQ-8617: RedeliveryPolicy:Exponential Backoff + NonBlockingRedelivery = too long delays
+
+Scenario on client:
+
+1. Employing RedeliveryPolicy with exponential backoff (keeping maximum
+redeliveries at default 6)
+2. Enabled non-blocking redelivery
+3. Receiving e.g. 100 consecutive poison messages (which eventually
+should DLQ after max redeliveries)
+
+This will result in massive redelivery delays due to a logic bug.
+
+The reason is that redeliveryDelay is a field variable kept on the
+ActiveMQMessageConsumer, instead of being a property on the message - or
+that the redelivery delay was calculated per message based on the
+redelivery count.
+
+When consecutive messages rollbacks multiple times, the redeliveryDelay
+field is continuously multiplied by the backoff multiplier, resulting in
+enormous delays.
+
+Fix: Ditch the field variable, instead calculating the redeliveryDelay
+per delivery from the redelivery count. (This happens to be identical to
+how it is done in afterRollback() in ActiveMQSession:1004.)
+
+Test is added - which fails with the previous code, and passes with
+this. Added a debug log line for the calculated delay.",154,125,0.7826139654172458,1.7244325350094647,314

@@ -1,0 +1,1140 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+40a7d3b6ac35d2ecb34e85fc3403d2e48e33874e,2005-12-12 17:53:59+00:00,2005-12-12 17:53:59+00:00,activemq-core/src/main/java/org/activemq/broker/BrokerService.java,909,909,"Moved the trunk code into the trunk sub directory
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356304 13f79535-47bb-0310-9956-ffa450edef68",109,105,1.5680048561451372,1.5680048605519126,73
+0d6f94b93dad17328ae79cfebe3ccf3c4e16b5cb,2005-12-16 13:56:13+00:00,2005-12-16 13:56:13+00:00,activemq-core/src/main/java/org/activemq/broker/BrokerService.java,914,914,"allow multiple calls to start() as its quite easy to do these days with all the different configuration mechanisms (URI, spring, xbean, command line)
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@357158 13f79535-47bb-0310-9956-ffa450edef68",110,105,1.568340155670204,1.568340160094616,73
+92a698fe42656274d0f3e31be415ba881b094b3f,2005-12-22 06:11:40+00:00,2005-12-22 06:11:40+00:00,activemq-core/src/main/java/org/activemq/broker/BrokerService.java,912,912,"updated headers in source file to use apache header
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358513 13f79535-47bb-0310-9956-ffa450edef68",110,105,1.568340155670204,1.568340160094616,73
+d29ca2a71b7fd281c15f7d05e135c196d2b2488c,2005-12-28 17:24:02+00:00,2005-12-28 17:24:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,912,912,"Refactor org.activemq -> org.apache.activemq
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359567 13f79535-47bb-0310-9956-ffa450edef68",110,105,1.5688914495648714,1.568891451649163,73
+48b4869472d647a890ce6905e7914b7d1ecde948,2005-12-29 02:15:21+00:00,2005-12-29 02:15:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,912,912,"Updated copyright headers to be (c) 2005-2006 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359679 13f79535-47bb-0310-9956-ffa450edef68",110,105,1.5688914495648714,1.568891451649163,73
+eef92026754b0cc94c2b0ba21ece0b531b518b97,2006-01-13 23:11:20+00:00,2006-01-13 23:11:20+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,914,914,"AMQ-484: Restore discoveryUri when replacing TransportConnector with ManagedTransportConnector
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@368911 13f79535-47bb-0310-9956-ffa450edef68",110,105,1.5689935799420052,1.5689935842537985,73
+4098942c1e8c1947eeecaff8bfcdbd8ba9d01ab9,2006-01-18 19:16:58+00:00,2006-01-18 19:16:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1056,1056,"Added master/slave functionality to the Broker
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@370223 13f79535-47bb-0310-9956-ffa450edef68",127,118,1.5652398487577082,1.5652398526079672,86
+5a429d90bbfeb27d012127cc5d03f67b0ef7ed98,2006-01-31 16:35:13+00:00,2006-01-31 16:35:13+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1058,1058,"Fixes for networks and the invalid Brokers caper
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@373863 13f79535-47bb-0310-9956-ffa450edef68",127,118,1.5628477490807018,1.5628477544821793,86
+d517eebfbc124b156fdba4b0223dd68933ef2ccf,2006-02-02 06:54:17+00:00,2006-02-02 06:54:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1059,1059,"put back default Constructor on NetworkConnector - for now.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@374288 13f79535-47bb-0310-9956-ffa450edef68",127,118,1.5641216443507,1.5641216491014471,86
+43d4e983dc3984b09655b36750f645e680c6c84d,2006-02-08 20:17:12+00:00,2006-02-08 20:17:12+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1059,1059,"A little better logging to see when brokers are started and stopped.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@376042 13f79535-47bb-0310-9956-ffa450edef68",127,118,1.5636893382943735,1.563689341113071,86
+1a3021beac346600cee0c4766b9b7779f5312ff3,2006-02-08 20:58:20+00:00,2006-02-08 20:58:20+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1059,1059,"rollback this change since it breaks stuff.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@376065 13f79535-47bb-0310-9956-ffa450edef68",127,118,1.563712964852949,1.563712970996811,86
+e7106d31b121d0e73e9032ce3dd108528d3f0cee,2006-02-13 16:52:03+00:00,2006-02-13 16:52:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1060,1060,"Set existing durable destinations on a network connector
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@377421 13f79535-47bb-0310-9956-ffa450edef68",127,118,1.5638367285725345,1.5638367341469825,86
+4686ec5f0bb7ee618f20b93f8a0aa04099f44003,2006-02-15 11:48:17+00:00,2006-02-15 11:48:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1078,1078,"added a BrokerPlugin mechanism to allow users to customize the Broker interceptor stack
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@377991 13f79535-47bb-0310-9956-ffa450edef68",129,121,1.583846177328114,1.5838461808773823,89
+f8c268df6f68e3180b2ce6db27d016726ede89e4,2006-02-15 17:09:18+00:00,2006-02-15 17:09:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1078,1078,"Fix for http://jira.activemq.org/jira/browse/AMQ-568
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378037 13f79535-47bb-0310-9956-ffa450edef68",129,121,1.5831556216154028,1.5831556242436504,89
+a33f399004de7a69441a569db43369ebd134a8f0,2006-02-15 21:39:54+00:00,2006-02-15 21:39:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1078,1078,"Added a testcase that shows to do more detailed configuration of the JMX mangement context.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378100 13f79535-47bb-0310-9956-ffa450edef68",129,121,1.5825940978557158,1.5825940992766387,89
+67019975228d04754f599dc773be54d2c97efdc8,2006-02-16 01:37:49+00:00,2006-02-16 01:37:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1075,1075,"Fixed test cases that I broke with my previous commit to this file.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378137 13f79535-47bb-0310-9956-ffa450edef68",131,121,1.58336147664403,1.5833614795261233,88
+236a1ac422ab55c9600a3a57890d43af57803d3d,2006-02-17 21:01:04+00:00,2006-02-17 21:01:04+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1068,1068,"http://jira.activemq.org/jira//browse/AMQ-568
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378626 13f79535-47bb-0310-9956-ffa450edef68",131,121,1.582865850022869,1.5828658521454657,86
+523ea5f4e736b84d6376bf00f8e94a887a1e7732,2006-02-17 22:30:59+00:00,2006-02-17 22:30:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1068,1068,"http://jira.activemq.org/jira//browse/AMQ-568
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378642 13f79535-47bb-0310-9956-ffa450edef68",131,121,1.5824982890950985,1.5824982904200005,86
+8610db3e14758db6f55a19ec0f4f25eeff10b6f7,2006-02-19 22:12:39+00:00,2006-02-19 22:12:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1071,1071,"remove VMTransport connectors last in stop() - can prevent hanging tests
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378966 13f79535-47bb-0310-9956-ffa450edef68",134,121,1.5830415799823976,1.5830415817004009,86
+9c4223615d795bfe9a7c03317db98fa7526e3b1b,2006-02-22 13:28:04+00:00,2006-02-22 13:28:04+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1079,1079,"updated to test durable subscriptions get propagated
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@379767 13f79535-47bb-0310-9956-ffa450edef68",135,122,1.5845551910541733,1.5845551931172934,86
+a640ff58433a435c811f4c33d1cd998a031cc784,2006-02-24 15:09:34+00:00,2006-02-24 15:09:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1097,1097,"fix for AMQ-591 so that we can add a per message level authorization policy to allow content based authorization on a per message basis
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@380684 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.5889681395976154,1.5889681421369923,88
+3601e813f352b85983c607cd4944f8159175a3dc,2006-03-01 06:34:44+00:00,2006-03-01 06:34:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1097,1097,"Added mbeans for Subscribers
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@381927 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.589205977713708,1.5892059802733594,88
+ed5d43b04f25ed4835feba1afd66c440fb256c1e,2006-03-02 22:11:25+00:00,2006-03-02 22:11:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1098,1098,"Added more operations to the JMX beans.
+ - broker view can now create and destroy destinations
+ - queue view can now copy messages to other destinations.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382532 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.5888881167672375,1.5888881187017985,88
+6cb66e48652946226767f14fc3ae4fa04e20d79b,2006-03-06 07:25:51+00:00,2006-03-06 07:25:51+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1097,1097,"PolicyMap not initialized by XBean/Spring when Broker constructed for Transports.
+Chanhed so PolicyMap is lazily fetched from the BrokerService by the RegionBroker
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@383486 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.5888546835893482,1.588854684914091,88
+07d4e8c63de63e589b7bf807fecdf64d167565d3,2006-03-07 07:39:51+00:00,2006-03-07 07:39:51+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1094,1094,"- A bunch of JMX related tiding up.
+  - Added a sendTextMessage() method to the DestinationView so that a JMX console can send a test message to a destination.
+  - Renamed a few bean properties so that they would be more consistent:
+      - use get*Counter for properties that keep incrementing
+      - use get*QueueSize for poperties that repesenet the size of list in broker.
+  - the gc() method on the broker is now the only one expose
+  - the CachedMessageCount is not exposed anymore.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@383815 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.586508163756874,1.5865081649780257,88
+b2ad8fa833fdfaaa75f5ced370c6756fbe3c0103,2006-03-07 19:25:05+00:00,2006-03-07 19:25:05+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1097,1097,"Support naming all the connectors so that JMX object names are easier to view.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@383972 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.5851373862201457,1.5851373890729117,88
+dba3ea8d0eb06c9777f56dc6b20d9de9d9b523cd,2006-03-08 11:44:45+00:00,2006-03-08 11:44:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1097,1097,"enable JMX by default
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@384187 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.585096427614367,1.5850964300088017,88
+364337b9aa2f973697355148c521aeb3fd0c2c88,2006-03-14 16:34:34+00:00,2006-03-14 16:34:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1103,1103,"refactor of the UDP transport to enable the ReliableTransport by default
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@385826 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.585512689085112,1.5855126920878069,88
+400b1fca09423bd711fbe68dab566ff68147574d,2006-03-15 16:03:34+00:00,2006-03-15 16:03:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1102,1102,"refactor of the DemandForwardingBridge so that a multicast-based network can be created (or any other multiplexing transport can be used to create a netowrk)
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@386100 13f79535-47bb-0310-9956-ffa450edef68",137,125,1.5856209987076253,1.5856210003215343,88
+47853d35847ed616372bfd6474d048cde9e23d95,2006-03-17 02:24:29+00:00,2006-03-17 02:24:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1121,1121,"Fix for http://jira.activemq.org/jira/browse/AMQ-639
+
+The NetworkConnector was not removing the old bridge for the map of bridges that he was mantinaing,
+so when the remote broker came back up, then the bridge was not restarted.
+
+Also add a new ConnectionFilter interface which allows the broker to avoid establishing loopback connections.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@386507 13f79535-47bb-0310-9956-ffa450edef68",139,125,1.5852472509995064,1.5852472531122903,90
+635e6e744540cc4b20686781086d41dce7198b5f,2006-03-17 10:38:02+00:00,2006-03-17 10:38:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1125,1125,"- Perform the actual setup of the connectors when it is actually started.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@386603 13f79535-47bb-0310-9956-ffa450edef68",140,126,1.5858452239932266,1.5858452267524028,90
+47f2bb7cc24055cb09a7a05ac68389971d020410,2006-03-23 07:23:33+00:00,2006-03-23 07:23:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1124,1124,"Avoid starting a persistence adapter if the broker is stop()ed before once has been created.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@388081 13f79535-47bb-0310-9956-ffa450edef68",139,126,1.5855044531216806,1.585504455133894,90
+d1a18f5787eb97c7613272b657436d1c06a30f56,2006-03-28 15:27:55+00:00,2006-03-28 15:27:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1124,1124,"added extra visualisation plugin; to render the broker, connections, sessions, consumers in a DOT graph
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@389519 13f79535-47bb-0310-9956-ffa450edef68",139,126,1.5858026707845503,1.5858026724927636,90
+449981be9db1380167e650b34bda53c524f8128d,2006-03-28 22:10:34+00:00,2006-03-28 22:10:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1135,1135,"Working on https://issues.apache.org/activemq/browse/AMQ-669
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@389614 13f79535-47bb-0310-9956-ffa450edef68",142,129,1.5865392780048346,1.5865392816997526,90
+18d616c8db14f15d4b30fba51050c7c86b9890b3,2006-03-30 00:36:21+00:00,2006-03-30 00:36:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1135,1135,"- Since we now have per destination usage managers, I updated the MessageStore API so that each destination's store can be maded aware of the manager for that store. 
+  Some stores like the journal hold messages around and use the usage manager to know when it should flush to disk.
+- Moved alot of the message reference counting logic from the PrefetchSubscription up to it's subclasses since they all seem to do it just a slightly different way.
+  I think it makes easier to see now how the usage manager is affected by operations.
+- I fixed and verifed that the keepDurableSubsActive=true option actually works.  I think we should make this the default setting since it
+  make recovery safer.  Once we have a better spooling implementation we can turn if off again.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@389941 13f79535-47bb-0310-9956-ffa450edef68",142,129,1.5869755129882588,1.5869755171131086,90
+d9729e86d461f551be50b9f6bebcb19f6605d62f,2006-03-30 13:20:08+00:00,2006-03-30 13:20:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1135,1135,"fixed old startup text - thx for the catch Geir
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@390117 13f79535-47bb-0310-9956-ffa450edef68",142,129,1.5870086106925645,1.5870086159281473,90
+ea1dad712aba14486a55bd8a39bd71f0bf20c6f8,2006-03-31 18:12:24+00:00,2006-03-31 18:12:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1138,1138,"Implemented: http://issues.apache.org/activemq/browse/AMQ-673
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@390470 13f79535-47bb-0310-9956-ffa450edef68",142,130,1.5891029008548356,1.58910290413264,90
+609681a0cbbe5658ce67409112414e8f0c7f1b8b,2006-04-03 17:39:32+00:00,2006-04-03 17:39:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1139,1139,"allow any implementation of PersistenceAdapterFactory to be used
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@391091 13f79535-47bb-0310-9956-ffa450edef68",142,130,1.5874661011416777,1.587466105385821,90
+23d80b3c71065571c5c6ca458626fd681326dc2c,2006-04-05 21:26:03+00:00,2006-04-05 21:26:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1142,1142,"List the unique id of the broker when it's started and stopped.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@391821 13f79535-47bb-0310-9956-ffa450edef68",142,131,1.5862132777585176,1.586213280693048,90
+b76530740e60d40f9bf3107d1d440e85122bda6b,2006-04-06 18:56:36+00:00,2006-04-06 18:56:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1145,1145,"allow folks to serialize the broker service if they really need to
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@392035 13f79535-47bb-0310-9956-ffa450edef68",143,132,1.5869404600987136,1.5869404630084125,90
+d724f9ed4d85d398dd5fe4b44157ca7c5ec2afba,2006-04-06 19:15:29+00:00,2006-04-06 19:15:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1147,1147,"Group the connections using the connector name that they were created from.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@392043 13f79535-47bb-0310-9956-ffa450edef68",145,132,1.5880874762717245,1.5880874812175438,90
+46d62dff70d782a8f21915c00cef3eb1f5128691,2006-04-07 15:38:38+00:00,2006-04-07 15:38:38+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1146,1146,"enable keepDurableSubsActive by default.  See:
+http://issues.apache.org/activemq/browse/AMQ-669
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@392323 13f79535-47bb-0310-9956-ffa450edef68",144,132,1.587342759771165,1.58734276431941,90
+8ad6fd36a1a285e37d5e910a1c43994af2100fd5,2006-04-25 14:06:52+00:00,2006-04-25 14:06:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1169,1169,"added a helper method to make it easier to work with the admin view together with fixed some NPEs I was getting when redeploying ActiveMQ when using mvn jetty6:run
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@396892 13f79535-47bb-0310-9956-ffa450edef68",147,135,1.5878543163199963,1.5878543206458922,106
+466ccddc1fde7810cd5d1ee91cf50f4b10518473,2006-07-04 17:15:00+00:00,2006-07-04 17:15:00+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1183,1183,"made it possible to disable advisory message support for AMQ-794
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@419049 13f79535-47bb-0310-9956-ffa450edef68",149,138,1.583656189201118,1.5836561942874492,107
+fd3c5104df89ee7d2a7de5634760add0354d4d84,2006-07-14 16:25:29+00:00,2006-07-14 16:25:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1183,1183,"Added a workaround for Spring 2.0-rc1 for AMQ-825 where we avoid using File objects on the default persistence adapter and use Strings instead. Its unfortunate (I tried patching xbean-spring to get around this but I'm afraid it doesn't seem possible). So folks using Java to configure the dataDirectory will need to change foo.setDataDirectory(file) to foo.setDataDirectoryFile(file)  or switch to using a String
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@421936 13f79535-47bb-0310-9956-ffa450edef68",149,138,1.5835008764142695,1.5835008834507027,107
+90d0c4b38b715e5fca91126e8fc673e7e9c67bf2,2006-07-21 14:10:45+00:00,2006-07-21 14:10:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1193,1193,"an implementation of an exclusive lock in SQL to ensure that only one JDBC message store is run against a database at once to fix AMQ-831. For documentation on this feature see: http://activemq.org/site/jdbc-master-slave.html 
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@424328 13f79535-47bb-0310-9956-ffa450edef68",149,139,1.5831010791097229,1.5831010842112632,108
+8f8fddc70c840a725193b8eed369baffab2298c8,2006-07-24 10:27:32+00:00,2006-07-24 10:27:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1212,1212,"added patch from Brian Madigan. To see thread see: http://www.nabble.com/Re%3A-Virtual-Topics-%28was-Re%3A-Failover-topic-subscribers%29-tf1942508.html#a5439965
+for background see: http://incubator.apache.org/activemq/virtual-destinations.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@424994 13f79535-47bb-0310-9956-ffa450edef68",152,142,1.5820117437052206,1.582011750535461,109
+29081a8b1010fa6f7f3788205662782d1ab2f784,2006-07-24 12:08:40+00:00,2006-07-24 12:08:40+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1211,1211,"removed unused imports
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@425021 13f79535-47bb-0310-9956-ffa450edef68",152,142,1.5820117437052206,1.582011750535461,109
+da67a386967bd03bd21af1e3dff3b89f72fc8cc9,2006-07-27 13:12:46+00:00,2006-07-27 13:12:46+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1236,1236,"refactored the previous implementation of virtual topics to use DestinationInterceptors instead so that there is no cost to virtual topics unless you are using them. Also added support for CompositeQueue/CompositeTopics too
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426060 13f79535-47bb-0310-9956-ffa450edef68",155,144,1.5851714845174771,1.585171490839027,112
+370734c8213b87b40d02e16e5af87276f2a3a10d,2006-07-27 14:23:52+00:00,2006-07-27 14:23:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1267,1267,"moved the virtual topic test cases to a better package and added a test case that demonstrates how to configure the virtual topic policy to enable all topics to be virtual topics together with changing the consumer queue prefix
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426087 13f79535-47bb-0310-9956-ffa450edef68",160,148,1.595479656968611,1.595479663072142,115
+4bd8a8bf852507b1d5d03eba0c20aa28a7e69f8b,2006-07-27 16:14:38+00:00,2006-07-27 16:14:38+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1278,1278,"added a test case to show the auto-creation of destinations on startup working to fix AMQ-828. For documentation see: http://activemq.org/site/configure-startup-destinations.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426116 13f79535-47bb-0310-9956-ffa450edef68",162,150,1.5994666376062667,1.599466645041173,115
+8abb655e82501b33336316b6ba0d863fdfc01bf4,2006-07-27 16:39:09+00:00,2006-07-27 16:39:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1303,1303,"added a helper method on the broker for its default administration connection context to avoid various parts of the code spoofing one and to provide a single place we can register any particular security details for startup or runtime MBean based administration
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426132 13f79535-47bb-0310-9956-ffa450edef68",166,152,1.5989378235540483,1.5989378300174828,117
+57b494132549ebef6877bf47da3c3d5d776286e0,2006-07-28 03:04:41+00:00,2006-07-28 03:04:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1304,1304,"Applied new source header boiler plate per http://www.apache.org/legal/src-headers.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426366 13f79535-47bb-0310-9956-ffa450edef68",166,152,1.5989378235540483,1.5989378300174828,117
+bf4d7538f8924ed266cbbc76b1b7b29d93fdd2e2,2006-08-07 14:54:29+00:00,2006-08-07 14:54:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1308,1308,"Beter documentation for xbean reference generation.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@429358 13f79535-47bb-0310-9956-ffa450edef68",166,152,1.5989378235540483,1.5989378300174828,117
+ee2462da4162185a33578d61a7d9e7404dfb3f57,2006-08-18 08:30:40+00:00,2006-08-18 08:30:40+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1339,1339,"Minor refactor so that we can configure the MasterConnector using XML or dependency injection easier. Also added a test case showing how to use a new <masterConnector> element to configure the userName & password of the slave. For background on this issue see: http://www.nabble.com/Master-Slave-with-authentication-tf2094845.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@432517 13f79535-47bb-0310-9956-ffa450edef68",170,155,1.608363616029713,1.6083636259066745,127
+53082e6a14af5d80904b0b72b6f7ae2a98648ec3,2006-08-23 16:12:47+00:00,2006-08-23 16:12:47+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1378,1378,"add the ability to remove network connectors dynamically
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@434068 13f79535-47bb-0310-9956-ffa450edef68",173,158,1.611375511459888,1.6113755190234398,132
+9d4c74fb74e6206f13ca43718bf922410744d09e,2006-08-31 17:32:02+00:00,2006-08-31 17:32:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1390,1390,git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@438994 13f79535-47bb-0310-9956-ffa450edef68,175,160,1.6081350943965738,1.6081350978764923,134
+7d1e6bcdeec58eff5f937adb6c5aa355d0a0ec13,2006-09-02 07:03:30+00:00,2006-09-02 07:03:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1432,1432,"some ground work for http://issues.apache.org/activemq/browse/AMQ-845
+changed pending linked list to use a PendingMessageCursor interface instead
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@439552 13f79535-47bb-0310-9956-ffa450edef68",178,166,1.6098081082797517,1.6098081149669048,138
+3fe77a2cf8de036cdfcdf4c0fc6889e71265ac88,2006-09-04 15:40:53+00:00,2006-09-04 15:40:53+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1461,1461,"Use a different TaskFactory for PersistenceAdaptors - allowing the thread priority
+to be set differently for PersistenceAdaptors (e.g. Journal) than normal tasks.
+
+This is part of the work necessary for http://issues.apache.org/activemq/browse/AMQ-845
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@440108 13f79535-47bb-0310-9956-ffa450edef68",190,172,1.6064221017280824,1.606422108231571,140
+c9b89056f771d351f0a3a4cfbe8976011290e63f,2006-09-15 00:31:46+00:00,2006-09-15 00:31:46+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1500,1500,"fix for http://issues.apache.org/activemq/browse/AMQ-922
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@443534 13f79535-47bb-0310-9956-ffa450edef68",195,175,1.6099565779704628,1.6099565821996351,145
+0552c2bf0d0f8aa2a62befa72f638d92e7698266,2006-09-30 02:06:59+00:00,2006-09-30 02:06:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1519,1519,"https://issues.apache.org/activemq/browse/AMQ-812 - allow all destinations, including inactive ones to be shown in jmx 
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@451518 13f79535-47bb-0310-9956-ffa450edef68",196,176,1.6100390019384663,1.6100390062934957,150
+b6ba20b965ec0fe97ead8f824a88d83d8e0d6400,2006-10-09 13:05:20+00:00,2006-10-09 13:05:20+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1520,1520,"changes for https://issues.apache.org/activemq/browse/AMQ-845 -
+provide support for durable topic cursors
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@454368 13f79535-47bb-0310-9956-ffa450edef68",196,176,1.610854878601178,1.6108548843409274,150
+78035ea26b5e56f422f7473c2690b3965aff4bbc,2006-10-09 17:56:58+00:00,2006-10-09 17:56:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1522,1522,"check tmpDataStore is actually created before closing!
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@454444 13f79535-47bb-0310-9956-ffa450edef68",196,176,1.6109277922312955,1.6109278005199341,151
+3a9299bade47de24705eebfe8cb4941309986a00,2006-10-13 11:17:41+00:00,2006-10-13 11:17:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1544,1544,"Fixed failing test cases: - a few problems had been there for a while
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@463646 13f79535-47bb-0310-9956-ffa450edef68",194,179,1.614125659489118,1.614125663831465,153
+d96a43d400329bf126dbd9f58db692650b7a94ae,2006-10-18 13:55:53+00:00,2006-10-18 13:55:53+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1544,1544,"some trivial javadoc fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@465251 13f79535-47bb-0310-9956-ffa450edef68",194,179,1.614125659489118,1.614125663831465,153
+319966c1298daa97b86573c4149cd9a7fa896ce2,2006-10-21 01:57:35+00:00,2006-10-21 01:57:35+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1549,1549,"refactored out a protected stopAllConnectors() so it can be overriden in derived classes.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@466320 13f79535-47bb-0310-9956-ffa450edef68",196,180,1.61491034194445,1.6149103463314733,153
+49e10d36fc5a3317ee6a3e7a42787c913da5234d,2006-10-30 12:17:14+00:00,2006-10-30 12:17:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1550,1550,"added support for a simple message based command agent so that you can send management commands to the broker over JMS
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@469135 13f79535-47bb-0310-9956-ffa450edef68",196,180,1.613900795653023,1.6139007978000888,153
+b3e315fcc21e2d96ab151fa4d2516bbdb3d49edf,2006-11-01 16:37:39+00:00,2006-11-01 16:37:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1550,1550,"disabled the use of the CommandAgent by default to avoid causing the VM broker to keep around forever (since the broker itself creates a VM transport which avoids it ever being closed)
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@469972 13f79535-47bb-0310-9956-ffa450edef68",196,180,1.61491034194445,1.6149103463314733,153
+86cbdfd5db5b1c90c4a5f4dcdef702b0cf4901ce,2006-11-17 00:29:03+00:00,2006-11-17 00:29:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1550,1550,"Switching to Java 5.. Build and Runtime now require Java 5 see: http://www.nabble.com/Switching-to-ActiveMQ-4.2-to-Java-5----tf2637427.html
+- Update maven build
+- Removed dependency on concurrent-backport
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@475999 13f79535-47bb-0310-9956-ffa450edef68",196,180,1.61491034194445,1.6149103463314733,153
+e34cbc1b075ce78879abfdcb3a023df005686f7e,2006-11-21 08:15:10+00:00,2006-11-21 08:15:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1561,1561,"applied patch for http://issues.apache.org/activemq/browse/AMQ-1029
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@477570 13f79535-47bb-0310-9956-ffa450edef68",200,180,1.6152093929663107,1.6152093968968102,154
+4597dddf79cf250c5b29e2d59cb4f7457bc62ea1,2006-11-29 22:09:33+00:00,2006-11-29 22:09:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1564,1564,"Setting the Store based cursor as the default for Durable Subscribers
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@480731 13f79535-47bb-0310-9956-ffa450edef68",200,180,1.6154647904695802,1.6154647937654405,154
+415d46cf466067411d3a52a1ca8206fb456470ed,2006-11-30 13:46:08+00:00,2006-11-30 13:46:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1564,1564,"log which Persistence Adaptor we are using
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@480924 13f79535-47bb-0310-9956-ffa450edef68",200,180,1.6152655895685553,1.6152655929803732,154
+f1a989da9e464b6b016e61e7e08d756f923b8d0d,2006-11-30 13:47:48+00:00,2006-11-30 13:47:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1564,1564,"sp mistake
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@480925 13f79535-47bb-0310-9956-ffa450edef68",200,180,1.6153250080001613,1.615325011947393,154
+bc03f37ebe8b2180031eb21aca37b92a4521e644,2006-12-28 20:29:34+00:00,2006-12-28 20:29:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1605,1605,"Fix for http://issues.apache.org/activemq/browse/AMQ-841
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@490786 13f79535-47bb-0310-9956-ffa450edef68",205,185,1.6187840391942054,1.6187840411913037,157
+81c5b1500bc324e269ff462308094c6eda766021,2007-01-02 13:39:10+00:00,2007-01-02 13:39:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1609,1609,"in stop() remove VMTransports after services stopped - to avoid a timing issue with 
+discovery spinning up a new instance
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@491794 13f79535-47bb-0310-9956-ffa450edef68",206,185,1.6185716166214066,1.61857161942509,157
+61d56b290ab80d8bf694a107759e7dbed12dd295,2007-01-02 17:13:54+00:00,2007-01-02 17:13:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1595,1595,"in stop() remove VMTransports after services stopped - to avoid a timing issue with 
+discovery spinning up a new instance
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@491856 13f79535-47bb-0310-9956-ffa450edef68",193,185,1.6184964571471838,1.6184964613589046,154
+0c0be94a312fd432f3076fbe8ab91a2080e65043,2007-01-28 19:39:02+00:00,2007-01-28 19:39:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1574,1574,"Updated support for configurable Cursor types from the Destination Policy Map
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@500862 13f79535-47bb-0310-9956-ffa450edef68",191,182,1.615747289453447,1.615747289770233,152
+1d882e981cfcd16a9f89c0e141cc4f7715b6e010,2007-02-07 15:35:10+00:00,2007-02-07 15:35:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1576,1576,"adding a patch to fix AMQ-1157 allowing a broker security context to be used to allow destinations to be created on startup etc.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@504586 13f79535-47bb-0310-9956-ffa450edef68",191,182,1.6158607263929532,1.6158607263758944,152
+ccf3f3c60dc714beb24fb640f075d8b31c8b9be8,2007-02-12 11:20:05+00:00,2007-02-12 11:20:05+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1598,1598,"updates for https://issues.apache.org/activemq/browse/AMQ-894 - provided option to disable statistics gathering
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@506415 13f79535-47bb-0310-9956-ffa450edef68",199,185,1.614460320778658,1.6144603216262858,152
+f5b1b831b63ec722936fcab2bb04235b8154cf5a,2007-02-20 15:40:08+00:00,2007-02-20 15:40:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1598,1598,"set stats collection to false by default - a real performance hog - ironically
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@509612 13f79535-47bb-0310-9956-ffa450edef68",199,185,1.6142930795522403,1.614293080694986,152
+3013c2020bcc65019a957017fcbda3ae5b79dac8,2007-02-26 11:04:18+00:00,2007-02-26 11:04:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1598,1598,"updated wiki links in source code to point to the graduated site
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@511784 13f79535-47bb-0310-9956-ffa450edef68",199,185,1.6144029071634858,1.6144029083870004,152
+9583b5fc9f3fa23ccbb2bea5d34cbb3c39048fee,2007-02-26 19:01:22+00:00,2007-02-26 19:01:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1600,1600,"added a helper class so that system properties can be used to overload the default prefix for auto-created data directories. Also patched the test cases to use a relative to target/ directory for easier cleaning
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@511947 13f79535-47bb-0310-9956-ffa450edef68",199,185,1.6145947192008032,1.6145947195317105,152
+14c605feabc9ccabb407011f183d0076603350fc,2007-02-28 07:17:55+00:00,2007-02-28 07:17:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1643,1643,"Have separate child Usage Managers - one for producers, one for consumers.
+This has been done so that paged-in messages do not have to contend for memory
+with fast producers
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@512637 13f79535-47bb-0310-9956-ffa450edef68",210,191,1.6082149276860556,1.6082149263281533,154
+44bafc3e0340c60d78d533959aebc79e409f3ff1,2007-02-28 14:21:29+00:00,2007-02-28 14:21:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1662,1662,"added a little helper method to make it easy to wait on a broker being shut down in Java code
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@512764 13f79535-47bb-0310-9956-ffa450edef68",211,194,1.6110190187472848,1.611019015969537,155
+9fd9189a17aef039bf28da1fd8538c736e0e550d,2007-03-01 19:43:12+00:00,2007-03-01 19:43:12+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1665,1665,"ensure deleteAllMessages gets passed to the persistence adapter whilst it still makes sense
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@513467 13f79535-47bb-0310-9956-ffa450edef68",211,194,1.6113185552900728,1.611318553978722,156
+1dc9d9d355d9159ec088c6ee8193e77a359a80c7,2007-03-03 12:32:25+00:00,2007-03-03 12:32:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1665,1665,"reset enableStatistics=true
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@514140 13f79535-47bb-0310-9956-ffa450edef68",211,194,1.611482220823919,1.611482220402312,156
+985b4ce0df17acf06c8046b6e2ecb80f88c31713,2007-03-06 10:29:03+00:00,2007-03-06 10:29:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1668,1668,"Make AMQPersistenceAdaptor the default persistence engine for ActiveMQ 5.0
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@515059 13f79535-47bb-0310-9956-ffa450edef68",211,194,1.610337246887279,1.6103372474261124,156
+0d9b41325673ce4b7b40fc76bec1415c98bef894,2007-03-07 16:13:06+00:00,2007-03-07 16:13:06+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1665,1665,"remove unused imports
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@515629 13f79535-47bb-0310-9956-ffa450edef68",211,194,1.610337246887279,1.6103372474261124,156
+82201d28dd029b2f1c7c0b37b74a38629415b751,2007-03-09 15:47:05+00:00,2007-03-09 15:47:05+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1670,1670,"Use the broker name in the directory used for the AMQStore and temp-store area
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@516439 13f79535-47bb-0310-9956-ffa450edef68",213,195,1.61047312736569,1.6104731287793561,156
+7162f01b75429edd25ae49b3039c496579775b89,2007-03-14 18:37:31+00:00,2007-03-14 18:37:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1670,1670,"default the usageManager to 64Mb rather than the measily 20m :)
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@518260 13f79535-47bb-0310-9956-ffa450edef68",213,195,1.610361136673244,1.6103611370043067,156
+a640190fc45a256cf457e241c7acc634c020c4a0,2007-03-15 11:39:04+00:00,2007-03-15 11:39:04+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1675,1675,"added support for using a properties file to configure the broker to avoid the dependency on Spring and xbean; for AMQ-1206
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@518590 13f79535-47bb-0310-9956-ffa450edef68",214,196,1.6106104278243318,1.6106104264578185,156
+47510d8eee2eff8e4b449ee25717dfe1d75e2f98,2007-03-21 09:37:39+00:00,2007-03-21 09:37:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1677,1677,"added soft bunny log message - so we don't scare folks when we delete all their messages on startup 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@520819 13f79535-47bb-0310-9956-ffa450edef68",214,196,1.6100642279853548,1.610064228873961,155
+a2aed3d732a57ea42bc3354d6cd2e1a603673f5a,2007-03-21 12:54:10+00:00,2007-03-21 12:54:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1677,1677,"If localhost broker not started and other named broker exists - use that from vm:// transport instead of creating a new broker 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@520870 13f79535-47bb-0310-9956-ffa450edef68",214,196,1.6104475906087423,1.6104475923824748,155
+9dccfa4a8a03a0327b3daa7881bf4d2206225715,2007-03-28 11:15:22+00:00,2007-03-28 11:15:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1688,1688,"fixed the assembly so that the activemq broker script works again. Now moved from a Jetty snapshot to a release (6.1.2rc2) and also made BrokerService.setDataDirectory(String) take a string to avoid strange Spring errors we were getting
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@523279 13f79535-47bb-0310-9956-ffa450edef68",215,197,1.6113405275614117,1.6113405274709114,155
+2bed73b2f1561046bf97e88db2301571ce638372,2007-06-26 05:11:51+00:00,2007-06-26 05:11:51+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1687,1687,"My bad if not true (I don't see how it could be done) - but why is BrokerService serializable ? - now removed
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@550694 13f79535-47bb-0310-9956-ffa450edef68",215,197,1.6113405275614117,1.6113405274709114,155
+a3e382199cd45169ebad5c2c1544d67ac7314412,2007-06-27 18:53:30+00:00,2007-06-27 18:53:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1680,1680,"ensure member variables are always synchronized 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@551271 13f79535-47bb-0310-9956-ffa450edef68",215,196,1.611408190909248,1.6114081895094956,152
+ec6e6a55a7477dc67d7dc4cd42f9caa64f8de654,2007-06-28 04:34:57+00:00,2007-06-28 04:34:57+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1682,1682,"Display the establised Neteowork Connector Bridges via JMX - https://issues.apache.org/activemq/browse/AMQ-1299
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@551443 13f79535-47bb-0310-9956-ffa450edef68",215,196,1.610625858873231,1.6106258607682058,152
+25a252f34868fa58b3cb9207e8f91a44e720e8e7,2007-07-03 08:31:10+00:00,2007-07-03 08:31:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1696,1696,"Added duplicate detection to the TransactionBroker - so can cope with rollbacks etc.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@552738 13f79535-47bb-0310-9956-ffa450edef68",214,199,1.6121648387633785,1.6121648407014373,152
+4757541f960330a11b6dc158006912a70fdfb68f,2007-07-04 06:33:48+00:00,2007-07-04 06:33:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1702,1702,"set async=false for network connectors
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@553094 13f79535-47bb-0310-9956-ffa450edef68",214,199,1.6123097904966066,1.6123097937668571,152
+83a6eff431007e259fce89905f3245669f65c8fc,2007-07-19 19:24:31+00:00,2007-07-19 19:24:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1716,1716,"move decision about being a slave from the Broker to the ConnectionContext - so can be done on a Connection basis if required
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@557748 13f79535-47bb-0310-9956-ffa450edef68",215,202,1.6106385073581861,1.6106385093494777,152
+1e3e5b722337307dcce1cc12b001658dacd04c5a,2007-07-29 08:54:49+00:00,2007-07-29 08:54:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1731,1731,"Fix for http://issues.apache.org/activemq/browse/AMQ-1294
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@560693 13f79535-47bb-0310-9956-ffa450edef68",215,202,1.6110548190336162,1.6110548223431362,157
+64b8fb64f45bcfdb291806816ccc50dc0950495c,2007-08-01 14:49:48+00:00,2007-08-01 14:49:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1736,1736,"Added explicit error for badly formated broker name
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@561815 13f79535-47bb-0310-9956-ffa450edef68",216,202,1.6120501461975794,1.6120501482299985,158
+0945e32b6ac01569d69300c80c344bfae8392cbf,2007-08-08 13:22:15+00:00,2007-08-08 13:22:15+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1736,1736,"Fix the TopicMasterSlaveTest that was failing
+ - Stack was overflowing due to the advisory broker advising on topic advisories
+ - MasterConnector now makes sync request to the slave if it's given a sync request
+ - Test was failing due to kaha not being able to create a file that was too long.. fixed by making the 
+   sub name and client id and dest name shorter.  Need to revisit.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563854 13f79535-47bb-0310-9956-ffa450edef68",216,202,1.611947482201874,1.6119474843017538,158
+230a86c4897e10fbc5e7384b064cc526395d47e5,2007-08-08 15:52:25+00:00,2007-08-08 15:52:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1689,1689,"Fixing a bunch of checkstyle violations
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563921 13f79535-47bb-0310-9956-ffa450edef68",194,202,1.6133751779120549,1.61337517226131,174
+74a7a8bbfc8012bf0842b1eec891a8545f9944cb,2007-08-09 00:34:07+00:00,2007-08-09 00:34:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1691,1691,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564057 13f79535-47bb-0310-9956-ffa450edef68",196,202,1.6133751779120549,1.61337517226131,174
+ecf89a60bfd8089d1b1de5666bd2e9d5938abe8e,2007-08-10 16:57:01+00:00,2007-08-10 16:57:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1692,1692,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564679 13f79535-47bb-0310-9956-ffa450edef68",197,202,1.615402604156736,1.615402597634769,174
+6d8e2c5b3a4054f537308a5be9eac9254a57a17a,2007-08-20 10:37:29+00:00,2007-08-20 10:37:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1702,1702,"UpdateManager changed to account for Store and Temp data usage as well as memory usage
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@567647 13f79535-47bb-0310-9956-ffa450edef68",197,202,1.617176963182108,1.6171769592669527,174
+2b0024c269c8727084a36637f239667d25f5dfe7,2007-08-20 19:30:33+00:00,2007-08-20 19:30:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1702,1702,"Made the SystemUsage and associated *Usage classes IOC friendly so that they can be configured
+via xbean/spring.  Fixed the ConfigTest test case.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@567796 13f79535-47bb-0310-9956-ffa450edef68",197,202,1.6173733962141594,1.6173733902601586,174
+0a52fe728962f773d620b7f205dacf103599480e,2007-08-30 20:49:41+00:00,2007-08-30 20:49:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1702,1702,"Satitized the filenames that the KahaStore uses. 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@571306 13f79535-47bb-0310-9956-ffa450edef68",197,202,1.6173803474956703,1.6173803424708069,174
+222daf2323cbb6d98b6bd7ed31d886b0c58cfdfa,2007-09-06 22:14:34+00:00,2007-09-06 22:14:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1707,1707,"Fix for https://issues.apache.org/activemq/browse/AMQ-1382... if the broker.persistent==false then we should not create any files, not even for the Temp Store.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@573397 13f79535-47bb-0310-9956-ffa450edef68",199,202,1.6171776791993655,1.6171776740724586,175
+42b768aa1f5095419b7e25ee669f301b2b57f889,2007-09-27 08:26:57+00:00,2007-09-27 08:26:57+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1738,1738,"added patch for https://issues.apache.org/activemq/browse/AMQ-1435 to handle Mirrored Queues (so that folks can consume on a topic what messages are sent to a queue)
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@579941 13f79535-47bb-0310-9956-ffa450edef68",204,207,1.6147908676477747,1.614790860783189,176
+e2ef8b81650e03f397c474cd888d317119d9b4bb,2007-10-05 06:02:46+00:00,2007-10-05 06:02:46+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1756,1756,"patch http://issues.apache.org/activemq/browse/AMQ-1444
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@582086 13f79535-47bb-0310-9956-ffa450edef68",206,209,1.6177752319986554,1.6177752240498293,180
+2cb21198141c8980a0d84b697809053a6ad36f35,2007-10-18 14:08:44+00:00,2007-10-18 14:08:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1767,1767,"fix for https://issues.apache.org/activemq/browse/AMQ-1467
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@585967 13f79535-47bb-0310-9956-ffa450edef68",206,210,1.6178695023249192,1.6178694995502014,184
+9dd11cb71f02e7259c2e4a110c90dea69c70bb69,2007-11-28 20:19:27+00:00,2007-11-28 20:19:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1767,1767,"Fix for https://issues.apache.org/activemq/browse/AMQ-1490
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@599129 13f79535-47bb-0310-9956-ffa450edef68",206,210,1.6182240450331424,1.6182240430136565,184
+f4720004671efe9cae4f8610b64b55099733f6d2,2007-12-04 11:27:58+00:00,2007-12-04 11:27:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1767,1767,"Changes to address memory usage for large transactions for:
+https://issues.apache.org/activemq/browse/AMQ-1490
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@600891 13f79535-47bb-0310-9956-ffa450edef68",206,210,1.6180045706472246,1.6180045662126348,184
+a3b4c5a3580217c248b47539e125e3fa70adf276,2007-12-13 09:19:36+00:00,2007-12-13 09:19:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1768,1768,"Fix for https://issues.apache.org/activemq/browse/AMQ-1507
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@603863 13f79535-47bb-0310-9956-ffa450edef68",206,210,1.6181560639883343,1.6181560598467242,184
+2db7df72d69582e399b2a997027d909babf9b2de,2007-12-27 11:06:50+00:00,2007-12-27 11:06:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1778,1778,"Reduce contention around Queues
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@607038 13f79535-47bb-0310-9956-ffa450edef68",207,210,1.616654555871445,1.616654551816927,184
+5f4db41d2da5df90f3f21097b6b80b0941dad050,2008-01-16 13:56:24+00:00,2008-01-16 13:56:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1800,1800,"set correct consumer count on consumer advisories
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@612459 13f79535-47bb-0310-9956-ffa450edef68",213,212,1.619978189133717,1.6199781839261,189
+13829eff1dbcda6962f65a570815db129f82bc4b,2008-02-29 21:59:33+00:00,2008-02-29 21:59:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1809,1809,"The Producer MemoryLimit can lead to network deadlock when spooling is disabled.
+So we now disable using it when sooling is used on a queue.
+
+see:
+https://issues.apache.org/activemq/browse/AMQ-1606
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@632455 13f79535-47bb-0310-9956-ffa450edef68",215,215,1.61680860620412,1.6168086031592581,189
+c427689dad37c674328233e61d3f231b662cd9ff,2008-03-01 22:31:26+00:00,2008-03-01 22:31:26+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1847,1847,"make splitting consumers/producers memory limit optional and off
+by default
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@632666 13f79535-47bb-0310-9956-ffa450edef68",221,224,1.617873873337411,1.6178738674594766,191
+88fbb05af59bfd59dc6c558b9d5e4c7c2831580c,2008-03-07 00:59:02+00:00,2008-03-07 00:59:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1862,1862,"Add foundation for monitoring split brokers from a clients view point
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@634488 13f79535-47bb-0310-9956-ffa450edef68",223,230,1.6171924005791756,1.6171923945928197,192
+290ce2a6bf9bcaec82d214bdad73ecb8414c5649,2008-03-12 19:00:25+00:00,2008-03-12 19:00:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1862,1862,"ensure network connections use async dispatch
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636454 13f79535-47bb-0310-9956-ffa450edef68",223,230,1.6171934282695484,1.6171934231136886,192
+10965641172b49c9027197264c4f0547740cdc31,2008-03-13 03:09:48+00:00,2008-03-13 03:09:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1867,1867,"Allow the region broker implemenation to get changed by subclasses of BrokerService.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636609 13f79535-47bb-0310-9956-ffa450edef68",223,231,1.6183797613706392,1.6183797561950957,190
+e4621e3aa71b6fabb67dad158e488946859dfea5,2008-03-13 11:35:57+00:00,2008-03-13 11:35:57+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1886,1886,"Added properties for caching of temp destinations
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636722 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6165844070192366,1.6165844005388634,190
+5fd3229c0bfba2d530928fe8edbb6fec6c12cabb,2008-03-13 16:21:36+00:00,2008-03-13 16:21:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1886,1886,"default back to straight through for network vm transport
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636796 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6165834706265356,1.6165834647127502,190
+5dc188eb32ff61cca06d0837a3d7d894b3f75a4b,2008-03-14 00:04:32+00:00,2008-03-14 00:04:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1886,1886,"monitor connection splits is now on by default
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636930 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6162615601999115,1.6162615538305298,190
+0ff0ee3766f3fa10ea57c57fe51e656b10d20c79,2008-03-17 13:27:11+00:00,2008-03-17 13:27:11+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1885,1885,"use defaults for VMTransport in network connections
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@637877 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6166010371804158,1.6166010320263442,190
+2f9fdea41f0959dd1a3c4ea62902c5c3d61b2926,2008-03-19 14:35:32+00:00,2008-03-19 14:35:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1885,1885,"changed some defaults
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@638844 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6165907616088189,1.6165907567996831,190
+39100564daa1cfcb3ccafcdef260455b0b8b473b,2008-04-07 15:48:53+00:00,2008-04-07 15:48:53+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1886,1886,"Applying patch: https://issues.apache.org/activemq/browse/AMQ-1567  Thanks Dejan!
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@645574 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6157103080256894,1.6157103034578395,190
+f1b6362dedeb6f55ae344478d1666598a8b1bfee,2008-04-09 09:45:22+00:00,2008-04-09 09:45:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1900,1900,"Applied patch for https://issues.apache.org/activemq/browse/AMQ-1511
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@646245 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.6162973493205495,1.6162973472918913,196
+8bf9c17dd9ee51eaed6a9ef3c6affe2c7bd718bc,2008-04-09 15:41:33+00:00,2008-04-09 15:41:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1903,1903,"Throw an exception if advisory messages are disabled when creating networks
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@646409 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.615414111165206,1.615414107718402,197
+5d99c99ab72fb500d66e07fe346dfd64ce7460ac,2008-04-17 18:09:37+00:00,2008-04-17 18:09:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1901,1901,"Fix for https://issues.apache.org/activemq/browse/AMQ-1670 you should now able able to add transports before configuring the reset of 
+the broker properties.  Also slightly changed the TransportFactory interface so that you are not forced to supply a brokerId to bind
+a transport.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@649211 13f79535-47bb-0310-9956-ffa450edef68",227,237,1.617006116526496,1.6170061101909232,197
+16f2d753e8f96c35910971c5994c9f84778f63ba,2008-04-21 13:41:19+00:00,2008-04-21 13:41:19+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1905,1905,"Fix for https://issues.apache.org/activemq/browse/AMQ-1672
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@650143 13f79535-47bb-0310-9956-ffa450edef68",228,238,1.6169548264265903,1.6169548188819782,197
+620b657216d73490b00d3fa2dfb69ce7edbb11d7,2008-04-23 07:10:22+00:00,2008-04-23 07:10:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1915,1915,"Fix for https://issues.apache.org/activemq/browse/AMQ-1654
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@650766 13f79535-47bb-0310-9956-ffa450edef68",231,241,1.6140375685282005,1.6140375650576957,197
+803abe48a43f79c594e398f9b41e9457811275a9,2008-04-25 14:42:45+00:00,2008-04-25 14:42:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1915,1915,"Apply patch for http://issues.apache.org/activemq/browse/AMQ-1690
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@651618 13f79535-47bb-0310-9956-ffa450edef68",231,241,1.6140242702478378,1.6140242656583779,197
+b4f65bafaca8e8013c417355a3c470ed2f997ee7,2008-05-12 20:54:31+00:00,2008-05-12 20:54:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1956,1956,"Fix for https://issues.apache.org/activemq/browse/AMQ-1720
+added the ability to get a callback when the broker is shutdown.  Also added an option to System.exit when the broker is shutdown.
+
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@655639 13f79535-47bb-0310-9956-ffa450edef68",237,248,1.6175133777525434,1.6175133709050116,199
+139a220ee73b201517c2212d8e7a7ead48526fb1,2008-05-14 15:32:54+00:00,2008-05-14 15:32:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1978,1978,"fix for AMQ-1724
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@656319 13f79535-47bb-0310-9956-ffa450edef68",241,253,1.6170198039152668,1.6170197984387213,199
+2aa661d724572f70ba91fc76c7af7c1ed836552b,2008-05-15 11:58:12+00:00,2008-05-15 11:58:12+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1978,1978,"Fix for http://issues.apache.org/activemq/browse/AMQ-1709
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@656601 13f79535-47bb-0310-9956-ffa450edef68",240,253,1.616923108050723,1.6169231040539733,199
+4ee029ef4e708090eeaaa7d63ac14d1bc274fcc9,2008-05-28 15:19:30+00:00,2008-05-28 15:19:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1979,1979,"Fix for https://issues.apache.org/activemq/browse/AMQ-1541
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@660977 13f79535-47bb-0310-9956-ffa450edef68",240,253,1.6169809540785547,1.616980950089152,199
+8573072a6f777c43b3b09a2afbb6c0d1348bc392,2008-05-29 17:01:55+00:00,2008-05-29 17:01:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1982,1982,"Fixed PublishOnTopicConsumerMessageUsingActivemqXMLTest case that started failing due to the recently added chagne to the journal persistence adapter which did a:
+ this.usageManager.getMemoryUsage().addUsageListener(this); on start.  Basically we now don't start the persistence layer until the broker is started (was happening
+when the broker was created).
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@661402 13f79535-47bb-0310-9956-ffa450edef68",242,253,1.6173076136901232,1.6173076074565953,199
+fd184fb79a9fde8ce6b0e55d62d855750a1daab0,2008-05-29 19:11:20+00:00,2008-05-29 19:11:20+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1982,1982,"Provide better error messages when directories cannot be created.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@661435 13f79535-47bb-0310-9956-ffa450edef68",242,253,1.6172798627186606,1.6172798559985913,199
+55409bdea045058ca79d9a26813644bad46cf067,2008-06-05 13:29:59+00:00,2008-06-05 13:29:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1987,1987,"Fix for https://issues.apache.org/activemq/browse/AMQ-1772
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@663604 13f79535-47bb-0310-9956-ffa450edef68",242,253,1.617360380884738,1.617360376190942,199
+6453ebbd1243ee5a536317a10643acbc7896235c,2008-06-11 12:52:03+00:00,2008-06-11 12:52:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1987,1987,"Don't setup an SssContext by default, so that system properties can be used to configure the ssl settings.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@666646 13f79535-47bb-0310-9956-ffa450edef68",242,253,1.6176129126334964,1.617612906108317,199
+0cf384549ca8d57a501e447d56f9a3113b12c4dd,2008-08-14 09:32:25+00:00,2008-08-14 09:32:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1987,1987,"Apply patch for https://issues.apache.org/activemq/browse/AMQ-1858
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@685832 13f79535-47bb-0310-9956-ffa450edef68",242,253,1.6175747904484845,1.6175747836984664,199
+43880af18accb86d05489b41dcc2e57866d60d64,2008-08-20 08:07:48+00:00,2008-08-20 08:07:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1987,1987,"add waitForStart option to vm url, fix AMQ-1895
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@687280 13f79535-47bb-0310-9956-ffa450edef68",242,253,1.6176051009306778,1.6176050933490183,199
+d14e4aee1c204de5ea726fa632aeee5823ca44a7,2008-09-02 11:48:21+00:00,2008-09-02 11:48:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2024,2024,"Apply patch for https://issues.apache.org/activemq/browse/AMQ-596
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@691206 13f79535-47bb-0310-9956-ffa450edef68",248,263,1.6172816644501427,1.617281660842425,200
+543bc84a88e414d1e2b1df261a8f2a5c115f36ba,2008-10-15 10:10:29+00:00,2008-10-15 10:10:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2017,2017,"resolve AMQ-1977, some more choreography required in duplex case. Fix duplication of deleteAllMessageOnStartup which slows down JDBC test, add some more robustness to DuplexNetworkMBeanTest
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@704846 13f79535-47bb-0310-9956-ffa450edef68",247,263,1.6168341734322251,1.6168341687500105,199
+3b374365c193cd07940de22198f527810d1e043d,2008-12-28 23:13:32+00:00,2008-12-28 23:13:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2010,2010,"Fix for https://issues.apache.org/activemq/browse/AMQ-1918
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@729803 13f79535-47bb-0310-9956-ffa450edef68",245,263,1.6168341734322251,1.6168341687500105,199
+1ab76f775d4cade018f16f970b93b5ee9d77ac8f,2009-02-03 19:05:07+00:00,2009-02-03 19:05:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2013,2013,"AMQ-2091: Add a cache to the jms selector parser for speed improvements
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@740375 13f79535-47bb-0310-9956-ffa450edef68",245,263,1.616742673137211,1.6167426681028951,199
+2de531cb5209e0aa8ce46f18379619352583f6ba,2009-02-23 14:36:03+00:00,2009-02-23 14:36:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2013,2013,"fix for https://issues.apache.org/activemq/browse/AMQ-2074
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@747030 13f79535-47bb-0310-9956-ffa450edef68",245,263,1.6168013461830462,1.6168013395819993,199
+31c7e620c272d97bf3839f584e5deb133e5da23a,2009-03-25 14:30:50+00:00,2009-03-25 14:30:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2031,2031,"add waitUntilStarted to broker service so it is possible to wait till recovery is complete
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@758268 13f79535-47bb-0310-9956-ffa450edef68",247,265,1.6173231722286048,1.6173231670460304,203
+62e1abfb902ac48741481bd0d80783ecef9e79a4,2009-05-11 14:15:58+00:00,2009-05-11 14:15:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2048,2048,"fix for https://issues.apache.org/activemq/browse/AMQ-2245 - broker restart
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@773569 13f79535-47bb-0310-9956-ffa450edef68",254,270,1.5073922976132623,1.626757658801468,205
+07822041b4a877f55d375f178618bb104fe95e51,2009-06-15 10:11:24+00:00,2009-06-15 10:11:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2048,2048,"capture exception in log on slave start failure
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@784711 13f79535-47bb-0310-9956-ffa450edef68",254,270,1.507401764274407,1.6267763688179688,205
+a72f26f0df75749a6655a86f72b46a056964fcfd,2009-07-09 16:00:29+00:00,2009-07-09 16:00:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2048,2048,"resolve https://issues.apache.org/activemq/browse/AMQ-2321
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@792591 13f79535-47bb-0310-9956-ffa450edef68",254,270,1.5072918741472194,1.6265593830559728,205
+1ec71bdff17f6d11d50d77ff98db1c9a70e5d7b4,2009-07-31 19:19:07+00:00,2009-07-31 19:19:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1960,1960,"Refactored ManagementContext to  improve encapsulation - so all registrations of MBeans happen in one place
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@799706 13f79535-47bb-0310-9956-ffa450edef68",193,269,1.4659978777069689,1.618163551558989,184
+ced6909078435963f9e1a1e1be84281a1c48eb62,2009-08-03 12:40:13+00:00,2009-08-03 12:40:13+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1961,1961,"fix for https://issues.apache.org/activemq/browse/AMQ-2330 - mbean descriptions
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@800339 13f79535-47bb-0310-9956-ffa450edef68",193,269,1.4659905374566624,1.6181493358033465,184
+c1051c8ee1b56480fc78d850c2dc55344244523a,2009-09-07 13:52:45+00:00,2009-09-07 13:52:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1980,1980,"Fix for https://issues.apache.org/activemq/browse/AMQ-2378
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@812139 13f79535-47bb-0310-9956-ffa450edef68",196,270,1.4663493063077966,1.6188269941179367,187
+a33f73e2026de6060199ab091b9b7ff369c50eb6,2009-09-07 18:46:26+00:00,2009-09-07 18:46:26+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,1979,1979,"remove System.err line
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@812252 13f79535-47bb-0310-9956-ffa450edef68",196,270,1.4662230857707383,1.6185793758643146,187
+98497b19303af231068904157034049ba5141137,2009-09-10 13:19:52+00:00,2009-09-10 13:19:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2074,2074,"Fix for https://issues.apache.org/activemq/browse/AMQ-2071 and 
+https://issues.apache.org/activemq/browse/AMQ-2070
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813422 13f79535-47bb-0310-9956-ffa450edef68",198,272,1.4674536613022404,1.6209309178778124,224
+42282810a88c2a7ed1814f0bc13e922efcccaaaa,2009-09-11 16:16:08+00:00,2009-09-11 16:16:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2091,2091,"Fix for https://issues.apache.org/activemq/browse/AMQ-2387
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813906 13f79535-47bb-0310-9956-ffa450edef68",200,275,1.4657148803725895,1.6173904092260558,224
+7da608c411f3e4db9a33dae06967b6a218d480ad,2009-09-11 18:49:23+00:00,2009-09-11 18:49:23+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2091,2091,"Fix for https://issues.apache.org/activemq/browse/AMQ-1813
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813980 13f79535-47bb-0310-9956-ffa450edef68",200,275,1.4656294990507477,1.6172226974102948,228
+72b941603a2b1b3b9b014f34042461d1ec5ebb9e,2009-09-14 18:05:43+00:00,2009-09-14 18:05:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2093,2093,"resolve some failures and ref to old config namespace
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@814757 13f79535-47bb-0310-9956-ffa450edef68",200,275,1.4657976678814755,1.6175560636107962,228
+b3873fb3e45f1f74b77148bf64430ca0860a8266,2009-11-06 13:56:28+00:00,2009-11-06 13:56:28+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2106,2106,"https://issues.apache.org/activemq/browse/AMQ-2306 - jmx for slave brokers
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@833395 13f79535-47bb-0310-9956-ffa450edef68",201,276,1.4659980482250512,1.6179154745907696,230
+db65c4365bc6494f7e77d41892491917aa52eb04,2009-11-12 11:26:57+00:00,2009-11-12 11:26:57+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2106,2106,"https://issues.apache.org/activemq/browse/AMQ-2486 - systemExitOnShutdown hangs
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@835339 13f79535-47bb-0310-9956-ffa450edef68",201,276,1.4659702514748207,1.6178602599199323,230
+f528aa5b1d8689ca1aca053657437f2696e3a740,2009-11-13 11:26:16+00:00,2009-11-13 11:26:16+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2115,2115,"https://issues.apache.org/activemq/browse/AMQ-2486 - systemExitOnShutdown hang
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@835816 13f79535-47bb-0310-9956-ffa450edef68",206,276,1.466325681715794,1.6185609751095784,232
+c808bebd00064c6c1d2c702f10e249e6e2f99254,2009-11-13 15:22:07+00:00,2009-11-13 15:22:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2115,2115,"resolve https://issues.apache.org/activemq/browse/AMQ-2483 and https://issues.apache.org/activemq/browse/AMQ-2028, keep track of outstanding wakeup requests in a queue with regular task runner avoids build up in determintic task runner. Exposed useDeterministicTaskRunner to validate some test that fail with the -DuseDedicatedTaskRunner=true system property. With broker.useDedicatedTask=false, Queues will use pooled executor for dispatch.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@835874 13f79535-47bb-0310-9956-ffa450edef68",206,276,1.4664151179418852,1.618737397271819,232
+e8a641c6b7a4fe14f7dbc33134a2f833731b05ab,2009-11-13 15:50:32+00:00,2009-11-13 15:50:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2135,2135,"http://issues.apache.org/activemq/browse/AMQ-2042 - adding configurable io exception handling
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@835888 13f79535-47bb-0310-9956-ffa450edef68",209,279,1.4671273889066683,1.6200429254947897,237
+4969866569efd357e7d88b88f59e06638cc75a6c,2009-12-08 11:12:45+00:00,2009-12-08 11:12:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2135,2135,"https://issues.apache.org/activemq/browse/AMQ-2513 - JMX bug - javax.management.InstanceNotFoundException
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@888323 13f79535-47bb-0310-9956-ffa450edef68",209,279,1.4671240428648311,1.6200356045229511,238
+e80bf00b5b82384fd8c4817199a8be1f1c839735,2009-12-09 21:09:21+00:00,2009-12-09 21:09:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2146,2146,"resolve https://issues.apache.org/activemq/browse/AMQ-2527 - add timeout to waitForSlave and make the following more reseliant to slow machines, VMTransportWaitForTest,MasterSlaveSlaveDieTest,SimpleNetworkTest,NetworkBrokerDetachTest,DuplexNetworkMBeanTest,MultiBrokersMultiClientsTest,AMQ2102Test - related to changes for https://issues.apache.org/activemq/browse/AMQ-1112
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@888974 13f79535-47bb-0310-9956-ffa450edef68",211,282,1.4657976847364202,1.6173327773156203,239
+7ae2055c59bc455dc448d538a91613974bd639fb,2010-01-15 14:09:30+00:00,2010-01-15 14:09:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2190,2190,"Added fix for https://issues.apache.org/activemq/browse/AMQ-451
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@899633 13f79535-47bb-0310-9956-ffa450edef68",214,289,1.4558637031439838,1.616241757320298,242
+ee55abb921e3050f3e9332ce82860fbf1ffca822,2010-01-20 13:27:05+00:00,2010-01-20 13:27:05+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2191,2191,"Fix for https://issues.apache.org/activemq/browse/AMQ-2575
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@901188 13f79535-47bb-0310-9956-ffa450edef68",214,289,1.4564850387590833,1.6174752117634865,242
+6efc268572326b6a6d9f2c2e62c77df27690c350,2010-01-22 10:59:46+00:00,2010-01-22 10:59:46+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2191,2191,"resolve intermittent failure of org.apache.activemq.bugs.AMQ2149Test as a result of https://issues.apache.org/activemq/browse/AMQ-2573. An new command to indicate when recovery is complete on a sub is needed to gate dispatch on a recovered connection, can do this for 5.4. An outstanding ack transaction is now ignored but an outstand send transaction can still cause a potential hang till we introduce the new recovery complete command
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@902056 13f79535-47bb-0310-9956-ffa450edef68",214,289,1.4566421512135888,1.6177843248416122,242
+204f91f9355130f8b6d6edd9d9d701e30cff5ea8,2010-02-03 08:02:49+00:00,2010-02-03 08:02:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2191,2191,"Fix for https://issues.apache.org/activemq/browse/AMQ-2571
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@905926 13f79535-47bb-0310-9956-ffa450edef68",214,289,1.456469801843953,1.6174445829923694,242
+c7c8e5367e9e7b75bc12eb11fcbf189655340ccb,2010-02-06 08:57:24+00:00,2010-02-06 08:57:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2209,2209,"Added JMX support for JobScheduling
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@907197 13f79535-47bb-0310-9956-ffa450edef68",216,289,1.45652428535779,1.61755235423482,243
+09fab742ff0aa2106f567717991a3b4c6b1390e1,2010-02-09 19:56:21+00:00,2010-02-09 19:56:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2226,2226,"AMQ-2601 Make amq more blueprint-friendly, move away from spring lifecycle interfaces
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@908182 13f79535-47bb-0310-9956-ffa450edef68",218,289,1.456331618932426,1.6171773511624683,243
+d3fb1aabce89f499ff5503e5092bc1799cd86ea8,2010-02-15 15:34:58+00:00,2010-02-15 15:34:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2226,2226,"resolve https://issues.apache.org/activemq/browse/AMQ-2599 - tidy up exmple config to make it compliant with the schema - added simpe schema validation test and extended the broker start test, mvn test in assembly will now validate all the configs. added destroyApplicationContextOnStop to ensure jetty and other additions to the context are cleaned up when broker stops, allows mulitple brokers to rerun in the same jvm
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@910238 13f79535-47bb-0310-9956-ffa450edef68",218,289,1.456331618932426,1.6171773511624683,243
+f392884e31d9325fd90643b6d8e01668a58b70de,2010-03-08 12:48:45+00:00,2010-03-08 12:48:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2251,2251,"Fix for https://issues.apache.org/activemq/browse/AMQ-2632
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@920306 13f79535-47bb-0310-9956-ffa450edef68",219,291,1.4569154362847985,1.6182419213393862,250
+475eedc7a6abbfffba069974ef87d1bf233abd88,2010-03-19 17:41:13+00:00,2010-03-19 17:41:13+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2251,2251,"Fix order in which scheduler is used in the broker
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@925351 13f79535-47bb-0310-9956-ffa450edef68",219,291,1.4569121133509566,1.6182363551374621,250
+73338477add439372e59d9a232fb7a595ad7f0e7,2010-03-25 10:07:53+00:00,2010-03-25 10:07:53+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2256,2256,"https://issues.apache.org/activemq/browse/AMQ-2669 - jmx slave attribute for shared filesystem (jdbc) MS configurations
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@927324 13f79535-47bb-0310-9956-ffa450edef68",220,292,1.456793304231148,1.617937825581418,252
+956c3e0df2b858a659d47f14e9123aa9e5cf1859,2010-04-22 12:01:15+00:00,2010-04-22 12:01:15+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2257,2257,"resolve hang in purge if message count stats are off and log a warning.. tidy up broker service waitForStarted logic which caused AMQ2102 test to block.. still issue with master/slave sync with AMQ2102
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@936798 13f79535-47bb-0310-9956-ffa450edef68",220,292,1.4568870345395042,1.6181235673653311,252
+52808088659d594a22a7ce484a21aec902d168e6,2010-04-27 08:22:59+00:00,2010-04-27 08:22:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2257,2257,"https://issues.apache.org/activemq/browse/AMQ-2183 - composite destinations and master/slave
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@938353 13f79535-47bb-0310-9956-ffa450edef68",220,292,1.4568835843738204,1.618116481203298,252
+1a5ad284ed67d1742237c337072635f29aae5f9c,2010-05-20 12:02:10+00:00,2010-05-20 12:02:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2295,2295,"fixes for https://issues.apache.org/activemq/browse/AMQ-2620 and
+https://issues.apache.org/activemq/browse/AMQ-2568
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@946600 13f79535-47bb-0310-9956-ffa450edef68",218,295,1.4563692288548218,1.6169517977426136,262
+35593638f5d45f7ba5a76d4431afe725563f633e,2010-05-24 15:36:14+00:00,2010-05-24 15:36:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2307,2307,"resolve ConnectorXBeanConfigTest, broker service needs to null more impls at shutdown to allow restart to find new impls of scheudaler etc. consequence of fixes for https://issues.apache.org/activemq/browse/AMQ-2620  and
+https://issues.apache.org/activemq/browse/AMQ-2568
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@947671 13f79535-47bb-0310-9956-ffa450edef68",221,295,1.4564143495051365,1.6170399480126523,262
+452ceae26e4ebe2982bf2a8d6f09918d5ca8bc58,2010-06-30 05:57:45+00:00,2010-06-30 05:57:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2307,2307,"Name the BrokerService TaskRunner 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@959200 13f79535-47bb-0310-9956-ffa450edef68",221,295,1.4562393984730346,1.6166948843208042,262
+2705e3606fe3b4ac449119ad3c25ad6a5eeb1b57,2010-07-11 16:08:15+00:00,2010-07-11 16:08:15+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2317,2317,"Fix for https://issues.apache.org/activemq/browse/AMQ-2821
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@963095 13f79535-47bb-0310-9956-ffa450edef68",224,298,1.4563553844820678,1.6168114323113534,262
+ea0ceacef07627abfde4f47d7ba9c0f44bf4de91,2010-07-11 16:33:03+00:00,2010-07-11 16:33:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2317,2317,"Fix for https://issues.apache.org/activemq/browse/AMQ-2070
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@963104 13f79535-47bb-0310-9956-ffa450edef68",224,298,1.4563615201843456,1.6168235363574155,262
+145c80a298c71f20ae080b1feca715f153b89881,2010-07-16 16:20:21+00:00,2010-07-16 16:20:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2328,2328,"https://issues.apache.org/activemq/browse/AMQ-2574 - removing runtime OSGi dependency
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@964847 13f79535-47bb-0310-9956-ffa450edef68",225,299,1.4570695357550578,1.6181856387026203,263
+11705e70b4395c25f275ae448efc12b0fec8d501,2010-07-20 12:07:27+00:00,2010-07-20 12:07:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2340,2340,"https://issues.apache.org/activemq/browse/AMQ-2702 - remove runtime spring dependency
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@965820 13f79535-47bb-0310-9956-ffa450edef68",230,302,1.4553034196598493,1.614568870329688,263
+784b93df4d369f8c90c2038dc440ee0f0b0f09d8,2010-08-12 15:16:47+00:00,2010-08-12 15:16:47+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2340,2340,"https://issues.apache.org/activemq/browse/AMQ-2598 - URISupport.parseParameters() now supports composite urls
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@984826 13f79535-47bb-0310-9956-ffa450edef68",230,302,1.4553142802194043,1.6145897502231488,263
+20118f2604b8b212e35a1ea71c67ccaae4afabec,2010-09-06 09:37:19+00:00,2010-09-06 09:37:19+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2350,2350,"https://issues.apache.org/activemq/browse/AMQ-2813 - BrokerService @PostConstruct
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@992984 13f79535-47bb-0310-9956-ffa450edef68",232,304,1.4552700556894074,1.6144109448766628,264
+adb76e5eb17a1a55b3c2f6e52fbbce10258e56f7,2010-09-08 17:03:02+00:00,2010-09-08 17:03:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2350,2350,"make default schedualler dir broker name dependent so there is no clash among embedded brokers - follow up to https://issues.apache.org/activemq/browse/AMQ-2897
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@995154 13f79535-47bb-0310-9956-ffa450edef68",232,304,1.4553325645952608,1.6145367057102487,264
+996b7a53a3247d92c07619736a90fbc6d8d20ec7,2010-09-22 13:04:59+00:00,2010-09-22 13:04:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2358,2358,"https://issues.apache.org/activemq/browse/AMQ-2927 - support for configuring custom broker id
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@999924 13f79535-47bb-0310-9956-ffa450edef68",232,305,1.4549506774431809,1.6137427829764661,268
+92b3ae2cd067fc32b73ec0fc4b1436754532d2c4,2010-10-08 15:22:57+00:00,2010-10-08 15:22:57+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2358,2358,"disable schedualler by default: resolve: https://issues.apache.org/activemq/browse/AMQ-2967, https://issues.apache.org/activemq/browse/AMQ-2959
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1005858 13f79535-47bb-0310-9956-ffa450edef68",232,305,1.454972938733925,1.6137872535944464,268
+df7cb7727b1145c48e9b4d8920760ef0918cc968,2010-10-22 08:55:08+00:00,2010-10-22 08:55:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2333,2333,"https://issues.apache.org/activemq/browse/AMQ-2970 - refactor to avoid duplicate getConnectionContext() method
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1026254 13f79535-47bb-0310-9956-ffa450edef68",231,304,1.4552115190040076,1.6142937806667872,266
+8a1f994bf5b5dea4fd0b851a57937e6868f48fab,2010-10-27 23:56:40+00:00,2010-10-27 23:56:40+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2333,2333,"AMQ-2965 - Patched to allow ActiveMQ to start up when DNS resolution is unavailable
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1028143 13f79535-47bb-0310-9956-ffa450edef68",231,304,1.4552115190040076,1.6142937807311994,266
+2a2dcd5ec45f2d165f65a8e6983a9d28c4981199,2010-12-30 17:03:35+00:00,2010-12-30 17:03:35+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2341,2341,"https://issues.apache.org/jira/browse/AMQ-3109 - mbeans for bridges created by duplex connector
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1053942 13f79535-47bb-0310-9956-ffa450edef68",233,305,1.4555255692887452,1.614878950091385,266
+0ed0ba584c3a2637dac6378301b3d276aae13c9f,2011-01-11 10:28:43+00:00,2011-01-11 10:28:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2341,2341,"https://issues.apache.org/jira/browse/AMQ-3124 - Failover transport client gets corrupted connectedBrokers data - apply variant of suggested patch with thanks. Stripping server side url options is the right way to go, reusing api used by discovery publisher to same effect, additional test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1057565 13f79535-47bb-0310-9956-ffa450edef68",233,305,1.4556949026771981,1.6152124735925084,266
+8bf987b134bd827b93ed8157b323bc3bd2d8a82e,2011-02-10 14:24:01+00:00,2011-02-10 14:24:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2341,2341,"https://issues.apache.org/jira/browse/AMQ-3177 - use slf4j instead of jcl
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069405 13f79535-47bb-0310-9956-ffa450edef68",233,305,1.4558875492364767,1.6155930118175201,266
+b0c2a40fb979829ceca2ca51858ca67269bd5992,2011-02-16 14:08:48+00:00,2011-02-16 14:08:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2341,2341,"Removing svn keywords, they don't have much value and just add additional noise when diffing source trees.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071259 13f79535-47bb-0310-9956-ffa450edef68",233,305,1.4558875492364767,1.6155930116045503,266
+6f68a94319e2882070dc99ba73535e3358551c77,2011-02-16 16:12:18+00:00,2011-02-16 16:12:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2353,2353,"https://issues.apache.org/jira/browse/AMQ-3182 - JAAS PropertiesLoginModule does not maintain internal validity state, so will commit in error after an invalid login attempt
+https://issues.apache.org/jira/browse/AMQ-3183 - Set JMSXUserID value based on authenticated principal
+Fixed up PropertiesLoginModule such that it maintains login state and only commits on success. Added attribute brokerService useAuthenticatedPrincipalForJMXUserID to indicate
+that the first authenticated user principal should be used for the userName and hense by the userId broker when populateJMSXUserID is set. In the absense of a principal the
+userName is unchanged.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071301 13f79535-47bb-0310-9956-ffa450edef68",236,308,1.4562339982925356,1.6161774937501825,266
+f38908eb52380688aff3c73406d9ac1b32ce28bb,2011-03-01 12:59:09+00:00,2011-03-01 12:59:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2396,2396,"https://issues.apache.org/jira/browse/AMQ-3195 - NetworkConnector initialization should be backed by an executor
+added new broker attribute networkConnectorStartAsync (default false) that will cause network connectors
+to be started in seperate threads such that a block of one does not effect the rest
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1075801 13f79535-47bb-0310-9956-ffa450edef68",239,314,1.5308447038378101,1.6288487534926686,272
+286c9d0020e468e5f14c632d8da4f15bb617162a,2011-03-11 10:53:02+00:00,2011-03-11 10:53:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2396,2396,"https://issues.apache.org/jira/browse/AMQ-3183 - fix typo in useAuthenticatedPrincipalForJMSXUserID
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1080512 13f79535-47bb-0310-9956-ffa450edef68",239,314,1.5310707183160932,1.6295105558090042,272
+f0429be6ee603f3b94d37c53005f40853d3f24b0,2011-03-14 18:24:21+00:00,2011-03-14 18:24:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2409,2409,"https://issues.apache.org/jira/browse/AMQ-3219 - add basic support for MDC and enable broker name to appear in log entries
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1081502 13f79535-47bb-0310-9956-ffa450edef68",244,314,1.524738810386542,1.6292867361588943,272
+3da9f1c6ea0836b5fed53b00f3cb3a40fad47e14,2011-03-23 13:17:09+00:00,2011-03-23 13:17:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2409,2409,"https://issues.apache.org/jira/browse/AMQ-3219 - add prefix to mdc keys
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1084576 13f79535-47bb-0310-9956-ffa450edef68",244,314,1.5247097508035115,1.629199875708742,272
+c42d8de03489baa6d6d5a3c6af42324bf4e0f37b,2011-03-23 16:36:55+00:00,2011-03-23 16:36:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2409,2409,"https://issues.apache.org/jira/browse/AMQ-2852 - Memory leak when undeploying webapp with ActiveMQ client - AMQ store piece
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1084633 13f79535-47bb-0310-9956-ffa450edef68",244,314,1.5247876838717256,1.6294260945105077,272
+41506505f4b348b7e5b720150f476448914b434e,2011-03-28 11:00:06+00:00,2011-03-28 11:00:06+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2419,2419,"https://issues.apache.org/jira/browse/AMQ-1780 - ActiveMQ broker does not automatically reconnect if the connection to the database is lost - extend the DefaultIOExceptionHandler http://activemq.apache.org/configurable-ioexception-handling.html to be aware of sql exceptions and provide a connector stop/resume option. This is now called in the event of a failure to get a jdbc connection, the default behaviour is to stop as before, but new iptions to ignore some sql exceptions or to stop/resume connectors are supported which allow a db restart to be recovered without restarting the broker
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1086182 13f79535-47bb-0310-9956-ffa450edef68",245,315,1.525290860751786,1.6308194192716057,272
+b9045dba98f053e31fb93922978334b126ad146b,2011-03-31 15:11:09+00:00,2011-03-31 15:11:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2415,2415,"https://issues.apache.org/jira/browse/AMQ-3253 - Support Temporary Destinations in a network without advisories. Allow the connection id generator prefix to be set via a connection factory such that temp identies can be configured such that they are suitable for inclusion in a network list of statically included destintions. Allow auto recreation of temp destinations by a new producer and tie lifecycle to the producers connection. This allows configurable support for request reply with temps in a network with advisory support disabled
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1087330 13f79535-47bb-0310-9956-ffa450edef68",245,315,1.525492724316938,1.6314095737419783,271
+254d9209f59bebc7fb63c9081dc14d1cbdebe78a,2011-04-01 21:56:34+00:00,2011-04-01 21:56:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2433,2433,"https://issues.apache.org/jira/browse/AMQ-3253 - Support Temporary Destinations in a network without advisories. Support hub and spoke, such that two spokes can communicate. Revisit https://issues.apache.org/jira/browse/AMQ-2571 to make creating temp destinations on command configurable broker setAllowTempAutoCreationOnSend=true and allow temp destinations to be gced via gcInactiveDestinations policy
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1087912 13f79535-47bb-0310-9956-ffa450edef68",247,318,1.5257324794368736,1.631900368726902,271
+8a2892b9d05457f4b67ef6efa6b696746f7e02d6,2011-04-08 16:16:58+00:00,2011-04-08 16:16:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2431,2431,"https://issues.apache.org/jira/browse/AMQ-3276 - ConcurrentModificationException in embedded 5.5.0 broker. Rework https://issues.apache.org/jira/browse/AMQ-3219 - no need to set the context on thread creation as mdc impl uses an InheritableThreadLocal. This should avoid the concurrent mod, little test in mods to org.apache.activemq.bugs.AMQ2902Test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1090320 13f79535-47bb-0310-9956-ffa450edef68",247,318,1.5321050147573254,1.632240434564756,271
+c395917fa7657184dde4899dcc1793c8ad687a83,2011-04-27 10:29:32+00:00,2011-04-27 10:29:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2438,2438,"Ensure provided temp data store is started
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1097069 13f79535-47bb-0310-9956-ffa450edef68",247,318,1.5321308737358186,1.6323171780802954,271
+ddca4cf5906a815bdd43183c633aca76e31091bd,2011-05-06 13:26:16+00:00,2011-05-06 13:26:16+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2440,2440,"null check in brokerSerice for jmx uri map and remove duplicated tests
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1100207 13f79535-47bb-0310-9956-ffa450edef68",247,318,1.5321691378733637,1.63242812261919,273
+0619a8757e308174447d9f0688cebff885bec7e2,2011-05-09 16:11:50+00:00,2011-05-09 16:11:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2442,2442,"https://issues.apache.org/jira/browse/AMQ-3310 - IOException PListStore ""Could not locate data file"" from FilePendingMessageCursor. Issue with reference counting and async location initialsation resulting in inuse data file removal and data file leaking. Pulled cleanup into task that periodically queries lists for references
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1101085 13f79535-47bb-0310-9956-ffa450edef68",247,318,1.5320362128018443,1.6320390511185114,273
+f0d9f8320fd429c14952db0390843ddf5f9e8b55,2011-07-11 19:51:43+00:00,2011-07-11 19:51:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2451,2451,"fix for: https://issues.apache.org/jira/browse/AMQ-3339
+
+Adds the options maxPurgedDestinationsPerSweep to BrokerService.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1145312 13f79535-47bb-0310-9956-ffa450edef68",249,321,1.5324566723109931,1.6330355961606273,273
+6f70393dfbc03c1288b289f7ba01dc0ba8b5bfb1,2011-07-19 12:11:45+00:00,2011-07-19 12:11:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2470,2470,"https://issues.apache.org/jira/browse/AMQ-3408 - remove durable subscribers after certain time of inactivity
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1148289 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5322996983376387,1.6321597893236306,273
+5f99d5c98a3d24424aea44626bbe78c24dfebed5,2011-07-19 12:32:51+00:00,2011-07-19 12:32:51+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2470,2470,"https://issues.apache.org/jira/browse/AMQ-3408 - remove durable subscribers after certain time of inactivity - 5 min default task schedule
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1148300 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5322631720690056,1.6320555688015277,273
+2030097e01c6ea65236bfc9616ed3b158f4ef7b8,2011-09-30 11:59:44+00:00,2011-09-30 11:59:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2473,2473,"https://issues.apache.org/jira/browse/AMQ-3519 - Allow JMSRedelivered flag to survive a restart. Add transactedIndividualAck flag to connection factory and rewriteOnRedelivery to KahaDBPersistenceAdapter. These combine to persist the redelivery status on a rollback
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1177619 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.532241057616365,1.6319923136851293,273
+174c40579a9e2856d4e72907129c6cf4536b4618,2011-10-18 17:31:27+00:00,2011-10-18 17:31:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2473,2473,"https://issues.apache.org/jira/browse/AMQ-3542 - further simplification of network bridge start, remove latch wait states, add duplex test variant
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1185765 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5322410575662966,1.6319923140353745,273
+1462fd234c98037992cdb78b77e9ddde808efa83,2011-11-14 11:15:02+00:00,2011-11-14 11:15:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2488,2488,"https://issues.apache.org/jira/browse/AMQ-3168 - use boolean editor for most used broker service boolean properties
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1201666 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5322410575662966,1.6319923140353745,273
+6813691a3d8e8443b3841175893d265188932f5b,2011-11-28 14:44:56+00:00,2011-11-28 14:44:56+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2488,2488,"https://issues.apache.org/jira/browse/AMQ-3609 - Turn inactivity monitor thread off by default, new default 0
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1207239 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5323536587284312,1.6323197864784291,273
+2f72b7182990e98e677442027104b595c2d03951,2011-12-06 13:52:24+00:00,2011-12-06 13:52:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2502,2502,"Added javadoc for BrokerService.start(boolean force) to discourage its use.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1210917 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5323536587284312,1.6323197864784291,273
+41cdadbe2a55c5cf7f86341e34565ef372dc9197,2011-12-15 17:44:47+00:00,2011-12-15 17:44:47+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2502,2502,"https://issues.apache.org/jira/browse/AMQ-3637 - NullPointerException while loading node from kahadb during vmcursor replay. Batch recovery such that expiry can be processed periodically which avoids a nested kahadb transaction that modifies. additional test and some additional logging when recovery is taking a long time
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1214888 13f79535-47bb-0310-9956-ffa450edef68",254,327,1.5323775637896049,1.6323900282959376,273
+dbc661fd9b27eedb6c9045a81bc25b55a4720251,2012-01-24 14:22:58+00:00,2012-01-24 14:22:58+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2535,2535,"Fix for https://issues.apache.org/jira/browse/AMQ-3573 -
+changed defaults for SystemUsage to
+50GB for temp usage, 100GB for store usage and 64mb for memory usage.
+Added error and warning messages if the SysteMUsage limits cannot be met by the system
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1235261 13f79535-47bb-0310-9956-ffa450edef68",256,328,1.5325449189714802,1.6328078199850256,285
+7b90f4178fb8882bcc24fc0b5708dccacbcb484c,2012-01-24 16:14:37+00:00,2012-01-24 16:14:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2546,2546,"additional fix for: https://issues.apache.org/jira/browse/AMQ-3573
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1235325 13f79535-47bb-0310-9956-ffa450edef68",258,328,1.5325535516286368,1.6328323102840228,287
+dcf1f5e0cc20ecb49da0c1ad5681d2ac578cee20,2012-01-27 12:47:39+00:00,2012-01-27 12:47:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2546,2546,"https://issues.apache.org/jira/browse/AMQ-3634 - ensure full recovery of the index, irrespective of the load failure reason, with additional tests. Shutdown the schedualler early to ensure no ugly errors from timer tasks during shutdown
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1236661 13f79535-47bb-0310-9956-ffa450edef68",258,328,1.532526486924275,1.6327517113148087,287
+91059de2836c833e07709f4be9149f2c022ae315,2012-02-01 13:12:33+00:00,2012-02-01 13:12:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2555,2555,"https://issues.apache.org/jira/browse/AMQ-3685 - fixing cluster update feature
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1239118 13f79535-47bb-0310-9956-ffa450edef68",259,328,1.532582644435984,1.6329177596184576,293
+d403f107224244abbe53e8e9cb90959ae402885a,2012-02-01 20:57:36+00:00,2012-02-01 20:57:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2563,2563,"Additional Fix for https://issues.apache.org/jira/browse/AMQ-3573 - Add check for improperly configured temp store limits 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1239319 13f79535-47bb-0310-9956-ffa450edef68",260,328,1.5326000619020743,1.6329668310740229,294
+f6caba7127ba3b5f7eae2a14943606c10bff93e8,2012-02-01 21:39:37+00:00,2012-02-01 21:39:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2571,2571,"Additional Fix for https://issues.apache.org/jira/browse/AMQ-3573 - Avoid a potential NPE.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1239335 13f79535-47bb-0310-9956-ffa450edef68",262,328,1.5325798888667916,1.6329071329042304,297
+b6f63b0d10f3db34356b056e3e4caeedc4c95aad,2012-02-03 13:43:36+00:00,2012-02-03 13:43:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2595,2595,"https://issues.apache.org/jira/browse/AMQ-3695: Failover using a JDBC Message Store and Virtual Topic can result in a lost message if queue is empty. Problem is that an empty destination is not recorded, as there is no entry in the messages table. Fix is to make use of the ack table, in the same way a for durable subs. For destinations that match the virtual topic filter, an entry out of priority range is added to the ack table. the startup destination query now unions over the ack and messages table
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1240162 13f79535-47bb-0310-9956-ffa450edef68",264,331,1.5330279764661396,1.6340008833237687,304
+df19a382c95777a95bde9b7c9218acc7a405c6c3,2012-02-17 21:50:45+00:00,2012-02-17 21:50:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2625,2625,"fix for: https://issues.apache.org/jira/browse/AMQ-2834
+
+Adds some checks on store limit vs journal max file size similar to the Temp Store limit checks
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1245777 13f79535-47bb-0310-9956-ffa450edef68",270,331,1.5329397321278948,1.633742751122396,308
+f5dcc9dfbf6635ec70916376afcb7640396def4a,2012-02-23 00:40:13+00:00,2012-02-23 00:40:13+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2644,2644,"fix for: https://issues.apache.org/jira/browse/AMQ-3734
+
+Adds username to some MBeans when enabled in BrokerService to allow for tracking of the authenticated user of connections and other resources.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1292599 13f79535-47bb-0310-9956-ffa450edef68",272,334,1.5331865166559,1.6342727930541783,308
+5cd9ebaeb7f82e2828e6ccf0931b12aab51dddab,2012-03-21 19:55:30+00:00,2012-03-21 19:55:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2668,2668,"fis for: https://issues.apache.org/jira/browse/AMQ-3718
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1303544 13f79535-47bb-0310-9956-ffa450edef68",275,337,1.5718744955318396,1.647327876445815,308
+61fdb188c82a5a548e0eaac3f40d2a8614f58fc1,2012-04-18 05:34:22+00:00,2012-04-18 05:34:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2676,2676,"For https://issues.apache.org/jira/browse/AMQ-3573 In junit tests -  fixed warning messages can be generated for not enough disk space if the directory doesn't exist
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1327379 13f79535-47bb-0310-9956-ffa450edef68",276,337,1.5718666242405719,1.647299011938896,313
+3df43f58866ea4c400629a7831dee3b7a073e423,2012-04-18 07:01:50+00:00,2012-04-18 07:01:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2677,2677,"For https://issues.apache.org/jira/browse/AMQ-3573 In junit tests -  fixed null pointer if the directory doesn't exist
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1327388 13f79535-47bb-0310-9956-ffa450edef68",277,337,1.571850417910788,1.6472352507096828,313
+74bed6b577fcc7388922a74e15036a5729aa2e6a,2012-04-20 09:51:55+00:00,2012-04-20 09:51:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2695,2695,"Fix for https://issues.apache.org/jira/browse/AMQ-3813
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1328287 13f79535-47bb-0310-9956-ffa450edef68",279,339,1.572313957754751,1.648832219906211,317
+584c133e9da08d195a41b9177c2ca96c6dfbd894,2012-06-08 22:56:35+00:00,2012-06-08 22:56:35+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2717,2717,"fix for: https://issues.apache.org/jira/browse/AMQ-3877
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1348270 13f79535-47bb-0310-9956-ffa450edef68",281,342,1.5726596241323667,1.649852142467035,317
+ae816dcb3fdaf22b80ed4122a552b7c0275458f6,2012-07-03 13:31:32+00:00,2012-07-03 13:31:32+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2721,2721,"https://issues.apache.org/jira/browse/AMQ-3912 - Durable subs store messages in error with broker attribute persistent=""false"" - fix with test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1356724 13f79535-47bb-0310-9956-ffa450edef68",281,342,1.5726686362388267,1.6498892694284442,319
+cb895f01b79a6e104435db68729a7ad7ace99434,2012-07-09 14:43:30+00:00,2012-07-09 14:43:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2721,2721,"https://issues.apache.org/jira/browse/AMQ-3918 - transport connector urls exposed using JMX
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1359194 13f79535-47bb-0310-9956-ffa450edef68",281,342,1.572683043161538,1.6499472352627689,319
+7f89b33aa4282ff410ea52fd6518512d0186be57,2012-07-18 13:43:09+00:00,2012-07-18 13:43:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2768,2768,"https://issues.apache.org/jira/browse/AMQ-3696 - start broker asynchronously since hanging in start() method leads to problems with stopping slaves in osgi
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1362950 13f79535-47bb-0310-9956-ffa450edef68",285,348,1.5732175212652162,1.6512847836964528,323
+ed58e9a05d86b913dd4bd9c4b1800a1da89983e3,2012-07-18 15:25:25+00:00,2012-07-18 15:25:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2793,2793,"https://issues.apache.org/jira/browse/AMQ-3696 - make start() sync because of the tests and embedded brokers and introduce startAsync() to be used by XBean
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1362979 13f79535-47bb-0310-9956-ffa450edef68",290,352,1.573252804254265,1.6510007802267337,327
+eebe1358d23859d872c4aae38681262e8fcd6b22,2012-07-18 16:19:31+00:00,2012-07-18 16:19:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2792,2792,"https://issues.apache.org/jira/browse/AMQ-3696 - use startAsync property instead of separate method
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1363003 13f79535-47bb-0310-9956-ffa450edef68",289,352,1.5730915207378084,1.6503978159143762,327
+3c4848b8a5582ae510d60da7b786eee7200b456e,2012-07-19 12:55:14+00:00,2012-07-19 12:55:14+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2791,2791,"https://issues.apache.org/jira/browse/AMQ-3696 - fix web console to show special page for slave brokers
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1363319 13f79535-47bb-0310-9956-ffa450edef68",288,352,1.573115611398889,1.650494270456071,327
+d301b4163833ddd4d75938b730e1a65891fe37ec,2012-07-20 09:58:49+00:00,2012-07-20 09:58:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2791,2791,"https://issues.apache.org/jira/browse/AMQ-3918 - revert accidental change - start connector only after we create a mbean for it
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1363700 13f79535-47bb-0310-9956-ffa450edef68",288,352,1.573101399753626,1.6504371342014097,327
+0051c4ea6f579cab730d89364d0a53b043a90995,2012-07-24 10:49:47+00:00,2012-07-24 10:49:47+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2796,2796,"https://issues.apache.org/jira/browse/AMQ-3696 - fix regression in FailoverStaticNetworkTest, in jvm slave overwriting broker registry entry of master
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1364973 13f79535-47bb-0310-9956-ffa450edef68",288,352,1.5730766212394864,1.6503416951050154,329
+eea9fca04dfc7ca5868a04f1812d294b600e65b9,2012-08-31 09:10:23+00:00,2012-08-31 09:10:23+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2804,2804,"AMQ-4008: Fixed MDC leak during shutting down AMQ broker, such as reported by Apache Tomcat.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1379376 13f79535-47bb-0310-9956-ffa450edef68",288,352,1.573063382394797,1.650287380535428,329
+4b44d3129c40e2a53b57505f58314038918cc256,2012-09-01 14:50:33+00:00,2012-09-01 14:50:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2805,2805,"AMQ-4012: Use english locale when doing lower/upper case introspection to avoid issues when running on certain locales such as turkish.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1379765 13f79535-47bb-0310-9956-ffa450edef68",288,352,1.5730788767881767,1.6503477839176286,329
+ca728c095852ee0410e58341cc34b6d9508cc147,2012-09-01 14:59:17+00:00,2012-09-01 14:59:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2801,2801,"AMQ-4007: Fixed default values of system usage for GB values to use 1024 multiplier instead of 1000.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1379767 13f79535-47bb-0310-9956-ffa450edef68",288,352,1.5730913961992854,1.6503947550665352,329
+2251ba0796659fd2eaa28a3621dde13bb779f330,2012-09-05 22:22:01+00:00,2012-09-05 22:22:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2841,2841,"fix for: https://issues.apache.org/jira/browse/AMQ-3991
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1381422 13f79535-47bb-0310-9956-ffa450edef68",295,354,1.573514804819132,1.6518439654953898,337
+6c1676b59fcd7d46ed4ea9c5c1d6ef77f9bbd779,2012-09-06 17:50:43+00:00,2012-09-06 17:50:43+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2841,2841,"AMQ-4026: Using ThreadPoolUtils to shutdown thread pool. Use thread pool from broker service where applicable.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1381695 13f79535-47bb-0310-9956-ffa450edef68",295,354,1.5735148047379979,1.6518439640633833,337
+5b4fe6e05fc34759900c81579662170923510097,2012-09-08 09:08:24+00:00,2012-09-08 09:08:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2843,2843,"AMQ-4031: Do not check for temporary journal store limit for non persistent broker. Thanks to Johno Crawford for the patch.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1382255 13f79535-47bb-0310-9956-ffa450edef68",295,354,1.5735148047379979,1.6518439645562533,338
+f2225c2f125fa178f1fc998ad52781ae6e156289,2012-09-11 09:51:24+00:00,2012-09-11 09:51:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2862,2862,"AMQ-4015: Added uptime to broker service, and shown in JMX, as well in logs when stopping broker.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1383327 13f79535-47bb-0310-9956-ffa450edef68",297,356,1.5735395546822049,1.651716647233775,342
+5453b26eb8e61c6ce626e3375421a687bbb84a00,2012-09-12 08:58:18+00:00,2012-09-12 08:58:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2864,2864,"AMQ-4045: Fixed NPE in BrokerService.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1383856 13f79535-47bb-0310-9956-ffa450edef68",297,356,1.5735537580107108,1.651772377589359,344
+4260034561f145482395824acf9f286091fda05b,2012-09-14 09:13:51+00:00,2012-09-14 09:13:51+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2867,2867,"AMQ-4044: Fixed issue with double stopping BrokerService.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1384691 13f79535-47bb-0310-9956-ffa450edef68",297,357,1.5735687923073194,1.651696978717303,344
+c9cc85bde1151e179b92091b858187846f790804,2012-09-14 10:34:54+00:00,2012-09-14 10:34:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2871,2871,"AMQ-4049: Polished the AMQ start and stop logging.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1384714 13f79535-47bb-0310-9956-ffa450edef68",300,357,1.5735681198743978,1.651690974135454,342
+c6595066e9d73f8201264ccd28183f989fe53f90,2012-09-20 12:02:04+00:00,2012-09-20 12:02:04+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2871,2871,"AMQ-4067: Prefix thread names with ActiveMQ
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1387989 13f79535-47bb-0310-9956-ffa450edef68",300,357,1.5733637447471982,1.6518374175115602,342
+1aab71b2a7f6402b8b8749cfe8a5806f99f546cd,2012-11-06 22:04:26+00:00,2012-11-06 22:04:26+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2871,2871,"Move the kahadb disk IO classes under org.apache.activemq.store.kahadb.  Drop redundant util classes.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406369 13f79535-47bb-0310-9956-ffa450edef68",300,357,1.573363744747198,1.6518374198562555,342
+d5dd937b810ace28d073adc5e730082c185d7114,2012-11-06 22:04:50+00:00,2012-11-06 22:04:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2828,2828,"Extract out a PListStore interface so that the broker can be decoupled from the KahaDB store implementation.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406370 13f79535-47bb-0310-9956-ffa450edef68",301,358,1.5738779799765725,1.653732239559585,342
+9a8f6e415db43a4e43ad42a87b3617b3641aa07d,2012-11-07 05:00:17+00:00,2012-11-07 05:00:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,2828,2828,"Refactored the classes needed to run an ActiveMQ JMS client out from the activemq-core module to the activemq-client module.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406466 13f79535-47bb-0310-9956-ffa450edef68",301,358,1.5738821625749428,1.6537488521661228,342
+58aca869816e893e7a2f34f0708c1d7fcbdca0f5,2012-11-07 13:37:50+00:00,2012-11-07 13:37:50+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2827,2827,"Refactor all the core broker classes from the activemq-core module into the activemq-broker module.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406629 13f79535-47bb-0310-9956-ffa450edef68",301,358,1.5738821625749428,1.6537488521661228,342
+39ff4d9fd839f0e3b4a727f0df6f7e999e14a0ea,2012-11-13 09:31:37+00:00,2012-11-13 09:31:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2729,2729,"Fix for https://issues.apache.org/jira/browse/AMQ-4165 - remove pure master/slave functionality
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1408651 13f79535-47bb-0310-9956-ffa450edef68",301,349,1.573947015843678,1.654888439150997,307
+30f531d7414f4a19c26e56c236eea08a77012a8f,2012-11-26 21:13:25+00:00,2012-11-26 21:13:25+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2714,2714,"Changes for https://issues.apache.org/jira/browse/AMQ-4165 : Remove pure master/slave functionality
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1413846 13f79535-47bb-0310-9956-ffa450edef68",300,347,1.563820698393901,1.6551997878529208,305
+ed96e2ec08d2f32f3bc8ad2576663cd6ccf7a1d9,2012-11-29 13:28:37+00:00,2012-11-29 13:28:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2727,2727,"https://issues.apache.org/jira/browse/AMQ-4191 - prototype of the Status MBean
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1415159 13f79535-47bb-0310-9956-ffa450edef68",301,347,1.5638767786293266,1.6554125488551252,306
+32e63dce28ceb23cfd339e93046f3e9676bac303,2012-12-08 15:21:14+00:00,2012-12-08 15:21:14+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2737,2737,"Fixes AMQ-4215: Simplify PList interface and provide a LevelDB store implementation.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1418686 13f79535-47bb-0310-9956-ffa450edef68",303,347,1.5638296759535586,1.6552303441708105,308
+1797ce98e3a4aa397e05811c207d763806c032be,2012-12-11 10:56:19+00:00,2012-12-11 10:56:19+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2737,2737,"made minor update to the StatusView mbean to comply with these health mbean conventions  https://github.com/hawtio/hawtio/blob/master/doc/HealthMBeans.md#health-mbeans
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1420092 13f79535-47bb-0310-9956-ffa450edef68",303,347,1.5638311207901705,1.6552358775329954,308
+f21992ef415dedca12e0165ce207478d612a91bf,2012-12-13 21:43:50+00:00,2012-12-13 21:43:50+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2851,2851,"apply fix for: https://issues.apache.org/jira/browse/AMQ-4068
+
+Updated patch for new layout and fixed size returned to only include the dynamic journal size and not the total disk usage since that accounts for the full log file size and not just the used portion. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1421557 13f79535-47bb-0310-9956-ffa450edef68",311,350,1.5796784989630344,1.6557317578686532,323
+973909ab44a4fdcbc11244adb42dfe78681de359,2012-12-17 14:42:44+00:00,2012-12-17 14:42:44+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2851,2851,"refactored mbean name and properties to more comply with https://github.com/hawtio/hawtio/blob/master/doc/HealthMBeans.md#health-mbeans and make it a little more descriptive for users
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1422953 13f79535-47bb-0310-9956-ffa450edef68",311,350,1.5796842036373777,1.6557537786018683,323
+d21b32e7487aaac374dd065eed633d914ce8086b,2012-12-19 18:45:20+00:00,2012-12-19 18:45:20+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2852,2852,"Fix BrokerService no longer setting started flag back to false when stop finishes causing some tests to fail. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1424019 13f79535-47bb-0310-9956-ffa450edef68",311,350,1.5796805815352866,1.655738626293255,323
+c37859a80a8471e361ad47c47d1e2dce90010c9e,2012-12-26 10:53:41+00:00,2012-12-26 10:53:41+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2853,2853,"Fix for https://issues.apache.org/jira/browse/AMQ-4237
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1425871 13f79535-47bb-0310-9956-ffa450edef68",310,350,1.5796290515150628,1.6555563390373766,323
+428a0631d3c3bba5436f4695ec15bacf4e65f18b,2012-12-26 13:36:59+00:00,2012-12-26 13:36:59+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2853,2853,"fix for VMTransportWaitForTest test, prevent broker from being started twice
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1425904 13f79535-47bb-0310-9956-ffa450edef68",310,350,1.5797323500125275,1.6559645206189748,325
+d0fb549f2ce888eee72713a0d8b06ebc613a5d86,2012-12-26 15:47:01+00:00,2012-12-26 15:47:01+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2853,2853,"additional fix for VMTransportWaitForTest test failure
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1425958 13f79535-47bb-0310-9956-ffa450edef68",310,350,1.579683875392736,1.65577504648928,325
+69d825830811e0088bfe61f57794defa2331e0d7,2013-01-03 15:17:35+00:00,2013-01-03 15:17:35+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2854,2854,"fix up master advisory, advisories are only fired after broker is fully started so the nowMaster advisory needs to ocurr after start rather than as part of persistence adapter start, resolves org.apache.activemq.broker.ft.QueueMasterSlaveTestSupport#testAdvisory failures
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1428397 13f79535-47bb-0310-9956-ffa450edef68",310,350,1.5796856507384704,1.655781802520333,325
+3cd8da80a687676167681f8e424e9648db79eb66,2013-01-07 16:19:35+00:00,2013-01-07 16:19:35+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2840,2840,"fixes: https://issues.apache.org/jira/browse/AMQ-4246
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1429878 13f79535-47bb-0310-9956-ffa450edef68",304,350,1.5567570819316066,1.656581959387984,325
+63a660ac04affba1d6f48da21b5de80b63a31a0a,2013-01-09 15:48:15+00:00,2013-01-09 15:48:15+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2824,2824,"https://issues.apache.org/jira/browse/AMQ-4237
+
+To support the bean renaming effort this pulls together the various code that create all our MBean names and puts them into one location which could later add supporting methods to create MBean queries for the unit tests etc.  This should make it simpler to iron out the naming as we go.  
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1430908 13f79535-47bb-0310-9956-ffa450edef68",304,350,1.5571778873064848,1.6581884290846107,325
+7d7d6fa08a9831d81b18a9818dc4bb0d962336ac,2013-01-10 14:15:15+00:00,2013-01-10 14:15:15+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2824,2824,"fix typo in utility class name
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1431374 13f79535-47bb-0310-9956-ffa450edef68",304,350,1.5572631417939156,1.6585346338394473,325
+d75e418c3dad4f3a6237a84d9bae924caf9346c0,2013-02-22 15:32:26+00:00,2013-02-22 15:32:26+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2832,2832,"https://issues.apache.org/jira/browse/AMQ-4330
+
+Merge back the isSlave() JMS API. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1449077 13f79535-47bb-0310-9956-ffa450edef68",306,352,1.5570279838153118,1.6573894571461885,325
+27c424ca19495fdbf5ffce3301e9d7813f3f3a91,2013-03-13 14:02:38+00:00,2013-03-13 14:02:38+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2832,2832,"https://issues.apache.org/jira/browse/AMQ-4369 - ensure default handler in place before transport connectors are started
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1455944 13f79535-47bb-0310-9956-ffa450edef68",306,352,1.5570276104216816,1.6573873866942845,325
+3a8eb74a9fd422e9137ccb3bf75201b52dd809ba,2013-05-03 15:21:25+00:00,2013-05-03 15:21:25+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2835,2835,"Fix and test for: https://issues.apache.org/jira/browse/AMQ-4505
+
+When a broker was stopping it was sending out a cluster update after tearing down its bridges so any client connected to it would lose its awareness of other brokers in the cluster. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1478835 13f79535-47bb-0310-9956-ffa450edef68",306,353,1.5572705908738753,1.6582185884567306,325
+ff9b80040b187bc3baa0c8604d86f52808c48221,2013-05-07 22:08:28+00:00,2013-05-07 22:08:28+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2849,2849,"fix for: https://issues.apache.org/jira/browse/AMQ-4520
+
+Load BouncyCastle if present in lib dir.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1480117 13f79535-47bb-0310-9956-ffa450edef68",309,353,1.5572800128194768,1.658255163229758,325
+4a16c1ff2769d042c90f204a71382d5817412a8a,2013-05-08 15:34:00+00:00,2013-05-08 15:34:00+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2883,2883,"Implements AMQ-4526: ActiveMQ should automatically restart if a Locker looses it's lock.
+
+* Adds a new broker config option 'restartAllowed'.  Set it to false to revert to the preserve behavior.
+* Adds a new 'restart' JMX operation on the broker
+* The default IO exception handler will trigger a broker restart instead of a broker stop.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1480325 13f79535-47bb-0310-9956-ffa450edef68",314,359,1.5567318807362507,1.655486291381693,325
+ec9975c36eddfeb7eb3c6339aac72dc0f71b3d5d,2013-05-31 19:56:03+00:00,2013-05-31 19:56:03+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2894,2894,"Additional fixes related to AMQ-4563: You can now configure the storeOpenWireVersion property of a broker to control which version of openwire is used by the persistence stores.  This needs to be set to version 10 to preserve the original AMQP message ids.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1488375 13f79535-47bb-0310-9956-ffa450edef68",317,362,1.5567973640157988,1.655477650542131,325
+539a5f162ebb328c068b214ad582e86b2a50e556,2013-06-06 16:32:15+00:00,2013-06-06 16:32:15+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2898,2898,"fix and test for: https://issues.apache.org/jira/browse/AMQ-4575
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1490343 13f79535-47bb-0310-9956-ffa450edef68",317,362,1.5568189826073286,1.6555596203337926,325
+6b1ffaeee31a59afe39e4c0b0c2faf25aa921b55,2013-06-28 10:58:31+00:00,2013-06-28 10:58:31+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2898,2898,"https://issues.apache.org/jira/browse/AMQ-4609 - register network connectors after mbean server is properly started
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1497733 13f79535-47bb-0310-9956-ffa450edef68",317,362,1.5567682138109413,1.655364243830656,325
+07369531ea484cc3b11ba1b6c8357713500b51e3,2013-07-18 12:53:08+00:00,2013-07-18 12:53:08+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2889,2889,"Add support for exposing information about blocked sends through JMX - see https://issues.apache.org/jira/browse/AMQ-4635
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1504452 13f79535-47bb-0310-9956-ffa450edef68",318,363,1.5570874105266588,1.6565183662948069,328
+cf9cccacf88a1c8e119b21967f66f71a5272163f,2013-07-18 15:55:37+00:00,2013-07-18 15:55:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2898,2898,"Fix for https://issues.apache.org/jira/browse/AMQ-4638
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1504506 13f79535-47bb-0310-9956-ffa450edef68",319,363,1.5571279631152284,1.6566777349482669,328
+0ba311f14b13a15d121e607b1107d34a27c816a9,2013-08-08 15:38:34+00:00,2013-08-08 15:38:34+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2898,2898,"fix typo in logged message
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1511839 13f79535-47bb-0310-9956-ffa450edef68",319,363,1.5571279631152284,1.6566777347085515,328
+3630a41fc9d20745fb3943845dbfd70b3dbda8ea,2013-08-14 13:23:36+00:00,2013-08-14 13:23:36+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2907,2907,"https://issues.apache.org/jira/browse/AMQ-4682 - implement runtimeConfigurationPlugin that will track xml config and react to changes. simple verification via test that adds a new network connector on the fly
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1513871 13f79535-47bb-0310-9956-ffa450edef68",321,366,1.5566836693598067,1.6546947122311435,328
+174fe15b3058341b4d4c200c6e6fbaa786e44fda,2013-08-23 21:27:27+00:00,2013-08-23 21:27:27+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2936,2936,"fix for: https://issues.apache.org/jira/browse/AMQ-4676 and https://issues.apache.org/jira/browse/AMQ-4673
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1517052 13f79535-47bb-0310-9956-ffa450edef68",326,368,1.5564959779302099,1.6537741565702624,328
+01704eece00e82e3cd50206732e88b04cb46a9b3,2013-08-23 22:47:09+00:00,2013-08-23 22:47:09+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2959,2959,"https://issues.apache.org/jira/browse/AMQ-4689
+
+Allows for the persistence adapter to implement JobSchedulerStore and also allows for user set JobSchedulerStore to be used even when persitence is off on the broker.  
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1517084 13f79535-47bb-0310-9956-ffa450edef68",330,368,1.5564540032639287,1.6536105677385406,332
+8d480b451a2c5183de85b0f2f3961b60a4154e75,2013-08-27 11:48:34+00:00,2013-08-27 11:48:34+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2959,2959,"https://issues.apache.org/jira/browse/AMQ-4682 - support updates to authorizationPlugin/map/authorizationMap
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1517794 13f79535-47bb-0310-9956-ffa450edef68",330,368,1.5564264782921848,1.653503603881106,332
+634a81898c4db442222ba58ec3ef779f2868dfd4,2013-09-03 00:28:46+01:00,2013-09-03 00:28:46+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2951,2951,"https://issues.apache.org/jira/browse/AMQ-4682 - use spring.schemas for spring.xsd resolution - use brokerContext for configurationurl, support property PropertyPlaceholderConfigurer locations and system prop replacement, nested networkConnector elements - excludedDestinations,dynamicallyIncludedDestinations etc. lists and sets of destination",328,366,1.556717079541433,1.6547838066270057,332
+8320e66b5de42ce797708699bfffa6bb6c1b3fa1,2013-09-03 11:50:52-04:00,2013-09-03 11:50:52-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2951,2951,Fixes https://issues.apache.org/jira/browse/AMQ-4704,328,366,1.556900712097126,1.6554955568130656,335
+e1bbde7302d7d169bec978633d2dd85eba2e19cc,2013-09-13 14:53:41-04:00,2013-09-13 14:53:41-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2938,2938,"https://issues.apache.org/jira/browse/AMQ-4721
+
+Upgrade to latest slf4j library and update many LOG statements to use
+proper calls (no string concats).  Removes many uneeded isXXXEnabled
+checks to clean up the code.",328,366,1.5600006381616893,1.6556670392812733,331
+ea1d02d06767afaf25d03f0e7aa1414b7aeeb67c,2013-10-03 11:11:13+02:00,2013-10-03 11:11:13+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2938,2938,Polished and removed double space in logging.,328,366,1.5600684434421728,1.6559280492969606,328
+5bdcc19693627af0c1fd155d61e016aab283cfef,2013-10-10 13:53:39+01:00,2013-10-10 13:52:53+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2938,2938,"simplify default config, remove vmcursor refs and default memory limits to 70% heap. hardcoded default 1g",328,366,1.560036203579899,1.6558029556893687,328
+598f206a58d1dc14fbe48812ac28266789722dd8,2013-10-22 15:38:28+02:00,2013-10-22 15:10:45+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2938,2938,AMQ-4819: Fixed spelling.,328,366,1.5600361327163625,1.655802671098391,328
+c2eb4863a8cc4de79a7f63fea915bf9397981bb8,2013-10-24 10:36:00-07:00,2013-10-24 10:36:00-07:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2938,2938,Fix for https://issues.apache.org/jira/browse/AMQ-4823 NetworkConnector not registered in JMX when created from Broker View + unit tests,328,366,1.5601344652826903,1.656183476447638,328
+855419359cefbdb31be38510db121b17170af42d,2013-10-31 21:16:17+00:00,2013-10-31 21:16:17+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2940,2940,https://issues.apache.org/jira/browse/AMQ-4832 - apply patch from Matthew Walker with thanks,328,366,1.5601572946994193,1.656271688906338,328
+ed8e4eae8f79b6f88562d3008292a1927b21786d,2013-12-05 13:38:52-05:00,2013-12-05 13:27:59-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2944,2944,Fixes https://issues.apache.org/jira/browse/AMQ-4923: Replicated LevelDB: Loss of broker Quorum fails to fully stop the master,329,367,1.5602892001804973,1.656678686250612,328
+fde22a8496a160fc746c6f193dea3f29d113c6e3,2014-01-28 14:07:39-05:00,2014-01-28 14:07:39-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,2997,2997,"https://issues.apache.org/jira/browse/AMQ-4754
+
+Add connection counts to Broker mbean",334,374,1.5619292602661865,1.6623827898724801,328
+25f1fe8460242530b7d2deb7ae9a48a85a90662b,2014-06-05 14:39:56-04:00,2014-06-05 14:39:56-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3004,3004,"https://issues.apache.org/jira/browse/AMQ-5213
+
+Adds a Log4JConfigViewMBean for use in configuring runtime logger
+levels.",335,374,1.5619132427548805,1.6623190079910843,330
+5016c4d4f2fb2a62d8f38732be0f14d96426d921,2014-06-09 15:40:03-04:00,2014-06-09 15:40:03-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3017,3017,"https://issues.apache.org/jira/browse/AMQ-5086
+
+Ensure that wait for started on vm transport factory actually waits for
+start, currently it doesn't really check started or wait porperly.",336,375,1.5619304322655745,1.6622917321916724,331
+6521549ec8858cfafe2f791023d1e7212b542ab7,2014-07-03 14:53:30-04:00,2014-07-03 14:53:30-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3017,3017,AMQ-5086. Fix the timeout arithmetic,336,375,1.5621107505896088,1.66302160008648,331
+74846bb2b40e6183f2accdcab388c2d309c1eaad,2014-07-07 12:28:11-04:00,2014-07-07 12:28:11-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3038,3038,"https://issues.apache.org/jira/browse/AMQ-3758
+
+Refactor the scheduler store into a more KahaDB style store that can
+recover from various problems like missing journal files or corruption
+as well as rebuild its index when needed.  Move the scheduler store into
+a more configurable style that allows for users to plug in their own
+implementations.  Store update from legacy versions is automatic.",337,375,1.562141645565551,1.6631408161819115,333
+433912f79a3ffb2323bc0060a980e77122f9a204,2014-07-10 12:16:34-04:00,2014-07-10 12:16:34-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3046,3046,"https://issues.apache.org/jira/browse/AMQ-5271
+
+Add an in-memory variant of the disk based JobScheduler store to allow
+for an embedded broker to have scheduler support without needing to use
+the disk based version.",337,375,1.5619980522164765,1.6625823525576755,330
+7c2735d0f4af9cfcb5c94690d03e2a8a7cdf59bb,2014-08-08 14:09:46+01:00,2014-08-08 14:09:17+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3046,3046,https://issues.apache.org/jira/browse/AMQ-5317 fix and test,337,375,1.5619676576166261,1.6624599113252838,330
+dffccb1c7dc8e4b4a6282fd5056dfd854d2d2a9b,2014-10-29 11:30:15+01:00,2014-10-29 11:30:15+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3047,3047,https://issues.apache.org/jira/browse/AMQ-5417 - use proper classloader in TaskRunnerFactory,337,375,1.5619794623478596,1.6625048408535579,330
+8e0865d5d115774f2cabd79e3378b9c3730567d3,2015-01-05 13:23:19-05:00,2015-01-05 13:23:19-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3056,3056,[AMQ-5505]. Add getUptimeMillis to the BrokerView MBean. This closes #56,341,376,1.561936638565598,1.6622549233290076,332
+cf62d58ae73e71d3407ccb83dd4fe5cf627df284,2015-01-12 22:58:07+00:00,2015-01-12 22:58:07+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3056,3056,https://issues.apache.org/jira/browse/AMQ-5515 - tidy up jetty deps - fix jetty maven coords,341,376,1.5619359228258083,1.662252548613619,332
+189a75afdc8862d783591d623286c7939d3ba9d7,2015-01-22 11:41:06+00:00,2015-01-22 11:41:06+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3056,3056,fix AMQ4221Test failure on low disk space - use warn level when resetting to available. Test checked log for error messages,341,376,1.5619371302172411,1.6622571848172956,332
+741e3aad3eb455220759afdd8001311727083882,2015-03-03 13:30:10+00:00,2015-03-03 13:29:36+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3065,3065,"https://issues.apache.org/jira/browse/AMQ-5630 - add rejectDurableConsumers boolen attribute - when true, requests to create durable subscriptions will fail with a JMSException - not allowed",343,379,1.5615876592482956,1.6606758935062156,332
+2852a8bdb1c6a09f6e59087630ea9d1ebbe02176,2015-04-14 13:59:01+02:00,2015-04-14 13:58:43+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3049,3049,https://issues.apache.org/jira/browse/AMQ-4929 - remove BrokerService.supportFailoverSupport. This closes #60,341,376,1.5618179580704867,1.6618106488800897,332
+c1290511751248773ba3409a0e9b68d9eef7cc8b,2015-04-27 16:16:49+01:00,2015-04-27 16:16:49+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3046,3046,https://issues.apache.org/jira/browse/AMQ-5746 - separate out start from creation of scheduler store. test via Martyn Taylor with thanks. This closes #80,342,376,1.561674365100549,1.661257369733025,334
+35b82e5f93b679629dac74d6ee83bcb180e2d9e4,2015-06-02 11:36:47-04:00,2015-06-02 11:36:47-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3049,3049,"https://issues.apache.org/jira/browse/AMQ-5599
+
+Ensure that persistence adapter start is not missed to avoid infinite
+wait for it.",342,376,1.5617984842602977,1.661732283498475,335
+12b26b641b36a4ad6d21face946300128cb7be59,2015-06-30 13:41:48-04:00,2015-06-22 18:34:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3103,3103,"https://issues.apache.org/jira/browse/AMQ-5745
+
+This commit is based off a patch submitted by admin@int3solutions.com.
+It fixes several locations in the code where there are potential resource leaks.",348,381,1.561894890718001,1.661702397178887,339
+13044deccea1e1bd6849dbe0babb6720aed634ac,2015-07-08 17:29:32-04:00,2015-07-08 17:29:32-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3103,3103,"https://issues.apache.org/jira/browse/AMQ-5848
+
+Use the latest openwire version marshallers in the KahaDB store when
+starting from a clean install, drop back to the version used in the
+existing store if one is found.",348,381,1.5619088883164185,1.661758075921746,339
+5e05df1cb76af9a4d2e7d59cb3711747c5814b75,2015-08-04 11:54:46-04:00,2015-08-04 11:54:46-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3100,3100,Fix a bunch of javadoc warnings produced during release profile builds.,348,381,1.5619088883164185,1.661758075921746,339
+4f8d56aaf60f99abe643e79c6c4940a571289a86,2015-09-14 19:46:57+00:00,2015-09-14 19:46:57+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3103,3103,"https://issues.apache.org/jira/browse/AMQ-5967
+
+Updating temporary limit disk check to take into account space being
+used by the temporary store itself",348,381,1.5619252862553876,1.6618209430790996,339
+4cddd2c015435732b3ff5503160fa87b37154e2b,2015-09-15 14:50:18+00:00,2015-09-11 13:50:35+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3135,3135,"https://issues.apache.org/jira/browse/AMQ-5963
+
+Disk limits can now be specified as a percentage of the partition size
+that the store is located on.  The usual checks of the max size
+exceeding the available space will still apply.  When using a
+percentage, the store can always regrow itself if space becomes
+available.
+
+https://issues.apache.org/jira/browse/AMQ-5964
+https://issues.apache.org/jira/browse/AMQ-5965
+https://issues.apache.org/jira/browse/AMQ-5969",353,385,1.5621860598617818,1.6625235167975836,337
+6fef9eea65d7cd6de3277db1947dda6147a6c563,2015-10-07 11:55:20+00:00,2015-10-07 11:53:57+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3134,3134,"Cleaning up logging
+
+Fixing one of the logging statements for the disk usage check process
+that warns when the amount of free space is too low",353,385,1.562173911962813,1.662476475003603,337
+af09b4586ba87d15d82645232778389ce961fcce,2015-10-14 11:35:18+00:00,2015-10-14 11:35:18+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3136,3136,"Improving disk usage log message
+
+Improving the warning message for a percent disk usage check so it is
+more clear what the original limit was set to and what the current
+limit is being set to.",353,385,1.5621734088043842,1.6624744008150043,337
+dc19d28af92a5fce4969352c53f02b11ee3f59e9,2015-10-20 12:17:23+01:00,2015-10-20 12:16:28+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3136,3136,https://issues.apache.org/jira/browse/AMQ-3573  https://issues.apache.org/jira/browse/AMQ-2834 - only validate limits if they are set,353,385,1.562162769478093,1.6624340360769267,339
+cc81680e10e5c7140ec3e28091df23e9d3c3233b,2015-11-09 20:07:43+00:00,2015-10-20 18:15:30+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3171,3171,"https://issues.apache.org/jira/browse/AMQ-6027
+
+Adding support for consumers on virtual destinations to create network
+demand. This behavior is turned off by default but can be enabled.
+
+For example, if a consumer comes online for a queue that is part of a
+VirtualTopic, this will cause a network of brokers to forward messages
+because a demand subscription will be created. Same for if a consumer
+comes online for a forwarded destination from a composite
+destination.
+
+There is also an option to enable flow based on the existence of a
+virtual destination if the virtual destination is forwarding to a
+Queue.
+
+Full configuration instructions for this feature will be on the wiki page.",357,391,1.561742234868465,1.660369044120766,340
+5772e7bed88198f57fabb08c2f48a1de68dea72c,2015-12-08 13:18:11+00:00,2015-12-08 13:14:01+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3171,3171,"https://issues.apache.org/jira/browse/AMQ-6080
+
+fixing typos",357,391,1.561742234868465,1.660369044120766,340
+d7febddb6789171ccfd22faf0ee4f00f3e9c9490,2015-12-10 11:23:56+00:00,2015-12-10 11:23:56+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3198,3198,"https://issues.apache.org/jira/browse/AMQ-6084 - add broker.adjustUsageLimits to disable the adjustment of limits to what is available. In this way, a broker will fail to start if constrained, ensuring it won't accept connections and block pending resources if it has earlier exited for that reason",362,395,1.5615560545955485,1.6593530984176446,344
+768fa17085ac938441915a82987c99b37ac52515,2015-12-10 14:24:03+00:00,2015-12-10 14:24:03+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3183,3183,https://issues.apache.org/jira/browse/AMQ-6005 - have plist whack it existing state on start. Start the temp store after the primary persistence adapter which does the locking,362,395,1.5615510561318044,1.6593324659931563,338
+da076f4a632af6ad1d66382523f4c50e9de9e62e,2015-12-11 16:22:31+00:00,2015-12-11 16:22:31+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3199,3199,https://issues.apache.org/jira/browse/AMQ-6086 - add some determinism to interleaved stop and start calls on broker service,364,397,1.5616627242711312,1.6595736419814375,339
+35df815fb86d201e63b4f0f2d53bee3bae5c0752,2015-12-14 15:40:05+00:00,2015-12-14 15:39:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3200,3200,"https://issues.apache.org/jira/browse/AMQ-6086 - start exception can prevent stop from exiting fully, need to be more selective in creation on stop.",365,398,1.5616895433680067,1.6595894077429758,340
+455a628305dc49476d7033701901d119db3fffdb,2015-12-14 16:32:10+00:00,2015-12-14 16:32:10+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3205,3205,https://issues.apache.org/jira/browse/AMQ-6086 - avoid logging npe on attempted start of persistence adapter post stop,365,398,1.5616318716334736,1.659364451114183,342
+b0c0441d0907a26b239367dedbd9b1f3a355ab66,2016-02-15 14:14:19+00:00,2016-02-15 14:13:07+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3207,3207,"https://issues.apache.org/jira/browse/AMQ-6171 - fix vm transport replacement of : from brokerName in error, fix networkConnector retry logic in the event of localTransport creation failure",365,399,1.5621811794298301,1.661419555890793,342
+5009b0c03bababa26f3b819dc0d3688d0d13af1a,2016-05-06 09:37:51-04:00,2016-05-06 09:37:51-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3208,3208,"https://issues.apache.org/jira/browse/AMQ-6247
+
+Allow the provider position to be read from the system.",365,399,1.5621811794298301,1.661419555890793,342
+fe9d99e7a071c4c09c78dfd95630036b86a8a05b,2016-05-25 11:24:43+01:00,2016-05-25 11:24:43+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3217,3217,AMQ-3166 - implement rollbackOnlyOnAsyncException such that async exceptions on transactional sends or acks result in the transaction being marked rollback only and commit failing with an exception. Test that shows current state of play using alwaySendSync or AsyncCallback. rollbackOnlyOnAsyncException enabled by default.,367,402,1.56220705468657,1.6612951922185886,342
+b6759b33dc5c67dd7c0deaf41abeaecff6f9afe7,2016-10-06 11:47:55+01:00,2016-10-06 11:47:55+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3224,3224,"AMQ-6403 - init broker temp from provided temp store to align usage checks. Thanks for the patchh shailendra14k@gmail.com, made a mod to respect broker.tmpDataDirectory as a default. This closes #204",367,402,1.5622007707998244,1.6612754743197335,349
+41bec0d65814448d0495462a6eafe7cbd54b36e0,2016-12-07 10:45:12+00:00,2016-09-29 08:24:41-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3228,3228,Fixes AMQ-6441 where a negative value can be returned with large AWS EFS files systems when calling java.io.File.getTotalSpace(),367,402,1.5621952433926356,1.661255746947188,350
+8a28c065554750ea5063333e2ff479a84d689a51,2016-12-07 18:09:34+00:00,2016-12-07 18:09:34+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3230,3230,[AMQ-6441] add option to specify the hard limits on a usage such that spurious values from the file system can be overridden. this closes #202 thanks William Crowell for the patch with test,367,402,1.562159851747769,1.6611178274548348,353
+56917c07ec1c52e6588091eb5d48c76bfbb71b19,2017-01-03 09:57:13-05:00,2017-01-03 09:57:13-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3230,3230,"https://issues.apache.org/jira/browse/AMQ-6549
+
+Fix bad logger output",367,402,1.561875198663032,1.6600002507869092,353
+bab0887ed60907d4ccac1824d83371a592f94925,2017-02-24 14:05:27-05:00,2017-02-24 14:05:27-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3250,3250,"AMQ-6610 - Network connector mbean not registered on reload
+
+On network connector add or update after broker start (such as the
+runtime plugins) the mbean was not created.  There was also a couple of
+other properties not set. Fixed the network connector start to be the
+same for normal broker start and runtime reload.",368,402,1.4810002099301562,1.6562336921097316,356
+ef84db5e64b7a96a0c5c7271bd88642d940ba7a4,2017-02-27 07:34:22-05:00,2017-02-27 07:34:22-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3257,3257,"AMQ-6610: Fixing JDBC test
+
+Durable destinations need to always be loaded on connector start",369,403,1.4811164598779194,1.6566243614023661,356
+d84a58656c0b3fcb2aad04e47ef843bf379a25f0,2017-03-29 23:50:47+01:00,2017-03-29 23:50:47+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3251,3251,[AMQ-6640] allign use of sync vm transport usage on duplex end of networkconnector with initiator end. only duplexinbound for forwarding is async to allow thread for responses. vm transport options applied in one place and test more deterministic w.r.t the hang scenario,368,403,1.4810482619869951,1.656360208462477,356
+155461a0ba0a082f5a8459f17ae6166bae950231,2017-06-19 14:29:05+02:00,2017-06-16 15:29:55+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3275,3275,"AMQ-6706 Allow for hooks before broker stop occurs
+
+When Camel is run embedded within ActiveMQ it's shutdown is called at
+the point the broker is already stopped, this can lead to data loss as
+there could be exchanges that have not ended.
+This adds the ability to specify preStopHook(s) that can be invoked
+during ActiveMQ shutdown but before the broker is shutdown.
+
+With this Camel can gracefully shutdown while the broker is still
+started.",372,406,1.4819613903842133,1.659741721798768,357
+2311749aa2629cf344fb5642910c3cc39f869b58,2017-06-20 11:05:29-04:00,2017-06-20 11:05:29-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3282,3282,AMQ-6706 - Protecting preShutdownHooks with an AtomicBoolean,372,407,1.4823113956708063,1.6610432962716266,358
+8646bb1010d2632f5d405fe1761c2b9c99a0a139,2017-08-08 20:55:56+02:00,2017-08-08 20:55:44+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3284,3284,[AMQ-6788] Explain how to fix the problem in the exception,372,407,1.4823093828942482,1.6610365862667855,358
+ecb404b3ebf66a9d2182f28312cb0664d44814b3,2018-02-20 21:41:50+01:00,2018-02-20 21:41:50+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3284,3284,BrokerService: fix typo in field and parameter name,372,407,1.4822291011742543,1.660730469935623,358
+dcb5ba1fb334afc8d02091bb9185b0dec0d97a86,2019-11-18 17:42:44+01:00,2019-11-18 17:42:44+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3284,3284,"Merge pull request #275 from PascalSchumacher/BrokerService_fix_typo
+
+BrokerService: fix typo in field and parameter name",372,407,1.4821782229179228,1.6605284653188654,360
+0c6f9a9a1e253d50dac6b265f04c0a458ac535ee,2019-11-22 13:35:32-05:00,2019-11-22 13:35:32-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3293,3293,"AMQ-7352 - Add support for anonymous producer advisories
+
+By default this behavior is turned off but can be enabled by setting
+anonymousProducerAdvisorySupport on the BrokerService to true",374,410,1.4820336520778639,1.6598077973409466,360
+127852d2e7098436e99c573bc7b30e3facdb634b,2020-01-27 10:43:39+00:00,2020-01-27 10:43:39+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3298,3298,AMQ-7142 - Inserting Bouncy Castle Provider Early in Java Security Provider Chain Breaks KeyStore Loading,374,410,1.4820336520778639,1.6598077973409466,363
+24aaa4698c23f69c6bea1c983c89267261bfcc29,2020-03-27 12:14:03+00:00,2020-03-27 12:14:03+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3309,3309,AMQ-7458 - Implement bounds checking on the message scheduling properties,376,414,1.4823184243184424,1.660686820728453,363
+4e1df1979b963de468d873d19ec046361d18a039,2020-06-22 16:24:29+02:00,2020-06-22 16:24:29+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3309,3309,[AMQ-7493] Fix RejectedExecutionException in the BrokerService,375,414,1.4839900738478409,1.6607639790988276,364
+2f2fe6855fa397d7977f3e0bca513db2881d5e7f,2020-11-10 10:22:32-05:00,2020-11-02 15:21:42-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3318,3318,adding an option which allows messages to expire on active durable subscriptions,377,417,1.484028851585261,1.6607668865147005,364
+1a2de52c5f580c24590c706fcf3b6fc61dc88379,2021-03-20 10:58:07+01:00,2021-03-20 10:58:07+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3317,3317,Fix slf4j logger use,377,417,1.4840584923599194,1.6608869896589284,364
+fc80b86ac68432f71a1015ee9588a0b6fcb5fbae,2021-05-25 06:55:39+02:00,2021-05-25 06:55:39+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3270,3270,[AMQ-7442] Support JDK11 full build and code style (#647),379,417,1.4838809487353284,1.6601980630476298,364
+950a1404558d07d80b8eaef48b998b158d689212,2021-06-02 08:30:36-05:00,2021-06-02 08:30:36-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3270,3270,[AMQ-8282] Migrate from deprecated .newInstance() calls to .getConstructors().newInstance,379,417,1.4838738436689887,1.6601707057446773,364
+dc55028c00fcb8a4574b7c390d19f85220c1edfe,2022-11-29 07:51:20+01:00,2022-11-14 15:58:30-08:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3275,3275,Added additional logging on BrokerService startup,379,417,1.4839103011622243,1.6603127748844384,364
+c41be2a8d765448b825c50388b1c5c137593194a,2023-03-14 07:07:56-04:00,2023-03-14 12:07:56+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/BrokerService.java,3300,3300,"[AMQ-8316] Flag deprecated methods in BrokerService (#988)
+
+These methods will be removed or renamed in a future release.
+
+Co-authored-by: Christopher L. Shannon <christopher.l.shannon@gmail.com>",379,417,1.4843730194383846,1.66211719843368,364
