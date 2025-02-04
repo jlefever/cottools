@@ -173,19 +173,19 @@ class _DiffListener(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_add(self, name: str) -> None:
+    def on_add(self, name: str, adds: int) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_delete(self, name: str) -> None:
+    def on_delete(self, name: str, dels: int) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_modify(self, name: str) -> None:
+    def on_modify(self, name: str, adds: int, dels: int) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_rename(self, old_name: str, new_name: str) -> None:
+    def on_rename(self, old_name: str, new_name: str, score: int, adds: int, dels: int) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
@@ -288,16 +288,16 @@ class _FileSolver(_DiffListener):
         self._curr_commit = commit
         self._curr_table = self._tables[parent].create_child()
 
-    def on_add(self, name: str) -> None:
+    def on_add(self, name: str, adds: int) -> None:
         self._curr_table.add(name)
 
-    def on_delete(self, name: str) -> None:
+    def on_delete(self, name: str, dels: int) -> None:
         self._curr_table.delete(name)
 
-    def on_modify(self, name: str) -> None:
+    def on_modify(self, name: str, adds: int, dels: int) -> None:
         self._curr_table.modify(name)
 
-    def on_rename(self, old_name: str, new_name: str) -> None:
+    def on_rename(self, old_name: str, new_name: str, score: int, adds: int , dels: int) -> None:
         self._curr_table.rename(old_name, new_name)
 
     def on_exit_diff(self) -> None:
@@ -385,47 +385,50 @@ class _FileSolver(_DiffListener):
         return _FileLookup(tables)
 
 
-class _ChangeRecorder(_DiffListener):
+class _ChurnRecorder(_DiffListener):
     def __init__(self) -> None:
         self._curr_commit: str = _NULL_COMMIT_ID
-        self._curr_names: set[str] = set()
-        self._commit_to_names: dict[str, set[str]] = dict()
+        self._curr_names: dict[str, int] = dict()
+        self._commit_to_names: dict[str, dict[str, int]] = dict()
 
     def on_enter_diff(self, commit: str, parent: str) -> None:
         self._curr_commit = commit
-        self._curr_names = set()
+        self._curr_names = dict()
 
-    def on_add(self, name: str) -> None:
-        self._curr_names.add(name)
+    def on_add(self, name: str, adds: int) -> None:
+        self._curr_names[name] = adds
 
-    def on_delete(self, name: str) -> None:
+    def on_delete(self, name: str, dels: int) -> None:
         pass
 
-    def on_modify(self, name: str) -> None:
-        self._curr_names.add(name)
+    def on_modify(self, name: str, adds: int, dels: int) -> None:
+        self._curr_names[name] = adds + dels
 
-    def on_rename(self, old_name: str, new_name: str) -> None:
-        self._curr_names.add(new_name)
+    def on_rename(self, old_name: str, new_name: str, score: int, adds: int, dels: int) -> None:
+        self._curr_names[new_name] = adds + dels
 
     def on_exit_diff(self) -> None:
         if self._curr_commit not in self._commit_to_names:
             self._commit_to_names[self._curr_commit] = self._curr_names
         else:
-            self._commit_to_names[self._curr_commit] &= self._curr_names
+            dict_x = self._commit_to_names[self._curr_commit]
+            dict_y = self._curr_names
+            inter = {k: min(dict_x[k], dict_y[k]) for k in dict_x.keys() & dict_y.keys()}
+            self._commit_to_names[self._curr_commit] = inter
 
-    def to_changes_by_name(self) -> dict[str, list[str]]:
-        name_to_commits: dict[str, list[str]] = defaultdict(list)
+    def to_churn_by_name(self) -> dict[str, list[tuple[str, int]]]:
+        name_to_commits: dict[str, list[tuple[str, int]]] = defaultdict(list)
         for commit, names in self._commit_to_names.items():
-            for name in names:
-                name_to_commits[name].append(commit)
+            for name, churn in names.items():
+                name_to_commits[name].append((commit, churn))
         return name_to_commits
 
-    def to_changes_by_id(self, lookup: _FileLookup) -> dict[int, list[str]]:
-        id_to_commits: dict[int, list[str]] = defaultdict(list)
+    def to_churn_by_id(self, lookup: _FileLookup) -> dict[int, list[tuple[str, int]]]:
+        id_to_commits: dict[int, list[tuple[str, int]]] = defaultdict(list)
         for commit, names in self._commit_to_names.items():
             file_table = lookup.file_table(commit)
-            for name in names:
-                id_to_commits[file_table[name]].append(commit)
+            for name, churn in names.items():
+                id_to_commits[file_table[name]].append((commit, churn))
         return id_to_commits
 
 
@@ -437,21 +440,21 @@ class _DiffPrinter(_DiffListener):
         self._count = 0
         print(f"Entering diff of {commit} from {parent}")
 
-    def on_add(self, name: str) -> None:
+    def on_add(self, name: str, adds: int) -> None:
         self._count += 1
-        print(f"A\t{name}")
+        print(f"A\t{adds}\t{name}")
 
-    def on_delete(self, name: str) -> None:
+    def on_delete(self, name: str, dels: int) -> None:
         self._count += 1
-        print(f"D\t{name}")
+        print(f"D\t{dels}\t{name}")
 
-    def on_modify(self, name: str) -> None:
+    def on_modify(self, name: str, adds: int, dels: int) -> None:
         self._count += 1
-        print(f"M\t{name}")
+        print(f"M\t{adds}\t{dels}\t{name}")
 
-    def on_rename(self, old_name: str, new_name: str) -> None:
+    def on_rename(self, old_name: str, new_name: str, score: int, adds: int, dels: int) -> None:
         self._count += 1
-        print(f"R\t{old_name}\t{new_name}")
+        print(f"R\t{adds}\t{dels}\t{old_name}\t{new_name}")
 
     def on_exit_diff(self) -> None:
         if self._count != 0:
@@ -477,7 +480,11 @@ class _LogListener(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def on_change(self, status: str, name_a: str, name_b: str | None) -> None:
+    def on_raw_diff(self, a_blob: str, b_blob: str, status: str, a_name: str, b_name: str) -> None:
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def on_numstat(self, adds: int | None, dels: int | None, name: str) -> None:
         raise NotImplementedError
 
     @abc.abstractmethod
@@ -495,6 +502,7 @@ class _DiffNotifier(_LogListener):
         self._curr_commit = _NULL_COMMIT_ID
         self._curr_parents: list[str] = list()
         self._prev_index: int | None = None
+        self._raw_diffs: list[list[str]] = []
 
     def add_listener(self, listener: _DiffListener) -> None:
         self._listeners.append(listener)
@@ -523,21 +531,26 @@ class _DiffNotifier(_LogListener):
     def on_message(self, message: str) -> None:
         pass
 
-    def on_change(self, status: str, name_a: str, name_b: str | None) -> None:
+    def on_raw_diff(self, a_blob: str, b_blob: str, status: str, a_name: str, b_name: str) -> None:
+        self._raw_diffs.insert(0, [a_blob, b_blob, status, a_name, b_name])
+
+    def on_numstat(self, adds: int | None, dels: int | None, name: str) -> None:
+        _, _, status, a_name, b_name = self._raw_diffs.pop()
+        adds = adds if adds else 0
+        dels = dels if dels else 0
         if status.startswith("A"):
             for listener in self._listeners:
-                listener.on_add(name_a)
+                listener.on_add(a_name, adds)
         elif status.startswith("D"):
             for listener in self._listeners:
-                listener.on_delete(name_a)
+                listener.on_delete(a_name, dels)
         elif status.startswith("M"):
             for listener in self._listeners:
-                listener.on_modify(name_a)
+                listener.on_modify(a_name, adds, dels)
         elif status.startswith("R"):
-            if name_b is None:
-                raise RuntimeError("Expected second name for rename")
+            score = int(status[1:])
             for listener in self._listeners:
-                listener.on_rename(name_a, name_b)
+                listener.on_rename(a_name, b_name, score, adds, dels)
         else:
             raise RuntimeError(f"Unexpected status: {status}")
 
@@ -606,7 +619,10 @@ class _CommitDataRecorder(_LogListener):
         else:
             self._curr_commit["message"] = [message]
 
-    def on_change(self, status: str, name_a: str, name_b: str | None) -> None:
+    def on_raw_diff(self, a_blob: str, b_blob: str, status: str, a_name: str, b_name: str) -> None:
+        pass
+
+    def on_numstat(self, adds: int | None, dels: int | None, name: str) -> None:
         pass
 
     def on_exit_commit(self) -> None:
@@ -652,7 +668,8 @@ class _LogParser:
             self._advance()
             self._parse_field_lines()
             self._parse_message_lines()
-            self._parse_change_lines()
+            self._parse_raw_diff_lines()
+            self._parse_numstat_lines()
             for listener in self._listeners:
                 listener.on_exit_commit()
         if not self._is_eof():
@@ -668,8 +685,12 @@ class _LogParser:
         while self._match_message_line():
             self._advance()
 
-    def _parse_change_lines(self) -> None:
-        while self._match_change_line():
+    def _parse_raw_diff_lines(self) -> None:
+        while self._match_raw_diff_line():
+            self._advance()
+
+    def _parse_numstat_lines(self) -> None:
+        while self._match_numstat_line():
             self._advance()
 
     def _match_commit_line(self) -> bool:
@@ -705,12 +726,29 @@ class _LogParser:
             listener.on_message(self._line.removeprefix("    "))
         return True
 
-    def _match_change_line(self) -> bool:
-        pattern = r"^([A-Z]\d{0,3})\t([^\t\v]+)\t?([^\t\v]+)?"
+    def _match_raw_diff_line(self) -> bool:
+        if not self._line.startswith(":"):
+            return False
+        parts = self._line.split("\t")
+        a_blob, b_blob, status = parts[0].split(" ")[-3:]
+        if len(parts) < 3:
+            name = parts[-1]
+            a_name, b_name = name, name
+        else:
+            a_name, b_name = parts[-2:]
+        for listener in self._listeners:
+            listener.on_raw_diff(a_blob, b_blob, status, a_name, b_name)
+        return True
+
+    def _match_numstat_line(self) -> bool:
+        pattern = r"^(\d+|-)\t(\d+|-)\t(.*)"
         if (match := re.match(pattern, self._line)) is None:
             return False
+        adds = match.group(1) != "-" and int(match.group(1)) or None
+        dels = match.group(2) != "-" and int(match.group(2)) or None
+        name = match.group(3)
         for listener in self._listeners:
-            listener.on_change(match.group(1), match.group(2), match.group(3))
+            listener.on_numstat(adds, dels, name)
         return True
 
     def _advance(self) -> None:
@@ -838,8 +876,10 @@ def _extract_log(repo_path: str, ref: str) -> str:
         "--parents",
         # Diff Formatting
         "--diff-merges=separate",
+        "--raw",
         "--diff-algorithm=histogram",
-        "--name-status",
+        "--numstat",
+        "--abbrev=40",
         "--find-renames",
         "-l0",
         ref,
@@ -853,13 +893,13 @@ class NameRepo:
         self,
         files: _FileLookup,
         commits: dict[str, CommitData],
-        changes_by_id: dict[int, list[str]],
-        changes_by_name: dict[str, list[str]],
+        churn_by_id: dict[int, list[tuple[str, int]]],
+        churn_by_name: dict[str, list[tuple[str, int]]],
     ) -> None:
         self._files = files
         self._commits = commits
-        self._changes_by_id = changes_by_id
-        self._changes_by_name = changes_by_name
+        self._churn_by_id = churn_by_id
+        self._churn_by_name = churn_by_name
         self._parents: dict[str, list[str]] = defaultdict(list)
         for commit in self._commits.values():
             self._parents[commit.id] = list(commit.parents)
@@ -868,7 +908,7 @@ class NameRepo:
     @staticmethod
     def parse_log(repo_path: str, ref: str) -> "NameRepo":
         name_recorder = _FileSolver()
-        change_recorder = _ChangeRecorder()
+        change_recorder = _ChurnRecorder()
         # diff_printer = DiffPrinter()
 
         diff_notifier = _DiffNotifier()
@@ -886,8 +926,8 @@ class NameRepo:
 
         files = name_recorder.solve_files()
         commits = commit_data_recorder.to_dict()
-        changes_by_id = change_recorder.to_changes_by_id(files)
-        changes_by_name = change_recorder.to_changes_by_name()
+        changes_by_id = change_recorder.to_churn_by_id(files)
+        changes_by_name = change_recorder.to_churn_by_name()
         return NameRepo(files, commits, changes_by_id, changes_by_name)
 
     @staticmethod
@@ -930,10 +970,16 @@ class NameRepo:
         return self._files.commits_by_name(file_name)
 
     def changes_by_id(self, file_id: int) -> list[str]:
-        return self._changes_by_id[file_id]
+        return [c for c, _ in self._churn_by_id[file_id]]
 
     def changes_by_name(self, file_name: str) -> list[str]:
-        return self._changes_by_name[file_name]
+        return [c for c, _ in self._churn_by_name[file_name]]
+
+    def churn_by_id(self, file_id: int) -> list[int]:
+        return [c for _, c in self._churn_by_id[file_id]]
+
+    def churn_by_name(self, file_name: str) -> list[int]:
+        return [c for _, c in self._churn_by_name[file_name]]
 
     def cont_changes_by_id(self, file_id: int) -> list[str]:
         commits = set(self.changes_by_id(file_id))
