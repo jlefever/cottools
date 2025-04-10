@@ -1,0 +1,189 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+aba5482f87e96d41e0b0ee9e403ecdb4a7eeece6,2019-11-06 11:51:46-08:00,2019-11-06 11:51:46-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/PinotDataAndQueryAnonymizer.java,1303,1303,"Data Anonymizer Tool (#4747)
+
+* Initial implementation of the Data anonymizer tool
+
+(1) Filter column extractor from query file
+(2) Global dictionari builder
+(3) Data generator
+(4) Query generator
+
+* Unit tests
+
+* Cleanup
+
+* Fix tests
+
+* Address review comments
+
+* address review comments
+
+* Use GenericRow::getFieldToValueMap",95,84,1.3469148375964475,1.8729738203946136,133
+63ceb0c47759cf5b7372c03a2d76f7206bbec133,2019-11-27 23:40:20-08:00,2019-11-27 23:40:20-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/PinotDataAndQueryAnonymizer.java,1303,1303,"Adding pinot-spi module and moving record reader interface (#4869)
+
+* Adding pinot-spi module and moving recordreader interface to it
+
+* Fixing compilation issues after rebase",95,84,1.3469148375964477,1.8729738200924384,133
+b934d10941d9d32a5c23942c61a5c07ed3b5b3a9,2019-12-10 09:20:53-08:00,2019-12-10 09:20:53-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/PinotDataAndQueryAnonymizer.java,1374,1374,Support multi-value in data anonymizer (#4905),99,85,1.3473704229366947,1.8703176296419024,148
+7cab902ad118c1ece56b980663ff6e01390194f3,2019-12-12 18:25:23-08:00,2019-12-12 18:25:23-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/PinotDataAndQueryAnonymizer.java,1448,1448,"Support ORDER BY and BYTES in data anonymizer tool (#4910)
+
+- ORDER BY in query generator
+- BYTES type support for both global dictionary and non global dictionary columns",101,88,1.3404939547998154,1.887710986644887,170
+24529612024cce47ac5907b34b1898b951d1cbfb,2020-02-10 14:32:57-08:00,2020-02-10 14:32:57-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1162,1162,"Improvements to data anonymizer tool (#5061)
+
+* Improvements to data anonymizer tool
+
+* Fix build
+
+* Address review comments",80,57,1.2829959988254507,1.7702217007008927,135
+a257935d9a015a82b2dc54cc3a7887740cb67440,2020-02-14 17:20:36-08:00,2020-02-14 17:20:37-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1182,1182,"Support no global-dictionary columns in data anonymizer (#5071)
+
+* Support no global-dictionary colums in data anonymizer
+
+* address review comments",82,60,1.2806166985025778,1.7649919307335993,135
+e44192ebca6cd42b1bc42d406d1cd805219d16bd,2020-02-23 18:42:02-08:00,2020-02-23 18:42:02-08:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1208,1208,"Support embedded parsing in PinotDataAndQueryAnonymizer (#5088)
+
+* Support embedded parsing
+
+* Add unit tests
+
+* Address PR comment",86,62,1.3425311496942423,1.779945074454569,143
+99338708cc074e4c7690da1ae3d69c1e40ae5dc8,2020-03-16 16:25:52-07:00,2020-03-16 16:25:52-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1207,1207,"Move SegmentMetadata from pinot-common to pinot-core (#5156)
+
+This PR only moves the class into another package, no actual code change",86,62,1.3425311496942425,1.7799450747840393,143
+98faf2bfac7ec69ced93eec25cf57237a911c560,2021-04-02 18:43:14-07:00,2021-04-02 18:43:14-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1207,1207,"WIP: Pinot SPI refactor. (#6721)
+
+In the first phase of Pinot SPI refactor, we introduced the plugin based architecture. This is
+a continuation of the refactor. Details of the refactor can be found here:
+https://docs.google.com/document/d/1urROfQZuTE8JJmW3IMCeB2i3FYoEyG1TCyPsxvSaNuw/edit?usp=sharing
+
+In this second phase, we will mainly be focuing on the following:
+- We will create pinot-segment-spi and pinot-query-spi modules that will host all the segment
+  and query related interfaces.
+- We will also create pinot-segment-default and pinot-query-default which will host the default (current)
+  implementations of Pinot segment and query execution engine.
+- These will purely be refactors and would not create any function differences. However, to clean up
+  dependency issues in existing code, we may make some changes (eg create a pojo), but those also
+  should not modify any functionality.
+
+In this particular PR, we are making the folowing changes:
+- Introduced pinot-segment-spi.
+- Moved all segment related interaces from pinot-core to pinot-segment-spi.
+- In order to clean dependency issues, we have also introduced pinot-query-api, but in this PR
+  we are only moving bare minimal files needed for the pinot-segment-spi move.
+- Moved tests for any POJO classes that got moved due to dependencies.
+
+Manual changes not performed by IDE:
+- Added module `pinot-segment-spi`, pinot-common pinot-core depend on it.
+- ChunkCompressionType moved out of ChunkCompressionFactory class.
+- StatsCollectorConfig.getPartitionFunction() now returns ParittionFunction name instead of an instantiated PartitionFunction object. This is cleaner so that StatsCollectorConfig does not to depend on ParittionFunction/Factory.
+- VirtualColumnIndexContainer.getNullValueVectorReader() returns an interface NullValueVectorReader, instead of the impl.
+- PUSH_FREQUENCY_HOURLY currecntly defined in CommonConstants (pinot-common). was also defined locally (TODO cleanup added) inside of NormalizedDateSegmentNameGenerator. This is a temporary
+  work-around to avoid circular dependency between pinot-segment-spi pinot-common.
+- Modified the JsonIndexReader.getMatchingDocIds() to take a String instead of FilterContext, to avoid pulling in
+  FilterContext and other transitive dependencies into the spi module.
+
+TODOs:
+- AggregationFunctionType is being used by StarTree (transitively) so had to be temporarily pulled in.
+  We need to find a better home for it.
+- Clean up the PUSH_FREQUENCY_HOURLY TODO mentioned above.
+  To keep the PR limited, these classes are moved into a `misc` package inside of pinot-segment-spi.",86,62,1.3425311496942423,1.7799450763487548,143
+f2e3446e75f1ec1d553805d03f6504f05b3e3c0e,2021-04-13 17:20:05-07:00,2021-04-13 17:20:05-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1207,1207,"Pinot SPI refactor contd: Added pinot-segment-local module. (#6761)
+
+- Added pinot-segment-local module that contains all the segment related
+  implementations for the existing local Pinot segment.
+
+- Modules that pinot-segment-local depends on:
+  - pinot-spi
+  - pinot-segment-spi
+  - pinot-common: This is temporary and needed as a lot of common utilities
+    are within pinot-common.
+  - External libraries: Datasketches,TDigest, HLL, Lucene, larray.
+  - For test-scope:
+    - pinot-avro
+    - pinot-csv
+    - pinot-json
+    - pinot-spi
+    - pinot-yammer
+
+- Modules dependent on pinot-segment-local:
+  - pinot-core
+  - pinot-server, pinot-perf: Only in test-scope
+
+Most moves/refactors done via IDE. Manual changes listed below:
+- Fix typo in Logger for RealtimeLuceneIndexReaderRefreshThread.
+- Moved builder specific util methods from StarTreeUtils to StarTreeBuilderUtils.
+  - `shouldRemove()`
+  - `remove()`
+
+- Made local copy of MAX_DOC_PER_CALL inside of PinotDataBitSetV2, as it is currently
+  defined in DocIdSetPlanNode, but segment related code depends on it.
+
+- Made local copy of DEFAULT_TDIGEST_COMPRESSION in PercentileTDigestValueAggregator,
+  originally defined in PercentileTDigestAggregationFunction.
+
+- Made local copy of DEFAULT_MAX_ERROR in PercentileEstValueAggregator, originally defined in
+  PercentileEstAggregationFunction.
+
+- Split QueryContextRequestUtils into two files, the new one calle RequestContextConverterUtils
+  is in pinot-common, as it has utility methods related to classes in pinot-common.
+
+- Created CustomSerDeUtils class, that has code from ObjectSerDeUtils related to ValueAggregator.
+  This is again to avoid pulling in dependencies from pinot-core into pinot-segment-local.
+
+- Removed reference of Operator in javadoc of EarlyTerminationException, as it is
+  was causing reference dependency to pinot-core.
+
+- Renamed SegmentGenerationWithNullValueTest to SegmentWithNullValueTest as it has test for segment
+  generation as well as querying, and can only be housed in pinot-core atm.
+
+- The clas RealtimeSegmentStatsHistory is ser/de using Java object ser/de, which makes moving the file
+  out of its current package backward incompatible. Addressed this issue by using a custom object
+  input stream that replaces the old package name with new one when deserializing.
+
+Moves done to resolve cross dependency issues:
+- Following moved to pinot-segment-local utils package:
+  - IngestionUtils
+  - TableConfigUtils
+  - SchemaUtils
+  - SegmentTestUtils: This depends on AvroSchemaUtil, added dependency on pinot-avro in test-scope.
+
+- Following moved to pinot-common:
+  - FilterContext
+  - ExpressionContext
+  - FunctionContext
+  - Predicate
+
+- Following moved to pinot-spi
+  - ReadMode
+  - CommonConstants
+  - ArrayCopyUtils
+  - BadQueryException moved
+  - EarlyTerminationException
+
+- Copied necessary data files in resources/data from pinot-core to pinot-segment-local.",86,62,1.3425311496942425,1.7799450754172066,143
+6e7fed9d79b265cd82e9c74fe8e3a07843b192f6,2021-05-17 12:35:32-07:00,2021-05-17 12:35:32-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1208,1208,"Enhance PinotSegmentRecordReader to preserve null values (#6922)
+
+Enhance PinotSegmentRecordReader to preserve null values within the NullValueVector, and also make it work on mutable segment.
+Replace RealtimeSegmentRecordReader with PinotSegmentRecordReader to reuse the dictionary id buffer for MV columns.
+Also misc fixes on misuse of record reader.",86,62,1.342471889027856,1.7798449996473615,143
+2b5500447cd82cedca9dd47860e69d321c4e00c3,2021-05-24 17:26:42-07:00,2021-05-24 17:26:42-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1208,1208,"SegmentDirectoryLoader interface and local impl (#6949)
+
+Introducing a SegmentDirectoryLoader which will create the SegmentDirectory, with default implementation being SegmentLocalFSDirectory.",86,62,1.3424718890278562,1.7798450030937645,143
+f38609b8dae9ccd1b2f171de0212aae3ce47bcd8,2021-07-01 10:41:30-07:00,2021-07-01 10:41:30-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1208,1208,"Clean up SegmentMetadata and ColumnMetadata (#7104)
+
+- Change `ColumnMetadata` to an interface, and rename `ColumnMetadata` to `ColumnMetadataImpl`
+- Add apis related to `ColumnMetadata` into `SegmentMetadata`
+- Clean up `SegmentMetadataImpl` and `ColumnMetadataImpl`",86,62,1.3424718890278562,1.7798449997730272,143
+7e9ca6a5a4afe0d4e283ac1307c45430e474cbf2,2021-08-20 21:33:52-07:00,2021-08-20 21:33:52-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1210,1210,Reformat code base with line length 120 (#7342),77,62,1.3469083187331308,1.782258355963957,143
+58d86a661d6ab5a71375722ef28a1da1b526d704,2021-08-23 14:56:53-07:00,2021-08-23 14:56:53-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1210,1210,reformat pinot-perf/pinot-tools/pinot-integration-tests/pinot-minion (#7335),77,62,1.3185953833783173,1.7802467854339776,143
+31ca84e749722e57eeb70edec9d5d98c6bed92ae,2021-09-17 18:04:18-07:00,2021-09-18 02:04:18+01:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1210,1210,"ban prefix increment (#7442)
+
+* ban prefix increment
+
+* remove all preincrements from Java source code",77,62,1.318624886884845,1.7803197475462098,143
+1b2c278daefc3f4c9d085094217ae9de469f904f,2022-05-03 20:33:23-07:00,2022-05-03 20:33:23-07:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1172,1172,"[PQL Cleanup] Remove all PQL related code (#8626)
+
+Remove all PQL related code.",50,34,1.2248735048830075,1.6184935905557012,65
+6bf0f6206846d1efb3e026dc5f3a85e33b7d15b1,2024-05-15 11:22:37-07:00,2024-05-15 23:52:37+05:30,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1172,1172,Use parameterized log messages instead of string concatenation (#13145),50,34,1.2241310035018031,1.616968311193375,65
+55f6a6f6d46ca92d2e7ca65a6c1e67de5738cfe7,2024-06-26 21:46:11-07:00,2024-06-27 00:46:11-04:00,pinot-tools/src/main/java/org/apache/pinot/tools/anonymizer/PinotDataAndQueryAnonymizer.java,1172,1172,Removing legacy commons-lang dependency (#13480),50,34,1.2241310035018031,1.6169683147463878,65

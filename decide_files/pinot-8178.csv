@@ -1,0 +1,1636 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+9413517c98d2eba176fe8cb86979ffd16a6ad9f1,2016-06-24 09:01:30-07:00,2016-06-24 09:01:30-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,100,100,"[PINOT-3202] Added code to create and verify the kafka partition allocation amongst low level consumers (#222)
+
+* [PINOT-3202] Added code to create and verify the kafka partition allocation amongst low level consumers
+
+* Fixing license header in unit test
+
+* Improved unit test
+
+* Make the test case uneven",15,14,1.517089712697201,1.5170897139786317,5
+82fbff256f3bc860a6252b130c267978e080a167,2016-07-20 10:49:43-07:00,2016-07-20 10:49:43-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,196,196,"[PINOT-3204] Plumbing the path for adding a new table. (#279)
+
+* [PINOT-3204] Plumbing the path for adding a new table.
+
+Changed kafka consumer type in config to be a list rather than a single type
+
+Added a new config variable for num replicas of low-level consumer. There is some discussion on this,
+so I may change this later.
+
+Added a class for segment metadata for LLC segments.
+
+Added methods to create initial segment metadata for low level segments
+
+* Addressed all review comments",20,17,1.5081462948501432,1.508146296309099,14
+cee43ee2417e839e5bb56d9c70edbf09123e316e,2016-07-22 13:29:51-07:00,2016-07-22 13:29:51-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,223,223,"Getting addTable to work with both high and low level consumers (#306)
+
+Tested locally adding tables with high and low-level consumers, adding them
+individually, and adding a low-level consumer to an existing table with
+high-level consumer",23,19,1.5074639215137817,1.5074639194459685,20
+ba1d7111d782df2ef95751f0ef2de825bdf2fa93,2016-08-01 14:19:08-07:00,2016-08-01 14:19:08-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,459,459,"[PINOT-3203] Controller code changes for Low-level consumer segments (#322)
+
+Updated PinotLLCRealtimeSegmentManager to support closing an old segment in propertystore
+and creating new ones in idealstate. Added tests for the new methods.
+
+Added a tentative protocol file (actual protocol elements TBF) and an FSM implementation
+for closing segments when multiple servers inform the controller about their offsets, and
+the controller ensures that one of them commits the segment.
+
+Added test cases to test the scenarios described in the design documents.",52,32,1.537640549169849,1.5376405440102647,45
+bd52a3f7ffe46e9863cdcd425b0ac0f2bebf5ee0,2016-08-10 20:05:16-07:00,2016-08-10 20:05:16-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,459,459,"[PINOT-3435] Adding segment completion protocol endpoints in the controller Added a utility in the server to find the controller leader (#359)
+
+* [PINOT-3435] Adding segment completion protocol endpoints in the controller
+Added a utility in the server to find the controller leader
+
+Added unit tests
+
+* Allowed start of multiple servers, and addressed a review comment
+
+* Addressed review comments",52,32,1.5360022618660683,1.5360022594572291,45
+a66ba259c01624e0a3f7f8143075ca8cb7390ff3,2016-08-11 13:18:48-07:00,2016-08-11 13:18:48-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,474,474,[PINOT-3464] Set the download url correctly in committing LLC segments (#373),53,34,1.5619369722872,1.5619369697144168,45
+56dbcb377f8ad78118c5e8cf83558f3a646a437d,2016-08-19 22:14:54-07:00,2016-08-19 22:14:54-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,475,475,"Fix the number of replicas in idealstate so that we get multiple servers in CONSUMING state (#420)
+
+Setting the REPLICAS value to 1 in idealstate causes helix to send a state transition to
+only one replica to go into CONSUMING state. We now set it to the number of replicas in
+the IDEALSTATE so that helix sends state transition to all replicas.
+
+Helix should still honor the fact that there is only one replica for the high-level
+consumers. Need to check with a combination of high and low-level consumers  with multiple
+servers",53,34,1.5626846186815424,1.5626846188644432,45
+782c69938b98deb10d1b19a094af759d4a445041,2016-08-29 20:48:36-07:00,2016-08-29 20:48:36-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,470,470,[PINOT-3542] Fix table deletion to delete the kafka partition assignment (#464),52,32,1.5391882261399932,1.5391882228278901,45
+886f27359241b9007491f30494939ae8c498905b,2016-08-30 15:06:23-07:00,2016-08-19 13:44:36-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,489,489,"Fetch initial Kafka offset on table creation (#462)
+
+Fetch the Kafka start offset on a per-partition basis when creating a
+new LLC realtime table, so that tables consuming from an already
+existing Kafka topic have a valid start offset.
+
+Reviewer: Subbu",55,33,1.5472142416478147,1.547214241578758,45
+b0d1304c6ff2914a1cda7eac57c63ba0dc804f99,2016-08-31 13:23:41-07:00,2016-08-31 13:23:41-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,540,540,"[PINOT-3505] Update committing segmentmetadata from the incoming metadata file (#473)
+
+* [PINOT-3505] Update committing segmentmetadata from the incoming metadata file
+
+Also fixed record count in RealtimeSegmentDataManager
+
+* Addressed review comments and added unit tests for ensuring that the metadata is set correctly.",57,34,1.5596548186565475,1.5596548165792272,47
+9538ee0b8350d3c83237e87830ab3b183503128a,2016-09-07 11:18:21-07:00,2016-09-07 11:18:21-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,542,542,[PINOT-3596] Add segment time unit so that retention manager works for LLC segments (#507),57,34,1.5601202137899652,1.5601202079372358,47
+3614e785f4fa38325585c2c92c830a662ffbc409,2016-09-20 08:19:49-07:00,2016-09-20 08:19:49-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,542,542,"[PINOT-3696] Make segment commit time configurable. (#565)
+
+* [PINOT-3696] Make segment commit time configurable.
+
+Also changed the default to 45s.
+
+The only downside of setting this value high is that the controller will allow this much time
+before it declares the committer down, and pick one of the other contenders as a committer.
+
+* Keep the default value of max segment commit time in one class.
+Change the max allowed time to be instance variable
+
+* Fix the time unit conversion calls
+
+* Updated unit tests to reflect a longer commit time
+
+* Change default commit time to 2 minutes",57,34,1.5600100162583292,1.5600100131874497,47
+c7dbfcd8df21f7a49dafa1c20ff05631ebfb5371,2016-09-23 10:42:53-07:00,2016-09-13 14:30:55-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,548,548,"Add timeouts to SimpleConsumerWrapper (#537)
+
+Add timeouts to SimpleConsumerWrapper instead of ignoring the
+timeoutMillis parameter. Add documentation for some methods which did
+not have any.
+
+Reviewer: Subbu",57,34,1.5600100183434795,1.5600100185714654,47
+bc8ccac451d0b5567ff17b41d0d747cb3c0ad8d2,2016-09-26 11:52:03-07:00,2016-09-26 11:52:03-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,558,558,Enable Controller failover logic (#598),58,35,1.5595132442924484,1.55951324332515,47
+80b10455a03e15f4e25b6df375f93a49886177c3,2016-09-26 20:46:21-07:00,2016-09-26 20:46:21-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,558,558,"[PINOT-3205] Added validation to make sure that there is at least one segment in CONSUMING state in each kafka partition (#601)
+
+* [PINOT-3205] Added validation to make sure that there is at least one segment in CONSUMING state in each kafka partition
+
+* Changed method name as per jfim's comment",58,35,1.5639011754133816,1.5639011751270349,47
+a6d6b72a933143bfa09a10b462541dc4d0a374ea,2016-10-03 16:25:36-07:00,2016-10-03 16:25:36-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,611,611,"[PINOT-3743] Remove all traces of LLC when a table is configured with only HLC segments (#637)
+
+* [PINOT-3743] Remove all traces of LLC when a table is configured with only HLC segments
+
+* Fix a timing bug in tests that got triggered because of the 1s sleep",61,36,1.5562507661512681,1.5562507643529804,54
+5700acb3afe7a2b813e3759c21a72dd5e930324c,2016-10-04 20:16:15-07:00,2016-10-04 17:30:08-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,616,616,"Add additional LLC metrics (#642)
+
+Add additional LLC metrics:
+ - Per partition offset lag
+ - Time spent in various phases (initial consumption, catch up,
+   completion, segment conversion)
+ - Controller response counts (commit, hold, etc.)
+ - LLC FSM abort count
+ - Rows discarded",61,37,1.565361963488299,1.5653619659333113,54
+a9897802fa1c3adf5e8f35799895014138ad69e9,2016-11-30 10:49:13-08:00,2016-11-30 10:49:13-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,726,726,"[PINOT-4062] Auto-create segments in CONSUMING state if we do not see one in a partition (#858)
+
+* [PINOT-4062] Auto-create segments in CONSUMING state if we do not see one in a partition
+
+This feature is useful to fix kafka consumer errors (e.g. offset not found). In this condition
+the segments will still show up as being in CONSUMING state, except that the servers
+have stopped consuming, and are waiting for some other server to commit the segment so that
+they can get the right segment. If each server thinks they are the only one that is having
+a problem, then consumption will stall.
+
+We have a metric for number of bytes consumed, which should drop to zero.
+
+In this case, the operator can just remove the segment in CONSUMING state for that partition,
+and we will auto-create the segment on the next run of ValidationManager.
+
+It may be useful to run this functionality more than once in an hour, TBD.
+
+* Addressed review comments
+
+* Resolved merge conflicts",75,43,1.5704651398372873,1.5704651391843938,61
+c3d72d7501f00b595fca6d3288868d3b56fab991,2016-11-30 13:35:32-08:00,2016-11-18 23:11:28-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,726,726,"Add configurable connection/fetch timeouts (#842)
+
+Add configurable connection and fetch timeouts for Kafka.",75,43,1.5722939819939077,1.5722939797397997,61
+cedfdfe4fa8b5735921f9d61ff705731c198281e,2016-12-07 13:40:22-08:00,2016-12-07 13:40:22-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,732,732,"Fix auto-creation of segments (#889)
+
+* Fix auto-creation of segments
+
+Several fixes applied:
+
+The auto-creation loop was skipping over segments if consecutive partitions had missing segments.
+
+The auto-creation logic was always taking the earliest kafka offset (assuming the error is
+that of offset not being found), but this may not be the case. So, if we have an older segment whose
+end offset is higher than the earliest available kafka offset, we should pick the higher one.
+
+Added tests for these cases.
+
+* Addressed review comments
+
+Fixed offset selection for the first segment in a partition.
+Added unit tests for both cases",74,43,1.5721043945828175,1.572104393039796,62
+2900e147e54fbdee3f51aaccf4917b26e9c5e5b3,2016-12-08 18:31:48-08:00,2016-12-08 18:31:48-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,756,756,"[PINOT-4169] Part-1 of auto-fix for non-consuming segments (#892)
+
+* [PINOT-4169] Part-1 of auto-fix for non-consuming segments
+
+This part handles the change in the controller side FSM to handle the incident reported by the
+server.
+
+The protocol now has a new message element (reason for stopping consumption) that is printed in the
+log message on the controller.
+
+Added tests for the new condition.
+
+* Addressed review comments and fixed URL construction that failed a test
+
+* Added the new endpoint to the routing table",75,44,1.5726185451281454,1.5726185432588957,62
+1d32bfb087dfb080fdcf54300078c19052550d25,2016-12-13 15:09:50-08:00,2016-12-13 15:09:50-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,865,865,"[PINOT-4167] Auto-update LLC Kafka partition assignment if any parameters change (#903)
+
+* [PINOT-4167] Auto-update LLC Kafka partition assignment if any parameters change
+
+Automatically update the kafka assignment if the capacity or the number of kafka partitions
+or the number of replicas per partition changes for the realtime table. The changes will take
+effect after the next succcessful run of ValidationManager
+
+* Addressed review comments",89,48,1.5768422501894828,1.5768422503344148,70
+4e3f61862126873351e121aa56965f41be70d7d1,2016-12-13 16:09:35-08:00,2016-12-13 16:09:35-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,842,842,"[PINOT-4172] Fix LLC segment cleanup when conumer type is changed (#905)
+
+When consumer type is changed from ""highLevel,simple"" to ""highLevel"" for any reason
+we need to delete the segments on disk as well. Going through the deletion manager
+deletes from idealstate, and also from propertystore and disk",89,48,1.5768754245686365,1.57687542708251,67
+1a567860a23a9514a4e322adcb447576d83d81e6,2016-12-20 14:45:38-08:00,2016-12-05 15:11:51-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,932,932,"Set the flush threshold on a per-segment basis (#893)
+
+Set the LLC realtime segment flush threshold on a per-segment basis
+according to the maximum number of partitions consumed by replicas. For
+example, if some replicas for a new segment are consuming three
+partitions and some are consuming four, the new segment will have a
+flush threshold equal to the per-table row flush threshold divided by
+four.
+
+This ensures that even if the number of Kafka partitions increases,
+there is still an upper bound on the number of rows held in memory
+before being flushed to disk.",104,51,1.6021547487445327,1.6021547447318734,78
+137a8416d6f9f81c0bf1020ec64a03633dbc127b,2017-01-13 14:10:11-08:00,2017-01-13 14:10:11-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,967,967,"[PINOT-4325] Fix auto-correction logic for consecutive failing segments (#956)
+
+* [PINOT-4325] Fix auto-correction logic for consecutive failing segments
+
+Modified createConsumingSegment() to consider whether the previous segment was completed or not, when it
+tries to create a new consuming segment. If it was not completed, then the new segment is created with the
+same start offset as the prev segment (or earliest available, if that is higher than the start offset
+of prev segment).
+
+If the prev segment is completed, then we attempt to create the new segment with a start offset equal to
+the end offset (unless of course, that offset is not available in kafka, in which we case we pick the
+earliest available offset).
+
+In either case, a warning is printed if data is lost, and a table metric is incremented.
+
+Added the setting of Long.MAX_VALUE as the end offset for auto-created segments. This part was missed before.
+
+Added unit tests.
+
+* Add a metric for the auto-creation of segments",105,52,1.6002087229725592,1.600208724747375,85
+eb500d17adb4912c099b7a6c1f504006915c4bbb,2017-01-17 14:48:15-08:00,2017-01-17 14:48:15-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,961,961,"Re-factor auto-creation of segments (#965)
+
+Incorporating feedback comments from previous RB on the same code to make
+the auto-creation logic more readable.",102,53,1.5975917979388248,1.597591798752376,87
+3b3c6b13ce836068bd8adc51c0c7154026375ef4,2017-01-18 13:10:16-08:00,2017-01-18 13:10:16-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,986,986,"Log an error and update metric when zookeeper updates fail (#968)
+
+* Log an error and update metric when zookeeper updates fail
+
+We have retries for helix updates, but if an update fails even after multiple retries
+(as has been seen sometimes), we need to know about it.
+
+Changed the retry policy to a linear fixed-delay policy with max 10 retries, attempting
+an update every 1/2 second. (earlier we had exponential back-off with 5 max attempts).
+This places a maximum time delay of 5 seconds to update zookeeper. Hopefully, zk is not
+busy for more than 5 seconds.
+
+Should an update fail after all these retries, we bump a metric, that we can alert on.
+If this alert files, some manual repair of zookeeper may be needed, production experience
+will tell better.
+
+* Update log messages to provide more information when an exception happens",102,53,1.5871239500550887,1.5871239474196257,87
+dbc4d86a942de702a0223fcb2d765cc41f4a5481,2017-02-07 13:27:43-08:00,2017-02-07 13:27:43-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1005,1005,"[PINOT-4446] Revert back to exponential back-off and introduce locks to serialize idealstate updates to same table (#1036)
+
+Exponential back-off introduces a randomness so that retries have a higher chance of
+succeeding, so changed the retry policy back to exponential back-off.
+
+In addition, introduced a lock to serialize updates to idealstate on the same table.
+This helps when there are multiple LLC partitions of the same table completing
+around the same time. While indepdendent threads can process the state changes
+during segment completion, the lock ensures that the updates happen in a serial
+fashion.
+
+There is still an undesriable behavior on failures, though. For any reason, if
+the update to idealstate fails during segment completion, we will be left with the
+scenario where the completing segment is in CONSUMING state, the PROPERTYSTORE
+entry for the completing segment has already been marked as DONE, and the
+PROPERTYSTORE entry for the next segment has already been created.
+
+When this happens, the servers will attempt to re-complete the segment, and will be told
+to either download or keep the segment. But they will never start a new segment.
+
+TBD how to fix this.",102,55,1.6061358959576446,1.6061358942194255,88
+7bdf38556c75a5665a330b21a32b81e552ebfc0d,2017-02-08 14:44:32-08:00,2017-02-08 14:44:32-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1007,1007,"Fix bug handling negative hash code (#1041)
+
+* Fix bug handling negative hash code
+
+* address review nit",102,55,1.6061358951094207,1.6061358933936785,88
+06a45ba10e3a406dc6e20aaa41ea3e9335a9a64d,2017-02-14 09:10:56-08:00,2017-02-14 09:10:56-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1019,1019,"Auto-fix segment consumption if idealstate update fails during LLC segment completion (#1049)
+
+* Auto-fix segment consumption if idealstate update fails during LLC segment completion
+
+When a segment completes, we update zk with two changes:
+1. Update proprtystore with a new LLC segment
+2. Update idealstate to mark old segment in ONLINE and add a new segment in CONSUMING
+These two updates cannot be done in a transaction. It is possible that the controller
+fails after step 1 but before step 2. In that case, we had called the code to fix
+things on a controller getting leadership.
+
+It is also possible that the idealstate update fails due to concurrent updates to
+the idealstate znode (e.g. retention manager, deletes by operator, etc.). In these
+cases, we have a retry, but no guarantees.
+
+With this change, we call the same logic that we call on leadership change.
+
+Also changed the logic that detects and fixes the condition to use priority
+queues to make the code more readable.
+
+Existing unit tests cover this case already
+
+* Addressed review comments
+
+* Addressed rest of the review comments",105,57,1.6040553677232974,1.6040553654175667,87
+2dbd2cfb3f5977ff9e07c28547a14ab3361c08da,2017-03-01 17:19:18-08:00,2017-03-01 17:19:18-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1044,1044,"Add table level configs. (#1100)
+
+Table level configs being added for LLC segment commit time and nodictionary columns.",107,58,1.6040391502590403,1.6040391469811313,92
+6b8b8c6a84021bda844f37b7b74194bf8abcd1e2,2017-03-14 14:37:29-07:00,2017-03-14 14:37:29-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1043,1043,"[PINOT-4603] Re-factor parameter passing in Segment Completion Protocol (#1142)
+
+* [PINOT-4603] Re-factor parameter passing in Segment Completion Protocol
+
+This is the first check-in towards adding a lease-based segment build time.
+Changing the parmeters to be a class makes it easier to add additional parameters
+and features around it
+
+* Addressed review comments",107,58,1.604039149979677,1.6040391461352956,92
+47f4a80f5f6873b6c35fdd0694c20dec7259b56a,2017-04-03 10:06:21-07:00,2017-04-03 10:06:21-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1044,1044,"Handle default number of rows when updating flush threshold for LLC (#1023)
+
+Out of the box, we seem to be letting each partition consume 5M rows,
+which is not desired.",107,58,1.6043971022551564,1.6043971000404413,92
+ab8acf2895edc628d4562e199a1a263cba2bcbee,2017-04-11 14:17:58-07:00,2017-04-11 14:17:58-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1089,1089,"[PINOT-4748] Retry on temporary kafka failures in the controller (#1263)
+
+Kafka failures when we try to get number of partitions, or the current offset from Kafka
+are usually temporary, and a single retry should fix things. Added retry logic for these
+cases, logging error only when all retries fail.",113,68,1.5399569024002138,1.6693941072217315,95
+636e7c37aa89c57d356236f1fc1ba4419a1ff634,2017-04-12 12:35:46-07:00,2017-04-12 12:35:46-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1108,1108,"Fix the problem where PinotLLCRealtimeSegmentManager directly load segment metadata from a file (#1277)
+
+We extract the metadata.properties and creation.meta into a temporary metadata directory, and load metadata from there.
+Fix the issue where invalid crc is extracted.",118,69,1.5404896827575985,1.6692790179970165,93
+dc88ec2dcabea304e98cb4b52fadfdaf385b9f36,2017-04-12 13:22:39-07:00,2017-04-12 13:22:39-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1112,1112,"[PINOT-4768] Handle exceptions when a table gets dropped while committing an LLC segment (#1275)
+
+* [PINOT-4768] Handle exceptions when a table gets dropped while committing an LLC segment
+
+We handle all exceptions inside the segment completion manager, and return a failed response.
+
+Added unit test
+
+* Changed exception and error string message
+
+* Fixed the exception to be a RuntimeException instead of NPE
+
+There are multiple points that call to get the segment metadata and they cannot handle null
+for the metadata. One (normal) condition in which this can happen is:
+
+  table getting dropped AND (segment completing OR validation manager auto-createing segments)
+
+Other cases are manual edits of zknodes to remove metadata nodes (not expected)
+
+Added an appropriate log message and turned the exception into RuntimeException instead of
+NPE",118,69,1.5403636168025645,1.669181047057561,95
+bd85e25513213c19d93fbe77fed6558250356b2a,2017-04-12 15:35:39-07:00,2017-04-12 15:35:39-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1112,1112,"Avoid logging exception for bad table configuration (#1267)
+
+For bad table configuration where number of replicas is greater than
+number of instances or for invalid replicasPerPartition, log info and
+return 400. Do not log exception.",118,69,1.5403076245975464,1.6689999968962324,95
+396d3ee3db1b5ab7650a5eda73b3b72583b3b8f5,2017-05-08 17:12:10-07:00,2017-05-08 17:12:10-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1112,1112,"Refactor TableNameBuilder class (#1408)
+
+1. Removed public constructor to prevent creating redundant instance
+2. Added tableHasTypeSuffix() method to check the table type
+3. Added isTableResource() method to check whether the resource is table resource
+4. Modified the usage of TableNameBuilder to follow the new convention
+5. Fixed a bug in PinotTableRestletResource updateTableConfig where CLIENT_ERROR_BAD_REQUEST is not thrown out properly",118,69,1.5397400654672726,1.6680035680169816,95
+2872a662581c98b6907364a30bc4353ccbc1767c,2017-05-18 16:51:05-07:00,2017-05-18 16:51:05-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1112,1112,"Merge offline/realtime table config into class TableConfig (#1461)
+
+Change base class AbstractTableConfig into TableConfig
+Remove OfflineTableConfig and RealtimeTableConfig",118,69,1.5409899162482026,1.669594283819152,95
+fdba41a0a36cd8c45f10a3a0212f7b9082cec1f8,2017-06-14 20:51:52-07:00,2017-06-14 20:51:52-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1112,1112,"[PINOT-5062] Handle NumberFormatException when looking at column values during pruning (#1562)
+
+* [PINOT-5062] Handle NumberFormatException when looking at column values during pruning
+
+We need to morph the exception to BadQueryException so that it is logged as an INFO
+
+* Addressed review comment
+
+* Fixed a log message",118,69,1.5410096198498509,1.6696512336271747,95
+f8a963fd1d4bc5de424918c7178610c96a7b575f,2017-06-20 22:06:54-07:00,2017-06-20 22:06:54-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1147,1147,"LLC Split Commit Pt. 2 - FSM (#1555)
+
+* When the server sends the commit upload, the controller saves the segment in a file name (with a unique UUID). The controller adds this segment location to the response it sends back to the server, and when the server sends a commitEnd, it includes the location received earlier in the commitEnd request. The controller renames the file to be the same as the segment name.",123,71,1.5463975968658539,1.6772970030276637,97
+e16e9fca44b02e395e8c5ffbc17ff56177dd7e7e,2017-07-11 21:46:44-07:00,2017-07-11 21:46:44-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1214,1214,"Adding partition aware realtime routing table builder (#1605)
+
+- Added the partition aware realtime routing table builder that can prune segments.
+- Refactored the offline routing table builder to share the duplicate code with the
+  realtime version.
+- Added unit tests for both offline and realtime partition aware routing table builders.",130,74,1.5432686781809226,1.6707412632687426,109
+e4ccc4831b80d7ac8d931a422ce3402488447744,2017-07-13 17:55:26-07:00,2017-07-13 17:55:26-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1222,1222,"LLC Split Commit Part 3 (#1600)
+
+* Server side changes for split commit as well as a working integration test. Includes configurations we can specify to turn split commit on/off for servers & controllers.",132,76,1.5434621934012633,1.6695998644342436,109
+20ed5c7ed637be62327cbe9af894cd76b51a7ead,2017-08-07 09:00:14-07:00,2017-08-07 09:00:14-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1222,1222,"Introducing Jersey-based REST admin API for Pinot controller (#1739)
+
+* Setup jersey based controller admin application
+
+This sets up basic framework for migrating controller APIs to jersey based
+REST application. ControllerAdminApiApplication is the basic ResourceConfig
+class that sets up the application, configures swagger resources and starts
+web application. All existing restlet APIs are copied to api.resources folder
+and only TableSchemaResource is modified to Jersey based framework. This commit
+configures the binder module in ControllerStarter to inject controller objects in
+rest resources. This also sets up constants, success response and WebApplicationMapper
+to map API exceptions to json responses.
+
+* Updated multiple controller API handlers to jersey framework
+
+Update health check, table metadata, indexing, tenant, version and size
+handlers to jersey framework. The change is on a copy of handlers and
+does not impact existing handlers.
+
+* Updated more controller handlers to jersey based framework
+
+* Commented out an API that does not seem to start right
+
+* Add support for multipart form data for jersey based controller APIs
+
+Added missing jersey dependency for multipart form data.
+Register multipart form data feature during application startup. This fixes
+broken APIs in PinotSchemaRestletResource.
+
+* Adding a class to handle all LLC segment completion requests
+
+* Added handlers for llc segment completion protocol
+
+* Addressed review comments
+
+* Fixed typo
+
+* PinotControllerHealthCheck should not extend ServerResource
+
+* Fixed a method call after rebase
+
+* Folded all the LLC segment completion handlers into one class
+
+* Added swagger index.html file and pin swagger version to 1.5.10
+
+* Completed PinotTableTenantConfigs
+
+* Fixed a typo
+
+* An attempt to get PinotSegmentRestlet resoruce working (toggle segment state, get segment metadata)
+
+* Modified PinotTableRestletResource
+
+* Updated more classes
+
+* Fix compile error
+
+* Fixed PinotSchemaRestletResource
+
+* Added TableViews
+
+* PinotTaskRestletResourceManager
+
+* PqlQueryResource
+
+* PinotSegmentRestletResource done
+
+* Base class is not used anymore
+
+* Added standard headers, and added code for table remove APIs to use enable/disable/drop
+
+* Small re-factors and adjusting code format
+
+* Removed TableSizeReader from api.resources in favor of TableSizeReader in controler.utils
+
+* Got segments tag to work, removed ""table"" tag in favor of ""Table"" tag
+
+* Updated methods that take String arguments to remove Consumes.JSON
+
+* Getting the client address correctly
+
+* Set upload segment file name correctly
+
+* Fixing encoded url for segment name, so that we can get percent characer. Need to do this everywhere.
+
+* Get the schemas API to work
+
+* If we are returning SuccessResponse, we need to have @Produces annotation for JSON
+
+* We should be comparing response codes, not return strings
+
+* Added @Encoded to the segment name APIs
+
+* Fill in the segment location so that llc realtime split commit tests pass
+
+* Apply the changes in PR #1697 to the Jersey API
+
+* Add content-type header for specific requests to jersey api
+
+This is to support backward compatibility for clients that may not send
+correct content-type header for PUT and POST requests to instances and
+tenants apis
+
+* More unit tests to pass
+
+* Capture the right exception class in the catch clause
+
+* Consistent error handling across all jersey handlers
+
+Make error handling consistent across all handlers. Remove redundant try-catch blocks.
+Added ControllerApplicationException class that logs correctly at info or error level
+and constructs a WebApplicationException instance. Update PinotSchemaRestletResource
+reading of schema from multipart form to directly read as stream instead of writing
+to file
+
+* More eunit tests pass
+
+* Fixed typo
+
+* Return bad request error for bad json schema body
+
+* Fix double comparison in exception handling
+
+* Exceptionk should be from codehaus json, not others
+
+* Controller Starter change to run tests on the new API alone (EXCLUDE FROM PR)
+
+* Get DeleteAPIHybridClusterIntegrationTest to pass
+
+* Changed segment upload to return a non-empty string on success
+
+* Fixed PinotTableSchema api to return only the table schema
+
+* Revert ""Fixed PinotTableSchema api to return only the table schema""
+
+This reverts commit a54b37375940f827d557cf664ab85a52908e9bae.
+
+* Fixed PinotTableSchema to return only the json schema and not the entire schema class
+
+* Changed the controller to have jersey and restlet APIs started in different ports
+
+Added the ability to switch ports via configuration ""jersey.primary""
+
+* Changed config variable names for jersey API
+
+* Added logic for static content on the new API
+
+* Ensure that the console path ends in slash
+
+* Turning on debugging for jersey
+
+* Added static resources for controller jersey handlers
+
+Copied existing static resources to resources/static folder. Modified
+init.js to handle both text and json responses. Configured grizzly web
+server to serve static resources from static folder. Controller
+landing page is served by a jersey handler because we can not setup
+our APIs and static resources at the same base path ('/') easily.
+
+* Running queries off the console works
+
+* Updated the config string and fixed a bug in the setter
+
+* Getting UMP schema API to work correctly
+
+* Added header for a file
+
+* Get the controller primary port working correctly. Also, added logic to stop admin port
+
+* Get ControllerTenantTest to pass with new API
+
+* Remove misleading comments
+
+* Removed unused BasePinotControllerRestletResource and duplicated SegmentCompletionUtils
+
+* Fix compile error after moving SegmentCompletionUtils
+
+* Addressed comments from @jenniferdai
+
+* Removed unused logger
+
+* Addressing comments from Adwait
+
+* Fixed indentation as per review comment",132,76,1.5434621934012633,1.6695998640957577,109
+acb13402e2750b43423510f9cd3f12b54afc7f99,2017-08-07 11:07:34-07:00,2017-08-07 11:07:34-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1221,1221,"Improve logs during realtime segment commit in the controller and server. (#1759)
+
+Changed the controller to log the entire exception while committing the segment file.
+
+Changed the server to log the controller host and version during split-commit upload phase,
+since the segment may go to any controller host.
+
+Re-factored the http post during split commit so that the code path is different from that
+of regular get/post to the leader controller.",131,76,1.5433971248432903,1.669497468405821,109
+0d7d865d792205d33f1262588ff486dd47b2aeda,2017-09-11 15:05:38-07:00,2017-09-11 15:05:38-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1242,1242,"Making LLC flush size configuration usable (#1869)
+
+* Making LLC flush size configuration usable
+
+Current behavior is to use the HLC flush size configuration. Configuring a very high HLC flush size
+value causes issues when migrating from HLC to LLC, since we need both to be consuming at the same
+time.
+
+This commit allows admin to configure independent thresholds for HLC and LLC.
+
+Removed unused import and variables from RoutingTableBuilderFactory
+
+* Addressed review comments",132,76,1.5431617374241182,1.6689552123474216,110
+92d7ad8a53a53b70e1ddafb16e3e77bce2965a2a,2017-09-18 13:20:33-07:00,2017-09-18 13:20:33-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1247,1247,"Adding support for other Kafka Consumers (#1872)
+
+* Added a MessageBatch interface that returns individual Kafka messages of type T. In the case of SimpleConsumerMessageBatch, the default implementation in open source, it returns type byte[].
+* Added a PinotKafkaConsumer interface that wraps logic specific to Kafka consumers. The default implementation is SimpleConsumerWrapper, which encapsulates all logic that touches Kafka's MessageAndOffset, the type returned by Kafka's SimpleConsumer class.
+* Added a PinotKafkaConsumerFactory interface that allows us to instantiate implementations of the PinotKafkaConsumer interface. The default implementation in open source is SimpleConsumerFactory and instantiates a SimpleConsumerWrapper.",134,77,1.559197047826685,1.668890683556271,110
+8733ceeddebdd14fb558508066fd664cd869be30,2017-09-27 13:44:54-07:00,2017-09-27 13:44:54-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1251,1251,"Adding configurable parameters for kafka consumer factories (#1925)
+
+* Allow configuration of different Kafka consumers
+* Refactoring interfaces to remove parameters and pass in kafkaStreamMetadata",133,77,1.536483932387783,1.6610105074066985,110
+440d860debcb61423c3d71cb383d01934b9bf8ae,2017-10-11 14:02:03-07:00,2017-10-11 14:02:03-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1274,1274,"Update partition information of SegmentZKMetadata during commit (#1992)
+
+When creating a SegmentZKMetadata, current implementation derives
+the partition information from table config and segment name information.
+This works with consuming segments; however, the partition information has
+to be updated with the most recent version, which is stored in segment
+metadata file.",134,78,1.5363779122481338,1.6605077101156394,115
+53239c53ee22c5d16a12a68f213fc1a779030e4c,2018-01-08 14:19:28-08:00,2018-01-08 14:19:28-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1291,1291,"Update the metadata event notifier framework (#2262)
+
+1. Renamed metadata change notifier to metadata event notifier
+2. Added the event notification on segment commit",137,80,1.5377366800171726,1.661336715025758,115
+9c6ae703bbb8ba259132450c5d9997c6a2802fd0,2018-01-17 09:42:47-08:00,2018-01-17 09:42:47-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1296,1296,"Add a controller gauge when short of instance (#2299)
+
+* Add a metric when short of live instances
+
+* Remove print statement
+
+* Move to gauge instead of meter. It denotes the number of extra live instances needed.",137,80,1.5377610323674673,1.661409505144332,116
+aa8bbdb7e2cef745ade4973dd8982900e57663c6,2018-01-17 10:32:33-08:00,2018-01-17 10:32:33-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1314,1314,"Minimize window in which two controllers can update metadata for LLC segment commit (#2321)
+
+* Minimize window in which two controllers can update metadata for LLC segment commit
+
+It is possible that the leader controller undergoes heavy GC after accepging the
+segment commit request from a server. In this case, the leader could lose zk connection
+for a while and wait to regain connection in order to test leadership.  During this time
+another controller could gain leadership and commit the metadata, with a slightly different
+kafka offset, and create a new segment. Meanwhile, the former leader, without knowing that it
+has lost leadership, could go ahead and commit another new realtime segment, which could
+have a different name than the segment committed by the new leader!
+
+We minimize the window of this happening by checking one more time right before we commit
+metadata.
+
+Also, we check for leadership as well as zk connectivity instead of just leadership check.
+
+Added unit tests
+
+* Addressed review comment",140,81,1.5371956626247456,1.6598512206553513,120
+352a1311147a2f3942287c3b1f4abff453703bac,2018-01-18 09:59:17-08:00,2018-01-18 09:59:17-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1314,1314,"Let RetryPolicy throw exception when number of attempts exhausted (#2324)
+
+Remove the return value from attempt() so it either succeeds or throws exception
+Add AttemptsExceededException to indicates number of attempts exhausted
+
+The reason for this change is to prevent using RetryPolicy without checking the return value which might cause silent failure.",140,81,1.5371178640626213,1.6597359278074695,119
+1d036da0606c85c55fe95e52e7869a7b846d51ba,2018-01-22 16:56:50-08:00,2018-01-22 16:56:50-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1338,1338,Fix duplicate LLC segments possible when lead controller goes through a huge GC (#2361),143,82,1.5359701510567767,1.657678999858028,124
+dc66df15d093bd6960052f555f6153e43cbc4707,2018-01-26 12:50:18-08:00,2018-01-26 12:50:18-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1344,1344,"Re-factor PinotLLCRealtimeSegmentManager methods to reduce the number of arguments. (#2404)
+
+* Re-factor PinotLLCRealtimeSegmentManager methods to reduce the number of arguments.
+
+The argument count seems to increase each time we want something new. Passing around
+tableConfig and kafkaStreamMetadata seems to obviate the need for most other arguments.
+In another step, maybe we can also get rid of KafkaStreamMetadata, since that should also
+be (technically) got from tableconfig.
+
+There is still a dependency with the kafka consumer, so we still need to be careful in tests
+ensuring that we don't start to initiate a connect to Kafka. At some point, we should
+pass in a mock kafka consumer, so that we can can get the offsets we want from the
+consumer. We are only interested in offsets for these tests.
+
+* Addressed review comment",144,82,1.536391824471865,1.6582193088647683,124
+d95d3c513ad6dfd03cd6a43c05fdb445589b43e9,2018-02-01 17:21:10-08:00,2018-02-01 17:21:10-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1347,1347,"Pass memory used by segment to the controller on segment completion, for using it to tune end criteria in future (#2413)
+
+* Pass memory used by segment to the controller on segment completion, for using it to tune end criteria in future
+
+* Rename memoryUsed to memoryUsedBytes
+
+* Documenting behaviour of endpoints in LLCSegmentCompletion handlers, when memoryUsedBytes is not set",144,82,1.5368571513417864,1.65905729094359,124
+510c2edd07e7a387315af3dad078b32f9d569884,2018-02-09 14:31:49-08:00,2018-02-09 14:31:49-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1373,1373,"Partition assignment support in multi tenant setup (#2428)
+
+1) Change generate partition assignment code to support multi tenant
+2) Create StreamPartitionAssignmentStrategy interface with Uniform and Balanced implementations
+3) Add StreamConsumptionConfig to table config builder",159,84,1.5375571970765733,1.6609766784833893,131
+228acf2efca93ecf54d635a652cd71785a16374a,2018-02-27 15:51:24-08:00,2018-02-27 15:51:24-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1352,1352,"Rebalance strategy interface and DefaultRebalanceStrategy implementation (#2507)
+
+Introduce an interface for RebalanceSegmentsStrategy, which has methods rebalancePartitions and rebalanceIdealState
+Adding DefaultRebalanceSegmentStrategy implementation, which rebalances stream partition assignment for rebalancing consuming segments, and also rebalances completed segments using auto rebalance strategy",153,82,1.5406837401609383,1.6665792741396106,122
+2a4c18ba93ee94e68702086362ed6c5f82d00800,2018-02-27 16:39:44-08:00,2018-02-27 16:39:44-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1354,1354,Keep NOT_LEADER meter only in Segment completion related code (#2546),153,82,1.5405473772592888,1.666382015887621,122
+bbb73a28507bcd3f6ed4ab5487dc252f3b63636f,2018-03-01 16:36:00-08:00,2018-03-01 16:36:00-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1446,1446,"Handle incomplete commit scenarios in realtime segment metadata commit (#2560)
+
+Segment commit happens in three steps: 1. update old segment metadata 2. create new segment metadata 3. update ideal state. Failure can happen between any of these steps. Added self correcting measures in controller leadership change and validation manager to fix various incomplete commit scenarios",165,85,1.5342645878263552,1.6552542524982996,130
+62ef764f22d3ea1f2b42c20371f14959e78e14a9,2018-03-04 21:58:38-08:00,2018-03-04 21:58:38-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1446,1446,"Added ReplicaGroupPartitionAssignment (#2549)
+
+1. Added ReplicaGroupPartitionAssignment and its generator
+2. Replace all the usages of PartitionToReplicaGroupMappingZKMetadata
+3. Moved PartitionAssignment to pinot-common because it needs to be
+   used in pinot-broker package for routing",165,85,1.5342645878263552,1.655254257605813,130
+da16c679272bd5b09721d4edc0910dd3a5bb8734,2018-03-11 18:26:14-07:00,2018-03-11 18:26:14-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1446,1446,"Issue-2583: Step 1 to support generic streams (#2606)
+
+* Issue-2583: Step 1 to support generic streams
+
+- Create a new package com.linkedin.pinot.core.realtime.stream in pinot-core.
+- Move KafkaStreamMetadata to com.linkedin.pinot.core.realtime.stream, renaming it to StreamMetadata
+- Get rid of (unused) StreamMetadata
+- Move (and rename) classes to be kafka-agnostic (which they are for most parts)
+- Add TODO in a couple of places where classes are kafka-specific
+
+* Moved StreamMetadata to different package as suggested in review comment",165,85,1.5356638125439226,1.6492496157508265,130
+d34e4ad078cf91f24eced54043dce08cb5a4369e,2018-04-17 14:13:00-07:00,2018-04-17 14:13:00-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1975,1975,"Refactor realtime code to eliminate use of znode for storing partition assignment (#2721)
+
+Removed dependency on partition assignment znode. Restructured code in PinotLLCRealtimeSegmentManager and ValidationManager to use new methods. Rewrote tests for new way of partition assignment generation and segment assignment",219,101,1.5352364720178082,1.6438212915030004,177
+e31b9b5080e303c9d8694422b793a744a1b0c47b,2018-04-26 16:21:27-07:00,2018-04-26 16:21:27-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1976,1976,"Add time threshold to flush segment as a realtime segment property so that it can be used for auto tuning (#2759)
+
+Add time threshold to flush segment as a realtime segment property so that it can be used for auto tuning, making the time threshold field in the znRecord a period string for readability
+Move methods which handle conversion between period string and millis to a utils class",219,101,1.5353265104965537,1.6439682462351102,177
+55d8af4e3aaec395a9225035e99ad3cc256fc806,2018-04-26 18:04:06-07:00,2018-04-26 18:04:06-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1418,1418,Cleanup deprecated code from PinotLLCRealtimeSegmentManager and ValidationManager (#2762),145,83,1.5405056376314716,1.657820943986721,122
+270576bf4a512e040174c21c2025a1e360a5cee2,2018-04-27 13:40:34-07:00,2018-04-27 13:40:34-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1344,1344,Create an abstract class for FlushThresholdUpdate strategies (#2765),140,81,1.5326377732439542,1.6448238636435397,112
+44c1debe158de36d009f879df1dcad1e04613d92,2018-05-14 15:00:24-07:00,2018-05-14 15:00:24-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1342,1342,"Segment size based flush threshold update (#2783)
+
+Add a segment size based flush threshold updater, which tries to chase an ideal segment size (defined as 200M) and adjusts num rows accordingly when creating new metadata",142,80,1.5318014605346106,1.642979472817217,110
+9328c0987157d8dcb7d7e86e904a51d6cbfa8268,2018-05-16 16:23:29-07:00,2018-05-16 16:23:29-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1339,1339,"Remove references to KAFKA_PARTITION znodes (#2817)
+
+Remove references to KAFKA_PARTITION znodes and Rename PartitionAssignmentGenerator to StreamPartitionAssignmentGenerator",142,80,1.5283796919982109,1.6416068312658503,110
+6efb1bae5403faf5a98a194648efb77d7fe89d38,2018-05-21 16:00:11-07:00,2018-05-21 16:00:11-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1346,1346,Use smallest available kafka offset when a new partition is detected (#2831),144,81,1.5284396970577807,1.6407788218371748,110
+f1bb22b9fb4fcb152564b9e46ed7c306db901a54,2018-06-05 15:08:09-07:00,2018-06-05 15:08:09-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1347,1347,"Addressed comments from design review for segment size based row threshold updater (and more). (#2875)
+
+* Addressed comments from design review for segment size based row threshold updater (and more).
+
+Review comment: Added logic to set a minimum of 10 k rows if the target number of rows computes to be too small.
+This avoids corner cases where incoming stream has issues and we consume too small number of rows.
+
+Changed updateFlushThreshold method to be synchronized since multiple partitions could be calling invoking the same method
+in the same instance of the object, and we need to serialize them in order for the ratio to be correct.
+
+Changed the threshold updater to accept input from partitions other than patition 0 if there the current
+ratio is 0. This helps us jump start all consuming partitions sooner during table start up, or controller
+switch of mastership.
+
+Added logic to start a fresh threshold updater when a table is created. If a table is removed and recreated
+(e.g. during experimentation), we get the old threshold values (not desirable)
+
+Updated log messages to contain the correct value of target num rows.
+
+Updated log messages to contain the new segment name for which target num rows is being computed.
+
+Added test cases
+
+* Added a TODO where we pick Integer.MAX for num rows to consume",144,81,1.52871192471989,1.6410211695199128,110
+733c44505bc8258ee91cb7ec14a8fc84d9c31c21,2018-06-29 15:20:50-07:00,2018-06-29 15:20:50-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1349,1349,"Handle a state created due to race condition between RetentionManager and segment commit, resulting in no consuming segments for the partition (#2891)
+
+Handle a state created due to race condition between RetentionManager and segment commit, resulting in no consuming segments for the partition",147,82,1.5310719513382016,1.644093194942919,109
+0be1ec623724888b5c43de1301ec3daa90f70333,2018-07-11 10:35:02-07:00,2018-07-11 10:35:02-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1348,1348,Update copyright year range to 2014-2018. (#2941),146,82,1.5310719513382016,1.6440931968349952,109
+a9c0c319577e0c86f117add284e003f5cb2a8c17,2018-07-13 16:07:03-07:00,2018-07-13 16:07:03-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1349,1349,Increase NUM_LOCKS available for ideal state update during segment commit (#2951),146,82,1.5329641442586723,1.6476348608398037,109
+059a6e09d717a45a10d4b804e5e94390cadaf0ee,2018-07-23 09:25:45-07:00,2018-07-23 09:25:45-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1371,1371,Remove leadership check when setting up metadata for new table (#2977),147,82,1.5329621806786777,1.6476816313689457,114
+28b5898f8f22358ceb96a934b867058a9ce3ec30,2018-07-27 12:12:35-07:00,2018-07-27 12:12:35-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1371,1371,Add stream abstraction for exceptions in realtime consumption code (#3003),147,82,1.534169408453095,1.6480646931429974,114
+ff5874f7cc9124c9fbee8ee1b62705e753c74c00,2018-09-13 12:37:39-07:00,2018-09-13 12:37:39-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1372,1372,"Create StreamConsumer and StreamMetadataProvider interfaces for splitting the consumers created by StreamConsumerFactory (#3169)
+
+Added StreamConsumer and StreamMetadataProvider interfaces which split duties of the consumer into fetching messages and providing metadata.
+StreamConsumerFactory will provide StreamConsumers and StreamMetadataProviders.
+Introduced a StreamConsumerFactoryProvider to instantiate factory from the StreamMetadata",146,82,1.5347253271179713,1.6476053428761541,114
+3817a134dd4f6b76e946feb0b52329c29d8a27b1,2018-09-27 10:11:11-07:00,2018-09-27 10:11:11-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1315,1315,Create abstraction for PartitionOffsetFetcher and PartitionCountFetcher (#3187),139,70,1.5987857161722292,1.5987857190274763,112
+dbcd462317542150f0ab58b68c161739e7a67e72,2018-10-08 14:32:01-07:00,2018-10-08 14:32:01-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1315,1315,Rename StreamMetadata to StreamConfig (#3284),139,70,1.5985071421649193,1.5985071432228455,112
+c66e3f529be93044721b74e9aba19c1c0705a528,2018-10-19 14:04:40-07:00,2018-10-19 14:04:40-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1313,1313,Refactor stream config properties related constants (#3352),139,70,1.5992647826407616,1.5992647824832624,112
+51fa4b9b1e4fae9c1c731946967392c52644f0ae,2018-10-22 18:21:21-07:00,2018-10-22 18:21:21-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1327,1327,Auto-reformat classes for PR #3356 (#3365),134,70,1.5996600730590602,1.5996600738774294,112
+78b62104b6e0c40426a62e7c3f022976094001e5,2018-10-23 12:24:27-07:00,2018-10-23 12:24:27-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1330,1330,"Stream config refactor (#3364)
+
+Refactor StreamConfigs to enable it to work on generic stream",134,70,1.6027240171773343,1.6027240156441056,112
+bd80360372c3769af5afa5bc4dae518ec9534138,2018-10-24 10:32:23-07:00,2018-10-24 10:32:23-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1352,1352,"Reduce the ZK access for segment metadata fetching (#3356)
+
+1. Added getSegments() and getLLCRealtimeSegments() in ZKMetadataProvider to only fetch the name of the segments
+2. Change code to only fetch segment names if possible",133,71,1.6020029149495967,1.6020029164758,121
+4f34f839ea1e10c99fad67778b8cdcdf07ecd4d6,2018-10-31 11:37:54-07:00,2018-10-31 11:37:54-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1352,1352,"Introduce OffsetCriteria class to handle different offset types and operations (#3402)
+
+* Introduce OffsetCriteria class to handle different offset types and operations
+
+* Move SMALLEST_OFFSET_CRITERIA to OffsetCriteria",133,70,1.6002025971076062,1.6002025975221295,121
+27ae04249750ace8a2a652abbbf045d5e7678871,2018-11-01 12:39:56-07:00,2018-11-01 12:39:56-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1351,1351,Remove references to kafka from generic classes (#3423),133,70,1.6013272786564694,1.6013272817812987,121
+f70c9c3f9bca151579aa2389105164f45c5c2b2c,2018-11-01 12:40:17-07:00,2018-11-01 12:40:17-07:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1353,1353,Add stream agnostic metrics for realtime (#3426),133,70,1.6011748006961974,1.6011748002931334,121
+dac899fbc19dc936b5684bd076d83229bc475c1d,2018-12-03 15:31:04-08:00,2018-12-03 15:31:04-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1351,1351,"Changing segmentCommitEnd to support deep storage (#3578)
+
+* Changing the way we move file to final location to use pinotFS so that we can support different storage backends
+* Testing covered by realtime integration tests
+* Part 2 will be making the metadata portion backwards compatible as well",133,69,1.5948072936229933,1.594807292218293,121
+24c35e8fb083451f622f31bfb45895f1dfd724aa,2018-12-10 13:37:40-08:00,2018-12-10 13:37:40-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1401,1401,"Allow completing segments to finish before stopping LLC Segment Manager (#3593)
+
+Added a stop() method to LLC segment manager, so that we can allow the segments
+that are completing to be done, and not allow new segments to start their
+completion process while controller is shutting down",141,74,1.594085464410754,1.594085466323343,126
+35d61aafa6a8fdc67cdd47d6e383dd791684e92a,2018-12-14 15:07:20-08:00,2018-12-14 15:07:20-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1381,1381,Add ControllerLeadershipManager as single place to check controller leadership changes (#3604),139,71,1.5901512684346497,1.5901512686945605,122
+46ad4f95996e77da8b516535daa8be4d89c09d36,2019-01-08 14:38:45-08:00,2019-01-08 14:38:45-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,"Update license header (#3664)
+
+* Update license header
+
+* Address review comments - Update excludes
+
+* Address review comments - add license header for autogenerated code as well",139,71,1.5901512684346497,1.5901512695592162,122
+493ed643e1e5a852cf2549cfe76ef4b3f1e7e0d4,2019-01-08 17:37:12-08:00,2019-01-08 17:37:12-08:00,pinot-controller/src/main/java/com/linkedin/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,"Split validation manager tasks into separate periodic tasks (#3668)
+
+Split ValidationManager duties into separate ControllerPeriodicTasks viz. OfflineSegmentIntervalChecker (to perform checks related to offline segments), RealtimeSegmentValidationManager (to perform validation of realtime consuming partitions), BrokerResourceValidationManager (to perform validation of broker resource). These have been split out as they need to be run in different frequencies than each other.",139,71,1.5933460536616426,1.5933460536789192,122
+b497851f3406b72b7f36596c362e1fcbcb4a162a,2019-01-11 09:43:41-08:00,2019-01-11 09:43:41-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,Move all files in com.linkedin to org.apache (#3680),139,71,1.5933460536616426,1.5933460554028087,122
+e7b20da3a3ef6f6a29f4c3f359aafdf96da1e134,2019-01-11 09:53:02-08:00,2019-01-11 09:53:02-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,Rename all package references from com.linkedin to org.apache (#3681),139,71,1.5933460536616426,1.5933460554028087,122
+059149bb621b6274f0234c2aa43d45dec97cb78e,2019-01-14 16:37:43-08:00,2019-01-14 16:37:43-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,"Optimize imports for all files (#3683)
+
+The import optimization is based on the LinkedIn Style which will be checked in in a separate PR.",139,71,1.5933460536616426,1.5933460554028087,122
+525102fd907bfce67d2f68d9feaf74987ae177e7,2019-01-23 13:11:27-08:00,2019-01-23 13:11:27-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1383,1383,"Replace partition ranges with partitions (#3725)
+
+Currently for partition based routing and pruning, we store a list
+of ranges (IntRange), but does not support any operations on ranges.
+Instead, storing a set of partitions (int) should be enough to serve
+all use cases.
+
+New behavior:
+- For json format ColumnPartitionMetadata, replace ""partitionRanges""
+  with ""partitions"" key.
+  E.g. ""partitionRanges"":""[0 0],[1 1]"" -> ""partitions"":[0,1]
+- For partition in segment metadata, replace strings with integers
+  E.g. partitionValues = [0 0],[1 1] -> partitionValues = 0,1
+
+Backward-compatibility:
+- Add custom deserializer for ColumnPartitionMetadata to handle both
+  new and legacy json format
+- Add ColumnPartitionMetadata.extractPartitions() to handle both new
+  and legacy config format
+- Add ColumnPartitionMetadataTest",139,71,1.5931811982331445,1.5931811986036724,120
+ce2d9ee9dc73b2d7273a63a4eede774eb024ea8f,2019-01-28 20:26:06-08:00,2019-01-28 20:26:06-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,"Auto-reformat all java source files (#3739)
+
+Use IntelliJ to reformat all java source files
+Manually fix some wrong-placed comments
+No code change involved
+
+After this, we can manually go to each file and resolve the checkstyle warnings
+
+To resolve conflict after rebasing on this change:
+1. For any conflict, pick the change in your branch
+2. Reformat the file using IntelliJ after all conflicts resolved
+
+NOTE: the reformat for enum is not well-supported (behavior is different between Mac and Linux), check before submitting the code",138,71,1.5927960765900637,1.5927960773901264,120
+e3a9184ff5f3cff0cc68630dbeca3968bf07ae4b,2019-02-25 11:12:27-08:00,2019-02-25 11:12:27-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1388,1388,"Fix listFiles method in HadoopPinotFS (#3838)
+
+* Fix listFiles method in HadoopPinotFS",138,71,1.5927572438388895,1.5927572484329278,120
+8f647cf423d177b612865b9206ecd490c35e731b,2019-02-27 09:56:10-08:00,2019-02-27 09:56:10-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1391,1391,"Unify move method in PinotFS (#3834)
+
+* Unify move method in PinotFS",138,71,1.592631250386728,1.5926312529030946,121
+4dc59ff95786f5f9c5e30c1b236c1282ea15efa8,2019-03-01 13:16:30-08:00,2019-03-01 13:16:30-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1423,1423,"Reduce MAX_SEGMENT_COMPLETION_TIME_MILLIS to 5 minutes (#3893)
+
+Reducing MAX_SEGMENT_COMPLETION_TIME_MILLIS from 10 minutes to 5 (and possibly lower in the future). 10 minutes is a lot for segment completion. This 10 minutes gets added into our SLA of being able to fix consuming partitions, no matter how fast we can run RealtimeSegmentValidationManager.",139,72,1.5897151106838745,1.5897151127563722,123
+2a70bb913f006d52a55aa686a86464b9acf4473f,2019-03-13 15:24:17-07:00,2019-03-13 15:24:17-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1376,1376,"Pinot controller side change to enhance LLC segment metadata upload. (#3877)
+
+* Pinot controller side change to enhance LLC segment metadata upload.
+
+* Remove an unused lib.
+
+* Revise based on reviews.
+
+* Let the LLCSegmentCompletionHandlers handle the metadata extraction.
+
+* Clean up error case behaviors for metadata extraction based on review.
+
+* Add more logging for error cases based on review feedback.
+
+* Fix integration failure by passing the right segment location in controller for metadata extraction.
+
+* Use PinotFS to copy segment files for metadata extraction.
+
+* Construct segment file URI directly.
+
+* Further revision to address reviews.
+
+* (1)Remove the prefix java.net. (2) Add test to show the diff between Apache URI and java.net.URI.
+
+* Fix a comment typo.
+
+* Revise logging and lib inclusion based on reviews.
+
+* Return failure directly if there is no metadata file in the input form.
+
+* Refector the upload function based on Subu's comments.
+
+* Fix the log error level.
+
+* Apply Subba's refactoring and a few of my twigs.
+
+* Address reviewer feedbacks about format and error logs.
+
+* Fix an compilation error.
+
+* Fix style issues and eliminate a local method.
+
+* Fix redundant line.",134,71,1.5870846361598328,1.5870846377940424,125
+c9fbd6a11ca18c6497462f4698130d2735addc77,2019-03-22 13:56:13-07:00,2019-03-22 13:56:13-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1379,1379,"Add controller mode logic in ControllerStarter (#3864)
+
+* Add controller mode logic
+
+* Move controller mode out of resource manager",134,71,1.5870448168910432,1.587044819446213,125
+e6f03416d1c7ae3f630399081fec5c60a3da4aac,2019-04-10 13:29:12-07:00,2019-04-10 13:29:12-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1385,1385,Refactor ControllerLeaderManager by using dependency injection instead of singleton (#4054),135,73,1.5883228877612263,1.5883228877020052,125
+25c36869999ad12560ca3fa0a9c1319cfba5183c,2019-04-18 14:09:56-07:00,2019-04-18 14:09:56-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1354,1354,Remove singleton for PinotLLCRealtimeSegmentManager and SegmentCompletionManager (#4102),132,69,1.5653134811141627,1.565313483270451,121
+f67107202dfbc5ca766fc5fd4e1bbab9e503cb7d,2019-07-12 17:33:53-07:00,2019-07-12 17:33:53-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1352,1352,"Add URIUtils class to handle URI/URL encoding/decoding (#4426)
+
+Fix the double encoding bug of encoding URI without scheme
+""/segments/segment %"" ->
+Without fix: ""file:/segments/segment+%2525""
+With fix: ""file:/segments/segment+%25""",131,69,1.5656304468003512,1.565630447503021,121
+4f8ffc760f5187883a7ea7561c536dca2d0957b8,2019-08-15 15:26:29-07:00,2019-08-15 15:26:29-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1348,1348,"[Controller Separation] Add logic for lead controller resource (#4323)
+
+* Add logic for leveraging lead controller resource
+
+* Add logic for lead controller resource on controller side
+
+* Remove API design out of this PR
+
+* Move murmur2 functions to an util class in pinot-common
+
+* Use resource config to check whether resource is enabled
+
+* Create a customized MasterSlaveStateModelFactory instead of inherating one from Helix
+
+* Check resource config is enabled from server",130,68,1.5748306631845452,1.5748306648527608,121
+d261a76e3b78eeec0d560d60c8f1999df5d7b7d0,2019-08-20 08:22:09-07:00,2019-08-20 08:22:09-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1351,1351,Expose table-name via StreamConfig (#4543),130,68,1.575204032725979,1.5752040352055996,121
+2a3fcdec6f7ba074e029beb1a66a38ffba3a3524,2019-10-10 14:10:50-07:00,2019-10-10 14:10:50-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1354,1354,"[#4667] Fix auto-tuning algorithm to update when parameters are changed (#4679)
+
+When any of the parameters of segment auto-tuning are changed, we currently
+miss picking them up, since we cache the FlushThreshodUpdater in
+memory in the controller. A controller restart will pick up the
+new parameters, but we can do better.
+
+Changed the auto-tuning mechanism to take parameters on every call, so
+that we can recognize chantges and act accordingly.
+
+Extra logic added:
+We used to consider that we hit the time limit any time when the
+number of rows in committing segment is lower than the target
+we set for it. Now, we also check that the target segment size
+must be lower than the desired size. If the target segment size
+is higher (most likely because the operator set it higher),
+we need to fall through to the computation based on ratio.
+
+Further,
+
+When we hit the time limit in the committing segment, it may
+be the case that the new time limit is even lower than the time we
+spend consuming the segment being committed.
+In that case, we should reduce the number of rows consumed by
+the committing segment (as per the average consumption rate)
+before applying the standard multiplier when we hit the time limit.
+
+Some examples are useful, since the logic is a bit involved:
+
+Assume segment size was set to 200M, and time limit was 3h, and we
+set the number of rows to 4M, and let a segment start consuming.
+
+Case-1:
+While it is consuming, the operator  changes the optimal segment
+size to 180 M.
+The segment comes back with a 190M size after hitting the time limit.
+and consumes 3.8M rows.
+
+Previously, we would have increased the number of rows as 3.8M * 1.1
+
+After this change, we will fall through to computing the rows using the
+ratio (and effectively reduce the number of rows).
+
+Case 2:
+The operator changes the time limit to 1 hr.
+The segment comes back the same way as before, 190M size, 3.8M rows
+consumed in 3 hrs.
+
+Previously, we would have treated this as a time limit hit, and
+increased the number of rows to 3.8M * 1.1
+
+After this change, we will assume that the segment actually consumed
+(3.8M * 1 hr)/3hrs (i.e. approx 1.3M rows, and then apply the multiplier,
+getting a value of about 1.4M rows target.",130,68,1.5764866035500997,1.5764866044716854,121
+a6f8f1e3e870aa3d242a67f92ffb28a7f6142770,2019-10-21 10:22:25-07:00,2019-10-21 10:22:25-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1035,1035,"[Resource Assignment] Plug in resource assignment to LLC REALTIME table (#4695)
+
+This is the last PR to plug in the new resource assignment, after this PR, all the segment assignment/rebalance will use the new strategy.
+Uniform the OFFLINE/REALTIME table segment assignment behavior to allow assigning segments to disabled instances to prevent segment shuffling if servers got disabled.
+
+Re-write most of the PinotLLCRealtimeSegmentManager to use the new assignment strategy:
+- Remove the boolean return and change it to throw exception when operation failed (old code can throw exception and also return false, which is hard to manage)
+- Remove the controller leadership check inside the PinotLLCRealtimeSegmentManager to prevent responding FAILED in case of NOT_LEADER. The check is already performed in SegmentCompletionManager
+- Remove the controller connection check because ZK access will implicitly check that
+- Enhance the segment repair logic to correctly skip OFFLINE segments
+- Introduce the LLC_ZOOKEEPER_FETCH_FAILURES in controller metrics to track ZK exceptions
+
+Re-write the PinotLLCRealtimeSegmentManagerTest to test all the changes:
+- testCommittingSegmentIfDisconnected is removed because we don't explicitly check disconnection but fail with the ZK exception
+- testIdealStateAlreadyUpdated is covered by testCommitSegment committing the segment again",100,58,1.54139907249351,1.5413990697069386,75
+2f7243246b11d50418cfac7d39e3794e61a88d0b,2019-10-23 18:04:13-07:00,2019-10-23 18:04:13-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Fix state change when consumption is stopped (#4739)
+
+* Fix state change when consumption is stopped
+
+When a server stops consumption due to any exception or error, it invokes
+a controller operation to mark itself as being OFFLINE. It may happen that
+this condition takes place right after a segment is marked as ONLINE,
+but the consumer thread on the server is still alive and waiting for the
+completion response (of KEEP/COMMIT/DISCARD, etc.)
+
+While updating the ideal state, the controller should ensure that the
+Helix state of the segment is CONSUMING and not anything else. If it
+is not CONSUMING, then we don't want to error out, but just quietly report
+back success to the server, and let it do its thing.
+
+* Address review comments",100,58,1.5408966146864194,1.540896611616441,77
+716a3b256fec36dee9f2290ea393f483eed9637a,2019-10-29 09:58:47-07:00,2019-10-29 09:58:47-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1040,1040,"Clean up duplicate/unused metrics in controller (#4750)
+
+This PR cleans up duplicate or unused metrics in Pinot controller.
+
+e.g. the following validation metrics are duplicate comparing to the hourly metics:
+offlineSegmentDelayMillis
+lastPushTimeDelayMillis
+
+Removing these two validation metrics can help reduce the number of metrics a lot in Pinot controller.
+
+The controller metric CONTROLLER_NOT_LEADER as a global metric isn't valid any more.
+
+The controller metrics LLC_KAFKA_DATA_LOSS can be removed because it's duplicate with LLC_STREAM_DATA_LOSS.",100,58,1.5408966138092792,1.5408966115462779,77
+3486022485b0f69e325ff6da81cb9a020fb68e2b,2019-11-30 13:05:14-08:00,2019-11-30 13:05:14-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1040,1040,Pushing PinotFS to pinot-spi (#4871),100,58,1.5408966138092792,1.540896610757623,77
+c37fa7d64813f01448e1c37f627182514895bea4,2019-12-04 11:16:34-08:00,2019-12-04 11:16:34-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Moving stream related apis to pinot-spi (#4884)
+
+* Moving stream related apis to pinot-spi
+
+* Fixing compilation issue after rebasing",100,58,1.5404024445572717,1.5404024429164072,77
+7bd5a7e76e54db5331fb934c56cff0714f3f7d89,2019-12-17 23:02:06-08:00,2019-12-17 23:02:06-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Removing pinot-common dependency from pinot-hadoop-filesystem and pin… (#4939)
+
+* Removing pinot-common dependency from pinot-hadoop-filesystem and pinot-azure-filesystem
+
+* Changing pinot-spi scope from compile to provided
+
+* Addressing comments - moving retryPolicy to spi
+
+* Removing static imports
+
+* Fixing test cases",100,58,1.5404024445572717,1.5404024435771897,77
+3c91a6d5b446886b2f0e6bb43c920b8e6e397b26,2020-02-26 17:30:45-08:00,2020-02-26 17:30:45-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Remove the support of the old Star-Tree (#5086)
+
+Remove the support of the old Star-Tree generated with the StarTreeIndexSpec (already deprecated)
+Remove the related metadata (rawDoc and aggregatedDoc)
+Remove the field size and derived metric type from MetricFieldSpec
+Simplify the segment generation logic
+
+Backward-incompatible: (checked with the community to make sure there is no use case with the old Star-Tree)
+Existing segments with old Star-Tree won't work properly",100,58,1.5406986800211633,1.540698677498095,77
+99338708cc074e4c7690da1ae3d69c1e40ae5dc8,2020-03-16 16:25:52-07:00,2020-03-16 16:25:52-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Move SegmentMetadata from pinot-common to pinot-core (#5156)
+
+This PR only moves the class into another package, no actual code change",100,58,1.5406986800211633,1.5406986798609905,77
+00fcb1d27f8daec48c1d87d46abfc8b60cfb32cf,2020-03-29 17:03:55-07:00,2020-03-29 17:03:55-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Move table config into pinot-spi (#5194)
+
+Motivation:
+- Table config should be moved to pinot-spi so that user interface can access it (e.g. segment generation spec)
+
+Changes:
+- Make all configs POJO like, and Json serializable for backward-compatibility
+- De-couple the Helix properties and utils from the configs
+- Add the TableConfigSerDeTest to check all the serialization/de-serialization
+
+Side changes:
+- Refactor DataSizeUtils (from DataSize), integrate StorageQuotaChecker and HelixExternalViewBasedQueryQuotaManager with the POJO like QuotaConfig
+- TextIndexConfigValidator is integrated into `TableConfigUtils.validate(TableConfig tableConfig)`
+
+BACKWARD-INCOMPATIBILITY:
+- TableConfig no longer support de-serialization from json string of nested json string (i.e. no `\""` inside the json)",100,58,1.5406986800211633,1.5406986798609905,77
+fb043dab7d5fef3ef726896d2f53e45a2fd69f22,2020-04-20 15:36:53-07:00,2020-04-20 15:36:53-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1042,1042,"Refactor configs in pinot-spi (#5262)
+
+* Refactor configs in pinot-spi
+
+* Add imports
+
+Co-authored-by: Jack <lijljacklee@gmail.com>",100,58,1.5406986800211633,1.5406986798609905,77
+8d995fe23e4c14a4b13e9ff18122f3fd1f983b67,2020-05-12 14:33:48-07:00,2020-05-12 14:33:48-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1045,1045,"[Issue# 5359] Changes to use StreamPartitionMsgOffset (#5371)
+
+These changes are mostly on the controller side inner code.
+A good bit of tests still use long offset and need to be modified.
+Protocol and persistent data are still unaffected.",100,58,1.5410333650231893,1.5410333656787372,77
+6bfcacb239f55c27491c2a580bf4a63cf2ec88fe,2020-05-29 11:39:44-07:00,2020-05-29 11:39:44-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1044,1044,"[Cleanup] Merge RealtimeSegmentOnlineOfflineStateModel and SegmentOnlineOfflineStateModel in CommonConstants (#5459)
+
+We only have one SegmentOnlineOfflineStateModel, so there is no value keeping both of them",100,58,1.541942978090181,1.5419429747605637,77
+957b28dbdee7cc90bb272be50ea2db6f28c99e53,2020-06-09 09:28:08-07:00,2020-06-09 09:28:08-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1052,1052,"Moved StreamPartitionMsgOffset to be an interface (#5506)
+
+* Moved StreamPartitionMsgOffset to be an interface
+
+- Changed StreamPartitionMsgOffset class to be an interface.
+- Introduced a LongMsgOffsetFactory class that can be used for Kafka. Other
+  streams will need to provide their own factory to create offsets of
+  various types. Keeping LongMsgOffsetFactory in spi, so we can also use
+  it in tests. Alternative was to introduce this for each test, but implement
+  one in kafka that does the same thing.
+- Introduced a new config 'stream.<type>.partition.offset.factory.class.name'
+  Stream providers need to set the offset factory class with this config key.
+- All classes now use StreamPartitionMsgOffset instead of 'long', except for
+  cases where the offset is received from the stream or the offset is being
+  read or written to persistent zk metadata.
+- Marked TODOs explicity on items still to be done to complete impleemntation
+  of generic offsets.
+
+Issue #5359
+
+* Enabled parsing stream partition msg offset in protocol
+
+And also added a backward cmpatibility test
+
+* Fix unit test failure",100,58,1.5426401351483054,1.5426401365259625,77
+f1f1c41d9f661d3ec1eb37c863d0049cbe5a434a,2020-06-11 14:48:40-07:00,2020-06-11 14:48:40-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1048,1048,"Changed the stream and metadata interface (#5542)
+
+Changed the interface exposed by streams to return StreamPartitionMsgOffset
+instead of long.
+
+Also changed the LLCRealtimeSegmentZKMetadat class to return String instead
+of long offsets, since it is stored as a String anyway. Luckily zk metadata does
+not generate java objects from json automatically (instead, parses the
+fields one by one via custom code).
+
+The segment endOffset can now be null in LLCRealtimeSegmentZKMetadata. For
+backward compatibility, we store Long.toSring(Long.MAX_VALUE) in zookeeper
+so that readers of the metadata do not get NPE if they are still running old
+version. We will remove this workaround after we release 0.5.0
+
+The segment completion protocol for realtime LLC segment completion will
+continue to use both 'offset' and 'streamPartitionOffset' elements for
+one more release, and will move to use the latter completely in 0.6.0
+
+Interfaces PartitionLevelConsumer and StreamMetadataProvider (marked STABLE)
+are now deprecating the calls that use long offsets. Instead, new calls have
+been added that use StreamPartitionMsgOffset. Kafka Plugins have been updated
+to use the new calls, but the old methods are preserved to make sure that any
+other Kafka implementations have time to move over. These calls will be removed
+in 0.6.0
+
+The metric to show the highest offset consumed has disappeared.
+
+Testing done:
+Manually verified that LLCRealtimeClusterIntegrationTest completes segments correctly with
+old server and new controller as well as with new server and old controller, using
+command line starter for controller and server to start a component at a specific
+revision after 0.4.0 release.
+
+This PR concludes the work for this Issue
+
+Issue #5359",100,57,1.5435019278375353,1.5435019254782956,77
+5e532eccd8f0898b0b13eef32b9f5335682a037e,2020-06-12 17:32:32-07:00,2020-06-12 17:32:32-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1050,1050,"Fix backward incompatibility in StreamFactoryConsumerProvider (#5557)
+
+* Fix backward incompatibility in StreamFactoryConsumerProvider
+
+PR #5542 introduced a backward incompatibility in this class that
+would cause existing stream implementations to break when they use
+pinot 0.5.0. This commit re-introduces the deleted method
+
+* Eliminated a new factory provider for offset parser
+
+Changed the StreamConsumerFactory to also provide the offset factory.
+This is much easier way to keep backward compat and reduces complexity.",100,57,1.542083762762017,1.5420837660698021,77
+72311af185822d5b0a91ed9de6ef8e3510151581,2020-07-02 09:34:47-07:00,2020-07-02 09:34:47-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1068,1068,"Refactor how Pinot controller stores segment download url in Zookeeper to deal with peer uri format (#5639)
+
+* Initial commit for controller side change.
+
+* Revised based on email discussion and add more tests.
+
+* Fix integration tests by adding segment location to descriptor.
+
+* Add handling of controller vip based segment download url. Add more tests.
+
+* Revise based on comments.
+
+* Update pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java
+
+Co-authored-by: Subbu Subramaniam <mcvsubbu@users.noreply.github.com>
+
+* Update pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java
+
+Co-authored-by: Subbu Subramaniam <mcvsubbu@users.noreply.github.com>
+
+* Minor revising based on comments.
+
+Co-authored-by: Subbu Subramaniam <mcvsubbu@users.noreply.github.com>",102,59,1.5408092921927838,1.5408092965689935,83
+dab1c2dcad3d6c9b8f01f3c208d6484df2679947,2020-07-23 17:13:34-07:00,2020-07-23 17:13:34-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1070,1070,"[Deepstore by-passing]Introduce a subclasses SplitSegmentCommitter which will proceeds to commit even if the segment upload fails. (#5700)
+
+* First commit to enable by passing segment store in LLC.
+
+* Fix a compilation issue.
+
+* Fix an unit test.
+
+* Refactor the segment committer factory api.
+
+* Introduction a new constant for peer download scheme.
+
+* Fix a typo.
+
+* Add a TODO on how to control split commit behavior and refactor the uploadSegment method.
+
+* Remove unused vars.",102,59,1.5417119345472503,1.5417119336043643,84
+d444285da9f5be8f7c6e73f67e371ea2b8a282ad,2020-09-01 12:36:27-07:00,2020-09-01 12:36:27-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1070,1070,Incorporating embedded exception while trying to fetch stream offset (#5956),102,59,1.5415770203031625,1.5415770202360883,84
+d9aec1735ea3a7f6962c3fb4c069aaac912439f8,2020-09-17 18:36:07-07:00,2020-09-17 18:36:07-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1072,1072,"Improve the realtime time creation unit test (#6032)
+
+1. Added the precondition check for time interval from segment metadata
+2. Added the unit test to check the case when the invalid time column name
+   is configured in the table config",102,59,1.5420275566360255,1.5420275568256125,84
+919f40764b1057e80be1e96daed8af929601360f,2020-09-19 11:56:44-07:00,2020-09-19 11:56:44-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1099,1099,"Handle the partitioning mismatch between table config and stream (#6031)
+
+In consuming segment, update the partition info when ingesting new records. Log a warning and emit a metric **REALTIME_PARTITION_MISMATCH** when the partition is not aligned with the stream partition. The updated partition info will be persisted in the segment metadata, and when the segment is committed, also update the partition info stored in the segment ZK metadata.
+
+Added `SegmentPartitionLLCRealtimeClusterIntegrationTest` to test the expected behavior.
+
+NOTE: With the fix, the consuming segment can still be pruned out incorrectly if the partition info in the table config does not align with the stream. To fix that, we can only persist the partition info for the completed segments, but not the consuming segments. Need some perf test to verify the performance penalty.",104,60,1.5423595569868473,1.5423595576644624,89
+f4d96306fe99f6f6b4c9478b6cdf7bfa797cdb4d,2020-09-30 09:35:56-07:00,2020-09-30 09:35:56-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1101,1101,"Refresh the routing when realtime segment is committed (#6078)
+
+Related to issue #6029 
+When a consuming realtime segment is committed, it will refresh the segment ZK metadata (the partition metadata can change when the stream partition does not match the table config). The broker needs to refresh the routing for this segment in order to pick up the change in the segment ZK metadata.
+
+This PR utilizes the `SegmentRefreshMessage` Helix message to refresh the broker routing when consuming realtime segment is committed.
+Also add more tests in `SegmentPartitionLLCRealtimeClusterIntegrationTest` to verify the behavior.
+With this change, when the stream partition changes for a partitioned table (which should be very rare), the result won't be accurate when the consuming segment contains records from multiple partitions, but will auto-recover when the segment is committed and the correct partition metadata is persisted to the segment ZK metadata.",104,60,1.544872913231985,1.5448729132486505,89
+9eaea998fc74d4b66f5dc9ea6c2de9b8f758aae5,2020-11-17 20:02:47-08:00,2020-11-17 20:02:47-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1102,1102,Add stream and batch to ingestionConfig (#6247),104,60,1.5446475223818885,1.5446475226862841,87
+bacaed22b4aa3eef38f951fdb098396706df444e,2021-01-26 09:00:54-08:00,2021-01-26 09:00:54-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1121,1121,"Guard against multiple consuming segments for same partition (#6483)
+
+* Guard against multiple consuming segments for same partition
+
+Fixes being considered for issues #5559 and #5263 may end up
+resurfacing some race conditions that we have strived to avoid
+via automated mechanisms. The race conditions may lead to multiple
+consuming segments in the same partition.
+
+This commit is a catch-all safeguard in case some automaticl operation
+interferes with other manual primitives provided, so that the table
+never reaches such a state.
+
+* Addressed review comments",104,60,1.542425125359393,1.542425126254402,92
+60b0c5f2dce5e82c7b1013a3b8d8935774d12d72,2021-02-17 12:50:58-08:00,2021-02-17 12:50:58-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1128,1128,"Handle creation of segments with 0 rows  (#6466)
+
+* Handle creation of segments with 0 rows
+
+* Broker and server side pruners for empty segment
+
+* Set current time as start/end if 0 totalDocs. Handle in time boundary
+
+* EmptyIndexSegment and EmptyDataSource
+
+* Make ValidSegmentPruner as first pruner",104,60,1.5422280189917807,1.5422280191165165,94
+3b7093039469b2a00269f747543c6c29c8f1801f,2021-03-09 16:04:41-08:00,2021-03-09 16:04:41-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1130,1130,"Kinesis implementation Part 1: Rename partitionId to partitionGroupId (#6655)
+
+* Kinesis implementation Part 1: Rename partitionId to partitionGroupId
+
+* Review comments",104,60,1.5398303891080523,1.5398303861834037,94
+2f8997198a7dd8037dc2c0165eb567c9c0a98c4b,2021-04-06 17:58:17-07:00,2021-04-06 17:58:17-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1217,1217,"Interface changes for Kinesis connector (#6667)
+
+Part 2 of Kinesis implementation changes. This #6518 is the main PR, which is being split up into 3 parts in order to reduce the scope of review.
+
+In this PR, An abstraction has been introduced for a group of partition/shards, and each consumer will now be responsible for a PartitionGroup instead of just a partitionId (though in first iteration, the PartitionGroup will only contain 1 partition/shard). It includes corresponding additions to interfaces and some new interfaces.
+
+Kafka stream should function as is, with no changes needed.
+
+Note that before upgrading to this change, installations should upgrade to at least the release that has #5359 (https://docs.pinot.apache.org/basics/releases/0.5.0). An installation that has older versions than this may break during upgrade.",115,60,1.550730114233389,1.550730112636571,107
+f2e3446e75f1ec1d553805d03f6504f05b3e3c0e,2021-04-13 17:20:05-07:00,2021-04-13 17:20:05-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1217,1217,"Pinot SPI refactor contd: Added pinot-segment-local module. (#6761)
+
+- Added pinot-segment-local module that contains all the segment related
+  implementations for the existing local Pinot segment.
+
+- Modules that pinot-segment-local depends on:
+  - pinot-spi
+  - pinot-segment-spi
+  - pinot-common: This is temporary and needed as a lot of common utilities
+    are within pinot-common.
+  - External libraries: Datasketches,TDigest, HLL, Lucene, larray.
+  - For test-scope:
+    - pinot-avro
+    - pinot-csv
+    - pinot-json
+    - pinot-spi
+    - pinot-yammer
+
+- Modules dependent on pinot-segment-local:
+  - pinot-core
+  - pinot-server, pinot-perf: Only in test-scope
+
+Most moves/refactors done via IDE. Manual changes listed below:
+- Fix typo in Logger for RealtimeLuceneIndexReaderRefreshThread.
+- Moved builder specific util methods from StarTreeUtils to StarTreeBuilderUtils.
+  - `shouldRemove()`
+  - `remove()`
+
+- Made local copy of MAX_DOC_PER_CALL inside of PinotDataBitSetV2, as it is currently
+  defined in DocIdSetPlanNode, but segment related code depends on it.
+
+- Made local copy of DEFAULT_TDIGEST_COMPRESSION in PercentileTDigestValueAggregator,
+  originally defined in PercentileTDigestAggregationFunction.
+
+- Made local copy of DEFAULT_MAX_ERROR in PercentileEstValueAggregator, originally defined in
+  PercentileEstAggregationFunction.
+
+- Split QueryContextRequestUtils into two files, the new one calle RequestContextConverterUtils
+  is in pinot-common, as it has utility methods related to classes in pinot-common.
+
+- Created CustomSerDeUtils class, that has code from ObjectSerDeUtils related to ValueAggregator.
+  This is again to avoid pulling in dependencies from pinot-core into pinot-segment-local.
+
+- Removed reference of Operator in javadoc of EarlyTerminationException, as it is
+  was causing reference dependency to pinot-core.
+
+- Renamed SegmentGenerationWithNullValueTest to SegmentWithNullValueTest as it has test for segment
+  generation as well as querying, and can only be housed in pinot-core atm.
+
+- The clas RealtimeSegmentStatsHistory is ser/de using Java object ser/de, which makes moving the file
+  out of its current package backward incompatible. Addressed this issue by using a custom object
+  input stream that replaces the old package name with new one when deserializing.
+
+Moves done to resolve cross dependency issues:
+- Following moved to pinot-segment-local utils package:
+  - IngestionUtils
+  - TableConfigUtils
+  - SchemaUtils
+  - SegmentTestUtils: This depends on AvroSchemaUtil, added dependency on pinot-avro in test-scope.
+
+- Following moved to pinot-common:
+  - FilterContext
+  - ExpressionContext
+  - FunctionContext
+  - Predicate
+
+- Following moved to pinot-spi
+  - ReadMode
+  - CommonConstants
+  - ArrayCopyUtils
+  - BadQueryException moved
+  - EarlyTerminationException
+
+- Copied necessary data files in resources/data from pinot-core to pinot-segment-local.",115,60,1.550730114233389,1.5507301135306775,107
+782d14dc3fb56256339cf5071d9fbdc41b7e6370,2021-04-28 20:52:34-07:00,2021-04-28 20:52:34-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1222,1222,Add reason of creation to StreamMetadataProvider name. (#6862),115,60,1.5501202482670355,1.5501202473156015,107
+34bb823b3f1fe176de7fbfef1ef1d157b7ae7df6,2021-04-29 19:36:31-07:00,2021-04-29 19:36:31-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1217,1217,"Revert commit 76edc5d4: ""Add reason of creation to StreamMetadataProvider name."" (#6866)",115,60,1.550730114233389,1.5507301135306775,107
+2b5500447cd82cedca9dd47860e69d321c4e00c3,2021-05-24 17:26:42-07:00,2021-05-24 17:26:42-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1217,1217,"SegmentDirectoryLoader interface and local impl (#6949)
+
+Introducing a SegmentDirectoryLoader which will create the SegmentDirectory, with default implementation being SegmentLocalFSDirectory.",115,60,1.550730114233389,1.5507301135306775,107
+f38609b8dae9ccd1b2f171de0212aae3ce47bcd8,2021-07-01 10:41:30-07:00,2021-07-01 10:41:30-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1231,1231,"Clean up SegmentMetadata and ColumnMetadata (#7104)
+
+- Change `ColumnMetadata` to an interface, and rename `ColumnMetadata` to `ColumnMetadataImpl`
+- Add apis related to `ColumnMetadata` into `SegmentMetadata`
+- Clean up `SegmentMetadataImpl` and `ColumnMetadataImpl`",113,60,1.5506576932388754,1.5506576913897485,109
+dbaf658e8dd6f177fadfa94f06dead274d52cb10,2021-08-12 16:46:42-07:00,2021-08-12 16:46:42-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1228,1228,"Unify segment ZK metadata (#7255)
+
+Currently there are 3 different classes for segment ZK metadata: `OfflineSegmentZKMetadata`, `RealtimeSegmentZKMetadata`, `LLCRealtimeSegmentZKMetadata`, and 3 different sets of APIs to read them from the ZK.
+The problem with this approach:
+- Need to know the type of segment before reading the ZK metadata, which is hard to use and makes common code non-sharable
+- Impossible to mix different types of ZK metadata. E.g. to support segment push to LLC table
+
+This PR unifies these 3 classes to `SegmentZKMetadata` class which is backed by the `ZNRecord` to:
+- Solve the problems above
+- Read fields from `ZNRecord` on demand to avoid pre-read all fields (in most cases only one or two fields are required)
+- Directly write the fields back to `ZNRecord` to avoid the overhead of creating a new `ZNRecord` when persisting back the segment ZK metadata
+
+The following keys are deprecated, backward-compatibility is maintained:
+- `segment.realtime.download.url` and `segment.offline.download.url`: replaced by `segment.download.url`
+- `segment.offline.push.time`: replaced by `segment.push.time`
+- `segment.offline.refresh.time`: replaced by `segment.refresh.time`
+- `segment.name`: use ZNRecord id instead
+- `segment.table.name`: decouple segment from table
+- `segment.type`: no need to differentiate",113,60,1.5488515320806198,1.5488515281556026,109
+7e9ca6a5a4afe0d4e283ac1307c45430e474cbf2,2021-08-20 21:33:52-07:00,2021-08-20 21:33:52-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1248,1248,Reformat code base with line length 120 (#7342),113,60,1.5496669560855687,1.5496669526411673,109
+bb34406aaa205f5c85b88c928d477fd267eda1b4,2021-08-21 02:02:19-07:00,2021-08-21 02:02:19-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1246,1246,reformat pinot-controller (#7331),113,60,1.5490963454031672,1.5490963462314928,109
+6605bc0aee6082654603cdc5c39ad148a2712e81,2021-09-16 16:27:52-07:00,2021-09-16 16:27:52-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1383,1383,"upload missing LLC segment to segment store by controller periodic task (#6778)
+
+With the new LLC segment commit protocol: deep store bypass for realtime segment completion, LLC segments can be considered as committed with segment store upload failure. Using controller periodic tasks (RealtimeSegmentValidationManager) to fix the upload failure by asking servers to upload missing segments.",122,67,1.57642806037872,1.57642805817624,128
+1ee3c020fa421a44f7f199299cc6c400216a972d,2021-10-22 10:47:43+05:30,2021-10-22 10:47:43+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1378,1378,"Add support for lowest partition id in case partition id 0 is not available (#7066)
+
+* Add support for lowest partition id in case partition id 0 is not available
+
+* Remove unused import
+
+* Add complete partition metadata list instead of just current partition
+
+* Add new test for min partition data instead of partition 0
+
+* Fix linting
+
+* Fix linting
+
+* edit comment to reflect new partition id calculation
+
+* Update method for easy int comparison",122,67,1.5747571304982646,1.5747571319858438,128
+561b8a3c6fa832be3ab9e540ca3688a38a11e4c8,2021-11-12 15:04:18-08:00,2021-11-12 15:04:18-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1385,1385,"Use oldest offset on newly detected partitions (#7756)
+
+* Use oldest offset on newly detected partitions
+
+Fixed the issue where Pinot was losing data when it detected new stream partitions
+(depending on table configuration).
+
+Manual testing by running LLCRealtimeClusterIntegrationTest via debugger
+- Change the table config to start from largest offset
+- Force the test to detect only one partition, notice that roughly
+  half the rows are ingested, and only partiton 0 shows up in idealstate
+- Run the RealtimeSegmentValidationManager job via swagger to force detection
+  of new partition.
+- Confirmed that all rows are now present.
+
+Issue #7741
+
+* Fixed linter error",122,67,1.574358978596054,1.5743589764283499,130
+362f3e1acca6b50dcf2680848ac6dfec71d37d3b,2021-11-12 17:32:10-08:00,2021-11-12 17:32:10-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1385,1385,Add getName() to PartitionFunction interface (#7760),122,67,1.5743725485399431,1.5743725456491238,130
+098d0e77d61cdb5575715d4d2aa06f67bef670a6,2021-12-01 10:52:16-08:00,2021-12-01 10:52:16-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1382,1382,Clean up deprecated ZK metadata keys and methods (#7846),122,67,1.5747389572197654,1.5747389540789223,130
+0bf408615cb8dc96defa80f4b8a0c302741dd40c,2021-12-23 17:26:53-08:00,2021-12-23 17:26:53-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1383,1383,Remove TableConfigCache which does not listen on ZK changes (#7943),122,66,1.5746146613687295,1.5746146632872449,132
+0874f5d0d8900adc6096830065c783d9ac4e6516,2022-01-07 13:11:32-08:00,2022-01-07 13:11:32-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1388,1388,Fix the issues that Pinot upsert table's uploaded segments get deleted when a server restarts. (#7979),122,66,1.573127465930214,1.5731274670844442,133
+4e4b1eafc98aebac44b5fd198084e6b76d8aa91d,2022-01-24 08:26:39-08:00,2022-01-24 08:26:39-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1382,1382,Smallest offset for new partitionGroups (#8053),122,66,1.5732855280810198,1.573285529810644,131
+9f40d1bc9eb22585595b68f91297194f55b741a6,2022-01-24 09:34:49-08:00,2022-01-24 09:34:49-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1388,1388,Fix the PinotLLCRealtimeSegmentManager on segment name check (#8058),122,66,1.5733428986670384,1.573342901436857,132
+3f98ce37fdaef0335fcd82e621489d65751b1f55,2022-02-25 15:01:01-08:00,2022-02-26 04:31:01+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1388,1388,"Implemented BoundedColumnValue partition function (#8224)
+
+Added new partition function called BoundedColumnValue to be able to partition segments based on column values",122,66,1.5727407024449416,1.572740705584919,132
+fe1423162eabcff793da3f88228bc234134136ec,2022-04-21 01:37:15-07:00,2022-04-21 14:07:15+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1388,1388,"Move controllerUrlUtils to SPI (#8573)
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>",122,66,1.5727407024449416,1.5727407061561927,132
+159afb7820c30f5eadd75a973ccdc1d99f4e2539,2022-05-16 11:14:34-07:00,2022-05-16 11:14:34-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1384,1384,"Cleanup segment upload logic and allow validation on real-time table (#8695)
+
+- Cleanup the segment upload logic and add more checks on the parameters
+- Refactor the segment validator to a util class to make it work on both metadata push and real-time table
+- Refine the return code documentation of the segment upload API",121,65,1.5748966839910052,1.574896685461133,129
+c7e835f9613d7bcc94c5e68c180dfb225b5acc1b,2022-05-24 10:02:36-07:00,2022-05-24 22:32:36+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1413,1413,Realtime table consumption resume API (#8663),121,66,1.5704255274651049,1.5704255287219084,133
+294ea08a32c2174c56739517c923f054aafb8435,2022-05-30 12:29:29-07:00,2022-05-30 12:29:29-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1402,1402,Misc fixes on segment validation for uploaded real-time segments (#8786),121,66,1.5731806182911257,1.5731806184481645,133
+bc27ad99ecd68fd4ae8522055f8a6a84e27fa3c1,2022-06-30 13:39:25-07:00,2022-06-30 13:39:25-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1399,1399,Emit metrics if there's no consuming segment for a partition (#8877),121,66,1.5731806182911257,1.5731806165740492,133
+e2ba55bed54cf497cf87fd955d61224e0030c874,2022-07-06 09:27:19-07:00,2022-07-06 09:27:19-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1406,1406,Null check for partitionGroupSmallestOffset and metric for failure (#9020),121,66,1.5743571738638167,1.574357172258144,136
+6903856d399b4d7b09548a75a888382e1659e9e3,2022-07-20 15:49:38-07:00,2022-07-20 15:49:38-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1509,1509,Support pause/resume consumption of realtime tables (#8986),131,74,1.582843514831093,1.5828435145600592,143
+989df641b7d29e18773a668663b0be894835d24f,2022-07-21 13:16:08-07:00,2022-07-21 13:16:08-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1509,1509,"Upgrade Helix to 1.0.4 (#8325)
+
+Co-authored-by: Jack Li(Analytics Engineering) <jlli@jlli-mn1.linkedin.biz>",131,74,1.582843514831093,1.582843512605148,143
+5ecca80cc8ac763d5c3ee256ea9504f60c581ecd,2022-08-29 11:43:30-07:00,2022-08-29 11:43:30-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1518,1518,Force commit consuming segments (#9197),132,75,1.5826829964697593,1.5826829936813258,143
+a273af026221be6a0d1eb6268f091429ce3fac39,2022-08-29 17:44:51-07:00,2022-08-29 17:44:51-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1551,1551,Add capabilities to ingest from another stream without disabling the realtime table (#9289),132,76,1.5804483577254005,1.580448353459672,151
+555e5a04439c614bea8915c9e69327d7390260de,2022-11-23 22:38:10-08:00,2022-11-23 22:38:10-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1551,1551,"Combine the read access for replication config (#9849)
+
+* Combine the read access for replication config
+
+Currently, we have a separate configuration for replication.
+Offline and HLC reads from `replication` and LLC reads from
+`replicasPerPartition`. This PR combines the read access for
+the replication config.
+
+* Addressed comments",132,76,1.5797820079165792,1.5797820042447108,151
+c84eda42c23c47058a58dcc91390d2748d73b1c0,2023-01-13 12:09:33-08:00,2023-01-14 01:39:33+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1552,1552,Add controller API for force commit status (#10088),132,76,1.5795719224502458,1.5795719176686323,151
+53e80fc69688600c0eb0fccff90b6c2865999183,2023-02-10 14:08:45-08:00,2023-02-10 14:08:45-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1553,1553,Add PinotHelixResourceManager to MetadataEventNotifier (#10247),132,76,1.5795493285643765,1.5795493237355067,151
+1763e70f79ed1328e3e33ae3817557f927d5fa38,2023-05-10 11:47:04-07:00,2023-05-11 00:17:04+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1558,1558,"Minor Realtime Segment Commit Upload Improvements (#10725)
+
+* Improve Monitoring for Realtime Segment Commit + Configurable Segment Upload Timeout
+
+* Add metric for upload timeout
+
+* Minor refactor
+
+* Add metrics for success/failure
+
+* Set timeout in HelixInstanceDataManager as well",133,76,1.5795493288719396,1.5795493229908633,152
+61d6b1075da2ae73d817c3154f942af2d45021b6,2023-05-17 17:20:30-07:00,2023-05-18 05:50:30+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1580,1580,"Minor Pinot Deepstore Upload Retry Task Improvements (#10752)
+
+* Use Non-Random Path in Pinot Deepstore Upload Retry
+
+* Add configurable timeout + fix segment name in move
+
+* Fix test
+
+* Proper test which asserts segment file move
+
+* Address feedback",137,79,1.5828083495975636,1.5828083477731696,152
+cb607a8594b606b596af355779dde02bb6ade240,2023-05-17 20:35:47-07:00,2023-05-18 09:05:47+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1582,1582,Track Number of Segments Fixed by Deep-store Retry Task (#10780),137,79,1.582808348922362,1.5828083458266342,152
+a022e4194d48cca27a674bb4aa24e08463a4892f,2023-08-31 21:36:51-07:00,2023-08-31 21:36:51-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1589,1589,Fix partition info in segment ZK metadata for changes in stream partition count (#11476),137,79,1.5833811754706328,1.583381171912932,154
+e26a29ea1491139149157d37c71f24635626d91b,2023-09-15 18:50:15-07:00,2023-09-15 18:50:15-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1561,1561,Remove/Deprecate HLC handling code (#11590),133,78,1.5848850295170176,1.584885028581859,150
+d9c0790a464eaf2575a2b7225827af36f4b0cd25,2023-09-18 19:08:07-07:00,2023-09-18 19:08:07-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1637,1637,Periodically delete Tmp Segment file brought by the SplitCommit End phase (#10815),142,83,1.5913693767392085,1.5913693772815787,166
+e1236429a709b5af3012bc92f51cc4fbcb12741d,2023-09-18 22:22:01-07:00,2023-09-18 22:22:01-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1630,1630,"Fix the alias handling in single-stage engine (#11610)
+
+* Fix the alias handling in single-stage engine
+
+* Throw exception when alias is used in filter clause
+
+---------
+
+Co-authored-by: Xiang Fu <xiangfu.1024@gmail.com>",141,82,1.5906100945624688,1.5906100941639112,165
+5b18145a721fe23f5e55e2463336db58169bd90e,2023-09-22 19:50:28-07:00,2023-09-22 19:50:28-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1633,1633,"assign segments for upsert table with respect to ideal state (#11628)
+
+* assign segments for upsert table with respect to ideal state",141,82,1.5886550038199987,1.5886550008782399,165
+55309f2f79ad33b82ad1648bdb113ee81c60ac46,2023-09-23 18:15:46-07:00,2023-09-23 18:15:46-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1629,1629,Remove split commit and some deprecated config for real-time protocol on controller (#11663),140,81,1.5874788550818344,1.5874788567575384,164
+8e84fc3fc50deeb3a05b24c09732c4116ad3979d,2023-11-20 11:07:25-08:00,2023-11-20 11:07:25-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1658,1658,Optimize segment commit to not read partition group metadata (#11943),138,82,1.5851909754653266,1.58519097511629,164
+6fe2d25c21fdc9b8364b6e594d96b78e907717e6,2023-11-28 13:05:13-08:00,2023-11-28 13:05:13-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1674,1674,"Fix incorrect handling of consumer creation errors (#12045)
+
+* Fix incorrect handling of consumer creation errors
+
+The current handling of exceptions during creation of a consumer is
+incorrect, since the ExternalView for the segment remains in ERROR
+state while we specify the IdealState to be OFFLINE. This happens
+for one replica, while other replicas may consume fine and reach
+ONLINE state eventually. At that time, however, the particular
+segment that had problem consuming is not able to transition to
+ONLINE since a transition from ERROR to ONLINE is not suppored by Helix.
+
+A partition state of ERROR is a special state in Helix. Helix does not
+work the same way moving from ERROR to other states. Instead,
+Helix provides an admin API to reset the state of a partition from ERROR
+to its starting state (which in our case is OFFLINE). When this reset
+API is invoked, a state transition message of ERROR to StartingState
+is sent to the specific instance that hosts the partition in question.
+If the participant's currentstate is not ERROR, then this message
+is discarded automatically (and Pinot will never see it). Otherwise,
+it is passed on to Pinot and we have a transition from ERROR to OFFLINE.
+
+Tested by manually inserting an exception in the consumer creation
+code ad observing that externalview changes to ERROR, and then later
+onto OFFLINE.
+
+* Ignore Helix expection on reset call
+
+Helix throws an exceptioin if we call reset on a partition that is not in ERROR
+state in ExternalView. So, we need to ignore any exception that helix sends out
+on the reset call (it is a best-effort call anyway).
+
+* Address linter check
+
+* Added tests
+
+* Addressed review comments
+
+* Addressed review comment to fix space",138,82,1.5852296999245503,1.5852296999509656,164
+b131f89461c94d7560ca06085c9209f15ac63e7f,2023-12-04 10:36:05-08:00,2023-12-04 10:36:05-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1714,1714,"make deep store upload retry async with configurable parallelism (#12017)
+
+* make deep store upload retry async with configurable parallelism
+
+* do not queue additional tasks if a task already exists in the queue
+
+* address comments, fix metrics
+
+* missed cherry-pick, use thread safe set
+
+* lint
+
+* address comments",143,85,1.5902701555436465,1.5902701544422437,163
+e62db612c91b4b540bcdfeecb412442eac35ced2,2023-12-07 07:51:50-08:00,2023-12-07 21:21:50+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1714,1714,Metrics for Table Disabled and Consumption Paused (#12000),143,85,1.5960595826617276,1.596059579804942,163
+9d939a007ec95cae3d6cc18420d3ae8090d37d57,2023-12-21 11:17:17-08:00,2023-12-21 11:17:17-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1757,1757,Add partition level Force Commit (#12088),146,86,1.5957993519633527,1.5957993488450368,169
+ec452a49f3c885308613bc45dfa44b48a16076ba,2024-04-15 17:02:18-07:00,2024-04-15 17:02:18-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1758,1758,Refine PeerServerSegmentFinder (#12933),146,86,1.5957993528705254,1.5957993485306865,169
+55f6a6f6d46ca92d2e7ca65a6c1e67de5738cfe7,2024-06-26 21:46:11-07:00,2024-06-27 00:46:11-04:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1758,1758,Removing legacy commons-lang dependency (#13480),146,86,1.5957993528705254,1.5957993482753245,169
+2bd6fb82bbf057192afd75f4a2fbcfc1180885b1,2024-08-07 15:08:56-07:00,2024-08-07 15:08:56-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1743,1743,Acquire a lock before updating the table lineage record (#13735),146,84,1.5819956356912055,1.5819956318073078,168
+4d2c3f54a64d4607c1d663994327c81896bd80f1,2024-08-13 16:33:53-07:00,2024-08-13 16:33:53-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1794,1794,Remove ingestion metrics when consuming segment relocates (#13668),149,85,1.5792523159537102,1.5792523156477467,174
+692d78c1120c411feabfe378d276ee0adec1f68c,2024-08-21 11:06:43+05:30,2024-08-21 10:36:43+05:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1836,1836,"Add TablePauseStatus to track the pause details (#13803)
+
+* Add table pause status container to track the pause details
+
+* deprecate IS_TABLE_PAUSED
+
+* fix
+
+* Allow passing comment for resuming ingestion
+
+* Avoid the confusion on description field in APIs
+
+* refactor PauseStatus
+
+* refactors
+
+* revert to consumingSegments
+
+* fix naming",150,87,1.5970294186931715,1.5970294166512244,182
+f5327a512ab90b6137c88c2fbaf0c517c8ac50b6,2024-09-07 08:48:32-07:00,2024-09-07 08:48:32-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1843,1843,Acquire IdealStateUpdaterLock for PinotLLCRealtimeSegmentManager IdealState update (#13947),149,87,1.5961629753942064,1.5961629723761122,182
+717895be6961aaa213f57b1438cd7faed2c0f16d,2024-09-14 22:58:00+08:00,2024-09-14 22:58:00+08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1834,1834,Group commit IdealState updates (#13976),149,87,1.596850004911459,1.5968500008440163,182
+e9271f6dd73cb1162e9743b14e61fd420dbf3e27,2024-09-18 17:52:46+05:30,2024-09-18 17:52:46+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1833,1833,"Storage Quota imposition on Realtime tables (#13584)
+
+* Storage quota imposition on realtime tables
+
+* fix test mock
+
+* Handle IS update failure case
+
+* refactor
+
+* tests
+
+* move quota checker to PinotLLCRealtimeSegmentManager
+
+* test fix
+
+* Add tableStorageQuotaExceeded gauge on controller
+
+* refactor to use PauseState
+
+* revert TABLE_STORAGE_QUOTA_EXCEEDED metric
+
+* cosmetic
+
+* refactors
+
+* check consuming segments only when table is not paused
+
+* refactor",149,87,1.598962855445276,1.5989628511841663,182
+2de61de8bcf4c5befce3404543f25025cbbf7cbd,2024-09-19 18:44:55+05:30,2024-09-19 18:44:55+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1829,1829,"Remove `recreateDeletedConsumingSegment` flag from RealtimeSegmentValidationManager (#14024)
+
+* Remove recreateDeletedConsumingSegment flag
+
+In favour of always recreating deleted consuming segments if table is not paused.
+
+* handle resumption upon storage quota getting freed up",149,87,1.6021742364870486,1.6021742295494528,181
+65f658d0dc38b73d65a9b22a4f7a206808f4c18f,2024-10-30 20:46:54-07:00,2024-10-30 20:46:54-07:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1834,1834,Improve async temp segment delete in validation manager (#14339),146,87,1.603682425671101,1.6036824204914373,178
+57ecbb946ca4fdb4cd2836565e496626cf695390,2024-11-04 16:12:04-08:00,2024-11-04 16:12:04-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1840,1840,Check for peerSegmentDownloadScheme when reaching out to peer servers for segment (#14378),148,87,1.6036824255364701,1.6036824233307907,180
+b273094661b5ef4760aac5769a4463fd0cd3fed0,2024-11-05 15:26:14-08:00,2024-11-05 15:26:14-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1841,1841,Fix real-time validation NPE when stream partition no longer available (#14392),151,87,1.6041311024366587,1.6041310979241317,178
+f5a8ea58047868bc33db78199210af1cc31c3cd5,2024-11-11 11:26:57+05:30,2024-11-11 11:26:57+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1841,1841,Fix deepstore upload retry for infinite retention tables (#14406),150,87,1.6048257880178995,1.6048257825898908,178
+e5d5bad37193ee9a8e312dbcb28e145c703722e2,2024-12-03 12:56:22+05:30,2024-12-03 12:56:22+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1863,1863,"Fix crc mismatch during deepstore upload retry task (#14506)
+
+* Fix crc mismatch during deepstore upload retry task
+
+* Address comments, add new API endpoint for crc
+
+* update crc post segment upload
+
+* Upload v2 API implementation
+
+* address comments",149,87,1.6048257880178995,1.6048257825898908,180
+f1fc02f7cc9e6fc70a86b7b443e68f1329721767,2024-12-18 20:37:57+05:30,2024-12-18 20:37:57+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1864,1864,Populating segment size in bytes in the ZK metadata during the COMMIT_END_METADATA call of the segment commit protocol. (#14679),149,87,1.6048257884300234,1.604825781320965,180
+73abb21c23d01d62f26e8f2a1eb8fddcd0f75aa2,2024-12-19 10:39:38-08:00,2024-12-19 10:39:38-08:00,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,1892,1892,"Add multi stream ingestion support (#13790)
+
+* Add multi stream ingestion support
+
+* Fix UT
+
+* Fix issues, rebase and resolve comments
+
+* Resolve comments
+
+* Fix style
+
+* Ensure transient exceptions do not prevent creating new consuming segments
+
+Summary:
+Ensure transient exceptions do not prevent creating new consuming segments. If some exception is hit, attempt to reconcile any successful fetches with partition group metadata.
+
+This ensures consuming partitions are not dropped, and attempts to add and new partitions discovered successfully.
+
+Test Plan:
+After deployment, despite still some `TransientConsumerException`, no new missing consuming segments appear
+{F1002071843}
+
+{F1002071523}
+
+Reviewers: gaoxin, tingchen
+
+Reviewed By: gaoxin
+
+JIRA Issues: EVA-8951
+
+Differential Revision: https://code.uberinternal.com/D15748639
+
+* Resolve comments for optimizing java doc
+
+* Edit doc/comment
+
+* Remove unrelated files
+
+* Rebase and resolve conflicts
+
+* Take the metadata fetch time change from the HEAD
+
+* Resolve conflicts
+
+---------
+
+Co-authored-by: Christopher Peck <peck@uber.com>",151,88,1.6026647504888196,1.6026647432723686,183
+d953d7cffcd2626cbe78648c7e599544e22bab96,2025-01-13 18:00:05-08:00,2025-01-14 07:30:05+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,2012,2012,Pauseless ingestion without failure scenarios (#14741),168,94,1.5917113366909719,1.5917113274619274,186
+c9e08f367ab1e89e7e54bdc11a70989fdc5f8913,2025-01-23 16:29:46-08:00,2025-01-24 05:59:46+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,2028,2028,Updates forceCommit APIs to handle Pauseless (#14828),169,95,1.5939956388986622,1.593995632040856,190
+3525116ac277e39e28331d955e968a13df62f8bf,2025-01-29 12:03:47+05:30,2025-01-29 12:03:47+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,2114,2114,Pauseless Ingestion #2: Handle Failure scenarios without DR (#14798),189,106,1.5808111488097456,1.5808111441052752,194
+6747ad00b49d16cda33f8bef8202992483c51b70,2025-01-31 16:12:06-08:00,2025-02-01 05:42:06+05:30,pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java,2232,2232,Supports Force Committing Segments in Batches (#14811),202,110,1.5795330172798805,1.5795330168598078,209

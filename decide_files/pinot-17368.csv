@@ -1,0 +1,889 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+51765c07ca2b0b71887b53c3e85e0bc5c698d60e,2020-07-13 17:15:11-07:00,2020-07-13 17:15:11-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,151,151,TransformConfig in IngestionConfig for ingestion transformations (#5681),9,5,1.3170893272458053,1.3170893345385284,36
+f740456dc74480456e8039db440afafce472e748,2020-07-17 02:22:19-07:00,2020-07-17 02:22:19-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,130,130,"Support text index on dictionary encoded columns. (#5667)
+
+With these changes, we can essentially have both text and native
+Pinot inverted index on the same column.
+
+Co-authored-by: Siddharth Teotia <steotia@steotia-mn1.linkedin.biz>",8,4,1.346434987665316,1.346434985117545,26
+8e412b5754bde73be0d3dd2de893d40fecbff2c1,2020-07-20 20:02:10-07:00,2020-07-20 20:02:10-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,144,144,Disallow table creation with dot in the table name (#5714),9,5,1.34764120326819,1.3476412060601324,27
+9f23e1857c5deb8eeac21f376f84665453fda007,2020-08-10 15:06:24-07:00,2020-08-10 15:06:24-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,196,196,"Tiered storage (#5793)
+
+Tiered storage support in Pinot - Phase 1.
+This phase supports default tag based instance assignments only, which are not persisted in zk.",13,6,1.4497399211887156,1.449739928187032,36
+e0ed179c249a4affbbf0491e4140d1c9fd5e9b20,2020-09-10 14:32:31-07:00,2020-09-10 14:32:31-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,228,228,Validate timeColumnName when adding/updating schema/tableConfig (#5966),16,6,1.4234429735624732,1.4234429743587762,44
+5548e791f9273ec9ffd74f237385c9e7a531f9f3,2020-09-17 21:02:48-07:00,2020-09-17 21:02:48-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,336,336,"Table indexing config validation (#6017)
+
+* Adding validation for table indexing config to check for valid column names
+
+* * Addressing review comments: adding validation for FieldConfigList. Adding javadocs
+* Bug fix in integration test regarding removal of existing column from schema
+
+* Adding validation for StarTreeIndexingConfig
+
+* Addressing review comments",21,8,1.4359388643292195,1.4359388635486425,87
+a88e05ef9467f8d7200e45ec885508b8ad6d2f61,2020-09-23 12:14:02-07:00,2020-09-23 12:14:02-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,343,343,Add validation for segment partition config column names (#6049),22,8,1.4396563225421564,1.4396563183509579,92
+07a6289a07fc5b268707a09086625f1fc023f144,2020-09-25 15:25:53-07:00,2020-09-25 15:25:53-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,356,356,"Adding dependency validation check on Indexing config (#6038)
+
+* Adding dependency validation check between inverted index, bloom filter and no dictionary column config
+
+* Fixing assert comment in valid star tree index config test",23,8,1.4440536462775442,1.4440536462332498,94
+9929dad2e804f525b8ace925e859e07c6fdee9da,2020-10-02 09:41:55-07:00,2020-10-02 09:41:55-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,400,400,"Adding more table config validation (#6073)
+
+Adding more table config validation (retention, pushType and tenant)
+Fixing bug where retention manager does not work for real-time tables if the pushType is missing.",29,9,1.4773108091052953,1.477310813437972,105
+11ff74a5af6cf2aaa7dd642775ef9553ee4ffe67,2020-10-05 16:35:27-07:00,2020-10-05 16:35:27-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,396,396,Making pushType non-mandatory (#6107),28,9,1.4733257187597995,1.4733257161028697,106
+0e1d4586989800934669cf76dc9f41e63e213345,2020-10-08 14:18:12-07:00,2020-10-08 14:18:12-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,400,400,"Implement off-heap bloom filter reader (#6118)
+
+Add BloomFilterCreator and BloomFilterReader interface (similar to other indexes)
+Re-implemented `OnHeapGuavaBloomFilterCreator` and `OffHeapGuavaBloomFilterReader`
+Remove the size limit of the bloom filter
+Add `BloomFilterConfig` for custom `fpp`
+
+The new `OffHeapGuavaBloomFilterReader` is compatible with the existing Guava bloom filter storage format, so it can read the bloom filter generated from the existing code.
+
+In order to config `fpp` for a bloom filter, use the key `bloomFilterConfigs` under the `tableIndexConfig` in the table config.
+E.g.
+{
+  ""tableIndexConfig"": {
+    ""bloomFilterConfigs"": {
+      ""col1"": {
+        ""fpp"": 0.01
+      }
+    },
+    ...
+  },
+  ...
+}",28,9,1.4690690718156816,1.4690690697466722,108
+1750548f08d842449dc7742abae58f0a5c47f280,2020-10-16 12:24:35-07:00,2020-10-16 12:24:35-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,437,437,"add validation for upsert tables (#6149)
+
+Part of a series of PRs for #4261",29,10,1.4907341185475131,1.4907341150864342,117
+da451a8f3dbfcfe18d344e8b3b40c69e6ef08325,2020-10-20 13:16:24-07:00,2020-10-20 13:16:24-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,441,441,"Add more validation for upsert config (#6153)
+
+Part of a series of PRs for #4261
+
+- validate primary key columns
+- validate startree index not in use",29,10,1.484870054243196,1.484870053880925,118
+1c17ab8c9213ec2773402d93a0099b438122ff40,2020-10-22 10:47:46-07:00,2020-10-22 10:47:46-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,441,441,"Add table name to the log on validation failure (#6173)
+
+Currently, the controller side log does not include
+the table name when the validation fails. This makes it
+hard to debug. This PR adds the table name to the log.",29,10,1.4891069285705287,1.489106928444837,118
+ec1c85987a25416ecb3ce57961d888381b29027d,2020-10-26 19:24:02-07:00,2020-10-26 19:24:02-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,469,469,"Relaxing timeColumnName and indexingConfig validation (#6185)
+
+Current validation code will fail when the time column name or
+indexing config list includes the empty string. We can relax the
+validation by treating the empty string the same as the null value.
+Added the unit test.",32,13,1.5934774883783567,1.5934774857646572,121
+413b7cb294a59628a2233c6c593295f817c33455,2020-11-01 01:54:00-07:00,2020-11-01 01:54:00-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,469,469,"Add StrictReplicaGroupInstanceSelector (#6208)
+
+Recently we have introduced some features which require all the segments from the same partition to be processed by the same server. For example, upsert (#4261) feature requires all the segments for a partition loaded on a single server before starting serving queries to ensure result correctness. The Strict Replica-Group Routing is designed to meet this requirement.
+
+This PR is the routing side change of the Strict Replica-Group Routing, which is handled in the StrictReplicaGroupInstanceSelector class.
+The new algorithm relies on the ideal state of the table, so this PR added the ideal state to the routing interfaces.",32,13,1.591359203606223,1.5913592015285487,121
+9eaea998fc74d4b66f5dc9ea6c2de9b8f758aae5,2020-11-17 20:02:47-08:00,2020-11-17 20:02:47-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,500,500,Add stream and batch to ingestionConfig (#6247),35,13,1.5798829313542622,1.5798829283280678,126
+318c1077bb4a8aa74a03acad8f236aff8eb9fa0d,2020-11-25 18:56:55-08:00,2020-11-25 18:56:55-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,500,500,Rename segmentPushType and SegmentPushFrequency to segmentIngestionType and segmentIngestionFrequency (#6289),35,13,1.5776586399903132,1.577658641009071,126
+2796b831f2313f9f7c6aaffb91c60e090d572679,2020-12-11 18:36:21-08:00,2020-12-11 18:36:21-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,501,501,Adding json path functions to extract values from json object (#6347),35,13,1.577658639502261,1.5776586365721823,126
+33de6dc6374db26a801124543bc633ba859220df,2020-12-22 14:36:41-08:00,2020-12-22 14:36:41-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,519,519,"Introduce DimensionTableDataManager (#6346)
+
+* Add DimensionTableData manager
+
+* Address review comments.
+
+* CLose reader after using.
+
+* Revisit javadocs.
+
+* Release segment after use.
+
+* Touch up instance instantiation.
+
+* Cleanup segment in test.
+
+* Release segments in ""finally"" block.
+
+* Update logs.
+
+* Add TableConfig validations for Dim Tables.
+
+* Seperate IngestionConfigTests for dim tables.
+
+* Remove defensive null checks.
+
+* Fix github action profile name.
+
+* Fix ingestionTest dependencies.
+
+* Undo the gihub-actions mvn profile name fix.",35,13,1.5732649814796962,1.5732649764957947,132
+1bb6c149ee4412d4e5da3a3b23565d76378df4d4,2020-12-25 07:28:33+05:30,2020-12-24 17:58:33-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,531,531,"Add FST index which works on top of REGEXP_LIKE operator. (#6120)
+
+This index is set to enable only on dictionary encoded string column.
+
+Co-authored-by: Pradeep Gopanapalli Venkata <pradeepvenkata@Pradeeps-MacBook-Pro.local>",37,13,1.5660674659298022,1.5660674657631357,137
+832ece75e7e2e827ba9a8d6765a4d80e61056001,2021-01-14 17:45:59-08:00,2021-01-14 17:45:59-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,531,531,"Bug Fix column metadata, read from the correct property config for hasFSTIndex (#6441)
+
+another bugfix on fieldConfigList validation when noDictionaryColumns is null
+
+Co-authored-by: Pradeep Gopanapalli Venkata <pradeepvenkata@Pradeeps-MacBook-Pro.local>",36,13,1.5654531687499125,1.5654531683072084,138
+d7f4fec53b4621bebc209fe783e5363b837298e0,2021-01-27 11:15:33-08:00,2021-01-27 11:15:33-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,523,523,"Support chained transform functions (#6495)
+
+* Allow derived columns in ingestion config. Sort the transform functions
+
+* Remove annotation",36,13,1.565453173243128,1.5654531711753608,137
+3adbbe48839b5f15ac8e94ea6bfa828f31f847a2,2021-02-25 10:41:41-08:00,2021-02-25 10:41:41-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,581,581,"Adding new validation for Json, TEXT indexing (#6541)
+
+* - Adding new validation for Json, TEXT indexing
+ - Adding semantic validation for indexing and field config
+
+* Updating range index to work with numeric and dictinary encoded columns
+
+* Addressing review feedback",39,13,1.565920595794029,1.5659205930303879,157
+df767c09b6358bebff7522e27810f2a3358f6a15,2021-03-03 19:01:35-08:00,2021-03-03 19:01:35-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,577,577,Removing redundant check for column with RAW encoding and noDictionary config (#6636),39,13,1.5654937123165122,1.5654937096345525,155
+53c2a3cd3288157067192f3c7cf34466b2b614ed,2021-03-12 16:02:35-08:00,2021-03-12 16:02:35-08:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,583,583,"Adding a check for multi-value column in star tree indexing config (#6641)
+
+* Adding a check for multi-value column in star tree indexing config
+
+* Using multi-map for column name to config map used for validating indexing config column names
+
+* Remove redundant imports",39,13,1.5644366265212175,1.5644366240936258,156
+98faf2bfac7ec69ced93eec25cf57237a911c560,2021-04-02 18:43:14-07:00,2021-04-02 18:43:14-07:00,pinot-core/src/main/java/org/apache/pinot/core/util/TableConfigUtils.java,583,583,"WIP: Pinot SPI refactor. (#6721)
+
+In the first phase of Pinot SPI refactor, we introduced the plugin based architecture. This is
+a continuation of the refactor. Details of the refactor can be found here:
+https://docs.google.com/document/d/1urROfQZuTE8JJmW3IMCeB2i3FYoEyG1TCyPsxvSaNuw/edit?usp=sharing
+
+In this second phase, we will mainly be focuing on the following:
+- We will create pinot-segment-spi and pinot-query-spi modules that will host all the segment
+  and query related interfaces.
+- We will also create pinot-segment-default and pinot-query-default which will host the default (current)
+  implementations of Pinot segment and query execution engine.
+- These will purely be refactors and would not create any function differences. However, to clean up
+  dependency issues in existing code, we may make some changes (eg create a pojo), but those also
+  should not modify any functionality.
+
+In this particular PR, we are making the folowing changes:
+- Introduced pinot-segment-spi.
+- Moved all segment related interaces from pinot-core to pinot-segment-spi.
+- In order to clean dependency issues, we have also introduced pinot-query-api, but in this PR
+  we are only moving bare minimal files needed for the pinot-segment-spi move.
+- Moved tests for any POJO classes that got moved due to dependencies.
+
+Manual changes not performed by IDE:
+- Added module `pinot-segment-spi`, pinot-common pinot-core depend on it.
+- ChunkCompressionType moved out of ChunkCompressionFactory class.
+- StatsCollectorConfig.getPartitionFunction() now returns ParittionFunction name instead of an instantiated PartitionFunction object. This is cleaner so that StatsCollectorConfig does not to depend on ParittionFunction/Factory.
+- VirtualColumnIndexContainer.getNullValueVectorReader() returns an interface NullValueVectorReader, instead of the impl.
+- PUSH_FREQUENCY_HOURLY currecntly defined in CommonConstants (pinot-common). was also defined locally (TODO cleanup added) inside of NormalizedDateSegmentNameGenerator. This is a temporary
+  work-around to avoid circular dependency between pinot-segment-spi pinot-common.
+- Modified the JsonIndexReader.getMatchingDocIds() to take a String instead of FilterContext, to avoid pulling in
+  FilterContext and other transitive dependencies into the spi module.
+
+TODOs:
+- AggregationFunctionType is being used by StarTree (transitively) so had to be temporarily pulled in.
+  We need to find a better home for it.
+- Clean up the PUSH_FREQUENCY_HOURLY TODO mentioned above.
+  To keep the PR limited, these classes are moved into a `misc` package inside of pinot-segment-spi.",39,13,1.5644366265212175,1.5644366253960234,156
+f2e3446e75f1ec1d553805d03f6504f05b3e3c0e,2021-04-13 17:20:05-07:00,2021-04-13 17:20:05-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,583,583,"Pinot SPI refactor contd: Added pinot-segment-local module. (#6761)
+
+- Added pinot-segment-local module that contains all the segment related
+  implementations for the existing local Pinot segment.
+
+- Modules that pinot-segment-local depends on:
+  - pinot-spi
+  - pinot-segment-spi
+  - pinot-common: This is temporary and needed as a lot of common utilities
+    are within pinot-common.
+  - External libraries: Datasketches,TDigest, HLL, Lucene, larray.
+  - For test-scope:
+    - pinot-avro
+    - pinot-csv
+    - pinot-json
+    - pinot-spi
+    - pinot-yammer
+
+- Modules dependent on pinot-segment-local:
+  - pinot-core
+  - pinot-server, pinot-perf: Only in test-scope
+
+Most moves/refactors done via IDE. Manual changes listed below:
+- Fix typo in Logger for RealtimeLuceneIndexReaderRefreshThread.
+- Moved builder specific util methods from StarTreeUtils to StarTreeBuilderUtils.
+  - `shouldRemove()`
+  - `remove()`
+
+- Made local copy of MAX_DOC_PER_CALL inside of PinotDataBitSetV2, as it is currently
+  defined in DocIdSetPlanNode, but segment related code depends on it.
+
+- Made local copy of DEFAULT_TDIGEST_COMPRESSION in PercentileTDigestValueAggregator,
+  originally defined in PercentileTDigestAggregationFunction.
+
+- Made local copy of DEFAULT_MAX_ERROR in PercentileEstValueAggregator, originally defined in
+  PercentileEstAggregationFunction.
+
+- Split QueryContextRequestUtils into two files, the new one calle RequestContextConverterUtils
+  is in pinot-common, as it has utility methods related to classes in pinot-common.
+
+- Created CustomSerDeUtils class, that has code from ObjectSerDeUtils related to ValueAggregator.
+  This is again to avoid pulling in dependencies from pinot-core into pinot-segment-local.
+
+- Removed reference of Operator in javadoc of EarlyTerminationException, as it is
+  was causing reference dependency to pinot-core.
+
+- Renamed SegmentGenerationWithNullValueTest to SegmentWithNullValueTest as it has test for segment
+  generation as well as querying, and can only be housed in pinot-core atm.
+
+- The clas RealtimeSegmentStatsHistory is ser/de using Java object ser/de, which makes moving the file
+  out of its current package backward incompatible. Addressed this issue by using a custom object
+  input stream that replaces the old package name with new one when deserializing.
+
+Moves done to resolve cross dependency issues:
+- Following moved to pinot-segment-local utils package:
+  - IngestionUtils
+  - TableConfigUtils
+  - SchemaUtils
+  - SegmentTestUtils: This depends on AvroSchemaUtil, added dependency on pinot-avro in test-scope.
+
+- Following moved to pinot-common:
+  - FilterContext
+  - ExpressionContext
+  - FunctionContext
+  - Predicate
+
+- Following moved to pinot-spi
+  - ReadMode
+  - CommonConstants
+  - ArrayCopyUtils
+  - BadQueryException moved
+  - EarlyTerminationException
+
+- Copied necessary data files in resources/data from pinot-core to pinot-segment-local.",39,13,1.5588414789963747,1.5588414752664908,156
+75bd7b9317058e7a2d1c2b6e3f9ce3069109ba1d,2021-04-26 19:21:14-07:00,2021-04-26 19:21:14-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,584,584,"Add TIMESTAMP and BOOLEAN data type support (#6719)
+
+Add `TIMESTAMP` and `BOOLEAN` data type support, and the primitives to support new data types stored as the supported types.
+Internally `TIMESTAMP` is stored as `LONG` (millis since epoch), `BOOLEAN` is stored as `INT` (`0` for `false`, `1` for `true`).
+In the query response, `TIMESTAMP` values follow the JDBC format (e.g. `2021-01-01 01:01:01.123`).
+
+The source data of a `TIMESTAMP` field should be either long values (millis since epoch) or String values of JDBC timestamp format; The source data of a `BOOLEAN` field should be boolean, numbers (non-zero for `true`, zero for `false`), or string (`""true""` for `true`, `false` otherwise).
+
+Support `TIMESTAMP` and `BOOLEAN` in:
+- Data Ingestion
+- Filtering
+- Selection
+- Distinct
+- Order-by
+- Aggregation
+- Group-by
+- Transform
+- Having
+- Post-Aggregation
+- Scalar function (`java.sql.Timestamp` for `TIMESTAMP` and primitive `boolean` for `BOOLEAN`)",39,13,1.5577166951845174,1.557716691071449,157
+7c8f47dcd6e262886470c613bf7d0542543a5356,2021-04-27 21:28:09-07:00,2021-04-27 21:28:09-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,741,741,"TableConfigs APIs (#6840)
+
+Introducing new tableConfigs APIs. These serve as a way to operate on the entire Pinot config as 1 unit, consisting of Pinot schema, realtime table config and offline table config",49,21,1.7436135178655645,1.7436135226400589,187
+73426bc9c9526c9db1f73d9f0649bcd365f1f784,2021-05-06 18:03:04-07:00,2021-05-06 18:03:04-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,744,744,Add Zstandard compression support with JMH benchmarking(#6804) (#6876),49,21,1.7452442385822078,1.7452442396416836,188
+f4e55182a8c552c8493d1693868b0c752b1a1d56,2021-06-22 11:45:29-07:00,2021-06-22 11:45:29-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,782,782,"Add partial upsert config and mergers (#6899)
+
+Add the following pieces for partial upsert:
+- The upsert metadata and upsert data manager changes to support previous record lookup process
+- Partial upsert merger and handler framework for different partial upsert strategies
+- Null value handling during partial upsert
+- Make sure all segments are online before consume
+- Table config validation
+- A partial upsert quickstart demo using MeetupEventRSVP",55,22,1.743233599229046,1.7432335973422022,195
+064a49226454b714c60b47d808f4e8b9b36454da,2021-06-25 16:43:40-07:00,2021-06-25 16:43:40-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,767,767,Make TableConfigTunerRegistry configurable to scan packages. (#7089),54,21,1.7193011824844995,1.719301181535524,190
+0fb92090efd9ae7fed071c35b6e33069287c35ef,2021-07-01 11:17:06-07:00,2021-07-01 11:17:06-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,774,774,"Implement Append merger for partial upsert (#7087)
+
+Add Append and Union merger for partial upsert",54,21,1.7197464290304103,1.7197464297792726,195
+01022271614af6fcaa060ad6276c01b63229d5f3,2021-07-07 14:13:56-07:00,2021-07-07 14:13:56-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,773,773,"Fix package for ReplicationUtils. (#7135)
+
+The class `ReplicationUtils` sits in `pinot-segment-local` module, however, the file
+states the package as `orig.apache.pinot.core.utils`. This PR fixes the incorrect package.",54,21,1.7197464290304103,1.7197464306677817,195
+6274e86cb3d805f877ea23314cc425c2a75fa268,2021-08-03 15:38:22-07:00,2021-08-03 15:38:22-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,779,779,"Allow any column as the upsert comparison column (#7200)
+
+* Allow any column as the upsert comparison column
+
+* fix ut
+
+* change time type to comparable
+
+* fix test
+
+* fix integration test
+
+* comments
+
+* style
+
+* comments",54,21,1.719169999780154,1.7191700036341784,197
+f034e28dc0a95ff6caa18462518f51efb872d294,2021-08-17 13:53:49-07:00,2021-08-17 13:53:49-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,784,784,"Null handling for time column (#7269)
+
+Add optional time column null value handling",55,21,1.7179990368628166,1.717999038943105,200
+f3ce66fe4781205ee74b99529918888347575f04,2021-08-19 17:10:11-07:00,2021-08-19 17:10:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,763,763,"Code style pinot-segment-spi and pinot-segment-local (#7317)
+
+* reformat  pinot-segment-spi
+
+* reformat pinot-segment-local",54,22,1.7313309060993014,1.7313309041458802,200
+7e9ca6a5a4afe0d4e283ac1307c45430e474cbf2,2021-08-20 21:33:52-07:00,2021-08-20 21:33:52-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,789,789,Reformat code base with line length 120 (#7342),54,22,1.731699681439757,1.7316996795201407,200
+8aeca69ac27e095addfc3fe79931ff5e1d563d72,2021-09-23 11:02:48-07:00,2021-09-23 19:02:48+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,789,789,Replace emptiness checks with `isEmpty()` (#7468),54,22,1.7333061819472122,1.7333061852226948,200
+acb775dd8c083a62e39be419953737eea58b0920,2021-10-07 10:25:13-07:00,2021-10-07 10:25:13-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,826,826,add validation for realtimeToOffline task (#7523),54,22,1.7173805184332713,1.717380514461163,202
+5208caa63a86e226cb71f516ea1d3a18821dd299,2021-10-29 16:51:47-07:00,2021-10-29 16:51:47-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,832,832,"fix fieldConfig nullable fields failed validation (#7648)
+
+Fix the field config validation on null index type",54,22,1.715554137915584,1.7155541408684578,206
+cc2d63c92b8586a988a7514f66cd24a139b35ebc,2021-11-01 15:50:36-07:00,2021-11-01 15:50:36-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,832,832,Add a quick start with both UPSERT and JSON index (#7669),54,22,1.7167109476894338,1.7167109482446619,206
+894841552b258edb8b2ba5ae65e2d18e921160bf,2021-11-01 23:16:56-07:00,2021-11-01 23:16:56-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,831,831,Allow text index on MV string in table config validation (#7677),54,22,1.7167062215516362,1.7167062220021256,205
+1e27f01c85ef20b503ea7ae6cd166c14a08402aa,2022-01-03 10:24:28-08:00,2022-01-03 10:24:28-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,860,860,"addking skip key for realtimeToOffline job validation (#7921)
+
+* add skipValidate QueryParam in  and  endpoints
+
+* fix test failures
+
+* address diff comments
+
+* fix jdk8 compile
+
+* address diff comments
+
+Co-authored-by: Rong Rong <rongr@startree.ai>",58,24,1.727774580239114,1.7277745794484638,209
+71e28a2313a0e175e64398b195e488b0fd67d49b,2022-01-31 23:53:10-08:00,2022-01-31 23:53:10-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,915,915,"Wire EmptySegmentPruner to routing config (#8067)
+
+* Remove EmptySegmentPruner from the default path and wire it to the config
+
+* fix unit test
+
+* rename isKinesisEnabled as needsEmptySegmentPruner and move to TableConfigUtils
+
+* add pinot-kinesis dependency to pinot-segment-local
+
+* hardcode kinesis in TableConfigUtils to avoid pulling pinot-kinesis module as dependency
+
+* Minor change on the comments",61,27,1.77259733036377,1.772597336499209,230
+b12b7bb84d1669253a04c0a0e31f60be92f1ba2d,2022-02-10 13:08:57-08:00,2022-02-10 13:08:57-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,930,930,"Adding controller config for disabling Groovy in ingestionConfig (#8169)
+
+Introduced new config for disabling Groovy in ingestionConfig: `controller.disable.ingestion.groovy`. If not defined, defaults to false",62,28,1.764055187720826,1.764055188979217,234
+53fa9a5e56a568ce1608bc40ae1bc56a9a3b72eb,2022-03-09 09:22:55-08:00,2022-03-09 09:22:55-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,925,925,"Always handle null time values (#8310)
+
+For the time column, check if the default value complies with the time format and is in valid time range (1971-01-01 to 2071-01-01). If so, use the custom default value; if not, fall back to the current time.",61,28,1.7634540647703136,1.7634540697288794,231
+360a2051c1eb20af552b8222eda97eb4a3e95387,2022-03-17 13:14:53-07:00,2022-03-17 13:14:53-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,942,942,"Add prefixesToRename config for renaming fields upon ingestion (#8273)
+
+* Allow renaming of unnested fields upon ingestion
+
+* Rename config and add unit tests
+
+* Refactor renaming of prefixes
+
+* Add validation for prefixesToRename config
+
+* Fix empty name after renaming case
+
+* Fix code style nits
+
+* Update pinot-common/src/test/java/org/apache/pinot/common/utils/config/TableConfigSerDeTest.java
+
+Co-authored-by: Xiaotian (Jackie) Jiang <17555551+Jackie-Jiang@users.noreply.github.com>
+
+* Update previous nits to pass unit tests
+
+Co-authored-by: Jeffrey Liu <jeffreyl@wepay.com>
+Co-authored-by: Xiaotian (Jackie) Jiang <17555551+Jackie-Jiang@users.noreply.github.com>",62,28,1.7634540644120755,1.763454068723085,238
+0d6b5da7c6872229501faf6cfc27481f35f52584,2022-03-28 10:18:51-07:00,2022-03-28 10:18:51-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,942,942,"FixedSegmentSelector for tier configs (#8389)
+
+* FixedSegmentSelector for tier configs
+
+* Review comments
+
+* fix test
+
+* jdk 8 breakage
+
+* Review comments:",62,28,1.7616994682444418,1.761699476304893,239
+be163f6f55cede6b31161238c2250a3dab82eeb1,2022-04-11 13:41:21-07:00,2022-04-11 13:41:21-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,946,946,"Timestamp type index (#8343)
+
+* Adding timestamp index",62,28,1.7599280347381285,1.7599280447206722,240
+ae02ecefa4b4367fc3547fa5bfb718d63b45b477,2022-05-17 20:09:14-07:00,2022-05-17 20:09:14-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1029,1029,"Ingestion Aggregation Feature  (#8611)
+
+This feature aggregates values at ingestion time, which reduces the number of rows stores (thus speeding up queries), using the same strategy as the 'aggregateMetrics' feature. This expands the feature to include, COUNT, MIN, and MAX, with the ability to expand further.",69,30,1.7875885920851964,1.7875885956765376,259
+167fa9476c554b4118e52a4dfa9b10dbb8bcbd3e,2022-05-20 12:08:17-07:00,2022-05-21 00:38:17+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1037,1037,"Handle partial update for comparison columns (#8688)
+
+Comparison column should not have update strategy configured. Add validation for table config",70,30,1.7851370654117915,1.7851370721890583,262
+ae392432c41956b20a20c76d3fb81f1b68213716,2022-06-01 10:31:33-07:00,2022-06-01 10:31:33-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1047,1047,"Allow table name with dots by a PinotConfiguration switch (#8713)
+
+- Added `pinot.table.name.dots.enabled` config to Controllers and Brokers to allow table name with dots.
+- Extract column name from queries like ""SELECT db.namespace.table.column_name"" properly",70,30,1.7853273170536057,1.7853273196843413,265
+2b82366c369cf668175695605f0b77d7105f4aff,2022-06-02 09:48:09-07:00,2022-06-02 22:18:09+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1052,1052,[Feature] Deduplication (#8708),75,30,1.7829429852704057,1.7829429875035643,274
+8a71323c3f6028c221c426f2e1942d5625e2fab6,2022-06-07 14:07:52-07:00,2022-06-07 23:07:52+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1070,1070,Fix Upsert config validation to check for metrics aggregation (#8781),76,31,1.7775559319033816,1.7775559350503294,278
+396f37daec153eb584094fbaa9450010323d8933,2022-07-28 22:34:09-07:00,2022-07-29 11:04:09+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1066,1066,Allow bloom filters for non dictionary columns (#9121),76,31,1.7778027239140626,1.777802732899444,277
+54d2813c00093e1baada9f7c8627c9360f133328,2022-08-10 17:28:16-07:00,2022-08-11 05:58:16+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1086,1086,[colocated-join] Adds Support for instancePartitionsMap in Table Config (#8989),77,32,1.767425769222549,1.7674257735661612,280
+65e01f1307c349d7cf46f257e0bb76d5f23d0b2d,2022-10-10 16:57:36-07:00,2022-10-10 16:57:36-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1091,1091,Add more options to json index (#9543),77,32,1.767425769222549,1.7674257747265596,281
+e813867985746e916c8e898a530002551b661496,2022-10-11 22:24:11-07:00,2022-10-11 22:24:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1135,1135,"Add an option to disable the creation of the forward index for a column (#9333)
+
+* Add the option to create columns without a forward index
+
+* Fix unit test
+
+* Set and unset flag in test
+
+* Empty commit to trigger tests
+
+* Empty commit to trigger tests
+
+* Trying test changes to see if unit tests pass
+
+* Add order by to tests for better determinism
+
+* Change disk size used in OfflineClusterIntegrationTest:testAggregateMetadataAPI
+
+* Empty commit to trigger tests
+
+* Address review comments
+
+* Empty commit to trigger tests
+
+* Address review comments, add file for MV forward index disabled tests
+
+* Enhance tests and add fixes and address some comments
+
+* Address review comments, remove no-op reader, allow sorted column, remove metadata
+
+* Address review comments
+
+* Address review comments
+
+* Empty-Commit
+
+* Address review comments, remove default column handling for forwardIndexDisabled columns
+
+* Fix formatting
+
+* Fix formatting
+
+* Update tests to check error message
+
+* Empty commit to trigger tests
+
+* Empty commit to trigger tests
+
+* Add checks for forwardIndexDisabled for derived column handling
+
+* Empty commit to trigger tests
+
+* Address review comments
+
+* Fix tests",81,33,1.7651620661602132,1.7651620668041808,294
+555e5a04439c614bea8915c9e69327d7390260de,2022-11-23 22:38:10-08:00,2022-11-23 22:38:10-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1135,1135,"Combine the read access for replication config (#9849)
+
+* Combine the read access for replication config
+
+Currently, we have a separate configuration for replication.
+Offline and HLC reads from `replication` and LLC reads from
+`replicasPerPartition`. This PR combines the read access for
+the replication config.
+
+* Addressed comments",81,33,1.7647107070790795,1.764710706089194,292
+53e1dbcf63a94c16964288b360c3d354d329ced5,2022-12-31 11:07:39-08:00,2022-12-31 11:07:39-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1151,1151,"add validation for proto decoder (#9588)
+
+* add validation for proto decoder
+
+* comments",83,34,1.76968611394612,1.7696861122708278,295
+cd6f9f1b3be0b2889dc819a01eb112453eab3b3d,2023-02-16 11:35:09-08:00,2023-02-17 01:05:09+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1159,1159,[multistage] Allow multiStageReplicaGroup Routing for Upsert Tables (#10258),84,36,1.7851011540768407,1.7851011592608985,295
+02baaac1c157cd4a260ce6ad01a7063b07755adf,2023-02-23 11:37:00-08:00,2023-02-23 11:37:00-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1171,1171,Relax the constraint to have a dictionary and inverted index when forward index is disabled (#10260),86,36,1.7858189069145172,1.7858189069394308,297
+2e03df02f65d766bde040389e4e6b12ea09710fa,2023-03-03 11:43:16-08:00,2023-03-03 11:43:16-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1173,1173,Add support for multiple comparison columns (i.e. one comparison column per producer sinking to a table) (#10234),86,36,1.7858492265615524,1.785849224300281,298
+7c3c8e87052edca26648a646850b2b17ec0aa690,2023-03-09 10:55:35+05:30,2023-03-09 10:55:35+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1174,1174,"Allow replica group assignment support in tier configs (#10255)
+
+* Allow replica group assignment support in tier configs
+
+* Add reassignment logic
+
+* Add tier to assignInstances
+
+* Make changes to APIs
+
+* Consolidate tier assignemnt configs inside InstanceAssignmentConfigsMap
+
+* Add removal logic for tier partitions
+
+* Lint fix
+
+* Review comments
+
+* Review comments
+
+* Add tests
+
+* Fix java8 quickstart
+
+* Fix test
+
+---------
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>",86,36,1.7858582722812164,1.7858582712956812,298
+2c5adc820730a3c0b4f6cdf741cd3e9533964ed4,2023-03-30 10:36:11-07:00,2023-03-30 10:36:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1174,1174,Make column order deterministic in segment (#10468),86,36,1.7858582708410202,1.7858582698069014,298
+9e4b5ade7e5379501278e3551c556a7de96ca06a,2023-04-10 12:21:36-07:00,2023-04-10 12:21:36-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1179,1179,Enabling dictionary override optimization on the segment reload path as well. (#10557),87,36,1.7847056438603006,1.7847056371959933,299
+4481e1b1ab44e6fac53049a4d6612da79be0b92b,2023-04-21 15:55:41+05:30,2023-04-21 15:55:41+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1208,1208,"Utility to convert table config into updated format (#10623)
+
+* new method in FieldIndexConfigsUtil to convert into new table config format
+
+* Expose a flag on the tableConfig endpoint to get the payload in newer format
+
+* checkstyle fixes
+
+* refactored code not compatible with java 8
+
+* moved the utility to TableConfigUtils
+
+* rename flag to updatedFormat
+
+* pulled out the INDEX_DISPLAY_NAME as a constant
+
+* moved createTableConfigFromOldFormat
+
+* Test cases on each index type to validate the conversion
+
+Test are only added to the index types which already had the AbstractSerdeIndexContract tests. Test for other indexes will be added in next commit.
+
+* changes based on upstream changes
+
+* minor code cleanup on existing index tests
+
+* added ConfTest to remaining index types
+
+* created handleIndexSpecificCleanup to handle index type specific cleanup of old configs
+
+* revert the flag introduced on get table config API
+
+* checkstyle fix
+
+* made name nonnull in FieldConfig  Builder
+
+* refactor redundant code runs
+
+* Optimised the list iterations by converting it to map",88,37,1.793856421263766,1.7938564164472968,303
+51bf75efa65cbe8bd8b497eb20e34869205d74e8,2023-05-26 17:19:57-07:00,2023-05-26 20:19:57-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1228,1228,10608: Changes for adding partitionColumn in replicaGroupPartitionConfig (#10656),89,38,1.7889198250705203,1.7889198262712842,308
+608cb8de2bd19c8497b03be07a087591bfd1c3bd,2023-06-23 11:59:43-07:00,2023-06-23 11:59:43-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1237,1237,Add delete support to upsert tables (#10703),89,38,1.7892072265184737,1.7892072224416138,314
+723b764bc91275c0b8361d3f9135f151b6404c39,2023-07-20 15:05:30-07:00,2023-07-20 23:05:30+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1253,1253,Allow extra aggregation types in RealtimeToOfflineSegmentsTask (#10982),91,39,1.8224690390948557,1.8224690377248804,315
+5eafe76ee89adfd12007db17de7a50c5dd7a43ac,2023-07-23 21:34:21-07:00,2023-07-23 21:34:21-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1282,1282,[Upsert TTL] Add Watermark for each partitions for Primary key cleanup (#10915),95,40,1.8203060677164946,1.82030606708733,322
+4d72eb5a58ed7c9874076d9d488afb1a81eeb54f,2023-07-26 10:11:45-07:00,2023-07-26 10:11:45-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1311,1311,Segment compaction for upsert real-time tables (#10463),96,41,1.8262960762701757,1.8262960714010181,330
+98e482c91139a00a4d24b5a6350e98945461998f,2023-07-28 09:34:02-07:00,2023-07-28 12:34:02-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1338,1338,Realtime pre-aggregation for Distinct Count HLL & Big Decimal (#10926),97,41,1.821928188381256,1.8219281848516715,348
+42897ad448735cd1f80c11f8b9fd882df04c0a5b,2023-08-01 23:33:54-07:00,2023-08-01 23:33:54-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1339,1339,Remove support for High level consumers in Apache Pinot (#11017),98,41,1.82383913239984,1.8238391330257373,349
+8ca6435209ddeb07d756435ad822cc9e142676ee,2023-08-23 17:38:55-07:00,2023-08-23 17:38:55-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1351,1351,Add broker validation for hybrid tableConfig creation (#7908),98,41,1.8234645296460679,1.8234645302559762,352
+d91e5db76c53af9774db1c57c71520f4c196c059,2023-08-24 14:08:55-07:00,2023-08-24 17:08:55-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1359,1359,"Add SchemaConformingTransformer to transform records with varying keys to fit a table's schema without dropping fields. (#11210)
+
+* Add JsonLogTransformer to transform semi-structured log events to fit a table's schema without dropping fields.
+
+* Minor fix
+
+* Add unit tests for JsonLogTransformer.
+
+* Minor fixes.
+
+* Refactor docstrings.
+
+* Rename JsonLogTransformer to SchemaConformingTransformer
+
+* JsonLogTransformer: Pass through GenericRow's special keys",99,41,1.8234645288779343,1.8234645311860407,356
+a29e93b92f3d3a8df613c3271d12674545342f99,2023-08-31 21:25:58-07:00,2023-09-01 09:55:58+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1361,1361,Disallow tenant tag override with upsert tables (#11468),99,41,1.8230361317810768,1.8230361326476219,357
+594f1ba9463b8ead3eb81a8b3118ee4ca8bbc226,2023-09-10 04:18:30-07:00,2023-09-10 07:18:30-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1363,1363,"[bugfix] Fix stream config validator for protobuf decoders (#11551)
+
+* fix stream config protobuf param check.
+
+* decoder properties is a map of only the identified stream.decoder.prop values.
+
+* update protobuf stream validator check tests to test valid and invalid paths.
+
+* remove import.",99,41,1.822619841355949,1.8226198403905138,357
+0929b4cdd1b3526824db551b6d7e1e5fe25aee52,2023-09-12 16:44:04-07:00,2023-09-13 05:14:04+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1367,1367,Disallow peer download when replication is < 2 (#11469),100,41,1.8245490600070942,1.824549053488725,358
+e26a29ea1491139149157d37c71f24635626d91b,2023-09-15 18:50:15-07:00,2023-09-15 18:50:15-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1330,1330,Remove/Deprecate HLC handling code (#11590),97,41,1.8208057972196516,1.8208057911844153,355
+fb656c5f2373ed286a4c8dea3520b6a0f1800ddd,2023-10-04 11:11:56-07:00,2023-10-04 11:11:56-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1346,1346,"Throw exception when schema name doesn't match table name during table creation (#11591)
+
+* Throw exception when schema doesn't matche table name
+
+* Move the validation logic to TableConfigUtils",98,42,1.8059791854815284,1.8059791833030039,358
+873d76e9a216cb496168eb62f02fc1ed849b7ebb,2023-10-05 14:29:54-07:00,2023-10-05 14:29:54-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1370,1370,Add pre-aggregation support for distinct count hll++ (#11747),98,42,1.8064095913811062,1.8064095931172297,371
+bd86e7bdc6df22846207b9f496ccab703e0ad462,2023-10-18 13:37:27-07:00,2023-10-18 21:37:27+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1370,1370,Add support for Apache Datasketches CPC sketch (#11774),98,42,1.8069808312637892,1.806980830873019,371
+70ac4b63a932c5ad724be4faab027ac3652e56ad,2023-10-24 02:10:46-07:00,2023-10-24 10:10:46+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1370,1370,"Add UltraLogLog support (#11835)
+
+* Add UltraLogLog support
+
+UltraLogLog is a variant of HyperLogLog from dynatrace, with an implementation available in hash4j under the apache license.
+
+This adds support for using it in the ways you'd use HLL in Pinot.
+
+When using it against normal java types, wyhash 4 is used as the default hashing algorithm, when bringing your own serialized sketches you can use any.
+
+* supports `UltraLogLog` as a data type
+  * the serialization format includes serializing the P value as the first byte in the data stream, so the width is known in streams
+* adds `DistinctCountULL` and `DistinctCountRawULL` for use in SQL
+  * raw outputs Base64 encoded bytes that can be fed into `UltraLogLog.wrap` in other services
+* adds startree support
+* adds merge rollup support
+* new transformaction functions added
+  * `toULL` allows turning data into a ULL
+  * `fromULL` lets you import ULLs encoded as byte arrays outside pinot
+
+* remove accidental comment
+
+* fix comment that broke checkstyle
+
+* Fix ULL integration test by using the right deserialiser
+
+* retrigger CI
+
+* remove duplicate, fix pom syntax",98,42,1.806950205801002,1.8069502045787338,371
+712c3e438b0d9c031ab68c8fbe12f2629434ddbc,2023-10-25 10:35:48-07:00,2023-10-25 23:05:48+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1375,1375,Config Validation: upsert table should not assign COMPLETED segments to different server (#11852),99,42,1.806950205801002,1.806950206532997,373
+2e37f2c837dd736ef94b0af4bc3f0d800f279f97,2023-10-30 09:06:39-07:00,2023-10-30 09:06:39-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1389,1389,"pre-configuration based assignment (#11578)
+
+* add tenant partition map rest resource
+
+add tenant partition map rest resource
+
+fix logic
+
+refactor and fix some logic
+
+pre-configuration based assignment
+
+* checkstyle
+
+* checkstyle
+
+* checkstyle
+
+* Trigger Test
+
+* Address comments
+
+* refactored branches
+
+* address comments
+
+* address comments
+
+* address comments
+
+* Change the shuffling logic to be compatible with future changes
+
+* add test cases
+
+* address comments
+
+* address comments
+
+* address comments
+
+* change table validation logic
+
+* Trigger Test
+
+* update shuffling logic
+
+* add more logging",100,42,1.8080157651839865,1.8080157632983291,377
+9da03b47cdf5426338b01cc0c7edca278809df6e,2023-10-30 16:34:01-07:00,2023-10-31 00:34:01+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1407,1407,Add compression configuration for functionColumnPairs to StartreeIndexConfigs (#11744),100,42,1.8080157651839865,1.8080157630893663,383
+cf41a0e5c76b1f9c33a5fa7a3ac362b52bee968c,2023-11-02 23:25:53-07:00,2023-11-02 23:25:53-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1403,1403,Support Upsert deletion for TTL: construct queryableDocIds when adding segments out of TTL (#11791),99,42,1.8077448701452437,1.8077448676709817,382
+c1fdb66ae8f8a0127e90f029739abc23229abe11,2023-11-17 13:33:01-08:00,2023-11-18 03:03:01+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1415,1415,Add upsert config - outOfOrderRecordColumn to track out-of-order events (#11877),101,42,1.8077448701452437,1.8077448679424908,390
+6aecd4164189d9840011f4cf6344b4e5d44a3c00,2023-11-18 11:35:17-08:00,2023-11-18 11:35:17-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1422,1422,Add a check to enable size based threshold for realtime tables (#12016),101,42,1.808275740168789,1.808275739057322,393
+b3af476b8314f7201e00c2ccd94ad720634f9f8a,2023-11-22 15:36:17-08:00,2023-11-23 05:06:17+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1427,1427,Prevent inverted index on a non dictionary column in table config (#12043),101,42,1.8085559158515656,1.8085559152192276,394
+d654cc9db2c8561d8b7856c316c6a00c73cc7ff5,2023-11-28 15:40:42-08:00,2023-11-28 15:40:42-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1437,1437,Add a new MV forward index to only store unique MV values (#11993),101,42,1.8119959441397602,1.811995946684883,395
+49804a4f56a1ae87b5ef882dbf6373ac8190ee84,2023-12-05 15:33:35-08:00,2023-12-06 05:03:35+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1444,1444,Add support for retention on deleted keys of upsert tables (#12037),102,42,1.812407811774688,1.8124078121821803,400
+388d394c7f2335c7958934805f556cf36d39ffda,2024-01-08 13:54:31+05:30,2024-01-08 13:54:31+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1447,1447,"Fix upsert tenant tag override check (#12233)
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>",102,42,1.8132128626482302,1.8132128574421296,401
+747e34dedef7b4a318cb0e10e7f3c85b0b038036,2024-01-09 22:42:11-08:00,2024-01-10 12:12:11+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1453,1453,"Allow String / numeric data type for deleteRecordColumn config (#12222)
+
+* Remove enforcement of BOOLEAN data type from deleteRecordColumn
+
+* add string and numeric type for boolean columns
+
+* addressed comments
+
+* improve error messages",102,42,1.8132128626482302,1.8132128574421296,402
+35faeb67121a26b29bac65101a8a06b9f0984900,2024-01-23 13:17:56+05:30,2024-01-23 13:17:56+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1452,1452,"Revert allowing tag override with upserts (#12311)
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>",102,42,1.8133242630298094,1.813324260647946,405
+5a382f2e7d7bf5c782d77d5e49e97583633f6ff6,2024-01-26 10:21:18-08:00,2024-01-26 18:21:18+00:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1463,1463,Shared aggregations in StarTree (#12164),102,42,1.8133242629064679,1.813324260883147,407
+ab525ee9296fec122135fb5f877c45fa37f9c376,2024-02-02 14:03:43-08:00,2024-02-02 14:03:43-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1478,1478,"Cover the race condition for upsert compaction (#12346)
+
+* Cover the race condition for upsert compaction
+
+The current code can face the race condition when the
+following condition is met:
+
+1. Segment upload is complete for segment replacement
+   and segment zk metadata is changed to point the new
+   segment.
+2. Server is still loading the segment (e.g. if offheap
+   upsert is enabled, segment reload can take a while)
+3. If minion picks up the compaction task at the above
+   step, minion will download the new segment (replaced)
+   while it will fetch the validDocId bitmap for old
+   segment.
+
+To avoid this scenario, we added the extra crc check
+on the minion side. Minion will check if the crc from
+downloaded segment and crc from server api for valid
+doc id bitmap are the same.
+
+Changes from the PR:
+1. Add the new API for fetching validDocId bitmap. the
+   response is changed to JSON to include extra
+   information like crc.
+2. Wired the new API & added tests
+3. Added the crc check on the minion task executor
+4. Added the crc check on the task generator
+
+* Add the 'validDocIdType' across all APIs
+
+* Changed 'validDocIdType' to 'validDocIdsType'
+
+* Add validDocIdsType enum
+
+* Addressing the comments to use enum everywhere",102,42,1.8133242645267111,1.8133242678478074,410
+04b279e8dae03d46a01ed1587ae335813bcc176f,2024-02-12 21:49:36-08:00,2024-02-13 11:19:36+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1473,1473,Remove the feature flag `allow.table.name.with.database` (#12402),102,42,1.8151493127855316,1.8151493107173633,407
+efd7786797a8143d231dd61a7451f69e7f44c6e7,2024-02-23 13:55:54-08:00,2024-02-23 16:55:54-05:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1486,1486,require noDictionaryColumns with aggregationConfigs (#12464),103,42,1.815149311888204,1.8151493100390166,409
+07daa7bbaa92c882758f086d4d30dad96c273473,2024-02-27 10:14:23+05:30,2024-02-27 10:14:23+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1499,1499,"Record enricher (#12243)
+
+* Enricher interface
+
+* Support in realtime ingestion
+
+* Fix offline segment builder
+
+* Add enricher to mapper
+
+* Add columnsToExtract config
+
+* Complete enricher pipeline usage
+
+* Enrichment configs
+
+* Add transform function based enrichment
+
+* Change package name
+
+* Change package name
+
+* Review comments
+
+* Add table config validation
+
+* Review comments
+
+* Change to fieldToFunctionMap
+
+---------
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@saurabhs-macbook-pro-1.tail8a064.ts.net>
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>",105,42,1.815149311888204,1.8151493100390166,412
+02d1c128f9b97b12d3f4c7d10f432ffabcc286f1,2024-03-21 15:58:48+05:30,2024-03-21 15:58:48+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1505,1505,"CLP as a compressionCodec (#12504)
+
+---------
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@saurabhs-macbook-pro-1.tail8a064.ts.net>
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>
+Co-authored-by: Seunghyun Lee <seunghyun@startree.ai>",105,42,1.8150240136216733,1.815024018124759,419
+78f38db3653e4ac3ec96e52de7f7dafa96d708d0,2024-03-25 16:27:10-07:00,2024-03-25 16:27:10-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1508,1508,Enhance commit threshold to accept size threshold without setting rows to 0 (#12684),106,42,1.810491071088237,1.810491073034814,417
+3174e91b961224caca980f2b3f5c8556a02908b0,2024-04-04 18:10:10-07:00,2024-04-05 06:40:10+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1519,1519,12508: Feature add segment rows flush config (#12681),106,42,1.8109875340428174,1.8109875338350578,419
+01df14b4b08eb118206e594c75a11ca101c10e9a,2024-04-05 10:21:22-07:00,2024-04-05 22:51:22+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1528,1528,pluggable partial upsert merger (#11983),106,42,1.8103355124519773,1.8103355121841713,421
+13673f11508f00ae35f5bb12f9cf97b6897ebfba,2024-04-09 16:11:06-07:00,2024-04-09 16:11:06-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1536,1536,"Add SchemaConformingTransformerV2 to enhance text search abilities (#12788)
+
+* Add SchemaConformingTransformerV2 to enhance text search abilities
+
+* Fix style
+
+* Update __mergedTextIndex field logics
+
+* Fix UT
+
+* Resolve comments and add fieldPathsToPreserveInput config",107,42,1.8103355124519773,1.8103355118539155,425
+1d807df40160ec8525b5a33847d67a61fef2c54e,2024-04-16 17:03:39-07:00,2024-04-16 17:03:39-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1542,1542,Add validation check for forward index disabled if it's a REALTIME table (#12838),108,42,1.8038608751435463,1.803860881784603,426
+ceb9c1acf17972f851e54bb9d4b0060f72516a44,2024-05-17 21:01:48+05:30,2024-05-17 08:31:48-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1542,1542,Made the error message around dimension table size clearer (#13163),108,42,1.8026469348275622,1.802646937005707,426
+b5c00da235ce5e03a080f5e75bb4902e875e39c0,2024-05-17 18:01:45-05:00,2024-05-18 04:31:45+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1551,1551,Add ability for minion nodes to download segments from servers during task execution (#12960),108,42,1.8024899201398459,1.8024899219493067,428
+1950323cc956b6d23d8bdb2773465ccfd9131e6f,2024-05-25 10:44:23-07:00,2024-05-25 10:44:23-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1546,1546,Allow all raw index config in star-tree index (#13225),107,42,1.8032194608213408,1.8032194633126342,431
+425182f438094be570740e617ff6274416469ec6,2024-06-10 15:20:55-07:00,2024-06-10 15:20:55-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1586,1586,Adding a cluster config to enable instance pool and replica group configuration in table config (#13131),114,47,1.8728214103854937,1.8728214160293941,440
+6883a4dfa59eccfe0572f9837ee1f354649bb56d,2024-06-20 11:29:07-07:00,2024-06-20 23:59:07+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1586,1586,"Improve upsert compaction threshold validations (#13424)
+
+* Improve upsert compaction threshold validations",114,47,1.8728214099913025,1.8728214094762858,440
+8dab53ae4efd4475cbd23b7b808fb684018a4cb0,2024-06-27 13:01:23-07:00,2024-06-27 16:01:23-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1586,1586,Remove legacy commons-collections dependency. (#13501),114,47,1.8728214099913025,1.8728214088054786,440
+50a32c28f71f5bf73cb9d782a3a320a6157a8d4d,2024-08-08 23:33:27-07:00,2024-08-09 02:33:27-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1585,1585,Remove usage of the deprecated replicaPerPartition. (#13671),114,47,1.8731181251174829,1.8731181221114264,440
+bd32dc9a642fbbdfef45e066ed00e97f66b80a5d,2024-08-15 17:33:42-05:00,2024-08-16 04:03:42+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1610,1610,Ensure upsert deletion consistency when enabled with compaction flow (#13347),120,47,1.8731181260471252,1.8731181219999549,446
+d3eaea67c2c468bdcf37999fe502efc406d45d0e,2024-08-29 11:52:19+02:00,2024-08-29 11:52:19+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1611,1611,"Improve column null handling (#13839)
+
+* Renames some usages of isNullHandlingEnabled to isDefaultNullHandlingEnabled to make it clearer the semantic of the method. It also adds javadoc.
+* Modify TableConfigUtils.validatePartialUpsertStrategies and SegmentMapper constructor to also use column based null handling.",120,47,1.8733285807420754,1.8733285764623646,447
+fc6e690352abe481e9dc4f6217bf2d63b3b5894a,2024-09-06 15:32:46-07:00,2024-09-07 04:02:46+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1633,1633,Add support for configuring aggregation function parameters in the star-tree index (#13835),125,48,1.8697125780073032,1.8697125790616405,451
+dbd0f3be02a2a4a45ecdb63571c99d0dc303c010,2024-09-18 11:33:40-07:00,2024-09-18 11:33:40-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1638,1638,"track newly added segments for upsert tables for a more complete upsert data view (#13992)
+
+* tracking newly added segments on server to handle the race condition when server starts to process a segment ahead of broker adding it to routing table",125,48,1.869797979813314,1.8697979801985154,451
+ea103c1cbb4cc8c60e548bce2febe7bcb7b81643,2024-10-02 14:18:43-07:00,2024-10-02 23:18:43+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1640,1640,Support map type in complex schema (#13906),125,48,1.8697979803403257,1.8697979768301838,451
+381097dc1ba990839f43fe40fc9144fb9c879769,2024-11-08 11:38:16+05:30,2024-11-07 22:08:16-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1518,1518,"Added support to perform task validations for plug-in tasks (#14340)
+
+* Added support to perform task validations for plug-in tasks
+
+* trigger build2",122,44,1.8460720248312774,1.8460720226447982,428
+585e33338ec1e6030916717c101ab23a843bf019,2024-12-02 00:42:46-08:00,2024-12-02 16:42:46+08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1520,1520,"Add immtuable CLPForwardIndex creator and related classes (#14288)
+
+* Add initial implementation of CLPForwardIndexCreatorV2 and the associated reader, unit test, table config updates, etc.
+
+* Add apache license
+
+* Modify table config to recognize CLPV2 compression codec.
+
+* Add columnar ingestion code for CLP + some refactoring + bug fix
+
+* Remove efficient columnar ingestion.
+
+* Refactored out dead code.
+
+* Refactored javadoc
+
+* Refactored code.",122,44,1.8465404855981866,1.8465404873323479,432
+694546b3b2970cdd6553bce2331e2ffd8e5ea0bf,2024-12-06 13:40:48-08:00,2024-12-06 13:40:48-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1520,1520,Make RecordEnricher extend RecordTransformer (#14601),122,44,1.8465404855981866,1.84654048857727,432
+73abb21c23d01d62f26e8f2a1eb8fddcd0f75aa2,2024-12-19 10:39:38-08:00,2024-12-19 10:39:38-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1528,1528,"Add multi stream ingestion support (#13790)
+
+* Add multi stream ingestion support
+
+* Fix UT
+
+* Fix issues, rebase and resolve comments
+
+* Resolve comments
+
+* Fix style
+
+* Ensure transient exceptions do not prevent creating new consuming segments
+
+Summary:
+Ensure transient exceptions do not prevent creating new consuming segments. If some exception is hit, attempt to reconcile any successful fetches with partition group metadata.
+
+This ensures consuming partitions are not dropped, and attempts to add and new partitions discovered successfully.
+
+Test Plan:
+After deployment, despite still some `TransientConsumerException`, no new missing consuming segments appear
+{F1002071843}
+
+{F1002071523}
+
+Reviewers: gaoxin, tingchen
+
+Reviewed By: gaoxin
+
+JIRA Issues: EVA-8951
+
+Differential Revision: https://code.uberinternal.com/D15748639
+
+* Resolve comments for optimizing java doc
+
+* Edit doc/comment
+
+* Remove unrelated files
+
+* Rebase and resolve conflicts
+
+* Take the metadata fetch time change from the HEAD
+
+* Resolve conflicts
+
+---------
+
+Co-authored-by: Christopher Peck <peck@uber.com>",122,44,1.846445469236626,1.846445470040228,433
+af4670045db06885921316c7a3728744d6fab0b2,2025-01-10 22:06:06-08:00,2025-01-10 22:06:06-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1520,1520,Cleanup and converge V1 and V2 SchemaConformingTransformer (#14772),121,44,1.8464454694472066,1.8464454721714525,429
+863e05fd4ff7b848fdb7bf6fb088a496729d76af,2025-01-11 11:07:24-05:00,2025-01-11 21:37:24+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1523,1523,Enable UpsertCompactMergeTask with enableDeletedKeysCompactionConsistency config (#14796),121,45,1.851797995136713,1.8517979967747005,430
+b787ad43a173500c81bce779233cc7fe85aa8cd2,2025-01-13 11:41:43-08:00,2025-01-14 03:41:43+08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java,1525,1525,Add CLPV2_ZSTD and CLPV2_LZ4 raw forward index compression codecs. (#14661),121,45,1.8513730591189712,1.8513730625844713,438

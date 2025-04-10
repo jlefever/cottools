@@ -1,0 +1,365 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+40a7d3b6ac35d2ecb34e85fc3403d2e48e33874e,2005-12-12 17:53:59+00:00,2005-12-12 17:53:59+00:00,activemq-core/src/main/java/org/activemq/broker/region/policy/PolicyEntry.java,80,80,"Moved the trunk code into the trunk sub directory
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356304 13f79535-47bb-0310-9956-ffa450edef68",12,11,1.1449885264579471,1.1449885279385834,6
+92a698fe42656274d0f3e31be415ba881b094b3f,2005-12-22 06:11:40+00:00,2005-12-22 06:11:40+00:00,activemq-core/src/main/java/org/activemq/broker/region/policy/PolicyEntry.java,79,79,"updated headers in source file to use apache header
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358513 13f79535-47bb-0310-9956-ffa450edef68",12,11,1.1449885264579471,1.1449885243473186,6
+d29ca2a71b7fd281c15f7d05e135c196d2b2488c,2005-12-28 17:24:02+00:00,2005-12-28 17:24:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,79,79,"Refactor org.activemq -> org.apache.activemq
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359567 13f79535-47bb-0310-9956-ffa450edef68",12,11,1.1449885264579471,1.1449885243473186,6
+48b4869472d647a890ce6905e7914b7d1ecde948,2005-12-29 02:15:21+00:00,2005-12-29 02:15:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,79,79,"Updated copyright headers to be (c) 2005-2006 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359679 13f79535-47bb-0310-9956-ffa450edef68",12,11,1.1449885264579471,1.1449885243473186,6
+c2408b8997e117db5bda579da612083fd44e27b4,2005-12-29 14:12:46+00:00,2005-12-29 14:12:46+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,92,92,"enable by default that non-persistent topic messages which have no consumers are sent to a dead letter topic
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359800 13f79535-47bb-0310-9956-ffa450edef68",13,14,1.2205231227025906,1.220523122631052,6
+27f7cab3e8bebad9a6d2c96ebb81482e2a56dd69,2005-12-29 15:17:19+00:00,2005-12-29 15:17:19+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,92,92,"added test case to show AMQ-458 working
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359819 13f79535-47bb-0310-9956-ffa450edef68",13,14,1.220951199857366,1.2209511979182928,6
+88203aea9bbf4ea1284f2350cd28f1ee21b1d953,2005-12-30 14:05:51+00:00,2005-12-30 14:05:51+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,106,106,"added the ability to configure the DLQ policy on a per destination basis; either use 1 global DLQ for all messages or use 1 DLQ for a bunch of messages via a wildcard PolicyEntry or use an individual DLQ per destination (which again can be attached to a wildcard via a PolicyEntry)
+fixes AMQ-459
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@360089 13f79535-47bb-0310-9956-ffa450edef68",17,17,1.259535711917621,1.2595357116769916,6
+10c6b2964fc716a10f22f5b37bbac46c3a0f4a7d,2005-12-30 15:36:19+00:00,2005-12-30 15:36:19+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,112,112,"added test cases to demonstrate shared and individual DLQ strategies; which highlight a bug in the rollback logic in the client
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@360108 13f79535-47bb-0310-9956-ffa450edef68",17,17,1.2536795750479834,1.2536795752981604,10
+8f22cfa4fc2c45c10d9df30e89e79b469844e71a,2006-01-04 10:31:15+00:00,2006-01-04 10:31:15+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,102,102,"make destinations sortable
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@365883 13f79535-47bb-0310-9956-ffa450edef68",15,14,1.2429648515096587,1.2429648515477545,10
+d7f91463d6c597fe301c328c9173703590cf17a5,2006-01-05 15:58:49+00:00,2006-01-05 15:58:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,118,118,"enabled the hash bucket based implementation of MessageGroupMap by default and made the bucketCount configurable in the destination policy map
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@366208 13f79535-47bb-0310-9956-ffa450edef68",17,17,1.3381736271553077,1.3381736228023424,10
+68d245f4bf31495554ac6f5c9bc6df450fff43fd,2006-02-09 21:41:59+00:00,2006-02-09 21:41:59+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,118,118,"Migrated to using xbean 2.2-SNAPSHOT
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@376445 13f79535-47bb-0310-9956-ffa450edef68",17,17,1.3381736271553077,1.3381736259970658,10
+95d0dec008e5f8ae48cda1cb61f8019874a7a86e,2006-03-02 17:56:21+00:00,2006-03-02 17:56:21+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,146,146,"Patch for AMQ-606 to allow slow consumers to have their old messages discarded. For background to the issue see http://docs.codehaus.org/display/ACTIVEMQ/Slow+Consumers
+
+Provides a way to set a limit on the pending messages to be dispatched to a subscription so that if that limit is reached, old messages are discarded. This will avoid the non-durable topics from getting blocked due to slow consumers
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382459 13f79535-47bb-0310-9956-ffa450edef68",18,21,1.3720126176740897,1.372012616836192,13
+bed10aac1e4d8e1e6f5dc7817b63014525be299d,2006-03-03 10:34:33+00:00,2006-03-03 10:34:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,159,159,"allowed the maximum pending message count to be specified on the ActiveMQPrefetchPolicy or the ConsumerInfo
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382753 13f79535-47bb-0310-9956-ffa450edef68",19,22,1.3974056098552592,1.397405610508669,17
+062dc5681c6932bfde4bdd14db70becb759acc2c,2006-03-03 13:56:29+00:00,2006-03-03 13:56:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,176,176,"added better MBeans for topic subscriptions so that they can see the discarded and matched statistics. Also added a configurable MessageEvictionStrategy
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382816 13f79535-47bb-0310-9956-ffa450edef68",22,25,1.3622792038073528,1.3622792041097684,19
+36722d87744d2db5291d58d5d6eefc947e442c9c,2006-03-15 22:45:38+00:00,2006-03-15 22:45:38+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,191,191,"Applied patch in http://jira.activemq.org/jira/browse/AMQ-633
+Thanks Brian Diesenhaus!
+
+Also exposed the memory limits and usage via JMX and allowed the limit to be configured via a destination policy.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@386199 13f79535-47bb-0310-9956-ffa450edef68",24,28,1.3783711840474435,1.3783711858952745,21
+c1a0cd6875ad04dc384ef484e00788cb2f4c51c0,2006-06-12 15:08:33+00:00,2006-06-12 15:08:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,191,191,"http://issues.apache.org/activemq/browse/AMQ-714
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@413674 13f79535-47bb-0310-9956-ffa450edef68",24,28,1.3769582686106987,1.3769582682079646,21
+57b494132549ebef6877bf47da3c3d5d776286e0,2006-07-28 03:04:41+00:00,2006-07-28 03:04:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,192,192,"Applied new source header boiler plate per http://www.apache.org/legal/src-headers.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426366 13f79535-47bb-0310-9956-ffa450edef68",24,28,1.3769582686106987,1.376958267470972,21
+e7e15b5559a8c293c7d9d2e0b6f1413b3a3e11e0,2006-08-09 08:44:27+00:00,2006-08-09 08:44:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,195,195,"a fix for  AMQ-769 to allow the MessageGroupMap implementation to be specified via a policyEntry
+
+http://incubator.apache.org/activemq/per-destination-policies.html
+
+so you can specify something like this...
+
+ <broker>
+
+    <destinationPolicy>
+      <policyMap>
+        <policyEntries>
+          <policyEntry queue="">"">
+           <messageGroupMapFactory>
+            <simpleMessageGroupMapFactory/>
+    
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@429995 13f79535-47bb-0310-9956-ffa450edef68",25,28,1.3868208775376623,1.3868208716669912,23
+ac66a09dab2a3a756def13c35e54a8a2e11017b8,2006-09-04 04:56:25+00:00,2006-09-04 04:56:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,199,199,"Added a MemoryPropertyEditor that allows you to specify memory sizes in the xbean config like: limit=""20 MB""
+Upgraded the xbean maven plugin to 2.6 and the new qdox that it used did not like some of our valid inline initialization of variables, so I had
+to refactor to an equivalent form that qdox did like.
+
+http://issues.apache.org/activemq/browse/AMQ-827
+http://issues.apache.org/activemq/browse/AMQ-909
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@439930 13f79535-47bb-0310-9956-ffa450edef68",25,28,1.3868208775376623,1.3868208714401171,23
+3a9299bade47de24705eebfe8cb4941309986a00,2006-10-13 11:17:41+00:00,2006-10-13 11:17:41+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,222,222,"Fixed failing test cases: - a few problems had been there for a while
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@463646 13f79535-47bb-0310-9956-ffa450edef68",30,31,1.3814731517779733,1.3814731513426315,25
+e00678027f52d17cc2670e5a965f52a39049d631,2006-11-23 08:19:00+00:00,2006-11-23 08:19:00+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,223,223,"support for different message storage cursor types for Queue destination policies
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@478509 13f79535-47bb-0310-9956-ffa450edef68",30,31,1.3823188525375945,1.3823188525204937,25
+0c0be94a312fd432f3076fbe8ab91a2080e65043,2007-01-28 19:39:02+00:00,2007-01-28 19:39:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,268,268,"Updated support for configurable Cursor types from the Destination Policy Map
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@500862 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.364420024298107,1.3644200236240913,17
+3013c2020bcc65019a957017fcbda3ae5b79dac8,2007-02-26 11:04:18+00:00,2007-02-26 11:04:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,268,268,"updated wiki links in source code to point to the graduated site
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@511784 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.364420024298107,1.3644200227868204,17
+230a86c4897e10fbc5e7384b064cc526395d47e5,2007-08-08 15:52:25+00:00,2007-08-08 15:52:25+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,264,264,"Fixing a bunch of checkstyle violations
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563921 13f79535-47bb-0310-9956-ffa450edef68",31,38,1.371660666356156,1.3716606610138207,29
+fc00993839c69f86823870e06a335d035db48bb2,2007-08-09 16:37:49+00:00,2007-08-09 16:37:49+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,266,266,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564271 13f79535-47bb-0310-9956-ffa450edef68",30,38,1.3713465712038377,1.3713465678938654,29
+6d8e2c5b3a4054f537308a5be9eac9254a57a17a,2007-08-20 10:37:29+00:00,2007-08-20 10:37:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,266,266,"UpdateManager changed to account for Store and Temp data usage as well as memory usage
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@567647 13f79535-47bb-0310-9956-ffa450edef68",30,38,1.3697563307797704,1.3697563252903193,29
+53c4e125f6790a9283687118e03567514f37d845,2007-10-01 20:02:18+00:00,2007-10-01 20:02:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,266,266,"Fix for AMQ-1095:
+ - Added contributed test cases
+ - We now filter out non-matching messages as they are loaded into the TopicStorePrefetch
+ - Changed the TopicStorePrefetch and StoreDurableSubscriberCursor so that they don't depend
+   on the pending message counter since some stores cannot give an accurate count for it.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@581053 13f79535-47bb-0310-9956-ffa450edef68",30,38,1.369872808391593,1.3698728079783093,29
+0da68b4cb3915e36ea07ac322ea417c475573ac5,2007-10-17 05:05:50+00:00,2007-10-17 05:05:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,277,277,"Make producerFlowControl configurable per Destination
+default=true
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@585375 13f79535-47bb-0310-9956-ffa450edef68",32,41,1.368969155739595,1.3689691510388207,29
+1ee00173d6a395f9b49a3ab07530c9b51fe99f3f,2007-10-19 19:01:10+00:00,2007-10-19 19:01:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,334,334,"Fix for https://issues.apache.org/activemq/browse/AMQ-1452 and
+https://issues.apache.org/activemq/browse/AMQ-729
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@586580 13f79535-47bb-0310-9956-ffa450edef68",38,50,1.4245377989010288,1.4245378004184408,29
+9dd11cb71f02e7259c2e4a110c90dea69c70bb69,2007-11-28 20:19:27+00:00,2007-11-28 20:19:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,354,354,"Fix for https://issues.apache.org/activemq/browse/AMQ-1490
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@599129 13f79535-47bb-0310-9956-ffa450edef68",42,56,1.4214963518484498,1.4214963512305225,29
+83c3dca9e50e216cce5cc3af7c040195b9ff81f5,2008-01-21 10:31:22+00:00,2008-01-21 10:31:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,354,354,"Fix for https://issues.apache.org/activemq/browse/AMQ-1510
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@613830 13f79535-47bb-0310-9956-ffa450edef68",42,56,1.4224571252651146,1.4224571239245094,29
+23cda2d6bb1b442d4ac1a68182ddf233075f2677,2008-01-22 14:28:10+00:00,2008-01-22 14:28:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,353,353,"Fix for https://issues.apache.org/activemq/browse/AMQ-1562
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@614206 13f79535-47bb-0310-9956-ffa450edef68",42,56,1.4230283774702592,1.4230283781199577,29
+d0f3d4dce918e7995fd937d279ee1ae69c72890b,2008-02-05 14:04:39+00:00,2008-02-05 14:04:39+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,364,364,"Make maximum page size for queues configurable
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@618654 13f79535-47bb-0310-9956-ffa450edef68",44,59,1.4393188434440902,1.4393188421443148,29
+6d0c552c8a5e7d09d8e49a4f245364dd38606eff,2008-02-07 12:55:02+00:00,2008-02-07 12:55:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,389,389,"cursor fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@619387 13f79535-47bb-0310-9956-ffa450edef68",48,65,1.4428065914302586,1.4428065905350151,29
+2a153b085fce82a1cac802d96ab75fd756ac69fc,2008-02-21 08:13:08+00:00,2008-02-21 08:13:08+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,406,406,"Fix for https://issues.apache.org/activemq/browse/AMQ-1560
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@629713 13f79535-47bb-0310-9956-ffa450edef68",52,71,1.4303716376848024,1.430371636151772,29
+3f9d6e2ef873c817a37ae551dc7a35d3c6788c1d,2008-03-07 09:02:37+00:00,2008-03-07 09:02:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,407,407,"re-introduce optimize dispatch for queues
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@634588 13f79535-47bb-0310-9956-ffa450edef68",52,71,1.4305367119574215,1.4305367111887048,29
+044c07d9a5a32511d006a38edae1e91cd033dd8e,2008-03-10 20:35:34+00:00,2008-03-10 20:35:34+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,418,418,"Added a lazy dispatch option for queues
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@635682 13f79535-47bb-0310-9956-ffa450edef68",54,74,1.4265917784040334,1.4265917782064512,29
+7d70fec53a2a0756c37cf4ae82a1bdc0541418a2,2008-03-11 19:13:50+00:00,2008-03-11 19:13:50+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,418,418,"make lazy dispatch the default for queues
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@636067 13f79535-47bb-0310-9956-ffa450edef68",54,74,1.4261467360577063,1.4261467371329184,29
+ff7033fa148a1009de856ffec88758ca2108f0fb,2008-03-19 21:52:31+00:00,2008-03-19 21:52:31+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,418,418,"set default max page size to 100
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@639030 13f79535-47bb-0310-9956-ffa450edef68",54,74,1.4267003703300065,1.426700368643979,29
+9e13dc67fa6a80f65669576b51a4c3c1b3ba184e,2008-03-21 04:26:33+00:00,2008-03-21 04:26:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,418,418,"Disable lazy dispatch.  Was causing queue browser tests to fail.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@639539 13f79535-47bb-0310-9956-ffa450edef68",54,74,1.4265739941283833,1.4265739932473867,29
+cdc2fd3d6d99dca3d1547a116205bdadc20f11ac,2008-05-22 18:56:03+00:00,2008-05-22 18:56:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,516,516,"Fix for:
+https://issues.apache.org/activemq/browse/AMQ-1704
+https://issues.apache.org/activemq/browse/AMQ-1679
+https://issues.apache.org/activemq/browse/AMQ-609
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@659203 13f79535-47bb-0310-9956-ffa450edef68",69,93,1.4189539547940488,1.418953956376487,29
+0d8586903a689041c3a4b94b64df07ae0115e834,2008-06-16 12:57:29+00:00,2008-06-16 12:57:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,517,517,"Fix for https://issues.apache.org/activemq/browse/AMQ-1796
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@668146 13f79535-47bb-0310-9956-ffa450edef68",69,93,1.4194610341114795,1.4194610364829388,29
+c8bd57cdc7a2bea5f0b4334a52aa2aa9a42ce7e0,2008-08-15 14:29:27+00:00,2008-08-15 14:29:27+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,517,517,"Fix for https://issues.apache.org/activemq/browse/AMQ-1878
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@686236 13f79535-47bb-0310-9956-ffa450edef68",69,93,1.420987653557378,1.4209876544108992,29
+47cfa5590bfe5f1015e48ea300c4a8ed9a86e340,2008-09-02 06:14:22+00:00,2008-09-02 06:14:22+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,527,527,"Fix for https://issues.apache.org/activemq/browse/AMQ-1909
+and https://issues.apache.org/activemq/browse/AMQ-1914
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@691114 13f79535-47bb-0310-9956-ffa450edef68",71,96,1.430976920707703,1.4309769221231692,29
+a321204079f435deaf8d082fb3de95c5c792c7f2,2009-01-23 12:11:00+00:00,2009-01-23 12:11:00+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,546,546,"fix for http://issues.apache.org/activemq/browse/AMQ-2016
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@737017 13f79535-47bb-0310-9956-ffa450edef68",74,102,1.4361845677768734,1.4361845716228534,29
+9ad6c089faf923cf92421cab51cd42f2f0a33d55,2009-02-17 12:56:24+00:00,2009-02-17 12:56:24+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,546,546,"fix for https://issues.apache.org/activemq/browse/AMQ-2120
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@745031 13f79535-47bb-0310-9956-ffa450edef68",74,102,1.4369968976965188,1.4369968970724312,29
+c6a485f90b5f3bc17002303b9dfaa6dc0bb127b9,2009-07-03 12:02:07+00:00,2009-07-03 12:02:07+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,563,563,"first cut of resolution to deterministic expiry https://issues.apache.org/activemq/browse/AMQ-1112 - default period is 30 seconds, destination policy entry allows it to be specified or turned off (0)
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@790880 13f79535-47bb-0310-9956-ffa450edef68",79,108,1.4415337416636296,1.4415337422192294,25
+fc63a923393f9ed6b12be9850a03abda1527e4ca,2009-07-29 21:40:29+00:00,2009-07-29 21:40:29+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,666,666,"Fix for https://issues.apache.org/activemq/browse/AMQ-1846
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@799090 13f79535-47bb-0310-9956-ffa450edef68",96,122,1.4381602682765617,1.4381602699811855,33
+dd9c10dfde17afcef224208cd708214a6f5abbfc,2009-09-04 08:54:44+00:00,2009-09-04 08:54:44+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,666,666,"Disable flow control by default in the PolicyEntry - for https://issues.apache.org/activemq/browse/AMQ-2318
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@811291 13f79535-47bb-0310-9956-ffa450edef68",96,122,1.4384000300125468,1.438400031204392,33
+356c39dcfc1673410b3a7b7d2055586be3279ab8,2009-09-10 15:05:55+00:00,2009-09-10 15:05:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,667,667,"expose journal writeBatchSize and tidy up xbean annotations
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@813469 13f79535-47bb-0310-9956-ffa450edef68",96,122,1.4384000300125468,1.4384000304454168,33
+785454a3669fc6d2207088847256abd2c792cc3b,2009-09-23 15:54:37+00:00,2009-09-23 15:54:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,681,681,"Fix for https://issues.apache.org/activemq/browse/AMQ-2403
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@818147 13f79535-47bb-0310-9956-ffa450edef68",98,125,1.4390706038051444,1.43907060511575,33
+6e7c4a4da91177764a561263234c552e67dee7f2,2009-09-23 17:51:45+00:00,2009-09-23 17:51:45+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,680,680,"remove unused imports
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@818176 13f79535-47bb-0310-9956-ffa450edef68",98,125,1.4390706038051444,1.4390706062067058,33
+48764becbdb72c94fd50601464f6e9e848490ed2,2009-11-25 19:35:09+00:00,2009-11-25 19:35:09+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,703,703,"Adding a blockedProducerWarningInterval attribute to destinations to control the rate at which warnings about blocked producers are generated (otherwise the warnings can flood the log). 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@884234 13f79535-47bb-0310-9956-ffa450edef68",100,128,1.4396071052237411,1.4396071053684654,33
+a2af47bd1d3c6a6f0b6e6ce5424d1458a6d45030,2010-02-24 12:53:37+00:00,2010-02-24 12:53:37+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,703,703,"resolve https://issues.apache.org/activemq/browse/AMQ-2626 - ensure reference count is decremented on non evicted messages
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@915770 13f79535-47bb-0310-9956-ffa450edef68",100,128,1.4391615310566785,1.4391615324329785,33
+a0d2282a418470c4256193f2085a0c3c46d2b67e,2010-04-15 10:04:55+00:00,2010-04-15 10:04:55+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,711,711,"resolve https://issues.apache.org/activemq/browse/AMQ-2668 - implement destination PolicyEntry storeUsageHighWaterMark to allow rough store usage split across destinations. an individual dest can use a 70% high watermark leaving the default 100% for a DLQ, so that it is not blocked on a store limit
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@934352 13f79535-47bb-0310-9956-ffa450edef68",100,131,1.43870851783427,1.438708518709477,33
+6a73c40c187f80a21ddc61ccbf6d257003ba6fe3,2010-04-20 15:13:18+00:00,2010-04-20 15:13:18+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,722,722,"resolve https://issues.apache.org/activemq/browse/AMQ-2651 - modified patch applied with thanks, did not change the default as there are a bunch of tests and user applications that depend on the current default
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@935954 13f79535-47bb-0310-9956-ffa450edef68",101,134,1.4332817943341816,1.4332817934214257,33
+eb983f7c08d13c75aefb781e141ac6fd8dc9a23c,2010-04-21 16:45:30+00:00,2010-04-21 16:45:30+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,727,727,"resolve https://issues.apache.org/activemq/browse/AMQ-2704 - add message audit to topic sub so that a regular sub can behave like store backed subscriptions which already suppress duplicates. Dup ocurrs from ring network topology where there are two equal and valid routes for a message, see test case
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@936390 13f79535-47bb-0310-9956-ffa450edef68",101,134,1.4325068369107001,1.4325068342916056,34
+1b6d397aab3c8cb4a010603ce55b87249950ef2d,2010-05-19 11:56:52+00:00,2010-05-19 11:56:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,737,737,"https://issues.apache.org/activemq/browse/AMQ-378 - add AbortSlowConsumerStrategy destination policy that will abort consumers that are repeatildy slow or slow for a defined period. Slowness is a product of the prefetch and message production rate.
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@946138 13f79535-47bb-0310-9956-ffa450edef68",103,137,1.4327057485764603,1.4327057465643567,34
+1a5ad284ed67d1742237c337072635f29aae5f9c,2010-05-20 12:02:10+00:00,2010-05-20 12:02:10+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,743,743,"fixes for https://issues.apache.org/activemq/browse/AMQ-2620 and
+https://issues.apache.org/activemq/browse/AMQ-2568
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@946600 13f79535-47bb-0310-9956-ffa450edef68",103,137,1.4328057106255248,1.4328057097734883,36
+00879cf6836ee20da9796d5475593889f370d661,2010-06-25 10:28:17+00:00,2010-06-25 10:28:17+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,754,754,"changes for https://issues.apache.org/activemq/browse/AMQ-2791
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@957881 13f79535-47bb-0310-9956-ffa450edef68",106,140,1.4299954831998003,1.4299954843186775,36
+42ee51fe9abe67712921ddb6ec296b8551aed2b0,2010-07-04 06:28:36+00:00,2010-07-04 06:28:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,764,764,"Applied patch for https://issues.apache.org/activemq/browse/AMQ-2795
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@960298 13f79535-47bb-0310-9956-ffa450edef68",108,143,1.4336348762986713,1.4336348766890055,36
+70314ea8a68cc6600730a659e58a4b01cfbdef75,2010-07-11 16:09:02+00:00,2010-07-11 16:09:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,784,784,"Fix for https://issues.apache.org/activemq/browse/AMQ-2821
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@963096 13f79535-47bb-0310-9956-ffa450edef68",112,149,1.4399540122176613,1.4399540131446837,36
+383d12ed0e1269161561e0050a6695610003bba2,2010-07-21 17:09:33+00:00,2010-07-21 17:09:33+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,784,784,"resolve: https://issues.apache.org/activemq/browse/AMQ-2741 - visibility of abort slow consumer policy in via jmx
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@966319 13f79535-47bb-0310-9956-ffa450edef68",112,149,1.4398742037400072,1.4398742039403782,36
+c1da3ac3bd7c7e527e5867cd09639f050d603afe,2010-10-11 19:06:02+00:00,2010-10-11 19:06:02+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,793,793,"resolve https://issues.apache.org/activemq/browse/AMQ-2103 and https://issues.apache.org/activemq/browse/AMQ-2966, implement fix for 2103 using boolean policy for queues named reduceMemoryFootprint, when set, after a message is persisted, the internal state is cleared. This works at a natural sync point in the broker and avoids contention. The contention to marshall with the original patch results in AMQ-2966
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1021466 13f79535-47bb-0310-9956-ffa450edef68",113,152,1.44201354973169,1.4420135503181688,36
+6519c3e2327930500912bdcc68098f28d366449b,2010-12-10 14:18:54+00:00,2010-12-10 14:18:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,793,793,"better support for immediate priority higher message dispatch for durable subs, tidy up audit and page size config for durables, use destination batch size to page in, remove extranious calls to store getSize(), test for duplicate delivery, audit needs to be large when priority is used and needs to be statically configured, prefetch is a bad model in with priority spread, restrict priority values to 0-9 as impl is restricted to 0-9 jms range
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1044368 13f79535-47bb-0310-9956-ffa450edef68",113,152,1.4420792102800442,1.4420792106119842,36
+3ddb71c65bf08affd9cf5adef6abb54f0abcaa8f,2010-12-13 16:20:40+00:00,2010-12-13 16:20:40+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,798,798,"respect storeHasMessages such that the store batch size, form max page size is respected, improves preformance by negating the replay of high priority inflight messages as a the tail of a backlog is recovered. Fix order issue with high priority cache such that sequence order of lower priority messages is respected. additional test for same and default audit size to 10 when priority is enabled
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1045219 13f79535-47bb-0310-9956-ffa450edef68",113,152,1.4429124245573282,1.4429124229688046,40
+e35519f3a116231e3e88452e2c0752609c3cf931,2010-12-17 18:33:13+00:00,2010-12-17 18:33:13+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,798,798,"resolve: https://issues.apache.org/jira/browse/AMQ-3095 - with test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1050463 13f79535-47bb-0310-9956-ffa450edef68",113,152,1.443276473046122,1.4432764720012778,42
+8bf987b134bd827b93ed8157b323bc3bd2d8a82e,2011-02-10 14:24:01+00:00,2011-02-10 14:24:01+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,798,798,"https://issues.apache.org/jira/browse/AMQ-3177 - use slf4j instead of jcl
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069405 13f79535-47bb-0310-9956-ffa450edef68",113,152,1.4436094704194498,1.4436094702604887,42
+b0c2a40fb979829ceca2ca51858ca67269bd5992,2011-02-16 14:08:48+00:00,2011-02-16 14:08:48+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,798,798,"Removing svn keywords, they don't have much value and just add additional noise when diffing source trees.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071259 13f79535-47bb-0310-9956-ffa450edef68",113,152,1.4436094704194498,1.4436094710440102,42
+d55a3922c918a14d53a1fe1583cbc98825d559e1,2011-04-04 11:11:36+00:00,2011-04-04 11:11:36+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,808,808,"https://issues.apache.org/jira/browse/AMQ-3253 - Support Temporary Destinations in a network without advisories. Allow gc of regular destinations that have just network consumers, hub/spoke case with dynamic real reply destinations. policy entry: GcWithNetworkConsumers now applicable to all destinations. addition to https://issues.apache.org/jira/browse/AMQ-2571
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1088557 13f79535-47bb-0310-9956-ffa450edef68",115,155,1.4438506485653018,1.4438506477214479,42
+af1b2328ee0b9ae8166a67078fe5bab93544385a,2011-07-01 17:45:54+00:00,2011-07-01 17:45:54+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,818,818,"https://issues.apache.org/jira/browse/AMQ-2484,https://issues.apache.org/jira/browse/AMQ-2324: Forwarded message cannot be distributed to the original broker, Avoid stuck messages in a network of brokers - implement destination policy that allows the network filter factory to be provided. A new implementation will allow queues to replay messages with a configurable delay once there are no local consumers. Also it allows a rate limit on the network consumer such that a statically included dest does not consume all messages if there is a slow local consumer
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1142005 13f79535-47bb-0310-9956-ffa450edef68",117,158,1.4507753189305042,1.4507753193610857,42
+fe63c29bcc18d54b622ca05dd70d3ba1c2f871f3,2011-07-11 16:02:52+00:00,2011-07-11 16:02:52+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,835,835,"https://issues.apache.org/jira/browse/AMQ-2911: Option to make all consumers retroactive. Patch applied and with thanks and an additional test. new destination policy entry 'alwaysRetroactive'.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1145217 13f79535-47bb-0310-9956-ffa450edef68",120,161,1.4525085650950549,1.452508566530003,42
+f4d4c3b4ce524ac2df287e7c5b20432e79760e50,2012-03-01 16:37:19+00:00,2012-03-01 16:37:19+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,845,845,"Fix for https://issues.apache.org/jira/browse/AMQ-3750 - add hint to storage of messages to enable concurrent store and dispatch
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1295662 13f79535-47bb-0310-9956-ffa450edef68",122,164,1.4521842499602433,1.452184250094005,42
+ca83305faa3138dcbdf6ab180bf5ef2e4954c44c,2012-03-20 13:40:03+00:00,2012-03-20 13:40:03+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,859,859,"add property  optimizeMessageStoreInFlightLimit on destinations so can set the inflight limit above which optimize store dispatch is no longer applied - for https://issues.apache.org/jira/browse/AMQ-3750
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1302887 13f79535-47bb-0310-9956-ffa450edef68",125,167,1.4539259948686742,1.4539259954442894,42
+db1f6fe2b42d6d1d505ae59618b0cbc36532cef5,2012-07-12 11:58:05+00:00,2012-07-12 11:58:05+00:00,activemq-core/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,859,859,"https://issues.apache.org/jira/browse/AMQ-3903 - Failed to fire fast producer advisory, reason: java.lang.NullPointerException. A generic producer does not contain a destination, so it must be obtained from the exchange. Modified the boker interface to reflect that. fixed up typo in the policy entry, advisoryForFastProducers now correctly spelled in favour of advisdoryForFastProducers
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1360642 13f79535-47bb-0310-9956-ffa450edef68",125,167,1.4538549514736911,1.4538549511350354,42
+58aca869816e893e7a2f34f0708c1d7fcbdca0f5,2012-11-07 13:37:50+00:00,2012-11-07 13:37:50+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,859,859,"Refactor all the core broker classes from the activemq-core module into the activemq-broker module.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406629 13f79535-47bb-0310-9956-ffa450edef68",125,167,1.4538549514736911,1.4538549482476684,42
+95e6d6074fe6e7ee5e95125bf9e5f8386b9dd00b,2012-12-17 11:48:01+00:00,2012-12-17 11:48:01+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,863,863,"https://issues.apache.org/jira/browse/AMQ-4224 - have broker update zero prefetch on consumer so that it can issue a pull request as appropriate
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1422873 13f79535-47bb-0310-9956-ffa450edef68",125,167,1.4539657862467752,1.453965784754838,44
+bc45bf806569fbcc21a4765b69f46a463dd8b2bf,2012-12-21 14:41:23+00:00,2012-12-21 14:41:23+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,867,867,"https://issues.apache.org/jira/browse/AMQ-4234 https://issues.apache.org/jira/browse/AMQ-4235 - ensure prefetch set via consumer control gets interepreted by policy such that defaults can be overidden, tidy up default prefetch values choices for stomp so they can pick up broker overrides
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1424936 13f79535-47bb-0310-9956-ffa450edef68",123,168,1.4540696109999793,1.4540696103536015,52
+37ede544868e2bf662f06dcbb2bffae5dd2f30a9,2013-06-03 21:12:44+00:00,2013-06-03 21:12:44+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,869,869,"some fixes for: https://issues.apache.org/jira/browse/AMQ-4487
+
+Allow the maxProducersToAudit value to be set of Queue and QueueBrowser subscriptions which can help to workaround OOM errors on QueueBrowsers when there are more than the max number of producers audited.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1489180 13f79535-47bb-0310-9956-ffa450edef68",123,168,1.452608056388969,1.4526080555992902,52
+1f5694ed60041d3b75fcb77070bdf1dae4996bd6,2013-06-05 17:34:50+00:00,2013-06-05 17:34:50+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,875,875,"fix for: https://issues.apache.org/jira/browse/AMQ-4487 and https://issues.apache.org/jira/browse/AMQ-4372
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1489978 13f79535-47bb-0310-9956-ffa450edef68",124,168,1.4532514082781116,1.4532514052755323,52
+2d544203f58ab35176a269cfeff921988a9dce14,2013-06-05 19:57:45+00:00,2013-06-05 19:57:45+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,874,874,"fix for: https://issues.apache.org/jira/browse/AMQ-4487 and https://issues.apache.org/jira/browse/AMQ-4372
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1490014 13f79535-47bb-0310-9956-ffa450edef68",124,168,1.4530075929952815,1.4530075905407203,52
+d97f28c4906b2d7de391a4d813814013f831d3db,2013-06-05 21:06:39+00:00,2013-06-05 21:06:39+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,875,875,"fix for: https://issues.apache.org/jira/browse/AMQ-4487 and https://issues.apache.org/jira/browse/AMQ-4372
+
+Additional testing and updates. 
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1490032 13f79535-47bb-0310-9956-ffa450edef68",124,168,1.4532023721096985,1.453202370740808,52
+2b99f39a5be229d8982e9378248c7e32df9147a0,2013-07-17 18:44:27+00:00,2013-07-17 18:44:27+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,875,875,"Fix for: https://issues.apache.org/jira/browse/AMQ-4621
+
+New SlowConsumerStrategy implementation for aborting consumers that haven't ack'd in the configured interval.  Can also be used to kick idle consumers if you disable the ignore idle consumers option.  
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1504231 13f79535-47bb-0310-9956-ffa450edef68",123,168,1.4534671557559597,1.4534671553483214,52
+e8ea6cd95cf0ed287f4c9d42a47cad5401d212a1,2013-08-27 22:02:07+00:00,2013-08-27 22:02:07+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,908,908,"https://issues.apache.org/jira/browse/AMQ-4682 - add support for mods and additions to destination policy - primitive attributes only
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1518009 13f79535-47bb-0310-9956-ffa450edef68",131,171,1.4591795553434896,1.4591795533396132,54
+e1bbde7302d7d169bec978633d2dd85eba2e19cc,2013-09-13 14:53:41-04:00,2013-09-13 14:53:41-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,906,906,"https://issues.apache.org/jira/browse/AMQ-4721
+
+Upgrade to latest slf4j library and update many LOG statements to use
+proper calls (no string concats).  Removes many uneeded isXXXEnabled
+checks to clean up the code.",131,171,1.4593096426497731,1.4593096393399059,53
+468e69765145ddad199963260e4774d179ad5555,2013-10-10 20:30:01+01:00,2013-10-10 20:29:40+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,920,920,Fix for https://issues.apache.org/jira/browse/AMQ-4766,135,174,1.4611581349381486,1.4611581305776067,53
+85bc9ce9d01cb1174572ed23372e18d753837eec,2013-10-22 15:23:33+01:00,2013-10-22 15:22:36+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,923,923,"modify fix for https://issues.apache.org/jira/browse/AMQ-4181 - apply maxBrowsePageSize, when > 0 it will limit a browser dispatch; related to https://issues.apache.org/jira/browse/AMQ-4487 https://issues.apache.org/jira/browse/AMQ-4372 https://issues.apache.org/jira/browse/AMQ-4595",136,174,1.46157384532306,1.4615738414554944,53
+266d23ef794e79bb48f81314295640421772808c,2014-03-26 11:16:42+00:00,2014-03-26 11:14:35+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,932,932,revisit https://issues.apache.org/jira/browse/AMQ-3519 with more durable solution https://issues.apache.org/jira/browse/AMQ-5068 - JMSRedelivered header now persisted before dispatch so that it is a reliable indication of a possible duplicate delivery. The option is enabled via destination policy persistJMSRedelivered,137,177,1.459823475884771,1.459823472014578,53
+75eb814ca7f05a78129628606488d47d89f7cf85,2014-03-26 11:50:13+00:00,2014-03-26 11:50:13+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,933,933,https://issues.apache.org/jira/browse/AMQ-5068 - don't rewrite durable subs as the message instance is shared,137,177,1.4590986012381533,1.4590985969865398,53
+b9fd189d5639269f0f5983c39975a3254fba1680,2014-07-21 16:08:59-04:00,2014-07-21 16:08:44-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,965,965,"https://issues.apache.org/jira/browse/AMQ-5253
+
+Add accessors with the correctly spelled name and deprecate the old
+ones.",139,179,1.4592279571380715,1.4592279535455976,53
+ee4672baaf190782c197b886f13aea566ba3253f,2015-09-17 11:08:21+02:00,2015-09-17 11:08:05+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1008,1008,https://issues.apache.org/jira/browse/AMQ-5972 - wildcard policy entries not applied in correct order,145,186,1.4635428742124181,1.463542869347971,53
+a253ad3c71a07bb4d1883fe84be217af9855cfc6,2015-12-17 14:35:50+00:00,2015-12-16 20:50:48+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1101,1101,"https://issues.apache.org/jira/browse/AMQ-6091
+
+The JavaRuntimeConfigurationBroker can now apply a subset of policy
+properties retrospectively to existing destinations versus applying
+all properties of the policy update.",146,190,1.475903213763501,1.475903207482198,89
+078f39f5896ab728046424017f9cd4f45d53f48c,2016-03-08 16:45:06+00:00,2016-03-08 16:45:06+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1102,1102,https://issues.apache.org/jira/browse/AMQ-6199 - apply CursorMemoryHighWaterMark to topic subscriptions,146,190,1.4758311953758685,1.4758311914897753,89
+687badb4fdd1b738103ab409f4342a82fb0e42fd,2017-01-30 11:13:57-05:00,2017-01-25 10:08:37+00:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1103,1103,"AMQ-6577: honour usePrefetchExtension in TopicSubscription.
+
+ AMQ-6577: move usePrefetchExtension flag to AbstractSubscription to promote reuse.",146,190,1.4757446559608316,1.4757446528413583,89
+6da08b245e8b5c728d2fb0795ad922ccc99baf41,2017-10-25 14:53:20+01:00,2017-10-25 14:44:16+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1131,1131,"[AMQ-6849] provide a virtualTopic dropOnResourceLimit attribute, default to false.
+
+Enabling will allow dispatch to continue even when end to some consumer queues
+fail due to resource constraints.
+The existing systemUsage sendFailIfNoSpace and sendFailIfNoSpaceAfterTimeout are
+promoted to destination policy options allowing selective destinations to fail a
+send with an exception. The global system usage options are still in place.
+When dropOnResourceLimit=true dispatch will continue in the event that any
+subscription queue throws a resource limit exception on send failure.",150,196,1.4750706406054253,1.4750706367573798,96
+8e576be1d9719367aa209562a128d489f27cdd01,2017-10-26 11:36:03+01:00,2017-10-26 11:36:03+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1131,1131,[AMQ-6849] - fix sendFailIfNoSpaceAfterTimeout policy entry default value,150,196,1.4750788489036697,1.4750788463652718,96
+65b0f2ad0d48845ad54681ac0eff832de122e2a9,2018-03-29 13:25:36-04:00,2018-03-29 13:23:33-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1141,1141,"AMQ-6940 - Add flag to disable TopicSubscription in flight stats
+
+To save memory usage in some use cases add a new flag to PolicyEntry
+called useTopicSubscriptionInflightStats to allow disabling the
+inflight stats",152,199,1.4737295526468228,1.4737295478282857,96
+efcca7d0628c1c5f52c44da152c3da6b68317e2f,2020-05-22 10:49:39+02:00,2020-05-22 10:49:39+02:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1141,1141,Fix javadoc warnings related to non-existing parameter names.,152,199,1.4737295526468228,1.4737295492837548,96
+05426d637cf00e0bc289df6e0cb3a050fc606835,2021-12-20 08:38:32-06:00,2021-12-20 08:38:32-06:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1156,1156,"[AMQ-8397] Add a destination option to sendDuplicateFromStoreToDLQ (#724)
+
+- Default 'true' to match existing behavior
+ - Added counter to DestinationView",153,202,1.4735511851834164,1.4735511812037891,97
+9956dd602a57fc8b592ad9df9fc4bc93b5408dab,2022-02-24 08:45:35-06:00,2022-02-24 08:45:35-06:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1156,1156,[AMQ-8440] Set sendDuplicateFromStoreToDLQ to 'false' by default (#773),153,202,1.4736337762775296,1.4736337708387366,97
+76f612600d291dfb4152b90a3dbfc9ce8ea2e1a5,2022-11-03 14:30:33-04:00,2022-10-31 18:27:03-04:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1168,1168,AMQ-9157 - Add a new optional advisory for dispatched messages,155,205,1.471495188733437,1.4714951855457608,98
+c465330be5e66fac40e7c73a74fd0cad9c5333f0,2024-06-13 12:52:32-05:00,2024-03-17 19:32:53-05:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1179,1179,[AMQ-9455] DestinationPolicy support for MessageInterceptorStrategy,157,208,1.4754760528301105,1.475476051564273,98
+5910b94b09aaa322cce5e2d9c71c2fdd9abaa726,2024-09-20 08:56:26-05:00,2024-02-23 08:51:17-06:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1190,1190,[AMQ-9437] AdvancedDestination statistics networkEnqueue and networkDequeue counters,158,211,1.4770204159929274,1.4770204134251137,99
+cb528078a694fcb186c84d2967d782192db64651,2024-12-18 18:15:52-05:00,2024-12-19 00:15:52+01:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1190,1190,"[AMQ-9543] Replace use of deprecated setInactiveTimoutBeforeGC in unit tests (#1269)
+
+* Fix typo in the deprication doc
+
+* Replace use of depricated setInactiveTimoutBeforeGC",158,211,1.4770204159929274,1.4770204111674072,99
+7f8cf0e7d977341b42f9b374a98292a586f95e79,2025-01-21 20:45:14-06:00,2024-12-13 12:04:20-06:00,activemq-broker/src/main/java/org/apache/activemq/broker/region/policy/PolicyEntry.java,1203,1203,"[AMQ-8463] New Feature: Advanced Message Flow statistics
+
+Co-authored-by: Christopher L. Shannon <cshannon@apache.org>",161,214,1.4758161388336946,1.4758161363529478,100

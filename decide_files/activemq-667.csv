@@ -1,0 +1,278 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+40a7d3b6ac35d2ecb34e85fc3403d2e48e33874e,2005-12-12 17:53:59+00:00,2005-12-12 17:53:59+00:00,activemq-core/src/main/java/org/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,608,608,"Moved the trunk code into the trunk sub directory
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@356304 13f79535-47bb-0310-9956-ffa450edef68",71,30,1.5395078747101536,1.5395078747962219,53
+92a698fe42656274d0f3e31be415ba881b094b3f,2005-12-22 06:11:40+00:00,2005-12-22 06:11:40+00:00,activemq-core/src/main/java/org/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,606,606,"updated headers in source file to use apache header
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@358513 13f79535-47bb-0310-9956-ffa450edef68",71,30,1.5395078747101536,1.5395078747962219,53
+d29ca2a71b7fd281c15f7d05e135c196d2b2488c,2005-12-28 17:24:02+00:00,2005-12-28 17:24:02+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,606,606,"Refactor org.activemq -> org.apache.activemq
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359567 13f79535-47bb-0310-9956-ffa450edef68",71,30,1.5395078747101536,1.5395078747962219,53
+48b4869472d647a890ce6905e7914b7d1ecde948,2005-12-29 02:15:21+00:00,2005-12-29 02:15:21+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,606,606,"Updated copyright headers to be (c) 2005-2006 
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@359679 13f79535-47bb-0310-9956-ffa450edef68",71,30,1.5395078747101536,1.5395078747962219,53
+c0edaf0532a619b2a90ecbc082bb57e052ef7793,2006-01-04 17:40:32+00:00,2006-01-04 17:40:32+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,624,624,"Use the jdbc catalog to avoid displaying warning messages on startup when the activemq tables allready exist.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@365954 13f79535-47bb-0310-9956-ffa450edef68",74,30,1.534878016595436,1.534878016916116,55
+9b64c37c4ca6a5ad73cfca071c7e894320c89810,2006-01-04 21:09:16+00:00,2006-01-04 21:09:16+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,651,651,"Added a SubscriptionInfo[] getAllSubscriptions()  to the TopicMessageStore.  We will need this if we want to eagerly load the durable subs when the broker starts up.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@365993 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5324140122355525,1.5324140107311532,55
+96adbc3fbb3ef361f67d4a42467c6f2c629503c2,2006-02-10 21:11:33+00:00,2006-02-10 21:11:33+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,657,657,"Fixing broker DurableConsumerCloseAndReconnectTest, subscriptions were not being added to the result array.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@376856 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5314510667155268,1.531451063731574,55
+911177eb6c81ce6b4fe7670582d401b2375d42c8,2006-02-15 15:51:11+00:00,2006-02-15 15:51:11+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,660,660,"http://jira.activemq.org/jira/browse/AMQ-564
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378023 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5303044223460005,1.5303044169381224,55
+4843dd459ce561e5e365c5505a4fac10f60dc6b5,2006-02-15 23:37:40+00:00,2006-02-15 23:37:40+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,659,659,"- Refactored the StementProvider and related classes to a simpler Statements class that's easier to configure though the xbean configuration system.
+- Added test cases that show this in use.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@378119 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.506301883777691,1.5063018779296695,55
+2748ae1612190838a74e653e2ecbf75e5e506446,2006-02-28 12:55:21+00:00,2006-02-28 12:55:21+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,661,661,"Added support for browsing Topics
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@381644 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.506710753566553,1.5067107472457186,55
+7f5213ba990ff4f1629f63dc93d0225a3c78594c,2006-03-03 15:36:38+00:00,2006-03-03 15:36:38+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,661,661,"Standardize on throwing Exception instead of Throwable, we were using both forms throught the API
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@382869 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5065043089085903,1.5065043122702912,55
+4c96523c6af23928e2b6930d0208416db0f139a5,2006-03-22 18:22:30+00:00,2006-03-22 18:22:30+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,662,662,"adding a log debugging statement so that if table creation fails we have some hopes of seeing what the statement looked like that failed.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@387908 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.50526183027166,1.5052618304193668,55
+28316bb0bba79bbcf8921471dc6ed5bc3daea0c9,2006-03-27 20:29:56+00:00,2006-03-27 20:29:56+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,662,662,"Fix for http://issues.apache.org/activemq/browse/AMQ-659
+
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@389258 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5038506633545492,1.5038506666187814,55
+f1e3420e1db4c1723b16e72e4e961ee339740f1b,2006-03-29 21:20:57+00:00,2006-03-29 21:20:57+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,663,663,"better debug so we can see the sql statement being executed.
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@389893 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5030794563611725,1.5030794509440244,55
+57b494132549ebef6877bf47da3c3d5d776286e0,2006-07-28 03:04:41+00:00,2006-07-28 03:04:41+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,664,664,"Applied new source header boiler plate per http://www.apache.org/legal/src-headers.html
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@426366 13f79535-47bb-0310-9956-ffa450edef68",78,31,1.5030794563611725,1.503079455238725,55
+4eef609524f4831de2d294a50f534d112875c556,2006-09-12 10:07:34+00:00,2006-09-12 10:07:34+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,739,739,"More foundation work to resolve: http://issues.apache.org/activemq/browse/AMQ-845
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@442550 13f79535-47bb-0310-9956-ffa450edef68",88,34,1.4855078841277396,1.4855078823354693,60
+17946e532570199820b019b947c9110cc28155a0,2006-10-05 07:19:35+00:00,2006-10-05 07:19:35+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,740,740,"work for https://issues.apache.org/activemq/browse/AMQ-876
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@453123 13f79535-47bb-0310-9956-ffa450edef68",87,34,1.4857853897526152,1.4857853882270455,60
+b6ba20b965ec0fe97ead8f824a88d83d8e0d6400,2006-10-09 13:05:20+00:00,2006-10-09 13:05:20+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,703,703,"changes for https://issues.apache.org/activemq/browse/AMQ-845 -
+provide support for durable topic cursors
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@454368 13f79535-47bb-0310-9956-ffa450edef68",39,36,1.4520834185833384,1.452083412126809,39
+629bc81fb2ab21f8ee4bd879b53e3dda0e459226,2006-11-17 10:33:57+00:00,2006-11-17 10:33:57+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,753,753,"Adding persitent cursor support for Queues
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@476101 13f79535-47bb-0310-9956-ffa450edef68",46,38,1.4311337395095285,1.4311337306207488,41
+5367f1ecb078074ac02e673a8a911d8aed6ed3ec,2006-11-20 13:11:26+00:00,2006-11-20 13:11:26+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,689,689,"fixed some timing issues using the Kaha Persistence Adaptor
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@477166 13f79535-47bb-0310-9956-ffa450edef68",41,36,1.447745193283628,1.4477451929147924,39
+3bf0245e763d74b5489ba0f872b09303fef8c7d7,2006-11-24 19:57:51+00:00,2006-11-24 19:57:51+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,693,693,"implementation of store based cursors for Queues and Durable Subscribers,
+to fix:
+http://issues.apache.org/activemq/browse/AMQ-845
+http://issues.apache.org/activemq/browse/AMQ-1062
+http://issues.apache.org/activemq/browse/AMQ-1061
+http://issues.apache.org/activemq/browse/AMQ-493
+http://issues.apache.org/activemq/browse/AMQ-914
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@478967 13f79535-47bb-0310-9956-ffa450edef68",41,36,1.4477776671212277,1.4477776629771855,39
+4597dddf79cf250c5b29e2d59cb4f7457bc62ea1,2006-11-29 22:09:33+00:00,2006-11-29 22:09:33+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,715,715,"Setting the Store based cursor as the default for Durable Subscribers
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/activemq/trunk@480731 13f79535-47bb-0310-9956-ffa450edef68",42,37,1.4410214699288784,1.4410214626304587,40
+3a5f48d277454e548a430a6611aee5e068ba3f4e,2007-07-29 19:01:29+00:00,2007-07-29 19:01:29+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,731,731,"Fix for http://issues.apache.org/activemq/browse/AMQ-1080
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@560783 13f79535-47bb-0310-9956-ffa450edef68",41,37,1.4443536205050562,1.4443536168003497,48
+2728ccbb88d62fc8f187f47313804a3a2db205d8,2007-08-06 17:07:55+00:00,2007-08-06 17:07:55+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,733,733,"Fix for AMQ-1356 : Durable Subscriptions do not work with Wildcards after broker is restarted.
+ - Added a RecoveryBrokerTest.testWildCardSubscriptionPreservedOnRestart() test case that was showing
+   that that wildcards did not work with DurableSubscriptions
+ - Fix the TransactedTopicMasterSlaveTest so that setDeleteAllMessagesOnStartup() takes effect (had to be done before the connectors are added.
+ - Change the MessageStore interface so that subscriptions are created using the data in the SubscriptionInfo class
+ - Added a subscribedDestination field to the SubscriptionInfo so that the original wildcard subscrption can be remembered
+ - The KahaReference store now deletes it's State store too when deleteAllMessages() is called
+ - Fixed KahaPersistenceAdapter.getDestinations() so that it actually returns all the destinations.
+ - We now recover all the topics eagerly when the topic region is started.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563194 13f79535-47bb-0310-9956-ffa450edef68",41,37,1.450681510194219,1.4506815121430576,48
+f812e3417988e13ed638434f892cff5c4ab843ad,2007-08-08 18:56:59+00:00,2007-08-08 18:56:59+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,764,764,"More checkstyle fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@563982 13f79535-47bb-0310-9956-ffa450edef68",39,37,1.4736885752655973,1.4736885753817204,84
+fc00993839c69f86823870e06a335d035db48bb2,2007-08-09 16:37:49+00:00,2007-08-09 16:37:49+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,766,766,"More checkstyle violation fixes
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564271 13f79535-47bb-0310-9956-ffa450edef68",38,37,1.468148088760185,1.4681480836615397,84
+933eb2f9e4040a3a9200b1a461dc4e004aafbf81,2007-08-11 00:49:19+00:00,2007-08-11 00:49:19+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,764,764,"More checkstyle fixes and Generics usage.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@564814 13f79535-47bb-0310-9956-ffa450edef68",38,37,1.4663025320263325,1.4663025250059007,84
+582f3401fa82a2907f555a33da1462c134eb3c02,2007-10-26 20:20:25+00:00,2007-10-26 20:20:25+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,764,764,"The caching of the prepared statement for updating the last ack was wrong.
+Reported at http://www.nabble.com/Is-this-a-bug-in-DefaultJDBCAdapter.java--tf1890445s2354.html#a5170127
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@588767 13f79535-47bb-0310-9956-ffa450edef68",38,37,1.4654982885600427,1.4654982854040712,84
+5a81bbb3759f52aa60735c1a9cfd327164c09407,2008-08-14 18:33:48+00:00,2008-08-14 18:33:48+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,767,767,"fix for AMQ-1885, allow jdbc slave broker to out live a db outage
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@685988 13f79535-47bb-0310-9956-ffa450edef68",38,37,1.4693547839703958,1.4693547783808338,85
+4d0e57261cf613fb62e6cf45f6e47452abf84230,2008-09-22 19:17:24+00:00,2008-09-22 19:17:24+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,769,769,"Fix for https://issues.apache.org/activemq/browse/AMQ-1943
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@697953 13f79535-47bb-0310-9956-ffa450edef68",38,37,1.468303978567065,1.468303975855418,85
+3b374365c193cd07940de22198f527810d1e043d,2008-12-28 23:13:32+00:00,2008-12-28 23:13:32+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,793,793,"Fix for https://issues.apache.org/activemq/browse/AMQ-1918
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@729803 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.4768124552543502,1.4768124559651263,90
+9bb46820b2bcfc279083ac84c42f793c882d9f0f,2009-02-05 10:06:39+00:00,2009-02-05 10:06:39+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,793,793,"store specific tests for setBatch http://issues.apache.org/activemq/browse/AMQ-2020
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@741061 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.476854332696274,1.4768543258440843,90
+e2778fbf7d81b10fa558deeb9ccf66d374de7f4f,2009-06-24 12:04:50+00:00,2009-06-24 12:04:50+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,793,793,"apply modified suggstion from https://issues.apache.org/activemq/browse/AMQ-1191 - executeQuery conditional on statement metadata which works when statement does not return a result set like with derby which is used in the unit tests
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@787990 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.4759536921616538,1.4759536862388674,92
+9f6efd4b1f2594cd2b41d2c297173c88025b372f,2009-09-25 18:10:12+00:00,2009-09-25 18:10:12+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,793,793,"AMQ-2414: Fixing the failing create tables problem on MySQL cluster.
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@818936 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.4760335340877944,1.476033528131503,92
+282f145f0818256319113d06a4f8e2f0ec8eae12,2009-09-29 16:14:49+00:00,2009-09-29 16:14:49+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,793,793,"reverting rev 818936 re: issue AMQ-2414
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@820010 13f79535-47bb-0310-9956-ffa450edef68",36,38,1.4759536921616538,1.4759536814762513,92
+94708a284dac59bcf386a8c304dec2e323b2b11e,2009-10-02 10:42:14+00:00,2009-10-02 10:42:14+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,795,795,"https://issues.apache.org/activemq/browse/AMQ-2436 - jdbc sync under high load
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@820955 13f79535-47bb-0310-9956-ffa450edef68",37,38,1.4766947707906304,1.4766947716032381,92
+4e1d383555749a7e2ec399d40425bc697f385fd0,2009-10-02 17:30:23+00:00,2009-10-02 17:30:23+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,797,797,"https://issues.apache.org/activemq/browse/AMQ-2437 - jdbc recovery
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@821106 13f79535-47bb-0310-9956-ffa450edef68",37,38,1.4747728454955906,1.4747728415190793,92
+8732f70793786c250ff986eea78dd8a87fcb42c8,2009-12-18 13:03:40+00:00,2009-12-18 13:03:40+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,819,819,"first cut of audit recovery for https://issues.apache.org/activemq/browse/AMQ-2540 - test case reproduces. Little more tidy up needed such that the query is limited and such that the audit is recovered at the persistence adapter rather than at the store level - also related to https://issues.apache.org/activemq/browse/AMQ-2473
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@892242 13f79535-47bb-0310-9956-ffa450edef68",38,39,1.464423565203165,1.4644235634950067,94
+5ffcaf40525d4ae00191ec891979ae6a6a101415,2009-12-21 08:49:56+00:00,2009-12-21 08:49:56+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,819,819,"https://issues.apache.org/activemq/browse/AMQ-2473 - fix find all message ids statement
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@892729 13f79535-47bb-0310-9956-ffa450edef68",38,39,1.4632066442916805,1.463206642143956,94
+ae840c4b0406ec3884439fcf6b6c8fe3f971b1d4,2009-12-21 10:53:44+00:00,2009-12-21 10:53:44+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,815,815,"https://issues.apache.org/activemq/browse/AMQ-2473 - improving jdbc audit recovery
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@892759 13f79535-47bb-0310-9956-ffa450edef68",38,39,1.4644522479223323,1.4644522445800314,93
+5fb52355d6fe6f0cfb3589af16b8dcae3dda81f4,2009-12-24 00:38:28+00:00,2009-12-24 00:38:28+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,821,821,"last piece of https://issues.apache.org/activemq/browse/AMQ-2540 - fix order or audit recovery replay
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@893661 13f79535-47bb-0310-9956-ffa450edef68",38,39,1.466399611306154,1.4663996105394355,94
+0bc545b5d161fc9feccd19e7fde6cd5d5ffac28f,2010-01-08 00:17:37+00:00,2010-01-08 00:17:37+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,824,824,"resolve potential lost ack with failover and an in progress consumer transaction that results in an Unmatched ack exception - resolve: https://issues.apache.org/activemq/browse/AMQ-2560
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@897061 13f79535-47bb-0310-9956-ffa450edef68",38,39,1.4684196563173997,1.4684196504125075,95
+5170a8bba3c40fe97b5e2f4f462b757b01630606,2010-02-03 14:07:08+00:00,2010-02-03 14:07:08+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,801,801,"https://issues.apache.org/activemq/browse/AMQ-2563 - jdbc memory leak
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@906054 13f79535-47bb-0310-9956-ffa450edef68",38,39,1.460284611583508,1.4602846046261186,91
+24a7626b065c646671d18e4bf150e3f16bca11c7,2010-03-15 15:37:58+00:00,2010-03-15 15:37:58+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,797,797,"https://issues.apache.org/activemq/browse/AMQ-2594 - jdbc and broker seq id - intial commit
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@923300 13f79535-47bb-0310-9956-ffa450edef68",38,38,1.4378258240989197,1.4378258124329808,91
+1cec28cf27c5191363b7c14d673388021abcb91f,2010-03-18 13:05:43+00:00,2010-03-18 13:05:43+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,817,817,"https://issues.apache.org/activemq/browse/AMQ-2594 - proper init of broker and store seq
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@924752 13f79535-47bb-0310-9956-ffa450edef68",41,39,1.4320197634809815,1.4320197600087738,92
+d22e841db9b2c431a76e51a9710660fec5af7ebb,2010-04-02 09:38:46+00:00,2010-04-02 09:38:46+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,817,817,"https://issues.apache.org/activemq/browse/AMQ-2681 - typo fixed and generate jdbc statements class
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@930206 13f79535-47bb-0310-9956-ffa450edef68",41,39,1.433327454363459,1.4333274482146219,92
+952d03685680d22168dffea03c69eccf69568eff,2010-04-15 13:52:06+00:00,2010-04-15 13:52:06+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,822,822,"https://issues.apache.org/activemq/browse/AMQ-2696 - last broker sequence id and durable subscribers
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@934408 13f79535-47bb-0310-9956-ffa450edef68",41,39,1.4370792793574996,1.4370792739777276,94
+a6a6a708ff26c8ddba966107d2add4186e173ba4,2010-07-08 14:23:21+00:00,2010-07-08 14:23:21+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,843,843,"resolve https://issues.apache.org/activemq/browse/AMQ-2800, https://issues.apache.org/activemq/browse/AMQ-2542, https://issues.apache.org/activemq/browse/AMQ-2803 - implement duplicate checker in transport for a failover: reconnect, uses last seqid from store. iimplemented for kahaDB and JDBC
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@961783 13f79535-47bb-0310-9956-ffa450edef68",42,40,1.4304905104162493,1.4304905082146906,95
+12f019591369bb6f8f6c8eadf82339d3391c5af0,2010-07-21 16:06:39+00:00,2010-07-21 16:06:39+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,859,859,"https://issues.apache.org/activemq/browse/AMQ-2843 - first stab at adding priority for queues in JDBC store
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@966291 13f79535-47bb-0310-9956-ffa450edef68",44,43,1.4748051866879275,1.4748051829930682,98
+4f5e620d1ca8bbe382b428a065dd118b58c0e797,2010-07-22 15:46:18+00:00,2010-07-22 15:46:18+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,908,908,"https://issues.apache.org/activemq/browse/AMQ-2843 - first stab at supporting priority for durable subs
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@966712 13f79535-47bb-0310-9956-ffa450edef68",47,43,1.481887113586089,1.4818871150327058,101
+f206a1bd11dfe8265faacfdbbb74113894069d28,2010-07-23 15:31:10+00:00,2010-07-23 15:31:10+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,904,904,"resolve https://issues.apache.org/activemq/browse/AMQ-2580 - patch was good for AMQ store, fix needed for kahaDB and JDBC now done, test case was great, thanks.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@967134 13f79535-47bb-0310-9956-ffa450edef68",47,43,1.4835364940485753,1.4835364878608914,99
+3432a75110022bcef39feb8f0f51017d1df5507c,2010-10-21 10:58:51+00:00,2010-10-21 10:58:51+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,905,905,"jdbc variant of https://issues.apache.org/activemq/browse/AMQ-2985 - jdbc store cannot ack out of order, the cleanup task query needed to be priority aware. fix for https://issues.apache.org/activemq/browse/AMQ-2980 JDBC - priority needed to be considered in count and recovery, additional tests included
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1025939 13f79535-47bb-0310-9956-ffa450edef68",47,43,1.4801349746441965,1.4801349735529659,99
+06cbebc8da7336be7feae5d7b8df25860092e5f7,2010-11-04 13:13:37+00:00,2010-11-04 13:13:37+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1028,1028,"further resolution to https://issues.apache.org/activemq/browse/AMQ-2980, concurrent producers was still problematic as the store needed to be traversed multiple times, requiring ack locations per priority. Resolution to https://issues.apache.org/activemq/browse/AMQ-2551 fell out of decreasing the cleanup interval in some of the tests, cleanup needs an exclusive lock so it won't cause contention
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1030928 13f79535-47bb-0310-9956-ffa450edef68",53,46,1.4463562691559828,1.4463562686106042,104
+fa4481c421c1a0bf111fd664c611554e8415103d,2010-11-09 16:34:54+00:00,2010-11-09 16:34:54+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1004,1004,"more improvements on https://issues.apache.org/activemq/browse/AMQ-2980 - split prioritised and regular statements, have ack row per priority and fix up deletion and interleaved durable subs. Simpler slq improves throughput
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1033076 13f79535-47bb-0310-9956-ffa450edef68",53,45,1.4567952012195695,1.456795215319339,112
+4679c8a788a49463c9251914d8cafcb48d54cb66,2010-11-12 16:51:26+00:00,2010-11-12 16:51:26+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1033,1033,"remove priority flag from default jdbc impl as that is shared across dests, leads to conflict between priority and non priority dests, limit rowSize returned from durable fetch so we don't hog memory or return too few matches: https://issues.apache.org/activemq/browse/AMQ-2980
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1034466 13f79535-47bb-0310-9956-ffa450edef68",54,47,1.4636941693130139,1.4636941781133457,118
+4fbf92de82a88976f3da01fd73f6e0b512f27c0f,2010-11-15 10:00:56+00:00,2010-11-15 10:00:56+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1034,1034,"improve jdbc durable sub performance for long running subs and resolve regression in selector test, related to https://issues.apache.org/activemq/browse/AMQ-2985, https://issues.apache.org/activemq/browse/AMQ-2980, expose maxRows on jdbc persistence adapter to allow it to be increased for really large selectors
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1035202 13f79535-47bb-0310-9956-ffa450edef68",54,48,1.476967224774297,1.4769672209304978,118
+8191f19672750533c4b45c0e0f08fbf0ae303d7d,2010-11-25 17:29:02+00:00,2010-11-25 17:29:02+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1031,1031,"resolve regression with offline durable subs and jdbc, if there are no messages in the store and some consumed messages, the durable is not reactivated and subsequent messages can get deleted before they are consumed. Reduce the duplicate replays to a topic store cursor by tracking the last recovered. additional test
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1039108 13f79535-47bb-0310-9956-ffa450edef68",54,48,1.4743971347215847,1.4743971478705558,116
+8bf987b134bd827b93ed8157b323bc3bd2d8a82e,2011-02-10 14:24:01+00:00,2011-02-10 14:24:01+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1031,1031,"https://issues.apache.org/jira/browse/AMQ-3177 - use slf4j instead of jcl
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1069405 13f79535-47bb-0310-9956-ffa450edef68",54,48,1.4748354198760703,1.4748354183918435,116
+b0c2a40fb979829ceca2ca51858ca67269bd5992,2011-02-16 14:08:48+00:00,2011-02-16 14:08:48+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1031,1031,"Removing svn keywords, they don't have much value and just add additional noise when diffing source trees.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1071259 13f79535-47bb-0310-9956-ffa450edef68",54,48,1.4748354198760703,1.4748354165498798,116
+fe31092b5441db27181f8ebf96cf996e34aedc48,2011-04-20 10:39:25+00:00,2011-04-20 10:39:25+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1029,1029,"https://issues.apache.org/jira/browse/AMQ-3288 - JDBC persistence adapter, intermittent performance degradation when a durable subscriber of priority messages falls behind. Store recovery was sometimes ignoring batch limit and would recover till memory limit was reached. Resolved issue with out or order delvery and immediatePriorityDelivery policy around memory limit boundaries. Resolved issue with over eager cleanup when priority and non priority destinations are mixed. Removed potential full table scan from cleanup. Resolved issue with null message ref (prefetch=0) and expiry. Added a bunch of corresponding tests
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1095352 13f79535-47bb-0310-9956-ffa450edef68",54,49,1.5054528498201505,1.5054528661535886,114
+adc45e8801f14464428d7e833e5426fcc8ff6caa,2011-04-20 11:52:50+00:00,2011-04-20 11:52:50+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1029,1029,"https://issues.apache.org/jira/browse/AMQ-3289 - ActiveMQ has problems storing >4K messages in Oracle - brought BlobAdapter up to speed and added @Override to other adapters to catch this sort of problem in the future
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1095376 13f79535-47bb-0310-9956-ffa450edef68",54,49,1.503210151604918,1.5032101549292727,114
+b6f63b0d10f3db34356b056e3e4caeedc4c95aad,2012-02-03 13:43:36+00:00,2012-02-03 13:43:36+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1058,1058,"https://issues.apache.org/jira/browse/AMQ-3695: Failover using a JDBC Message Store and Virtual Topic can result in a lost message if queue is empty. Problem is that an empty destination is not recorded, as there is no entry in the messages table. Fix is to make use of the ack table, in the same way a for durable subs. For destinations that match the virtual topic filter, an entry out of priority range is added to the ack table. the startup destination query now unions over the ack and messages table
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1240162 13f79535-47bb-0310-9956-ffa450edef68",56,50,1.4953732774793198,1.4953732898356171,119
+64f3492c85ef8e6c1e4ab1fa6fe56d1c9f4417d2,2012-06-01 14:32:50+00:00,2012-06-01 14:32:50+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1146,1146,"https://issues.apache.org/jira/browse/AMQ-3872 - Implement ""exactly once"" delivery with JDBC and XA in the event of a failure post prepare. jdbc xa is not a runner due to single table and update locks. implemention adds xid column to messages and acks table. a non null value indicated a prepared add/ack, so the insert is done on prepare. the result of the transaction outcome requires a row level update
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1345202 13f79535-47bb-0310-9956-ffa450edef68",62,53,1.4926958280820986,1.4926958299624018,142
+f0d0ce07ab11222089a2c71a38f854115dbf2389,2012-06-05 14:48:17+00:00,2012-06-05 14:48:17+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1146,1146,"https://issues.apache.org/jira/browse/AMQ-3288 - fix over flow to negative on signed int accumulator, would break priority message deletion
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1346401 13f79535-47bb-0310-9956-ffa450edef68",62,53,1.491042371265555,1.4910423727777813,142
+3adee8c076141d314e64c53bb9f8e5fb3cf96883,2012-06-06 10:29:35+00:00,2012-06-06 10:29:35+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1146,1146,"https://issues.apache.org/jira/browse/AMQ-3872 - avoid property syntax for internal accessor to ensure property equality after seriaization in generated marshalling tests
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1346813 13f79535-47bb-0310-9956-ffa450edef68",62,53,1.491054860732087,1.4910548640482804,142
+32d3fd51b4aa8ce4290cf2389d1bdb2ca34d8d3f,2012-06-20 14:14:33+00:00,2012-06-20 14:14:33+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1146,1146,"https://issues.apache.org/jira/browse/AMQ-1885 - make tests more deterministic, ensure ioexception handler is used with lease locker to avoid contending masters, the resumption after an error is dependent on a keepAlive win, so the lease expiry tests w/o the io handler is invalid
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1352120 13f79535-47bb-0310-9956-ffa450edef68",62,53,1.491054860732087,1.4910548625262012,142
+60624c4e38dd2b38af567eaf2e18693beb758ad8,2012-06-22 20:43:24+00:00,2012-06-22 20:43:24+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1147,1147,"fix up destination statistics for recovered transactions, pending adds are not visible, but pending acks are still accounted for in the messages count, commit/rollback updates enqueues/dequeues/messages as expected - https://issues.apache.org/jira/browse/AMQ-3872, https://issues.apache.org/jira/browse/AMQ-3305 - both kahadb and jdbc suffered
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1353024 13f79535-47bb-0310-9956-ffa450edef68",62,53,1.4894232770378364,1.4894232868933657,142
+c55f6a84d7d57df248a9a9f1492b3ecdc895a0a5,2012-08-24 14:21:22+00:00,2012-08-24 14:21:22+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1148,1148,"https://issues.apache.org/jira/browse/AMQ-3557 - Performance of consumption with JDBC persistance and Microsoft SQL Server. Fix up default value for maxRows to allign with default page size. Use a large maxPageSize via destination policy for durable subs that have sparse selectors. Same as queues with sparse selectors
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1376934 13f79535-47bb-0310-9956-ffa450edef68",62,53,1.4957333549282263,1.4957333574796559,142
+ba5fdc59158f8797002199600dd0a0a3544e43fe,2012-10-24 19:59:43+00:00,2012-10-24 19:59:43+00:00,activemq-core/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1149,1149,"test case for https://issues.apache.org/jira/browse/AMQ-4122 - that does not show a problem atm
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1401849 13f79535-47bb-0310-9956-ffa450edef68",66,57,1.5880786554896695,1.5880786594563447,149
+c5cf03806d646045e01f6cd382504fa73dedfeee,2012-11-07 16:00:07+00:00,2012-11-07 16:00:07+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1149,1149,"Refactored out the remaining plugins in the activemq-core module into their own modules.
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1406686 13f79535-47bb-0310-9956-ffa450edef68",66,57,1.5880786554896695,1.5880786538291187,149
+d6e8a5b988c9adc0911b4f43550a0b9397e130ca,2013-01-29 15:27:01+00:00,2013-01-29 15:27:01+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1151,1151,"https://issues.apache.org/jira/browse/AMQ-1870 - have maxRows implement a limit, policyentry max page size can be used to extend the scan, https://issues.apache.org/jira/browse/AMQ-3557
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1439933 13f79535-47bb-0310-9956-ffa450edef68",66,57,1.5879105254528803,1.5879105090875385,149
+ada9e00b6dc23f95e21d1819b10f15ebf38bdee4,2013-06-13 15:06:50+00:00,2013-06-13 15:06:50+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1151,1151,"https://issues.apache.org/jira/browse/AMQ-1870 - fix on missed maxrow computation. thanks Keith
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1492698 13f79535-47bb-0310-9956-ffa450edef68",66,57,1.5879221058567161,1.5879220945001682,149
+74ba0529d22b6aa9faa5680f6d18433bdc7f2399,2013-07-11 12:33:33+00:00,2013-07-11 12:33:33+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1161,1161,"https://issues.apache.org/jira/browse/AMQ-4628 - first attempt at jdbc performance improvement; make xid column string and indexed
+
+git-svn-id: https://svn.apache.org/repos/asf/activemq/trunk@1502206 13f79535-47bb-0310-9956-ffa450edef68",69,57,1.5954251635724475,1.595425146422181,149
+ff409b6f2c790b15a7b9078fe49be896e71f1006,2014-03-21 13:52:41-04:00,2014-03-21 13:52:41-04:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1186,1186,"Applying https://github.com/apache/activemq/pull/18.patch to fix AMQ-5116: batchStatment is misspelled for JDBC adaptors.  
+
+This closes #18 @github.",71,60,1.5639591239185597,1.563959108341625,149
+266d23ef794e79bb48f81314295640421772808c,2014-03-26 11:16:42+00:00,2014-03-26 11:14:35+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1204,1204,revisit https://issues.apache.org/jira/browse/AMQ-3519 with more durable solution https://issues.apache.org/jira/browse/AMQ-5068 - JMSRedelivered header now persisted before dispatch so that it is a reliable indication of a possible duplicate delivery. The option is enabled via destination policy persistJMSRedelivered,71,61,1.5570210145359156,1.5570210004031382,151
+6348d11976fd16e74e0b36b5e76e8ba2bf48db4a,2014-07-10 12:33:29+01:00,2014-07-10 12:32:40+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1205,1205,"https://issues.apache.org/jira/browse/AMQ-5266 - fix ordering of concurrent transaction completion in jdbc store, avoid skipped message dispatch. additional test",71,61,1.559450918330677,1.5594509118145694,151
+8b64e139f83b66c61f4e38b3d6224f8c12acaa8c,2014-08-11 11:15:17-04:00,2014-08-11 11:15:17-04:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1213,1213,"https://issues.apache.org/jira/browse/AMQ-5318
+
+Check for auto-commit and don't call commit if enabled.  
+
+ This closes #43",73,61,1.5591608795486769,1.5591608707665991,153
+54e2e3bef290d7455d9d1ba3420d12dc4805b339,2014-08-30 00:51:21+01:00,2014-08-29 22:24:38+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1217,1217,rework cursor store sync w.r.t to index order. resolve issues with skipped dispatch and duplicate dispatch. https://issues.apache.org/jira/browse/AMQ-4485 https://issues.apache.org/jira/browse/AMQ-5266,75,61,1.5580975670323953,1.558097562870389,153
+3155c625c69e3251e3ecd73d50f1dc5ed48387d3,2015-02-06 12:56:29+00:00,2015-02-06 12:55:43+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1218,1218,"https://issues.apache.org/jira/browse/AMQ-5567 - fix and test - issue was eager dispatch with concurrent sends, recovery and outcome delivery now assign a new sequence id to message additions which sorts sequence order in the xa case",75,61,1.559381718563901,1.559381720209474,153
+eece28ac7501103490e1cb7bdc547c07c6968525,2015-07-03 10:30:16+01:00,2015-07-03 10:30:03+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1218,1218,"https://issues.apache.org/jira/browse/AMQ-5853 - rework fix, have store reset tracked recovered priority when higer priority messages are stored. Additional perf fix that removes unnecessary 2x multiplier on db fetch size; seems periodic message expiry was throwing some tests when the cache was enabled",75,61,1.5590148512171385,1.5590148474578494,153
+a2697b844e1ff61dee6f011ebd08eee59d23f1ca,2015-07-06 15:32:23+01:00,2015-07-06 15:32:23+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1222,1222,https://issues.apache.org/jira/browse/AMQ-5853 - track per priority sequence on load from the store. Allow db to select from entire prority 0-9 range. fix and additonal test,75,61,1.5563146519965476,1.5563146503188112,155
+457dbd8b64a3753dcaa1e3de7f4f2374e8ec624e,2015-08-05 16:29:29+00:00,2015-08-05 16:23:22+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1255,1255,"https://issues.apache.org/jira/browse/AMQ-5919
+
+Converting printStackTrace statements to slf4j so that exceptions
+are logged properly",75,61,1.537510781385288,1.5375107789075226,155
+78c959a5c44e51d3591987962897e04fc81b06f0,2015-11-18 13:03:24+01:00,2015-11-18 13:02:42+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1259,1259,https://issues.apache.org/jira/browse/AMQ-6049 - limit query results,75,62,1.544638678549255,1.544638689478992,155
+d8cf54b0a9eee4b86db1ffef2cb3dd1171067307,2016-03-01 11:44:41+00:00,2016-03-01 11:41:37+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1258,1258,"https://issues.apache.org/jira/browse/AMQ-4495 - revisit. Reinstate check for space on pagein, so that highWaterMark is respected and full state is not reached, hense pfc is not triggered in error",75,62,1.5456028601598657,1.545602870183664,161
+13ec9949397848c57653845b35e8003f8c490ebd,2016-03-07 16:26:25+00:00,2016-03-07 16:26:25+00:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1259,1259,"Revert ""https://issues.apache.org/jira/browse/AMQ-4495 - revisit. Reinstate check for space on pagein, so that highWaterMark is respected and full state is not reached, hense pfc is not triggered in error""
+
+This reverts commit d8cf54b0a9eee4b86db1ffef2cb3dd1171067307.",75,62,1.544638678549255,1.5446386812684567,155
+03a211ec061d9ed49dc1ac16f171d8f4458483b8,2016-06-28 15:57:17+01:00,2016-06-09 11:09:18+02:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1266,1266,"AMQ-6317: Use an SQL Statement for each createSchemaStatement
+closes #190",80,67,1.5578452409034207,1.5578452347158154,156
+2a815c2e08a5e2f5a056fdafbcd9c30dacf369d5,2016-07-21 10:54:40+01:00,2016-07-21 10:54:26+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1193,1193,AMQ-6370 - move cleanup lock to connection allocation to avoid contention with between store and connection pool. pool connection grant or block is now guarded by store lock which lasts till connection is closed,79,66,1.574320607115419,1.5743206108931864,156
+d54d046b8a8f2e9e5c0a28e1f8c7634b3c8b18e4,2016-11-03 11:54:33-04:00,2016-11-03 11:54:33-04:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1193,1193,This closes #185. Won't fix. (fix more file permissions),79,66,1.574320607115419,1.5743206232530431,156
+ed5edb03d7fe63ef27269566aaa9a9b501650eb0,2019-09-26 15:54:57+01:00,2019-09-26 15:54:57+01:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1193,1193,"AMQ-7311 - track recovered prepared ack locations on a per subscriber basis, fix and test",79,66,1.5743208356961407,1.5743208482889672,156
+e7f023ce8bafb9c40778bb7cbf7af6684da2c50c,2023-10-07 07:44:42-05:00,2023-10-06 10:22:17-05:00,activemq-jdbc-store/src/main/java/org/apache/activemq/store/jdbc/adapter/DefaultJDBCAdapter.java,1191,1191,"[AMQ-9324] Convert activemq-jdbc-store to use j.util.Base64
+
+ - No need to drag JAXB dependency just for a base64 converter",78,66,1.5579353055653453,1.5579353193919059,156

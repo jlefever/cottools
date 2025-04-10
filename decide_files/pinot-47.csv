@@ -1,0 +1,1296 @@
+commit,commit_date,author_date,path,loc,lloc,comments,blanks,entities,inter_cd,intra_cd,cc
+391f307c9065982f402173d84bdc79bdcc40ed8f,2014-12-12 14:21:58-08:00,2014-12-11 19:07:34-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,164,164,"Segment Creation
+
+RB=407628
+R=kgopalak,xiafu
+A=kgopalak",29,15,1.4521505118225808,1.4521505104345174,8
+f6884643e1219317f4347c41e887dd6cff955a6f,2014-12-19 17:16:11-08:00,2014-12-17 16:29:23-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,166,166,"1. Adding segmentMetadata start/end time into segmentMetadata creation, segmentMetadata loader.
+2. Adding RetentionManager to scan segments and delete them based on configs.",28,15,1.4530685782882355,1.4530685784918271,8
+ac18d6765d024efeeef6fdb4890d8b909f7919cb,2015-01-13 16:37:36-08:00,2015-01-13 16:35:24-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,168,168,"Fixing the bug of missing time column during segment metadata persistance.
+
+RB=416226
+R=kgopalak,xiafu
+A=kgopalak",28,15,1.4498552585638789,1.449855258294634,10
+9af5868aab5b19df8f64c3105254ad0653f96e7a,2015-01-14 17:32:05-08:00,2015-01-14 17:29:52-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,176,176,"Change addProperty to setProperty
+
+RB=416226
+R=kgopalak,xiafu
+A=kgopalak",28,15,1.449920147680358,1.4499201483124788,13
+ac7488ad7a76c5dc28429d5dc73098ef5db35618,2015-02-04 15:01:58-08:00,2015-02-04 14:43:08-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,182,182,Add hasNullValue into column metadata,31,15,1.449920147680358,1.4499201483124788,13
+603656783308be3802d0ea83ff678a2513ebe4f3,2015-02-11 14:39:33-08:00,2015-02-11 14:39:30-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,182,182,"Fixed unit tests with columns that contained null values with the recent FixedBitWidth API changes
+
+RB=430190
+R=kgopalak,xiafu,jfim,dpatel
+A=kgopalak",31,15,1.4506106444939113,1.4506106448573999,13
+3a2f7b4a753c91d23c63aec2166db96d2a60b371,2015-02-19 14:28:38-08:00,2015-02-19 14:19:03-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,212,212,"Fixed Javadoc, added comments, removed some duplicate code, used static imports to shorten some code
+
+RB=432303
+R=kgopalak,xiafu,jfim,dpatel
+A=kgopalak",38,15,1.4402130166605365,1.4402130204415289,14
+7d2461f604cd2257def160d00822874200e0ef3b,2015-04-02 18:24:38-07:00,2015-04-02 15:16:09-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,228,228,"Close all file handles after creating a dictionary, added a utility to unload direct byte buffers from memory",38,15,1.4397533712696728,1.4397533725533682,14
+31fbdfe1f0960cb1443c5eb0ee436e56b11248a5,2015-04-03 13:55:24-07:00,2015-04-03 02:30:27-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,217,217,"Remove unused config in segment creation;
+Adding more logs.
+
+RB=457283
+R=xiafu
+A=jfim",35,15,1.4361784007977032,1.436178401877559,11
+aa0217e8b6a885073c193d99c908d42f4f81edd2,2015-04-03 16:48:04-07:00,2015-04-03 15:25:11-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,227,227,"fixing for set/get time column name in SegmentGeneratorConfig
+
+RB=457725
+R=xiafu
+A=dpatel",36,15,1.439590194757788,1.4395901969657763,14
+3e9996b9f8e6b6db1597200084f95220b7174c76,2015-04-24 00:27:34-07:00,2015-04-24 00:27:34-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,237,237,adding sorted column inverted index creator as an inverted index creator,36,15,1.439668460181914,1.4396684634561592,16
+6a4f5feb4677c588097ee275ed004b9884c1edc5,2015-05-06 17:01:43-07:00,2015-04-29 12:57:33-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,240,240,packages refactoring for index creation,36,15,1.4435727657417872,1.443572768131229,16
+082d9abd976ac0776f125279e37c86e3922e716e,2015-05-06 17:01:43-07:00,2015-04-29 13:38:52-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,249,249,refactored forward index creation during segment creation,36,15,1.4501442659416002,1.450144268253506,18
+97392f5fc01c3f777fac28a2e5c4fdf481a10ea9,2015-05-06 17:01:43-07:00,2015-04-29 13:53:51-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,249,249,more index creator refactoring,36,15,1.4502046948916025,1.4502046950769012,18
+e0a488f81f98ab031c23129904d9e57e9c9ab098,2015-05-12 17:30:06-07:00,2015-05-12 10:29:47-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,253,253,using FixedBitSkipList reader/writer for MultiValue columns,37,15,1.450204693546011,1.4502046970503373,18
+4085079a13e3d2da676b9921000157ce206fcb57,2015-05-12 17:30:06-07:00,2015-05-12 16:56:28-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,259,259,"changes to the *Stats collector
+
+RB=480861
+R=dpatel
+A=xiafu",37,15,1.43508923956044,1.4350892395993184,21
+13bcd244c3c7d1025e64d3aa9f789b793b5f5c97,2015-05-18 22:09:54-07:00,2015-05-18 17:31:30-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,257,257,"Remove table concept from codebase
+
+RB=484372
+R=xiafu
+A=dpatel",37,15,1.4333522986588854,1.4333523000034527,21
+42a905c939055a86fb0f7bccc842f34b4cc8853b,2015-05-25 12:10:02-07:00,2015-05-24 23:32:02-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,257,257,"Move all the resource related methods, variables, configs to table
+related stuffs.
+
+RB=487751
+R=xiafu
+A=kgopalak",37,15,1.4331531187414084,1.4331531191005105,21
+09a1d135113c6bc13b6a51c9bdbd56a0c51f3d6c,2015-05-26 11:55:11-07:00,2015-05-26 10:01:11-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,256,256,"Removing author tags for open source preparation.
+
+RB=487969
+R=kgopalak,xiafu,jfim,dpatel
+A=jfim",37,15,1.4331531187414084,1.4331531176957513,21
+03edade6f607ed84a9853925c45f06adedc5c3ab,2015-06-01 11:13:59-07:00,2015-06-01 00:15:31-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,265,265,Adding dictionary caching during segment creation.,37,16,1.4631412218834625,1.4631412221505926,23
+24a73f433ba1d84c9ed903d9d780add24a45ca59,2015-08-06 14:37:21-07:00,2015-08-06 10:24:24-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,263,263,"Greatly improved memory usage of segment creation, removed creation and retention of large amounts of boxed primitives, removed memory inefficient cache, removed inefficient binary searches, added missing assertion for unsupported data type, added logging of pre-index creation per-column statistics, refactored forward index creator interface
+
+RB=538156
+BUG=
+G=pinot-dev-reviewers
+R=kgopalak,xiafu,jfim,dpatel,mshrivas
+A=ssubrama",37,16,1.4652652199604403,1.4652652183632733,22
+3f10743b8b059037eb03bfe9653116fdda3f8a0d,2015-08-17 19:08:36-07:00,2015-08-17 17:15:41-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,263,263,"Fixed incorrect end time in metadata
+
+RB=546697
+BUG=
+G=pinot-dev-reviewers
+R=kgopalak,jfim,ssubrama,dpatel,mshrivas
+A=dpatel",37,16,1.4652622867310934,1.4652622853711912,22
+b72609efa122a4c42b47d8e14c2a433164bb9313,2015-09-04 17:06:06-07:00,2015-09-04 16:37:58-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,265,265,"Improved memory usage of pre-indexing stats collection by a factor of ~1.63
+
+RB=561712
+G=pinot-dev-reviewers
+R=kgopalak,jfim,ssubrama,dpatel,mshrivas
+A=dpatel",37,16,1.4651063004342864,1.4651063001482045,22
+1c7c535c915215eb04fdebc79bef9fc1a662f6e3,2015-09-10 04:40:04-07:00,2015-09-08 06:22:37-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,277,277,added per column inverted index create config during segment creation,39,16,1.4619854709184388,1.4619854723059889,24
+42d5e69ead91d2d1ab2a226dad49055f4bc37ac4,2015-10-27 17:30:47-07:00,2015-10-27 17:24:14-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,279,279,[PINOT-2286]: Fixing NPE in inverted index creation.,40,16,1.4690184605960153,1.4690184603260168,24
+314efdc88303a2c916b84ed0e28329a539f2798c,2015-12-23 11:14:45-08:00,2015-12-22 21:52:30-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,279,279,"Refactoring bitmap index creator to be more memory efficient
+
+RB=635065
+G=pinot-dev-reviewers
+R=jfim
+A=ssubrama",40,16,1.469018463555722,1.4690184642490602,24
+59583ab970f585f8e3e7a5a6ad6d79678127b00a,2016-01-15 15:05:32-08:00,2016-01-15 13:27:54-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,288,288,"Adding code to create inverted index columns on realtime segments
+
+RB=642699
+G=pinot-dev-reviewers
+R=jfim
+A=jfim",41,17,1.4644432506527487,1.464443250859414,25
+46ffff7879d51f8d3676c2080b1c69602d635dac,2016-02-09 15:34:23-08:00,2016-02-03 06:32:33-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,297,297,"Bug fixes for star-tree index creation. Introducing the concept of rawdocs and totaldocs in segment metadata
+
+RB=657662
+G=pinot-dev-reviewers
+A=mshrivas",40,19,1.4678100287305405,1.4678100291964766,27
+c83048fa5c1374d7c1ad37477ad039aa4f290b19,2016-02-11 17:47:04-08:00,2016-02-11 13:35:37-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,302,302,"Wiring in star tree index operator in Filter Plan
+
+RB=660061
+G=pinot-dev-reviewers
+A=jfim",39,19,1.4689028520523477,1.4689028522301373,27
+c9b7c6c1cc12ec88dae0804fc058a2e4b374c0a8,2016-02-18 18:32:48-08:00,2016-02-18 18:32:48-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,286,286,"Misc Cleanup: Changed log level from info to debug for certain messages, added splitOrder, maxLeafRecords in segment metadata",39,19,1.4683608505065782,1.468360851640022,29
+42e3d5e35c6f59f314ec81a5bff0ccc09885bec6,2016-03-01 11:31:19-08:00,2016-02-29 18:36:08-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,288,288,"[PINOT-2765]: Skip creating star node for specific dimensions
+
+RB=671622
+G=pinot-dev-reviewers
+R=kgopalak,jfim,atumbde,ssubrama
+A=jfim",39,19,1.4684485693476237,1.468448570218796,29
+4fbb0436ee84c8d7f64f6b642575bc1939ea7b58,2016-03-18 18:08:01-07:00,2016-03-18 16:43:49-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,290,290,[PINOT-2757]: Added functionality to skip dimensions from materialization,39,19,1.4673703733550483,1.4673703738943205,29
+816c21da2fa282f671d9aeee090aee5efda143b4,2016-04-06 15:27:49-07:00,2016-03-31 16:28:28-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,290,290,"[PINOT-2891] fix hasInvertedIndex always true in metadata
+
+Add an option in pinot-admin to give a segment generator config file where you can
+specify inverted index columns, schema file path, table name, segment name, etc.
+This change will significant simplify the command line arguments.
+Now hasInvertedIndex will be set according to the inverted index columns.
+
+RB=695075
+BUG=PINOT-2891
+G=pinot-dev-reviewers
+R=jfim,mshrivas,kgopalak,vradhakr,atumbde,raringun,ssubrama
+A=mshrivas",39,19,1.467615491771591,1.4676154911176862,29
+b929d1148410c179d1c211379a6ce13bc6651d53,2016-04-11 17:19:03-07:00,2016-04-10 10:45:10-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,290,290,"Minor changes to schema class
+
+RB=701446
+G=pinot-dev-reviewers
+R=jfim
+A=vradhakr,ssubrama",39,19,1.4676154904544887,1.467615489888822,29
+1ebd143e1f9dbbb3bd3f08d7e9101eceb0d75e13,2016-05-04 15:31:22-07:00,2016-05-04 14:18:07-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,299,299,"In segment metadata, set hasInvertedIndex field always true.
+
+Because server side (ColumnMetadata class) has some dependencies
+on this field and this field is not handled properly, temporary
+set it true to avoid performance issue. Should change it back to
+actual value later.
+
+RB=719320
+BUG=PINOT-3021
+G=pinot-dev-reviewers
+R=jfim,mshrivas,kgopalak,vradhakr,atumbde,raringun,ssubrama
+A=ssubrama",40,19,1.4676154904544887,1.4676154910375816,29
+ce2f2c05f1cf319b2af536e3197ce0897e5d76c6,2016-05-12 10:47:24-07:00,2016-05-11 10:28:17-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,312,312,"Add metadata at the segment level about number of type errors/conversions/nulls
+
+RB=725011
+G=pinot-dev-reviewers
+R=xajiang,jfim,mshrivas,kgopalak,atumbde,ssubrama
+A=ssubrama",40,23,1.486617190846517,1.4866171928737253,29
+afb43267ddda01e57ed73127c67b919de62c749c,2016-05-25 17:47:30-07:00,2016-05-25 13:53:30-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,315,315,"Fix dictionaries and indexes for column with entries which have different original and padded values.
+
+RB=734933
+G=pinot-dev-reviewers
+R=xajiang,jfim,mshrivas,kgopalak,atumbde,ssubrama
+A=raringun,ssubrama",40,23,1.4843560161128166,1.4843560169762176,29
+7c90c763c069f6f7b8db1756158805eb8e7655d5,2016-06-13 14:41:18-07:00,2016-06-13 11:25:39-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,315,315,"Update license year to 2014-2016 (#193)
+
+Reviewer: Joe",40,23,1.4843560161128166,1.4843560153283135,29
+12c9a156529c24d8581609b311bf62a098150959,2016-06-13 17:43:39-07:00,2016-06-13 17:43:39-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,316,316,"Add Pinot Hadoop jar version to segment metadata (#174)
+
+* Adding Pinot Hadoop Jar version to SegmentMetada interface and impl
+
+* Adding the segment creator string to SegmentCreator config and corresponding creator class
+
+* Adding null checks, and adding test for backward compat testing
+
+* Addressing some casing issues in method names",40,23,1.48526360284738,1.4852636027002426,29
+c60240f52c4306b89b9d8441319d254d3252e4c5,2016-07-26 14:56:55-07:00,2016-07-26 14:56:55-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,321,321,"Make the padding character configurable and change it to the null character. (#286)
+
+By default the padding character will continue to be '%' but it can be
+changed to any other character. This will automatically support segments generated with the  current default
+'%' and with no padding character specified in the metadata.
+This fixes the case when the column value has a trailing percent, which results in wrong results.",40,24,1.5001929659927542,1.5001929662122115,29
+2aa0408c1fc3d574b079f5869fa6fa1eebf8f2a6,2016-08-15 15:54:07-07:00,2016-08-15 15:54:07-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,339,339,"Schema evolution: Default values for newly added columns (#161)
+
+Added functionality of adding new columns with default value in DefaultColumnHandler.
+Let DefaultColumnHandler take a schema argument to control the newily added columns.
+The schema is passed down from the Helix property store.
+Inside SegmentMetadataImpl, add methods to modify and store the segment metadata.
+Support ADD, UPDATE, REMOVE operation on newly added columns.
+Support segment format v1 and v3.
+The DefaultColumnHandler is constructed inside SegmentPreProcessor.
+Added unit test and integration test for all types of newly added columns.",32,26,1.567802138091281,1.5678021382732683,31
+b617b59a9c22fa31fbdec844d266cadea98b5376,2016-09-06 16:37:55-07:00,2016-09-06 16:37:55-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,351,351,"startree hll config and aggregation function in query processing (#440)
+
+*  startree hll config and aggregation function in query processing
+
+* add hll config related unit tests",34,26,1.5707829937851534,1.5707829913630582,33
+016a46375a2f1c0018a890e99aeebd1bf3750b63,2016-09-07 13:27:46-07:00,2016-09-07 13:27:46-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,350,350,"separate hll config and startree (#504)
+
+* separate hll config and startree
+
+* fix compile issues",34,26,1.5700127781051938,1.5700127759000664,33
+55b582359cc18d096e43bcae9f032c982d74b560,2016-09-15 16:40:18-07:00,2016-09-15 16:40:18-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,361,361,Remove dependency on third-party HLL lib for segment generation without HLL (#549),37,26,1.5710023924698704,1.5710023902813595,37
+0bfc8d8e1b941db586458f632b8951bb28f61355,2016-11-29 21:58:04-08:00,2016-11-29 21:58:04-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,361,361,"Allow creation of segment without starTree when HLL columns are providedx (#863)
+
+* Allow creation of segment without starTree when HLL columns are providedx
+
+* Refactored HLL tests and added additional tests to validate
+segment creation when HLL column is provided in avro.",37,26,1.5710023915851568,1.571002393980265,37
+5933627f5777d2dc164fdbb070b4ba6958038adb,2016-12-16 06:13:57-08:00,2016-12-16 06:13:57-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,417,417,"No-dictionary indexing support for single-valued string columns. (#899)
+
+1. Added new Reader/Writer for variable byte length (string) data
+   with customizable compression.
+
+2. Added capability to generate/load segments with columns without dictionary:
+   - Forward index contains actual values of data, instead of dictionary ids.
+   - For high cardinality usecases, with large variance in string lengths,
+     this provides > 2X storage space saving (mostly from eliminating paddingy).
+   - Also if data is arranged such that related rows are colocated, this
+     improves locality. We have observed orders of magnitued of
+improvement in throughput, when data is large enough not to fit in main
+memory, as it avoids data fetch from random parts of
+dictioary.
+
+3. Added convertor from dictionary encoded to no-dictionary segment.
+
+4. Added unit tests for index creator, as well as var-byte reader/writers.",42,28,1.583251766289346,1.5832517628168585,51
+1f37fa707feeb00311413de770d5bdd1b08a95ff,2017-01-05 17:22:26-08:00,2017-01-05 17:22:26-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,469,469,"Add raw indexing (no-dictionary) support for single-valued primitive data types. (#932)
+
+1. Added reader/writer for reading/writing raw (single) values for fixed width
+primitive data types (int, long, float, double).
+
+2. Enhanced segment generator to generate raw index for these data type.
+
+3. Enhanced segment loader to load the raw index using appropriate
+readers.
+
+4. Modified data fetcher to support fetching data from raw index.
+
+5. Enhanced dictionary based to raw index convertor to support these
+data types.
+
+6. Added unit tests for the reader/writer.",50,29,1.6093191993396707,1.6093191990537814,49
+d5188e79481a79f7e4622476fbcb409dc449e959,2017-01-24 09:50:58-08:00,2017-01-24 09:50:58-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,466,466,"Generate v3 segments by default (#981)
+
+* Generate v3 segments by default
+
+Change segment generator default to output v3 segments. Also
+correctly set server level segment default to generate v3 segments.
+v3 segments are generated by invoking the converter in this step.
+This will be replaced with more optimal generator for v3.
+
+Testing: All tests, local segment upload, delete testing with v1 and v3 segments
+
+* StarTree format converter should use SegmentDirectorPaths to locate the file
+
+For v3 segments, startree files are in v3 subdirectory. Use
+SegmentDirectoryPaths to find startree file during format conversion.",49,29,1.6093191993396707,1.609319198698822,49
+ba64d34c2159a8c2e5f5429a17179a9f57c9c65a,2017-03-13 17:41:01-07:00,2017-03-13 17:41:01-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,476,476,"Add server side column min/max value pruner (#1135)
+
+1. Add a ColumnMinMaxValuePruner to prune segments based on the min/max value of the column.
+2. Pruner works on EQUALITY and RANGE, can handle nested AND and OR.
+3. Pruner can detect invalid RANGE predicate (e.g. BETWEEN 10 AND 0).
+4. Add ColumnMinMaxValueGeneratorMode: NONE, TIME, NON_METRIC, ALL to config the columns to add min/max value to, mode can be configured through TableCustomConfig, default TIME.
+5. Column min/max values are added at loading time, and flushed to segment metadata on disk.
+6. Add 2 unit tests, one for generating min/max, one for pruner.",50,30,1.6438301336250707,1.643830130596728,49
+df67c3276c95615ef5525a94173027341c672dfc,2017-03-23 14:32:19-07:00,2017-03-23 14:32:19-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,486,486,"Support for partitioned data during segment generation and query (#1181)
+
+execution.
+
+1. Segment Generation: Added config to specify the column with
+partitioned data. Config contains:
+   - Name (and arguments) for the partition function.
+   - Expected partition range(s) for the segment.
+   Segment generator checks if values for partitioned columns are within
+specified ranges. If yes, then partition info is written to metadata,
+otherwise not.
+
+2. Partition based segment pruning: If there are predicates on
+partitioned columns, then segments for which the predicates cannot be
+satisfied are pruned out from query planning and execution.
+
+3. Unit tests for new code.",51,30,1.6438301326671327,1.6438301309420589,51
+c894f00d973a74dacbfbe846ed7b2c7cf8341b16,2017-04-07 20:20:37-07:00,2017-04-07 20:20:37-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,489,489,"Derive partition ranges during indexing instead of relying on config. (#1258)
+
+1. Compute the partition range during segment generation instead of
+getting it from segment generation config. We will generate only one
+range currently, instead of a list of ranges. Metadata and pruner still
+support a list of partition ranges.
+
+2. The new code will now always write out a partition range as computed
+while indexing. This is different from the existing code that would not
+write the partition range metadata if it is not as expected.
+
+3. Updated tests to reflect this change.",51,30,1.6438301326671327,1.6438301309420589,53
+67182f03a569b6c093243570f5f228a2d7133f47,2017-04-10 18:10:30-07:00,2017-04-10 18:10:30-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,491,491,"Enhance IndexingConfig to have SegmentPartitionConfig. (#1264)
+
+The current indexing config has a map of column to partition function
+name, which is not sufficient information. Also, it imposes the burden
+on client of IndexingConfig to parse this info and build
+SegmentPartitionConfig. This change embeds SegmentPartitionConfig inside
+of IndexingConfig, thus solving both the problems.
+
+1. Added partition config inside of indexing config.
+2. Separated out number of partitions as a first class member of
+partition config, as opposed to embeded in partition function string.
+3. Moved the config classes to config, as IndexingConfig resides there.
+4. Enhanced unit tests to cover the changes.",51,30,1.6438301326671327,1.6438301309420589,53
+b23be4ed291dfd848840d9ddc3194b19b669a838,2017-04-17 21:33:21-07:00,2017-04-17 21:33:21-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,515,515,"Fix the problem of int overflow when trying to generate inverted index on huge number of entries (#1315)
+
+Added checks before generating inverted index.
+If the check failed, log a warning and skip creating the inverted index.",52,30,1.6438301333370504,1.643830131600651,58
+e13045ac79477dd2317d53367277fc85334fd239,2017-09-18 13:43:52-07:00,2017-09-18 13:43:52-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,519,519,"[PINOT-5314] Fix leak in OffHeapBitmapInvertedIndexCreator (#1902)
+
+This class makes a bunch of calls to allocate direct memory in its constructor. If second or subsequent
+calls fail to allocate memory then previously allocated memory is not released.
+
+Added a try/catch and released memory in the constructor before re-throwing the exception.",52,30,1.6438301333370504,1.643830131600651,58
+01242f9406d1b1d14ffc22a9fe74ad27dcfa1b73,2017-09-27 19:43:48-07:00,2017-09-27 19:43:48-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,535,535,"Tool for backfilling datetime column in pinot segments (#1890)
+
+* Tool for backfilling datetime column in pinot segments
+
+* Rename to BackfillDateTimeColumn
+
+* In the case of same name but different configs dateTimeFieldSpec backfill, add all other dateTimeFieldSpecs if any
+
+* Test for multiple dateTimeFieldSpecs, mandatory backup path, exception handling, javadocs
+
+* Removing redundant check for null outgoing timespec",55,30,1.6429389638287675,1.642938965505603,59
+19cbf166759e963129332805d79c37131ae1847d,2017-10-11 16:59:24-07:00,2017-10-11 16:59:24-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,505,505,"Refactor on-heap/off-heap inverted index creator to prevent leaking resources (#1989)
+
+1. When inverted index cannot be created, throw exception instead of not creating it (Even we do not throw the exception, it will fail when trying to load it)
+2. Add a field ""onHeap"" (default false) in SegmentGeneratorConfig so we can choose to generate index using on-heap/off-heap generator (currently only apply to inverted index)
+3. On-heap inverted index creator does not have the limit on total number of values, so if using heap memory won't cause problems (Hadoop job), should prefer the on-heap creator
+4. Add Closeable to creator classes to prevent leaks
+
+TODO: fix leaks for other type of index creators",53,28,1.658666672482027,1.6586666731740005,51
+a46182f5f3b233b97f424f76400126848bc04b11,2017-10-20 15:29:32-07:00,2017-10-20 15:29:32-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,505,505,"Add StarTreeIndexSpec and hllConfig to segmentValidationAndRetentionConfig (#1983)
+
+* Adding StarTreeIndexSpec and hllConfig to segmentValidationandRetentionConfig for PBNJ and minion purge so that they are accessible when generating segments from table config.
+
+* Due to package dependency conflicts between core and common, moved size-relevant methods from hllUtils into its own hllSizeUtils as size methods are used during hll config initialization as derived fields. Left the rest of the hllUtils methods in pinot-core because they are used by GenericRow. Moved hllConfig to pinot-common so it is visible to the SegmentsValidationAndRetentionConfig.",53,28,1.658666672482027,1.658666673661325,51
+a36e67ddceddce3de331c07d447904ca1cc95bab,2017-11-14 16:40:54-08:00,2017-11-14 16:40:54-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,505,505,"Add support for hll config in CreateSegmentCommand (#2070)
+
+Includes misc changes for star-tree",53,28,1.6587047842494493,1.6587047837849458,51
+9f71a350fb86b5ee7a319ce24b498f3407d1390b,2017-12-12 15:27:39-08:00,2017-12-12 15:27:39-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,518,518,"Enhanced raw index readers/writers to support uncompressed data. (#2204)
+
+Metric columns are good candidate for raw index (no-dictionary).
+However, in the current implementation, random access of metric columns
+is slow due to de-compression. This change allows us to support
+uncompressed data in raw index form, so it can be fetched efficiently.
+
+1. Added total docs, compression type and data start offset to the header. Adding
+data start offset in the header allows for adding more header
+information in future, without fixing where data starts.
+
+2. Compression type is now configured by SegmentColumnarIndexCreator,
+instead of being hardcoded. Also, make compression optional.
+
+3. Bumped up the writer version to 2, and enhanced reader to be able to
+read the current as well as previous version.
+
+4. Added tests for un-compressed format, as well as for backward
+compatibility.",54,28,1.6619574590061126,1.661957456710821,51
+1cda55c69047d9e29b92f394c50982d695c06969,2018-01-02 17:36:07-08:00,2018-01-02 17:36:07-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,516,516,Remove dateTimeType from dateTimeFieldSpec (#2287),54,28,1.6619574555107788,1.6619574556333154,51
+1797e4a25e1b5f02bfd29c3aa3befee41f92bd7b,2018-01-08 14:55:15-08:00,2018-01-08 14:55:15-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,515,515,"Change compression type to pass-through for raw indexed realtime metric columns (#2296)
+
+* Change compression type to pass-through for raw indexed realtime metric columns
+
+* Fixing NPE",54,28,1.6619574566471482,1.6619574570657343,51
+f6057c77dbb94965518a18f8082b16fcea74e8c6,2018-02-15 10:43:24-08:00,2018-02-15 10:43:24-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,508,508,"Enforce padding character to be '\0' (#2495)
+
+The current code will break if the padding character is not '\0'
+
+1. Remove the config for padding character
+2. Simplify the logic of creating string dictionary because the order won't change",54,27,1.6523488628552514,1.6523488593459899,51
+4f5f228297ce437f36a5344425c32cc20ebfad95,2018-02-28 11:33:39-08:00,2018-02-28 11:33:39-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,507,507,"Rewrite SegmentDictionaryCreator to use the FixedByteValueReaderWriter (#2501)
+
+1. For string value, only call getBytes() once for performance
+2. Add empty segment check
+3. Add benchmark for dictionary creation
+4. Allow zero length padded string to avoid the hack of using 1 byte to store empty string (we support 0 length dictionary)
+
+For string dictionary, benchmark score get improved from 437.810 ± 9.043  ms/op to 296.688 ± 4.540  ms/op (more than 30%)",54,27,1.6523488628552514,1.6523488612590183,51
+2ba4159db08db31e80d60784e9b86f7439c4d53a,2018-05-01 20:10:58-07:00,2018-05-01 20:10:58-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,510,510,"TDigest Support: Support for TDigest based percentile estimation. (#2754)
+
+* BYTE_ARRAY Support: Support for Bytes data type for segment generation
+and loading.
+
+1. Segment generator can now consume (Bytes) byte[] data type from
+input, and index it appropriately:
+   - For fixed length columns: Sorted, unsorted, and no-dictionary
+     indexing is supported.
+   - For variable length columns: Only no-dictionary indexing is
+     supported. This is because current dictionary based indexing would
+required padding variable length values to make them fixed length, which
+is not feasible for byte[].
+   - Only Single-Valued columns currently supported.
+   - TODO: Add support for Multi-valued columns of byte[] type.
+
+2. Segments containing columns with Bytes data type can now be loaded
+and read in.
+
+3. Off-heap as well as on-heap dictionaries now supported for
+byte[], for both Mutable as well as Immutable dictionaries.
+
+4. Added unit test for the new functionality.
+
+* Support for TDigest based percentile aggregation function(s).
+
+1. Replaced QDigest based percentile aggregation function implementation
+with TDigest based implementation.
+
+2. Added api's to get byte[] data from ProjectionBlockValSet,
+DataBlockCache & DataFetcher.
+
+3. Enhanced DataTable to support ser/de of TDigest objects.
+
+4. Added unit test for the new features.
+
+TODO:
+
+1. Support selection queries by returning hex encoded byte[].
+2. Since byte[] read/write support is not yet available for multi-valued
+columns, the MV aggregation function is still based on QDigest.
+
+* BYTE_ARRAY & TDigest Support contd: Support for byte[] and TDigest
+on all parts of the stack.
+
+1. Enhanced Selection Operator and data fetchers to support byte[].
+   These byte[] are converted to Hex string for selection queries.
+
+2. Added more percentile functions (25 and 75).
+
+3. Added unit tests to cover server-side as well as broker side merge of
+TDigest.
+
+2. Addressed comments from review.",54,27,1.6524752785968275,1.6524752773924134,54
+4d088057bae5bc6a3334d71537145e4eba6041a4,2018-05-24 17:52:58-07:00,2018-05-24 17:52:58-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,521,521,"Fix the issue where start/end time defined in SegmentGeneratorConfig is not picked up by IndexCreator (#2849)
+
+When generating segment, if start/end time is defined in SegmentGeneratorConfig, use the one in the config
+Move the SIMPLE_DATE time value conversion logic into IndexCreator from SegmentIndexCreationDriver
+New logic is covered by SegmentGenerationWithTimeColumnTest",55,27,1.6524752803906868,1.6524752822040387,59
+5d968c2da55935255fbd3cde1fc830f78e81e5ea,2018-05-25 15:25:58-07:00,2018-05-25 15:25:58-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,527,527,"Add log to track field name when exception thrown; Hot fix for calculating buffer length (#2850)
+
+* Add log to track field name when exception happens
+
+* Cast the result of multiplication to long",55,28,1.645153881141193,1.6451538816748645,59
+70010adad0be73a625cf37cecce1203fce927be6,2018-05-30 06:20:38-07:00,2018-05-30 06:20:38-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,553,553,"Use PASS_THROUGH compressor for Metric columns, by default. (#2857)
+
+1. Unless explicitly specified, no-dictionary Metric columns will now use
+   PASS_THROUGH compressor. This is because after applying predicates
+   rows of metric columns are more likely to be spread across multiple
+   chunk buffers, and in the worst cases would require one chunk
+   decompression per row selected.
+
+2. Bug fix in PASS_THROUGH decompressor where the output buffer was not
+   flipped to be ready to read.
+
+3. Enhanced unit tests to cover the new functionality.",57,29,1.651107658129663,1.651107663815423,65
+e22e1ce4e8d5a774e8b2fa756ec4f38703661565,2018-06-18 15:34:22-07:00,2018-06-18 15:34:22-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,551,551,"Re-implement OffHeapBitmapInvertedIndexCreator to support large number of values (> 500M) (#2886)
+
+1. Use LBuffer or MMapBuffer instead of ByteBuffer to allocate buffer larger than 2G
+2. Based on the number of values we need to store, choose LBuffer or MMapBuffer
+3. Re-use buffer if possible to reduce memory footprint
+4. Do not generate extra temporary file during index generation
+
+NOTE: the temporary buffers used are not tracked by MMapUtils. After adding trackable big size buffer, will replace the LBufferAPI with the new one",56,29,1.6518927646007047,1.6518927686134857,65
+0be1ec623724888b5c43de1301ec3daa90f70333,2018-07-11 10:35:02-07:00,2018-07-11 10:35:02-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,551,551,Update copyright year range to 2014-2018. (#2941),56,29,1.6518927646007047,1.6518927690169345,65
+6be93096d2f605ead786abaa5e7ffc18343394a7,2018-07-23 18:23:43-07:00,2018-07-23 18:23:43-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,547,547,Replace Number.SIZE / Byte.SIZE with Number.BYTES (#2985),56,29,1.649032066514595,1.6490320716276663,65
+8bfca8d0250f7bcfe44f039b1055c29a74c1a3b2,2018-09-11 13:56:38-07:00,2018-09-11 13:56:38-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,554,554,"Add support for virtual columns (#2000)
+
+Add support for virtual columns, which are columns that have no on-disk
+representation but instead contain values that are filled in at run
+time.
+
+Add support for three built-in virtual columns:
+ - $docId: Returns the document id for the current row
+ - $segmentName: Returns the current segment name
+ - $hostName: Returns the hostname of the current server
+
+These columns can be used for debugging purposes, such as debugging
+query routing (which server answered which query) and data issues (what
+are the data ranges in each segment).
+
+Additional built-in virtual columns can be added to
+VirtualColumnProviderFactory and customized virtual columns can be added
+to any schema by adding a provider to the classpath and specifying the
+fully qualified class name as the ""virtualColumnProvider"" property of
+the field specification in the Pinot table schema.",59,29,1.6495604664451702,1.649560467576138,66
+e5ec0f9cdf60b341fd2373da12420c89367e19a2,2018-09-27 18:39:45-07:00,2018-09-27 18:39:45-07:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,550,550,"Simplify the parameter for forward index creators (#3208)
+
+Also move method getNumBitsPerValue() into PinotDataBitSet and re-implement it without using double",57,29,1.6510702616016253,1.6510702668313233,66
+5c296de1c4b91d4cc3b99ee6ccf15c077f9b4dcc,2018-11-05 19:13:14-08:00,2018-11-05 19:13:14-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,538,538,"Add RecordTransformer to perform transformation to incoming record (GenericRow) (#3424)
+
+Replace the PlainFieldExtractor with record transformers for flexibility
+When reading records from record reader or consuming realtime records, need to perform transformation.
+When converting realtime segment into offline segment, no need to perform transformation because it's already done while consuming.
+
+Default record transformers:
+1. TimeTransformer: converts incoming time into outgoing time
+2. ExpressionTransformer: evaluate expressions and insert values into record
+3. DataTypeTransformer: converts values in record to data types specified in the schema
+4. SanitationTransformer: sanitizes values (remove '\0' from string, put byte[] into ByteArray)
+
+CompoundTransformer can take a list of transformers and perform all the transformations",57,25,1.647197854213453,1.6471978544364745,66
+46ad4f95996e77da8b516535daa8be4d89c09d36,2019-01-08 14:38:45-08:00,2019-01-08 14:38:45-08:00,pinot-core/src/main/java/com/linkedin/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,541,541,"Update license header (#3664)
+
+* Update license header
+
+* Address review comments - Update excludes
+
+* Address review comments - add license header for autogenerated code as well",57,25,1.647197854213453,1.64719785387081,66
+b497851f3406b72b7f36596c362e1fcbcb4a162a,2019-01-11 09:43:41-08:00,2019-01-11 09:43:41-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,541,541,Move all files in com.linkedin to org.apache (#3680),57,25,1.647197854213453,1.64719785387081,66
+e7b20da3a3ef6f6a29f4c3f359aafdf96da1e134,2019-01-11 09:53:02-08:00,2019-01-11 09:53:02-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,541,541,Rename all package references from com.linkedin to org.apache (#3681),57,25,1.647197854213453,1.64719785387081,66
+059149bb621b6274f0234c2aa43d45dec97cb78e,2019-01-14 16:37:43-08:00,2019-01-14 16:37:43-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,541,541,"Optimize imports for all files (#3683)
+
+The import optimization is based on the LinkedIn Style which will be checked in in a separate PR.",57,25,1.647197854213453,1.64719785387081,66
+525102fd907bfce67d2f68d9feaf74987ae177e7,2019-01-23 13:11:27-08:00,2019-01-23 13:11:27-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,537,537,"Replace partition ranges with partitions (#3725)
+
+Currently for partition based routing and pruning, we store a list
+of ranges (IntRange), but does not support any operations on ranges.
+Instead, storing a set of partitions (int) should be enough to serve
+all use cases.
+
+New behavior:
+- For json format ColumnPartitionMetadata, replace ""partitionRanges""
+  with ""partitions"" key.
+  E.g. ""partitionRanges"":""[0 0],[1 1]"" -> ""partitions"":[0,1]
+- For partition in segment metadata, replace strings with integers
+  E.g. partitionValues = [0 0],[1 1] -> partitionValues = 0,1
+
+Backward-compatibility:
+- Add custom deserializer for ColumnPartitionMetadata to handle both
+  new and legacy json format
+- Add ColumnPartitionMetadata.extractPartitions() to handle both new
+  and legacy config format
+- Add ColumnPartitionMetadataTest",57,25,1.6471978546865977,1.6471978557422826,64
+ce2d9ee9dc73b2d7273a63a4eede774eb024ea8f,2019-01-28 20:26:06-08:00,2019-01-28 20:26:06-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,542,542,"Auto-reformat all java source files (#3739)
+
+Use IntelliJ to reformat all java source files
+Manually fix some wrong-placed comments
+No code change involved
+
+After this, we can manually go to each file and resolve the checkstyle warnings
+
+To resolve conflict after rebasing on this change:
+1. For any conflict, pick the change in your branch
+2. Reformat the file using IntelliJ after all conflicts resolved
+
+NOTE: the reformat for enum is not well-supported (behavior is different between Mac and Linux), check before submitting the code",57,25,1.644202718572657,1.6442027154955519,64
+b3bd35b9dbf6e36932720cb338ef949b187d85a1,2019-03-06 17:11:41-08:00,2019-03-06 17:11:41-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,544,544,"Fix SegmentGeneratorConfig where the time format in schema is not picked up (#3912)
+
+Fix the issue where the time related specs in schema are not picked up by SegmentGeneratorConfig
+Also fix the bug in SegmentGeneratorConfig.loadConfigFiles() where incoming time unit is picked (should use outgoing time unit)",56,25,1.6442027202169935,1.6442027211000902,62
+9f6c20bfe07b4356a5e5fec5deb3f8337eed3c16,2019-06-10 05:36:48-07:00,2019-06-10 05:36:48-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,544,544,"skip bit-map inverted index generation for sorted column (#4270)
+
+* skip the inverted index generation
+
+* skip the cleaning, no potential side effect
+
+* fixed comments
+
+* fixed comments
+
+* fixed comments
+
+* standalone test done",56,25,1.6442027223308846,1.6442027227485403,63
+49d8fa7907efc4192c3ecd5fef67c33e657c39f5,2019-07-05 20:41:04-07:00,2019-07-05 20:41:04-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,545,545,"#4317 Feature/variable length bytes offline dictionary for indexing bytes and string dicts. (#4321)
+
+* Adding a variable length bytes value reader for offline dictionary index.
+
+* Make variables private.
+
+* Cleaned up the changes a bit and removed the hacks to use the
+variable length byte dictionary.
+
+In the next iteration, we'll be deciding dynamically whether to use
+fixed or variable length impl.
+
+* Minor cleanup.
+
+* Adding stats about the string values length in the StringDictionaryPerfTest.java
+
+* Improved the magic header for VariableLength dictionary.
+
+Also fixed other review comments from Kishore.
+
+* Making the feature of whether to use variable length dictionary
+for a column configurable through TableConfig.
+
+* Use the variable length dictionary config in realtime segments path too.
+
+* Fixed a bug that was caught by the unit tests.
+
+* Adding variable length dictionary config in more places like:
+- IndexLoadingConfig
+- RealtimeSegmentConfig
+
+* Use separate file names for different tests in a single class. This was
+causing a race condition and unit test failure.
+
+* Dont set null value for varLengthDictionaryColumns
+
+* Fixed review comments.
+
+* Fixed review comments and formatted the code as per Pinot code style.
+
+* Variable length dictionary shouldn't support getPaddedString()
+since we don't expect it to be ever called.
+
+* The way byte[] returned from ImmutableDictionaryReader is reused,
+we can't really reuse it so removing the ThreadLocal byte[].
+
+Thanks to the unit test which caught this issue :thumbsup:
+
+* Explicitly persist the data section offset in the header of the store
+so that we don't need to make any assumptions about where the data starts.",56,25,1.6441177748950222,1.6441177764955768,63
+b1d28fd15416cbb5455cd77bde0ae26274c5f96d,2019-07-15 19:10:53-07:00,2019-07-15 19:10:53-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,540,540,Fix potential resource leak in the way we close a collection of closeables (#4418),56,25,1.6385818790622286,1.638581879543527,60
+7b1715c44f1a049d01cf739ab90d9defbda5f667,2019-07-16 11:16:35-07:00,2019-07-16 11:16:35-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,665,665,"3891: Check for validity of segment start/end time during segment generation (#4368)
+
+* 3891: Check for validity of segment start/end time during
+segment generation.
+
+This will allow us to fail-fast if there is incorrect data
+as opposed to detecting this later during segment upload.
+The check during segment upload is still retained though
+
+* Introduced a config option in SegmentGeneratorConfig to disable (if needed)
+the time column value validity check in the segment generation code path.
+
+The config option is enabled by default. Also, the tests that were generating
+segments were failing due to the newly introduced check in segment generation code.
+Very few of these tests generate test data themselves and so that was modified
+to generate time column data under acceptable range. But most of them
+were taking data from external avro file. So the tests explicitly
+disable the check for now until a new PR comes in that is going
+to modify the avro files with acceptable time column data.
+
+* Fix PinotOutputFormatTest
+
+* Check for segment time column unit if type is INT
+and convert to millis before doing validation check
+against min-max allowed values in segment generation code
+
+* Fix PinotSegmentUtil to generate valid data for all time units",64,26,1.6506041127486133,1.6506041120647588,73
+23ffd67d871e26b03fba1da16250c061924dbdf0,2019-08-25 16:27:32-07:00,2019-08-25 16:27:32-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,664,664,"Handle the virtual column logic in FieldSpec instead of Schema (#4562)
+
+Virtual column should be tied to FieldSpec, and should be determined by whether the virtualColumnProvider is configured
+E.g. A column starts with '$' but without virtualColumnProvider should not be considered a virtual column because it cannot be initialized
+
+Also fix a bug in MutableSegmentImpl where virtual columns are added to the physical dimensions/metrics list",63,26,1.651086186582444,1.6510861887946684,73
+49a65a3987a78fce2a0851a65eb65762b4f3003d,2019-09-24 14:28:51-07:00,2019-09-24 14:28:51-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,668,668,"Support default value for Byte column (#4583)
+
+* Support default value for byte column
+
+* Add tests for Tdigest and HLL byte columns",63,26,1.651086186582444,1.6510861876920997,73
+d30dfb0c1fc5462e77cefde185478faa5d4eb6d4,2019-09-25 19:00:34-07:00,2019-09-25 19:00:34-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,667,667,"Standardize the Dictionary interface, ensure the BYTES support (#4622)
+
+- Type conversion between INT/LONG/FLOAT/DOUBLE/STRING are allowed
+- Type conversion between STRING/BYTES are allowed
+- Push down and enhance the MutableDictionary range predicate evaluation
+- Return dictId/dictIds while indexing value into MutableDictionary
+- Add documentation for the contract of Dictionary interface
+- Enhance PinotDataType for BYTES conversion",63,26,1.6505369834502162,1.6505369812053226,73
+1f5bf57dd7b4c642a5d030a3d36ddf4b1853948f,2019-10-28 16:28:59-07:00,2019-10-28 16:28:59-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,688,688,"Presence vector (#4585)
+
+This PR adds support for a presence vector inside a mutable and immutable segment. This will enable the query layer to ignore null values in the corresponding columns. Please see this issue for more details: #4230
+
+High level gist is as follows:
+
+Create a presence vector per column per segment by default. This presence vector keeps track of which document ID has a null value in the corresponding column.
+Expose this through the DataSource interface to enable the caller to ignore such document IDs.
+Presence vector is not really used anywhere as part of this PR. Subsequent PRs will use them to enable filtering out columns in predicates (eg: select ... from table where column_name != null)",66,28,1.658997025676429,1.6589970230083952,77
+74aea8564e6b8d289b2946247fa63e892c75453f,2019-10-28 18:42:13-07:00,2019-10-28 18:42:13-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,583,583,"[SegmentGeneratorConfig Cleanup] Replace checkTimeColumnValidityDuringGeneration with skipTimeValueCheck (#4745)
+
+- Reverse the config so that the default is false (easier to use)
+- Simplify the logic of time value check
+- Fix the invalid time value in some tests
+
+NOTE: This commit has backward-incompatible change on the config introduced in #4368 merged in 07/16/2019. In SegmentGeneratorConfig, checkTimeColumnValidityDuringGeneration (default true) is replaced with skipTimeValueCheck (default false).",61,27,1.64740921720579,1.6474092175627746,65
+63ceb0c47759cf5b7372c03a2d76f7206bbec133,2019-11-27 23:40:20-08:00,2019-11-27 23:40:20-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,583,583,"Adding pinot-spi module and moving record reader interface (#4869)
+
+* Adding pinot-spi module and moving recordreader interface to it
+
+* Fixing compilation issues after rebase",61,27,1.64740921720579,1.6474092172162909,65
+c37fa7d64813f01448e1c37f627182514895bea4,2019-12-04 11:16:34-08:00,2019-12-04 11:16:34-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,583,583,"Moving stream related apis to pinot-spi (#4884)
+
+* Moving stream related apis to pinot-spi
+
+* Fixing compilation issue after rebasing",61,27,1.64740921720579,1.6474092172162909,65
+2a795310267e329c5b426dd639f65e510bcf1018,2020-02-14 07:45:47-08:00,2020-02-14 07:45:47-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,619,619,Support Text Search (#4993),66,28,1.630683063674153,1.6306830597321906,69
+4124563ecde36022f261f9de25459d8ac3812434,2020-02-22 20:46:15-08:00,2020-02-22 20:46:15-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,627,627,"Support segment reload for text index (#5074)
+
+* Support segment reload for text index
+
+* Address review comments. Fix tests",67,28,1.627545387234454,1.6275453875013937,69
+3c91a6d5b446886b2f0e6bb43c920b8e6e397b26,2020-02-26 17:30:45-08:00,2020-02-26 17:30:45-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,581,581,"Remove the support of the old Star-Tree (#5086)
+
+Remove the support of the old Star-Tree generated with the StarTreeIndexSpec (already deprecated)
+Remove the related metadata (rawDoc and aggregatedDoc)
+Remove the field size and derived metric type from MetricFieldSpec
+Simplify the segment generation logic
+
+Backward-incompatible: (checked with the community to make sure there is no use case with the old Star-Tree)
+Existing segments with old Star-Tree won't work properly",63,26,1.6322722427471927,1.6322722460400672,61
+85474bae9752fea584ca3c2c88e961361dda5e17,2020-05-19 16:46:11-07:00,2020-05-19 16:46:11-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,581,581,"DATE_TIME should work as the primary time column for Pinot tables (#5399)
+
+This PR ensures that Pinot can use a DateTimeFieldSpec as a primary time column for the table.
+After this change, we no longer need to use TimeFieldSpec and new schemas should be created using DateTimeFieldSpec (but can very well keep using TimeFieldSpec, even for new schemas, if you really wish to). Older schemas having TimeFieldSpec will continue to work just as before.
+TimeFieldSpec, TimeGranularitySpec, TimeConverter have been marked as Deprecated. Some tests have been modified to test both cases, some have been changed to use datetime, and some retain time. A new integration test has been added which used only DateTimeFieldSpec. Most integration tests continue to use schema with TimeFieldSpec. The quickstart has been updated to use DateTimeFieldSpec.
+
+A change to note:
+The segment.time.column.name property in the segment metadata is now used to keep primary time column. This will match with the time column name in tableConfig. This can be either timeFieldSpec or dateTimeFieldSpec. If primary time column is timeFieldSpec, it will be present in only this property. If primary time column is dateTimeFieldSpec, it will also be present in segment.datetime.column.names",63,26,1.6330979154925171,1.6330979176489788,63
+ee21e793c0365f538bcb3b801f47122c59fc0e04,2020-05-30 19:21:23-07:00,2020-05-30 19:21:23-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,599,599,"Two changes: (#5470)
+
+(1) PR https://github.com/apache/incubator-pinot/pull/5256
+added support for deriving num docs per chunk for var byte
+raw index create from column length. This was specifically
+done as part of supporting text blobs. For use cases that
+don't want this feature and are high QPS, see a negative
+impact since size of chunk increases (earlier value
+of numDocsPerChunk was hardcoded to 1000) and based on the
+access pattern we might end up uncompressing a bigger chunk to get values
+for a set of docIds. We have made this change configurable.
+So the default behaviour is same as old (1000 docs per chunk)
+
+(2) PR https://github.com/apache/incubator-pinot/pull/4791
+added support for noDict for STRING/BYTES in consuming segments.
+There is a particular impact of this change on the use cases
+that have set noDict on their STRING dimension columns for other performance
+reasons and also want metricsAggregation. These use cases don't get to
+aggregateMetrics because the new implementation was able to honor their
+table config setting of noDict on STRING/BYTES. Without metrics aggregation,
+memory pressure increases. So to continue aggregating metrics for such cases,
+we will create dictionary even if the column is part of noDictionary set
+from table config.
+
+Co-authored-by: Siddharth Teotia <steotia@steotia-mn1.linkedin.biz>",65,28,1.6796287235872411,1.6796287281310414,67
+04e12bd847b4a04e14d17e05e294680d396826d5,2020-06-08 09:14:22-07:00,2020-06-08 09:14:22-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,612,612,"Config for raw index writer version (#5503)
+
+* In PR https://github.com/apache/incubator-pinot/pull/5285,
+the raw index writer format was changed to use 8 byte offset
+for each chunk in the file header. The writer version
+was bumped to 3. This was done to support > 2GB indexes.
+The change was backward compatible to continue the support
+for reading existing/old segments using 4-byte offsets
+
+While there is no problem with the change, it prevents rollback.
+So if there is any orthogonal issue while rolling out a release,
+we can't rollback to older Pinot release since segments already
+generated with 8-byte offsets can't be read by old code.
+
+This config option is temporary to help with internal roll-out
+by keeping the 8-byte format disabled by default thus allowing
+rollback due to any issues. In the next couple of weeks after
+internal rollout, we plan to remove this option.
+
+* address review comments
+
+Co-authored-by: Siddharth Teotia <steotia@steotia-mn1.linkedin.biz>",65,28,1.6827978631227238,1.6827978655357114,73
+2d53876f669e34d8536461c52d5fe344ad1d1439,2020-07-06 12:24:18-07:00,2020-07-06 12:24:18-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,619,619,"Make DataSource independent of query execution (not extend Operator) (#5625)
+
+Changes:
+- Make `DataSource` independent of the query execution (not extend `Operator`).
+- Add interfaces for forward index.
+- Make `ForwardIndexReaderContext` close-able so that resources (e.g. off-heap buffer) can be released.
+- In `ForwardIndexReader', always read with `ForwardIndexReaderContext` and close it when the reading is done to prevent resource leak.
+- Remove `SingleValueSet` and `MultiValueSet` and change caller logic to directly use forward index and prevent resource leak.
+- Make `DataFetcher` directly use forward index and handle the type conversion within the class. Similar to Dictionary convention, type conversion among INT, LONG, FLOAT, DOUBLE, STRING, and between STRING and BYTES are supported.
+
+Motivation:
+Currently `DataSource` is modeled as an `Operator`, where values are returned as a block complying with the Operator interface.
+This is confusing because of the following reasons:
+- The block contains all the documents in the segment, instead of a block of at most 10000 documents as in the `Projection` layer.
+- The values are always fetched with their document ids, instead of fetched as a block. Currently `BlockValSet` interface has 2 sets of APIs because of this, which is confusing.
+- The `BlockValSet` returned by the `DataSource` is not really a value set, but a value reader on top of the forward index.
+- Extra `BlockMetadata` has to be maintained which can cause unexpected problems (e.g. the issue fixed in #5619)
+
+TODO:
+There are 2 remaining places where `ForwardIndexReaderContext` needs to be closed:
+- `ScanBasedDocIdIterator`
+- `DataFetcher`
+
+New inheritance hierarchy for the forward index classes:
+- `ForwardIndexReader`
+  - Dictionary-encoded unsorted SV: `FixedBitSVForwardIndexReader`
+  - Dictionary-encoded sorted SV: `SortedIndexReaderImpl`
+  - Dictionary-encoded MV: `FixedBitMVForwardIndexReader`
+  - Raw fixed-byte SV: `FixedByteChunkSVForwardIndexReader`
+  - Raw var-byte SV: `VarByteChunkSVForwardIndexReader`
+- `MutableForwardIndex` extends `ForwardIndexReader`
+  - Fixed-byte SV (for both dictionary-encoded and raw): `FixedByteSVMutableForwardIndex`
+  - Var-byte SV: `VarByteSVMutableForwardIndex`
+  - Fixed-byte MV (for both dictionary-encoded and raw): `FixedByteMVMutableForwardIndex`
+- `ForwardIndexCreator`
+  - Dictionary-encoded unsorted SV: `SingleValueUnsortedForwardIndexCreator`
+  - Dictionary-encoded sorted SV: `SingleValueSortedForwardIndexCreator`
+  - Dictionary-encoded MV: `MultiValueUnsortedForwardIndexCreator`
+  - Raw fixed-byte SV: `SingleValueFixedByteRawIndexCreator`
+  - Raw var-byte SV: `SingleValueVarByteRawIndexCreator`",59,28,1.6853165403092116,1.6853165426852716,76
+158f16c8a1c3c0203c553c6e8647ba016f9ef5fd,2020-07-16 18:45:10-07:00,2020-07-16 18:45:10-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,632,632,"Store column min/max value into segment metadata (#5709)
+
+Column min/max value is very useful information and can be used for query optimization.
+When creating the segment, we already collected the column min/max value, but not save them to the metadata.
+
+Changes:
+- Store the already collected min/max value to the segment metadata
+- Do not store string value with special characters that cannot be handled by the `PropertiesConfiguration`
+- Enhance the `SegmentColumnarIndexCreator.removeColumnMetadataInfo()` to handle the removal of new added properties (`PARTITION_FUNCTION` etc.)
+- Support min/max value for BYTES columns
+- Change default `ColumnMinMaxValueGeneratorMode` to `ALL` so that existing segments can have min/max value generated for all dictionary-encoded columns during segment load",60,29,1.7167422646602475,1.7167422670924588,87
+f740456dc74480456e8039db440afafce472e748,2020-07-17 02:22:19-07:00,2020-07-17 02:22:19-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,631,631,"Support text index on dictionary encoded columns. (#5667)
+
+With these changes, we can essentially have both text and native
+Pinot inverted index on the same column.
+
+Co-authored-by: Siddharth Teotia <steotia@steotia-mn1.linkedin.biz>",58,30,1.7126023000048636,1.712602308216686,87
+449bf94d0dd9ba7e07f32d44bcc534e95248c321,2020-08-13 21:56:25-07:00,2020-08-13 21:56:25-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,622,622,"Fix NPE for aggregate metrics (#5862)
+
+For real-time table with aggregate metrics enabled, the metrics will have `null` min/max value in the column stats while creating the segment, which causes `NPE`.
+Added the null check to prevent the exception.
+Also added an integration test for the aggregate metrics",59,30,1.7109202071086416,1.7109202192565056,86
+a892fb40bbc131017629f9149c352c25c5388598,2020-08-29 00:41:28-07:00,2020-08-29 13:11:28+05:30,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,625,625,"Add Range Indexing support for raw values (#5853)
+
+- Create new interface RawValueBasedRangeIndexCreator
+- Add support for raw value range index
+
+Following refactoring has been done in this PR:
+- Create a marker interface InvertedIndexCreator
+- Rename the existing InvertedIndexCreator interface to DictionaryBasedInvertedIndexCreator
+- Create a new interface RawValueBasedInvertedIndexCreator which has add function for all data types instead of just int
+- Create a new RawValueBasedRangeIndexCreator which extends RawValueBasedInvertedIndexCreator",59,30,1.7114111647808747,1.711411174890609,87
+b2df8ea51180df272cc7e67b91ac2f7827db4b1a,2020-09-15 15:04:04-07:00,2020-09-15 15:04:04-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,632,632,Add a length limit of 512 to the properties stored in the segment metadata (#6008),60,31,1.700519083176778,1.700519092530803,88
+e72a856bc3c8430c1502550494bae1224f8a9676,2020-09-17 12:55:57-07:00,2020-09-17 12:55:57-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,631,631,"[Clean up] Separate TextIndex from InvertedIndex (#6010)
+
+Introduce `TextIndexCreator` and `TextIndexReader` for text index",60,31,1.7028718578451312,1.7028718670162917,88
+fe9d3c79d2da709e6ce15929df539f91fe960c2e,2020-11-23 11:21:54-08:00,2020-11-23 11:21:54-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,655,655,"Support for text index without raw (#6284)
+
+* WIP - Support for text index withour raw
+
+* review comments
+
+Co-authored-by: Siddharth Teotia <steotia@steotia-mn1.linkedin.biz>",62,33,1.6896394560909975,1.6896394639715975,97
+1bb6c149ee4412d4e5da3a3b23565d76378df4d4,2020-12-25 07:28:33+05:30,2020-12-24 17:58:33-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,682,682,"Add FST index which works on top of REGEXP_LIKE operator. (#6120)
+
+This index is set to enable only on dictionary encoded string column.
+
+Co-authored-by: Pradeep Gopanapalli Venkata <pradeepvenkata@Pradeeps-MacBook-Pro.local>",64,35,1.6862972250801278,1.686297227501414,101
+ea0bfa04fc548f24de248b0d1eca7f8ef7515b54,2020-12-28 14:44:37-08:00,2020-12-28 14:44:37-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,717,717,"Add json index support (#6216)
+
+Add the support for json index
+
+Sample table config:
+{
+  ""tableIndexConfig"": {
+    ""jsonIndexColumns"": [
+      ""actor"",
+      ""repo"",
+      ""payload""
+    ],
+    ...
+  },
+  ...
+}
+
+Sample queries:
+- SELECT ... FROM table WHERE JSON_MATCH(person, 'addresses.street = ''matin st'' AND name = ''adam''')
+- SELECT ... FROM table WHERE JSON_MATCH(person, 'name != ''adam''')
+- SELECT JSON_EXTRACT_SCALAR(person, '$.name', 'STRING') FROM table WHERE JSON_MATCH(person, 'addresses.street = ''matin st'') LIMIT 10
+
+Co-authored-by: Xiaotian (Jackie) Jiang <jackie.jxt@gmail.com>",67,34,1.696664441395583,1.6966644436450333,109
+8d3d4d49f7be6dcd63d3b5d6dc71f203429d1532,2021-01-15 10:50:24-08:00,2021-01-15 10:50:24-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,750,750,"Merge H3-index branch to master (#6409)
+
+Add support for indexing (longitude, latitude) using Uber's H3 index.
+- select count(*) from starbucksStores where ST_DISTANCE(location_st_point , ST_POINT(-122, 37, 1)) < 10",69,35,1.6974188096869645,1.6974188162724282,115
+60b0c5f2dce5e82c7b1013a3b8d8935774d12d72,2021-02-17 12:50:58-08:00,2021-02-17 12:50:58-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,769,769,"Handle creation of segments with 0 rows  (#6466)
+
+* Handle creation of segments with 0 rows
+
+* Broker and server side pruners for empty segment
+
+* Set current time as start/end if 0 totalDocs. Handle in time boundary
+
+* EmptyIndexSegment and EmptyDataSource
+
+* Make ValidSegmentPruner as first pruner",69,35,1.6976650380652367,1.6976650454676032,123
+74e40375dcf864f3fcb4d3e22294251a4c5df345,2021-03-11 16:22:34-08:00,2021-03-11 16:22:34-08:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,766,766,"SumPrecision: support all data types and star-tree (#6668)
+
+Currently `SumPrecision` aggregation function only supports summing up the serialized BigDecimal bytes.
+
+This PR enhances the `SumPrecision` with:
+- All data type support (INT, LONG, FLOAT, DOUBLE, STRING) to perform exact sum
+- Star-tree support (e.g. `SumPrecision__col`)
+
+Other changes:
+- Move the `BigDecimal` related functions into `BigDecimalUtils`
+- Allow creating var-length dictionary for BYTES column",68,35,1.6970924497957034,1.6970924535871355,120
+9275a430049ff0d2888cb353fc7ef369d53a171c,2021-03-23 17:02:42-07:00,2021-03-23 17:02:42-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,766,766,"Support data ingestion for offline segment in one pass (#6479)
+
+Co-authored-by: Jack Li(Analytics Engineering) <jlli@jlli-mn1.linkedin.biz>",68,35,1.6972945351328788,1.6972945415455183,120
+98faf2bfac7ec69ced93eec25cf57237a911c560,2021-04-02 18:43:14-07:00,2021-04-02 18:43:14-07:00,pinot-core/src/main/java/org/apache/pinot/core/segment/creator/impl/SegmentColumnarIndexCreator.java,766,766,"WIP: Pinot SPI refactor. (#6721)
+
+In the first phase of Pinot SPI refactor, we introduced the plugin based architecture. This is
+a continuation of the refactor. Details of the refactor can be found here:
+https://docs.google.com/document/d/1urROfQZuTE8JJmW3IMCeB2i3FYoEyG1TCyPsxvSaNuw/edit?usp=sharing
+
+In this second phase, we will mainly be focuing on the following:
+- We will create pinot-segment-spi and pinot-query-spi modules that will host all the segment
+  and query related interfaces.
+- We will also create pinot-segment-default and pinot-query-default which will host the default (current)
+  implementations of Pinot segment and query execution engine.
+- These will purely be refactors and would not create any function differences. However, to clean up
+  dependency issues in existing code, we may make some changes (eg create a pojo), but those also
+  should not modify any functionality.
+
+In this particular PR, we are making the folowing changes:
+- Introduced pinot-segment-spi.
+- Moved all segment related interaces from pinot-core to pinot-segment-spi.
+- In order to clean dependency issues, we have also introduced pinot-query-api, but in this PR
+  we are only moving bare minimal files needed for the pinot-segment-spi move.
+- Moved tests for any POJO classes that got moved due to dependencies.
+
+Manual changes not performed by IDE:
+- Added module `pinot-segment-spi`, pinot-common pinot-core depend on it.
+- ChunkCompressionType moved out of ChunkCompressionFactory class.
+- StatsCollectorConfig.getPartitionFunction() now returns ParittionFunction name instead of an instantiated PartitionFunction object. This is cleaner so that StatsCollectorConfig does not to depend on ParittionFunction/Factory.
+- VirtualColumnIndexContainer.getNullValueVectorReader() returns an interface NullValueVectorReader, instead of the impl.
+- PUSH_FREQUENCY_HOURLY currecntly defined in CommonConstants (pinot-common). was also defined locally (TODO cleanup added) inside of NormalizedDateSegmentNameGenerator. This is a temporary
+  work-around to avoid circular dependency between pinot-segment-spi pinot-common.
+- Modified the JsonIndexReader.getMatchingDocIds() to take a String instead of FilterContext, to avoid pulling in
+  FilterContext and other transitive dependencies into the spi module.
+
+TODOs:
+- AggregationFunctionType is being used by StarTree (transitively) so had to be temporarily pulled in.
+  We need to find a better home for it.
+- Clean up the PUSH_FREQUENCY_HOURLY TODO mentioned above.
+  To keep the PR limited, these classes are moved into a `misc` package inside of pinot-segment-spi.",68,35,1.6950599306834246,1.6950599359849654,120
+f2e3446e75f1ec1d553805d03f6504f05b3e3c0e,2021-04-13 17:20:05-07:00,2021-04-13 17:20:05-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,768,768,"Pinot SPI refactor contd: Added pinot-segment-local module. (#6761)
+
+- Added pinot-segment-local module that contains all the segment related
+  implementations for the existing local Pinot segment.
+
+- Modules that pinot-segment-local depends on:
+  - pinot-spi
+  - pinot-segment-spi
+  - pinot-common: This is temporary and needed as a lot of common utilities
+    are within pinot-common.
+  - External libraries: Datasketches,TDigest, HLL, Lucene, larray.
+  - For test-scope:
+    - pinot-avro
+    - pinot-csv
+    - pinot-json
+    - pinot-spi
+    - pinot-yammer
+
+- Modules dependent on pinot-segment-local:
+  - pinot-core
+  - pinot-server, pinot-perf: Only in test-scope
+
+Most moves/refactors done via IDE. Manual changes listed below:
+- Fix typo in Logger for RealtimeLuceneIndexReaderRefreshThread.
+- Moved builder specific util methods from StarTreeUtils to StarTreeBuilderUtils.
+  - `shouldRemove()`
+  - `remove()`
+
+- Made local copy of MAX_DOC_PER_CALL inside of PinotDataBitSetV2, as it is currently
+  defined in DocIdSetPlanNode, but segment related code depends on it.
+
+- Made local copy of DEFAULT_TDIGEST_COMPRESSION in PercentileTDigestValueAggregator,
+  originally defined in PercentileTDigestAggregationFunction.
+
+- Made local copy of DEFAULT_MAX_ERROR in PercentileEstValueAggregator, originally defined in
+  PercentileEstAggregationFunction.
+
+- Split QueryContextRequestUtils into two files, the new one calle RequestContextConverterUtils
+  is in pinot-common, as it has utility methods related to classes in pinot-common.
+
+- Created CustomSerDeUtils class, that has code from ObjectSerDeUtils related to ValueAggregator.
+  This is again to avoid pulling in dependencies from pinot-core into pinot-segment-local.
+
+- Removed reference of Operator in javadoc of EarlyTerminationException, as it is
+  was causing reference dependency to pinot-core.
+
+- Renamed SegmentGenerationWithNullValueTest to SegmentWithNullValueTest as it has test for segment
+  generation as well as querying, and can only be housed in pinot-core atm.
+
+- The clas RealtimeSegmentStatsHistory is ser/de using Java object ser/de, which makes moving the file
+  out of its current package backward incompatible. Addressed this issue by using a custom object
+  input stream that replaces the old package name with new one when deserializing.
+
+Moves done to resolve cross dependency issues:
+- Following moved to pinot-segment-local utils package:
+  - IngestionUtils
+  - TableConfigUtils
+  - SchemaUtils
+  - SegmentTestUtils: This depends on AvroSchemaUtil, added dependency on pinot-avro in test-scope.
+
+- Following moved to pinot-common:
+  - FilterContext
+  - ExpressionContext
+  - FunctionContext
+  - Predicate
+
+- Following moved to pinot-spi
+  - ReadMode
+  - CommonConstants
+  - ArrayCopyUtils
+  - BadQueryException moved
+  - EarlyTerminationException
+
+- Copied necessary data files in resources/data from pinot-core to pinot-segment-local.",68,35,1.695059931628487,1.6950599313481494,120
+75bd7b9317058e7a2d1c2b6e3f9ce3069109ba1d,2021-04-26 19:21:14-07:00,2021-04-26 19:21:14-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,763,763,"Add TIMESTAMP and BOOLEAN data type support (#6719)
+
+Add `TIMESTAMP` and `BOOLEAN` data type support, and the primitives to support new data types stored as the supported types.
+Internally `TIMESTAMP` is stored as `LONG` (millis since epoch), `BOOLEAN` is stored as `INT` (`0` for `false`, `1` for `true`).
+In the query response, `TIMESTAMP` values follow the JDBC format (e.g. `2021-01-01 01:01:01.123`).
+
+The source data of a `TIMESTAMP` field should be either long values (millis since epoch) or String values of JDBC timestamp format; The source data of a `BOOLEAN` field should be boolean, numbers (non-zero for `true`, zero for `false`), or string (`""true""` for `true`, `false` otherwise).
+
+Support `TIMESTAMP` and `BOOLEAN` in:
+- Data Ingestion
+- Filtering
+- Selection
+- Distinct
+- Order-by
+- Aggregation
+- Group-by
+- Transform
+- Having
+- Post-Aggregation
+- Scalar function (`java.sql.Timestamp` for `TIMESTAMP` and primitive `boolean` for `BOOLEAN`)",67,35,1.694978564075467,1.6949785672012598,121
+2b5500447cd82cedca9dd47860e69d321c4e00c3,2021-05-24 17:26:42-07:00,2021-05-24 17:26:42-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,764,764,"SegmentDirectoryLoader interface and local impl (#6949)
+
+Introducing a SegmentDirectoryLoader which will create the SegmentDirectory, with default implementation being SegmentLocalFSDirectory.",67,35,1.694978564075467,1.6949785677271885,121
+f3ce66fe4781205ee74b99529918888347575f04,2021-08-19 17:10:11-07:00,2021-08-19 17:10:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,726,726,"Code style pinot-segment-spi and pinot-segment-local (#7317)
+
+* reformat  pinot-segment-spi
+
+* reformat pinot-segment-local",67,35,1.6813342833368004,1.6813342818522043,121
+7e9ca6a5a4afe0d4e283ac1307c45430e474cbf2,2021-08-20 21:33:52-07:00,2021-08-20 21:33:52-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,767,767,Reformat code base with line length 120 (#7342),67,35,1.6781004513468467,1.6781004498085514,121
+aed13072dac0d8dae29056fac77f0f457be7adba,2021-10-22 07:50:36-07:00,2021-10-22 15:50:36+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,903,903,"Add MV raw forward index and MV `BYTES` data type (#7595)
+
+* Initial code for MultiValue forward Index
+
+* Wiring in the segment creation driver Impl
+
+* cleanup
+
+* finish off adding BYTES_ARRAY type
+
+* use less memory and fewer passes during encoding
+
+* reduce memory requirement for forwardindexwriter
+
+* track size in bytes of largest row so chunks can be sized to accommodate it
+
+* remove TODOs
+
+* force derivation of number of docs for raw MV columns
+
+* specify character encoding
+
+* leave changes to integration tests to MV TEXT index implementation
+
+* fix javadoc
+
+* don't use StringUtils
+
+* fix formatting after rebase
+
+* fix javadoc formatting again
+
+* use zstd's compress bound
+
+Co-authored-by: kishoreg <g.kishore@gmail.com>",69,36,1.694985694315088,1.6949856890854578,162
+d4d6be4e4cc9c84a8da9722b001e8f70ba3781ad,2021-10-25 16:25:13-07:00,2021-10-26 00:25:13+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,887,887,"implement FixedByteChunkMVForwardIndexReader, address post-review comments (#7629)",69,36,1.6943079907755942,1.6943079897933793,154
+5becf5b81c996a6be39a22fd99aacfa7f1b3e1ac,2021-10-29 18:01:49-07:00,2021-10-30 06:31:49+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,889,889,"Allow MV Field Support For Raw Columns in Text Indices  (#7638)
+
+Using the new MV raw byte forward index, allow multi value fields to be supported in text indices.",69,36,1.6979147273385222,1.697914725664719,153
+7cbd5ac21dc0c5c3c4ea007edb1980723c90e393,2021-11-05 17:38:44-07:00,2021-11-05 17:38:44-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,892,892,"to handle datetime column consistently (#7645)
+
+SegmentColumnarIndexCreator uses local time zone while converting datetime w/o time zone to timestamp. This is inconsistent with DateTimeFormatSpec.fromFormatToMillis() which uses UTC by default. This PR reuses DateTimeFormatSpec to handle timecolumn in SegmentColumnarIndexCreator.",69,36,1.699031335950333,1.6990313322307589,153
+781f5cdeee37d42b0eb0eb6069107f5b4588b13a,2021-11-12 15:31:47-08:00,2021-11-13 05:01:47+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,901,901,"Support Native FST As An Index Subtype for FST Indices (#7729)
+
+This PR introduces the notion of subtypes to FST index -- allowing users to set a segment level flag indicating whether the index should be built using native FST or Lucene FST.",70,36,1.6990313368874703,1.6990313341778949,156
+362f3e1acca6b50dcf2680848ac6dfec71d37d3b,2021-11-12 17:32:10-08:00,2021-11-12 17:32:10-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,901,901,Add getName() to PartitionFunction interface (#7760),70,36,1.69903133873853,1.6990313328947915,156
+6b33448da58992773ee23b863da029650e9ec37f,2021-11-19 17:03:11-08:00,2021-11-20 01:03:11+00:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,901,901,use `LZ4` as default compression mode (#7797),70,36,1.6988001371734962,1.6988001382188165,156
+5006bbc609b34dac0d9b86f5415beb35a94dbdd9,2021-12-02 13:14:06-08:00,2021-12-02 13:14:06-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,870,870,Clean up deprecated fields from segment metadata (#7853),65,36,1.7008642382020058,1.7008642345823761,156
+f9ab252980e4f973d60b9db2a0f5e7d5764bdaf2,2021-12-16 12:21:48-08:00,2021-12-16 20:21:48+00:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,712,712,"make index creator provision pluggable (#7885)
+
+This allows index creation to be intercepted, so that the current static logic in SegmentIndexCreator can be extended or overridden. This is achieved by introducing a new interface IndexCreatorProvider which provides various new index creators from an IndexCreationContext which bundles all information about index creation. External users can register a decorator which can enhance or entirely replace the default index creator provision logic. Typically, a registered decorator should pattern match the IndexCreatorContext for very specific cases, and return a custom implementation only in those cases, and merely delegate to the default provisioning logic otherwise.",55,33,1.6147288178462817,1.6147288135979445,129
+77a706996099f9bb44b90ad506f5205b3c4d7a42,2021-12-16 16:17:05-08:00,2021-12-17 00:17:05+00:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,712,712,make index readers/loaders pluggable (#7897),55,33,1.610537666094057,1.6105376657653405,129
+c8dde9bc7664bca179754046b0ba366103de790a,2022-01-27 08:21:57+00:00,2022-01-27 08:21:57+00:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,719,719,allow JSON forward indexes (#8073),55,33,1.6105376670168157,1.6105376681782948,132
+bad7106d5c714edf9d52b63dd4428d15cabd79c8,2022-02-13 10:21:54-08:00,2022-02-13 10:21:54-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,719,719,Adding more checkstyle rules (#8197),55,33,1.6105376670168157,1.6105376681782948,132
+3f98ce37fdaef0335fcd82e621489d65751b1f55,2022-02-25 15:01:01-08:00,2022-02-26 04:31:01+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,725,725,"Implemented BoundedColumnValue partition function (#8224)
+
+Added new partition function called BoundedColumnValue to be able to partition segments based on column values",55,33,1.610732644082567,1.6107326466083063,135
+86958b6e0bcdd51c3de0afc1196baea64bc4b92c,2022-03-31 14:48:17-07:00,2022-03-31 14:48:17-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,727,727,Adding min/max value for column stats during segment creation (#8452),55,33,1.6107326463525686,1.6107326467882173,135
+6debfa977102e072137dc034290285b83e09b875,2022-04-13 12:02:19-07:00,2022-04-14 00:32:19+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,735,735,Add zk metadata to segment's metadata.properties file (#8502),56,33,1.6107326467517027,1.610732649379048,137
+476679da861f20b7c7b1100f818a03eae60a9776,2022-04-13 16:45:00-07:00,2022-04-14 05:15:00+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,755,755,"Allow disabling dict generation for High cardinality columns (#8398)
+
+For high cardinality metric columns (especially doubles/floats), dictionary may be an overhead not only for storage space but also it adds one additional hop for read.
+During segment generation phase, we can check if a column would require more storage for dictionary vs raw values and can choose to not create dictionary in that phase.
+
+The feature is off by default and can be enabled by setting optimizeDictionaryEnabled to true.",60,33,1.6125109826039308,1.6125109810968525,143
+60ece7af170588d107cd44090caeadfda2b8538b,2022-05-03 11:37:31-07:00,2022-05-03 11:37:31-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,759,759,"Support BigDecimal raw value forward index; Support BigDecimal in many transforms and operators (#8622)
+
+- Support BigDecimal raw value forward index
+   - No dictionary group by
+   - No dictionary distinct only, distinct w/ order by
+   - etc.
+- Support BIG_DECIMAL in:
+  - CASE statement.
+  - CAST transform.
+  - Groovy transform.
+  - Addition, Subtraction, Multiplication, and Division.
+  - abs(), ceil(), and floor() math functions.
+  - Greatest transform.
+  - Least transform.
+  - EQUAL, NOT_EQUAL, IN, NOT_IN, RANGE predicates.
+  - NoDictionary based EQUAL, NOT_EQUAL and IN predicates.
+  - Binary operators (=, !=, >=, >, <=, <).",60,33,1.6125109826039308,1.6125109834594975,143
+907b0239b16e2b1eb71508d2aba36275891574ce,2022-05-03 17:34:28-07:00,2022-05-04 06:04:28+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,775,775,Implement Native Text Operator (#8384),60,33,1.6125109826039308,1.612510983278849,148
+b58650658c0aac258e1c7932073188ddc5590d89,2022-05-11 11:14:58-07:00,2022-05-11 11:14:58-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,774,774,"Allow updating start/end offset for pushed segments (#8653)
+
+- Support updating start/end offset in the segment ZK metadata for pushed segments if provided in the segment metadata
+- Refactor the updating segment ZK metadata logic to have consistent behavior for adding new segment and refreshing existing segment",60,33,1.612431471999893,1.6124314716245232,148
+bf48b59c41f2bcf967c609ce7055f2fcf9e9cb80,2022-05-20 11:42:08-07:00,2022-05-21 00:12:08+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,849,849,"Add support for indexes during offline segment creation (#8601)
+
+Create bloom filter and range index during offline segment creation",65,35,1.6084826382469317,1.60848263931425,168
+9f2f1b2bbcfd973b64740c06c4814fdff13454d6,2022-06-07 12:19:31-07:00,2022-06-08 00:49:31+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,897,897,Fix multi value column index creation (#8848),65,35,1.6102523780163065,1.6102523853301487,181
+7fef95ebe6bf76821df9d40ceb46b622c8037ad6,2022-06-18 18:04:00-07:00,2022-06-18 18:04:00-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,901,901,"Reduce the heap memory usage for segment creation (#8846)
+
+- Enhances `StatsCollector` to early release one copy when the values are no longer needed
+- Early release the value-to-index map in the `SegmentDictionaryCreator`
+- Clean up some unnecessary operations",65,35,1.6087832991512234,1.6087833018595905,181
+b837350034dfb9dc5d8ea624b1e11bbbef3b4948,2022-08-30 22:49:19-07:00,2022-08-30 22:49:19-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,905,905,"Add minMaxInvalid flag to avoid unnecessary needPreprocess (#9238)
+
+* Add minMaxInvalid flag to avoid unecessary needPreprocess
+
+* Increase size to account for new field in metadata",65,35,1.6099078292824327,1.6099078337005264,183
+65e01f1307c349d7cf46f257e0bb76d5f23d0b2d,2022-10-10 16:57:36-07:00,2022-10-10 16:57:36-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,907,907,Add more options to json index (#9543),65,35,1.6099078279390837,1.6099078316376545,184
+e813867985746e916c8e898a530002551b661496,2022-10-11 22:24:11-07:00,2022-10-11 22:24:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,959,959,"Add an option to disable the creation of the forward index for a column (#9333)
+
+* Add the option to create columns without a forward index
+
+* Fix unit test
+
+* Set and unset flag in test
+
+* Empty commit to trigger tests
+
+* Empty commit to trigger tests
+
+* Trying test changes to see if unit tests pass
+
+* Add order by to tests for better determinism
+
+* Change disk size used in OfflineClusterIntegrationTest:testAggregateMetadataAPI
+
+* Empty commit to trigger tests
+
+* Address review comments
+
+* Empty commit to trigger tests
+
+* Address review comments, add file for MV forward index disabled tests
+
+* Enhance tests and add fixes and address some comments
+
+* Address review comments, remove no-op reader, allow sorted column, remove metadata
+
+* Address review comments
+
+* Address review comments
+
+* Empty-Commit
+
+* Address review comments, remove default column handling for forwardIndexDisabled columns
+
+* Fix formatting
+
+* Fix formatting
+
+* Update tests to check error message
+
+* Empty commit to trigger tests
+
+* Empty commit to trigger tests
+
+* Add checks for forwardIndexDisabled for derived column handling
+
+* Empty commit to trigger tests
+
+* Address review comments
+
+* Fix tests",69,36,1.61596880443755,1.6159688050635261,188
+229c55e65ad7d3e0185c57b5a6da53c8adc0a9d4,2022-11-02 16:12:09-07:00,2022-11-02 16:12:09-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,961,961,"Customize stopword for Lucene Index (#9708)
+
+* Customize stopword for Lucene Index
+
+* Customize stopword for Lucene Index
+
+* Customize stopword for Lucene Index
+
+* Customize stopword for Lucene Index
+
+* Customize stopword for Lucene Index",69,36,1.6159688051825205,1.6159688054976293,188
+214095425e3cd084e2cbb53dc6a52e65cf0d6e9d,2022-11-23 17:31:44+05:30,2022-11-23 17:31:44+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,981,981,"Do not create dictionary for high-cardinality columns (#9527)
+
+* Do not create dictionary for high-cardinality columns
+
+* Refactor: rename config
+
+* Add dimension fields in the test as well
+
+* Add old config back for backward compatibility
+
+* Use both old and new optimizeDictionary configs
+
+Co-authored-by: Kartik Khare <kharekartik@Kartiks-MacBook-Pro.local>",73,37,1.6240353265064065,1.6240353319675698,194
+6210f43ca0bdb0d8ab280c55ff89284953b343ba,2022-11-30 09:55:11-08:00,2022-11-30 09:55:11-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,985,985,Disable Dictionary (#9868),75,38,1.6527457172538393,1.6527457276231439,193
+568d858f1654dc35cd07ad28978ead1161bd65d9,2022-12-01 19:24:44-08:00,2022-12-01 19:24:44-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,996,996,Fix bloom filter creation on BYTES (#9898),75,38,1.652669382438285,1.6526693922615017,200
+02baaac1c157cd4a260ce6ad01a7063b07755adf,2023-02-23 11:37:00-08:00,2023-02-23 11:37:00-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,964,964,Relax the constraint to have a dictionary and inverted index when forward index is disabled (#10260),73,37,1.6482479383469968,1.648247952076601,206
+2607c0ee1198daed32845ac25b14f76c7170e43c,2023-03-10 13:52:31-08:00,2023-03-10 13:52:31-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,964,964,refine method name withForwardIndexDisabled (#10407),73,37,1.6482479388767883,1.648247949038055,206
+889ed7b3ec26b3b8fe47f5b0748f3bf6d2de92fb,2023-03-28 13:12:57-07:00,2023-03-28 22:12:57+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,964,964,"Trivial fix on a warning detected by static checker (#10492)
+
+Older code was:
+```
+ long dictionarySize = info.getDistinctValueCount() * spec.getDataType().size();
+```
+
+This could produce an overflow if the number of distinct values is close to Integer.MAX_INT / 4, which seems rare, but possible.
+
+New code just cast one of the members as long in order to be sure that 64bit product is used.",73,37,1.6495829205986234,1.6495829273714306,206
+2c5adc820730a3c0b4f6cdf741cd3e9533964ed4,2023-03-30 10:36:11-07:00,2023-03-30 10:36:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,965,965,Make column order deterministic in segment (#10468),73,37,1.6488812131374424,1.6488812257084502,206
+f69557e325c5bb9e4e250bb0ec2db12d85298211,2023-03-31 12:18:24-07:00,2023-03-31 21:18:24+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,654,654,"Complete index spi (#10184)
+
+Last PR as part of the Index SPI. This includes all implementations for every index.",68,32,1.672712212635774,1.6727122121323406,115
+9e4b5ade7e5379501278e3551c556a7de96ca06a,2023-04-10 12:21:36-07:00,2023-04-10 12:21:36-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,622,622,Enabling dictionary override optimization on the segment reload path as well. (#10557),60,31,1.6661302734603796,1.6661302753598923,104
+4823c958aed8792d61c198955f41b1f594f365e1,2023-07-25 16:43:33-07:00,2023-07-25 19:43:33-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,710,710,Updated code for setting value of segment min/max property. (#10990),68,33,1.7001111211594693,1.7001111257548636,122
+93af58cf0cca05e102a2e39924b956b0854fd718,2023-07-31 08:39:40-07:00,2023-07-31 08:39:40-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,655,655,Fix the escape/unescape issue for property value in metadata (#11223),61,32,1.6827765333308797,1.6827765346615198,114
+aa5d65fccf87623970d2c5bdae8019d5d09c6ae7,2023-09-25 14:39:11-07:00,2023-09-25 14:39:11-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,657,657,Cleanup some reader/writer logic for raw forward index (#11669),62,32,1.680367037732161,1.6803670451995654,114
+873992f93d350ded958e20856ae455da89f990be,2023-10-04 09:55:12+05:30,2023-10-04 09:55:12+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,649,649,"Post build index creation (#11711)
+
+* Allow creating indexes that depend on completed segment
+
+---------
+
+Co-authored-by: Saurabh Dubey <saurabh.dubey@Saurabhs-MacBook-Pro.local>
+Co-authored-by: Saurabh Dubey <saurabh.dubey@saurabhs-macbook-pro-1.tail8a064.ts.net>",61,31,1.681277609321215,1.6812776038927888,112
+88edfd49cc27042ae923e053cd47f1bec7fb5663,2023-10-22 10:05:59-07:00,2023-10-22 13:05:59-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,702,702,Update Segment builder to use column major tables (#11776),66,33,1.668436234278858,1.6684362336492027,125
+35748a013b486b3526f7f6d53e6e1bee930c6e6a,2023-11-20 15:00:44-08:00,2023-11-21 00:00:44+01:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,698,698,Explicit null handling (#11960),67,33,1.6661622555446889,1.6661622573561465,124
+b44b3aeb8f166317f5b00a6bf998bdfa217cf5aa,2023-12-15 11:51:54-08:00,2023-12-15 14:51:54-05:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,698,698,Changes for migration to commons-configuration2 (#11985),67,33,1.6656403262733026,1.6656403287568502,124
+f9df57a9e32d1fbd538fc37338245b06c440838b,2024-01-03 07:33:39-08:00,2024-01-03 21:03:39+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,702,702,"Add column name to JSONParsing exception message during index build (#12151)
+
+* Add a reproducer for a json error during index build
+* Add column name to the error message and change the repro
+* Use + operator to concatenate strings
+
+Co-authored-by: Xiaotian (Jackie) Jiang <17555551+Jackie-Jiang@users.noreply.github.com>
+
+---------
+
+Co-authored-by: Xiaotian (Jackie) Jiang <17555551+Jackie-Jiang@users.noreply.github.com>",66,33,1.6654868098346403,1.665486810928863,124
+0e09e725f32a2cfb71baa1de934a4364c05ace7c,2024-02-12 23:22:35-08:00,2024-02-12 23:22:35-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,715,715,Fix the double unescape of property value (#12405),66,33,1.6692892944488793,1.6692892932728605,134
+28e480e8d37168d7c0e50fedd757f7139cbf381d,2024-02-28 10:06:07-08:00,2024-02-28 10:06:07-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,665,665,Fix ColumnMinMaxValueGenerator (#12502),65,32,1.65172707600839,1.6517270738204883,119
+2c6a84b8ec840ed679c0a98230c518522b6591dd,2024-04-15 09:34:37-07:00,2024-04-15 09:34:37-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,668,668,"Improved segment build time for Lucene text index realtime to offline conversion (#12744)
+
+* reuse mutable lucene index during segment conversion
+
+* realtime segment conversion only
+
+* add RealtimeSegmentConverter test for index reuse path
+
+* clarify naming
+
+* fix missed renaming
+
+* address comments, close all resources",65,32,1.6518566111146191,1.6518566123600094,119
+91156de091f1a5d8cda2198d082fa2a8e8480827,2024-05-07 14:17:51-07:00,2024-05-07 17:17:51-04:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,670,670,#12635 Bug Fix createDictionaryForColumn does not take into account inverted index  (#13048),65,32,1.65175894803937,1.6517589430939494,119
+fe8d39506bdb15f67a4f2d3977ced418d3b8b8b7,2024-05-10 22:42:07-07:00,2024-05-10 22:42:07-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,671,671,bugfix: use consumerDir during lucene realtime segment conversion  (#13094),65,32,1.65175894803937,1.651758944429474,119
+6bf0f6206846d1efb3e026dc5f3a85e33b7d15b1,2024-05-15 11:22:37-07:00,2024-05-15 23:52:37+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,671,671,Use parameterized log messages instead of string concatenation (#13145),65,32,1.6523507558815416,1.6523507551167351,119
+082ef4079f6a6fe480b2a04ace62a254166870c2,2024-06-07 11:50:46-07:00,2024-06-08 00:20:46+05:30,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,678,678,Update metadata.properties to have schema max-length (#13187),65,32,1.6521130581500971,1.652113055825509,124
+1702ea2d061b3467ba3e3954d3ef6817fd61f906,2024-08-28 12:26:16+02:00,2024-08-28 12:26:16+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,681,681,Log nullable columns on creation (#13868),65,32,1.6521130581500971,1.6521130571794984,125
+d3eaea67c2c468bdcf37999fe502efc406d45d0e,2024-08-29 11:52:19+02:00,2024-08-29 11:52:19+02:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,681,681,"Improve column null handling (#13839)
+
+* Renames some usages of isNullHandlingEnabled to isDefaultNullHandlingEnabled to make it clearer the semantic of the method. It also adds javadoc.
+* Modify TableConfigUtils.validatePartialUpsertStrategies and SegmentMapper constructor to also use column based null handling.",65,32,1.6517501245812902,1.6517501255549947,125
+7522d8a20663100c5e1cfa7402014fb55164d112,2024-08-29 21:23:51-07:00,2024-08-29 21:23:51-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,743,743,Support ComplexFieldSpec in Schema and column metadata (#13905),69,33,1.6673386332279514,1.667338633825661,143
+afb63bcfebe3d13ef557fd22df60ae5b09a54e32,2024-10-14 11:15:10-07:00,2024-10-14 11:15:10-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,744,744,Enhance `optimizeDictionary` to optionally optimize var-width type cols (#13994),69,33,1.6678708254673522,1.6678708224353151,143
+ee891a7e3b8cfaf0321641a6bdd976c40c58e213,2024-10-23 17:02:22-07:00,2024-10-23 17:02:22-07:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,742,742,Cleanup setters in IndexLoadingConfig and SegmentGeneratorConfig (#14258),70,33,1.6667121319354685,1.6667121266638196,141
+3da05fbf7fd7bbb0e6b8149fd60c588a8c757e7a,2024-11-21 13:01:42-08:00,2024-11-21 13:01:42-08:00,pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java,750,750,"Add `optimizeDictionaryType` config to automatically choose dictionary type (#14444)
+
+* add optimizeDictionaryType
+
+* make backwards compat",72,33,1.6667121319354685,1.6667121302998105,142
